@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\author{Alejandro Tirado Ramirez \and Simón Sloan García Villa}
+\title{FP: An F1 Pit Stop Predictor}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+In Formula 1, a few tenths of a second per lap can make a difference. Building a competitive car takes careful engineering, and getting the most out of it also depends on the decisions made during a race. Pit stops are part of that challenge: tyre condition, traffic, weather, and safety cars can all influence when a team decides to bring a driver in.
+
+That is what makes this project interesting to us. As a race unfolds, can we use the information from recent laps to anticipate a driver's next pit stop? We want to explore this question through deep learning and make the results easy to follow in a race replay.
+
+\section{Project goal}
+
+Our goal is to estimate, at the end of each lap, the probability that a driver will enter the pits within the next three laps. For example, a prediction made after lap 20 will cover pit entries on laps 21, 22, and 23. We will update that prediction as each new lap becomes available.
+
+The target is the pit entry that actually happens in a historical race. This gives us an observable outcome for training and evaluation, while keeping the project focused on anticipating the decisions teams make.
+
+\section{Our approach}
+
+\subsection{Learning from past races}
+
+We will use \textbf{FastF1}, a Python library that provides access to historical timing, tyre, telemetry, and position data from 2018 onwards.\footnote{FastF1 documentation: \url{https://docs.fastf1.dev/}.} Our first version will work with lap-level records for each driver. The inputs will include recent lap times, tyre compound and age, race position, and track status, such as whether a safety car is active.
+
+\subsection{Defining the training target}
+
+We will create a binary label called \texttt{PitWithin3Laps}. It will be 1 when a driver enters the pits during any of the next three laps, and 0 when no pit entry occurs in that window. We will build these labels from the historical \texttt{PitInTime} and \texttt{LapNumber} fields. Examples with insufficient data to determine the outcome will be excluded.
+
+\subsection{Following the race with a recurrent model}
+
+A single lap provides only a snapshot of a driver's situation. A sequence of laps can reveal how their pace and tyre age are changing. We will train a recurrent neural network (RNN) to explore whether these patterns help anticipate a pit entry.
+
+Each input sequence will contain consecutive laps from one driver in one race, ending at the lap where the prediction is made. The model will output a probability for the three-lap window ahead. Future pit records will be used to create training labels and evaluate predictions; the inputs will contain only information available at prediction time.
+
+\section{Evaluating the predictions}
+
+We will split the data chronologically into training, validation, and test sets, keeping every race entirely within one set. This will let us evaluate the model on races held after those used for training. Any learned preprocessing will be fitted on the training data, and model settings and the threshold for triggering an alert will be chosen using the validation set.
+
+We will compare the RNN with a simple baseline, such as logistic regression using the current lap's features and the same \texttt{PitWithin3Laps} target. Since pit entries are relatively rare, we will report precision, recall, and F1 score on driver-lap examples. We will also examine false alarms and missed entries to understand where the predictions are useful and where they fall short.
+
+\section{Race replay and final deliverable}
+
+The final application will replay a historical race lap by lap and display each driver's predicted probability of entering the pits within the next three laps. Actual pit entries will appear as the replay reaches them, making it possible to compare the predictions with what happened on track.
+
+Our first milestone will be a prepared dataset and an evaluated model. We will then connect the model to the replay viewer and demonstrate it on a race reserved for testing. The result will bring together the prediction, its evaluation, and a visual way to explore the race---something that both helps us understand the model and gives other Formula 1 fans a way to engage with the project.
+
+\end{document}
