@@ -116,3 +116,4 @@ Todos estos agregados describen la **vuelta completa**. Pueden entrar en la RNN 
 Para decidir una columna se registrará: **usar/excluir/derivar**, instante de disponibilidad, regla de limpieza, manejo de faltantes, rama FFNN/RNN y prueba de que no cambia al alterar el futuro. Aprobar una familia no aprueba automáticamente cada uno de sus campos. El orden sugerido de discusión es: (1) identidad/progreso, (2) neumáticos, (3) ritmo/sectores/posición, (4) estado de pista/clima, (5) telemetría. La revisión de cada familia actualizará el registro de características del experimento base.
 
 La primera revisión detallada de identidad, reloj y progreso quedó en [Revisión 1](14_revision_identidad_reloj_progreso.md).
+La revisión de `Stint`, `Compound`, `TyreLife` y `FreshTyre` quedó en [Revisión 2](15_revision_estado_neumaticos.md).
