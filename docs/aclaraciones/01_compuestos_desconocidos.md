@@ -15,6 +15,8 @@ Opciones: conservar la carrera e indicar valores desconocidos; excluirla de cier
 
 **Propuesta:** conservarla en la matriz maestra; no aplicar una exclusión definitiva antes de investigar y cuantificar su impacto. Una comparación posterior con y sin la carrera podría mostrar sensibilidad, registrando los cambios y evaluando en la misma validación. Ninguna regla de selección o imputación debe usar datos futuros como entrada del modelo.
 
+**Actualización:** la caché local de `timing_app_data` permitió recuperar el compuesto de los 12 stints de Austria afectados, con 298 filas candidatas completadas. La correspondencia fuente-matriz coincidió en los 44 stints comparables conocidos de esa carrera. La matriz maestra se conserva intacta; el resultado está en la matriz candidata y el informe descritos en `docs/analisis/04_validacion_reconstruccion_neumaticos.md`. Esto no resuelve por sí solo la decisión de incluir o excluir Austria de experimentos.
+
 ## Referencias internas
 
 - `docs/analisis/02_calidad_inicial_entrenamiento.md`: diagnóstico y búsqueda de compuestos conocidos en el mismo stint.
