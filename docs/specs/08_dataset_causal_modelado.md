@@ -1,6 +1,6 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.2.
+**Versión:** 0.3.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
 
@@ -16,7 +16,7 @@ El trabajo seguirá este orden: fijar contratos y particiones; resolver contradi
 
 Se mantienen estas decisiones de la conversación:
 
-- Objetivo operativo acordado en la socialización: **entrada del piloto a boxes durante la carrera bajo condiciones normales o de coche de seguridad**, sin exigir demostrar un cambio de neumáticos. Las entradas durante Virtual Safety Car se tratarán como parte del mismo régimen de neutralización en la propuesta, sujeto a confirmación explícita. Los traslados del coche por comisarios no constituyen por sí solos una entrada del piloto. El alcance de entradas para abandonar sigue pendiente de precisar. Esta decisión requiere reconciliar [SPEC-LABEL-002](07_objetivo_entrada_boxes.md), que aún incluye visitas por retiro, y las referencias antiguas a cambio de neumáticos en las especificaciones 01–03/06.
+- Objetivo operativo acordado en la socialización: **entrada del piloto a boxes durante la carrera bajo condiciones normales, Safety Car o Virtual Safety Car**, con `PitInTime` y `PitOutTime` emparejados del mismo piloto y carrera. Una entrada sin salida o una salida sin entrada queda incierta; una fuente externa no reemplaza la pareja. No se exige demostrar cambio de neumáticos. Los traslados del coche por comisarios no constituyen por sí solos una entrada del piloto. Rige [SPEC-LABEL-002, versión 1.1](07_objetivo_entrada_boxes.md); las referencias antiguas a cambio de neumáticos en las especificaciones 01–03/06 son antecedentes.
 - Predicción al cruce que inicia la vuelta `N`; horizonte `N`, `N+1`, `N+2`. Es la misma frontera que terminar la vuelta `N−1` y predecir las tres siguientes. Guardaremos `prediction_lap=N` para evitar ambigüedad.
 - Ventana máxima `W` configurable que cuenta la observación actual. Es corta al inicio y crece hasta `W`.
 - Cómputo local para preparación, comprobaciones e inferencia/evaluación pequeñas. Entrenamiento y ajuste de modelos en Colab/Kaggle; datos y artefactos versionados en Drive.
@@ -26,14 +26,14 @@ Estas reglas concretan el [pipeline de datos](02_pipeline_datos.md), el [diseño
 
 ## 2. Punto de partida y asuntos que deben corregirse antes de congelar datos
 
-La matriz histórica inspeccionada es `EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_limpieza_v1.pkl`. El perfil 2022–2023 contiene 47.997 filas y 61 columnas. `etiquetado_pit_entry_v19/labels.pkl` registra 4.990 positivos, 41.361 negativos y 1.646 desconocidos. Son cifras del artefacto candidato actual, no una certificación independiente de todas sus decisiones.
+La matriz histórica inspeccionada es `EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_limpieza_v1.pkl`. El perfil 2022–2023 contiene 47.997 filas y 61 columnas. `etiquetado_pit_entry_v19/labels.pkl` registra 4.990 positivos, 41.361 negativos y 1.646 desconocidos. Estas cifras describen una ejecución anterior a la regla de pareja obligatoria y **no son la distribución esperada de las nuevas etiquetas**. El artefacto v19 no queda aprobado para entrenar bajo el objetivo revisado.
 
 La revisión documental encontró dos asuntos concretos:
 
-1. **Ricciardo, Arabia Saudita 2022, candidato `2022-02-3-IN-36`:** el [informe FIA](https://www.fia.com/news/f1-verstappen-beats-leclerc-thrilling-duel-saudi-arabia) sitúa la detención antes de la entrada al pit lane y describe que los comisarios empujaron posteriormente el auto hacia boxes. Esto contradice el cierre por cruce de fuentes de [la revisión 11](../analisis/11_cierre_revision_eventos_pit_in.md), mientras que [la revisión 10](../analisis/10_revision_pit_in_sin_pit_out.md) ya recogía esa diferencia. Debe revisarse la vuelta, el timestamp y qué representa `PitInTime` en ese caso. Proponemos que un traslado de recuperación no se considere automáticamente una visita deportiva predicha. Hasta resolverlo, la evidencia no autoriza declarar ese caso definitivamente confirmado. Esta especificación no altera v19.
+1. **Ricciardo, Arabia Saudita 2022, candidato `2022-02-3-IN-36`:** el [informe FIA](https://www.fia.com/news/f1-verstappen-beats-leclerc-thrilling-duel-saudi-arabia) sitúa la detención antes de la entrada al pit lane y describe que los comisarios empujaron posteriormente el auto hacia boxes. Esto contradice el cierre por cruce de fuentes de [la revisión 11](../analisis/11_cierre_revision_eventos_pit_in.md), mientras que [la revisión 10](../analisis/10_revision_pit_in_sin_pit_out.md) ya recogía esa diferencia. La regla nueva exige comprobar si hay una pareja válida y si representa una entrada realizada por el piloto; el traslado de recuperación no basta. Hasta resolverlo, la evidencia no autoriza declarar ese caso definitivamente positivo. Esta especificación no altera v19.
 2. **Conteo de fuentes:** el código actual agrupa `official_report_confirms_pit_entry` junto con confirmaciones FIA. Hay cuatro filas con ese estado cuya fuente de revisión es Formula 1. Por ello, el rótulo de 76 confirmaciones «FIA directas» no describe con precisión la procedencia de todas ellas. La siguiente versión deberá distinguir FIA, F1/equipo, fuente secundaria y evidencia del propio feed, sin cambiar una etiqueta solo para corregir el nombre de su fuente.
 
-La política será: prevalece evidencia FIA pertinente al campo discutido; una fuente debe confirmar exactamente lo que se afirma. La ausencia en un resumen de paradas no demuestra que no hubiera una visita para retirarse. Una clasificación final prueba el resultado, pero no la entrada a boxes ni su vuelta. Dos sitios que copian el mismo feed no constituyen dos observaciones independientes. Una discrepancia abierta queda registrada y puede producir `NA`; la meta de la revisión es reducir errores, aunque queden casos sin resolver.
+La política será: prevalece evidencia FIA pertinente al campo discutido; una fuente debe confirmar exactamente lo que se afirma. Las fuentes oficiales permiten auditar eventos y calidad del feed, pero no convierten una entrada sin `PitOutTime` en positivo bajo el contrato 1.1. La ausencia en un resumen de paradas no demuestra que no hubiera una visita para retirarse. Una clasificación final prueba el resultado, pero no la entrada a boxes ni su vuelta. Dos sitios que copian el mismo feed no constituyen dos observaciones independientes. Una discrepancia abierta queda registrada y puede producir `NA`; la meta de la revisión es reducir errores, aunque queden casos sin resolver.
 
 ## 3. Contrato temporal de una muestra
 
@@ -53,7 +53,7 @@ Esta propuesta adapta el principio de reconstruir características en un instant
 
 **Ejemplo:** al iniciar la vuelta 21, una observación de clima publicada durante la 21 queda fuera de la decisión. La telemetría completa de la 20 puede usarse solo bajo la regla de disponibilidad/latencia fijada. La entrada a boxes de la 22 puede determinar `y=True`, pero nunca una característica de esa decisión.
 
-Una visita ya iniciada antes de `decision_time` no debe contarse como una entrada futura del mismo horizonte. También se revisarán los cruces de control dentro del pit lane y las salidas sin entrada conocida: una salida confirma presencia en boxes, pero por sí sola no demuestra en qué vuelta comenzó la visita. Resolver estos límites forma parte de la auditoría del anclaje temporal de las etiquetas.
+Una visita ya iniciada antes de `decision_time` no debe contarse como una entrada futura del mismo horizonte. También se revisarán los cruces de control dentro del pit lane y las salidas sin entrada conocida: una salida confirma presencia en boxes, pero por sí sola no demuestra en qué vuelta comenzó la visita ni cumple la pareja obligatoria. Resolver estos límites forma parte de la auditoría del anclaje temporal de las etiquetas.
 
 ## 4. Pipeline con una responsabilidad por etapa
 
@@ -248,7 +248,7 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 
 | Punto | Propuesta para discutir | Por qué debe fijarse |
 |---|---|---|
-| Alcance exacto de visita | Ya acordado: entrada del piloto a boxes en carrera normal o con coche de seguridad; traslado por comisarios no basta. Confirmar expresamente Virtual Safety Car y decidir entradas para retiro, penalización o reparación, así como autos ya dentro de boxes al decidir. | Afecta objetivo, anclaje temporal y qué alertas son útiles. |
+| Alcance exacto de visita | Acordado: carrera normal, Safety Car o Virtual Safety Car; solo `PitInTime` y `PitOutTime` válidos y emparejados. Un registro incompleto queda incierto. Auditar traslados asistidos, cruces dentro del pit lane y entradas ya iniciadas antes de decidir. | Fija objetivo, anclaje temporal y qué alertas son útiles. |
 | Latencia | Acordado: ningún dato posterior a la decisión entra en `X`. Falta definir supuestos medibles de disponibilidad por fuente para la primera reproducción y contrastarlos antes de hablar de uso en vivo. | Un timestamp de evento no acredita recepción inmediata. |
 | `K_clima` | Una unidad temporal explícita (segundos almacenados, minutos presentados) y valor elegido tras revisar cobertura de observaciones anteriores en train. Sin valor oculto por defecto. | Controla antigüedad y ausencia de clima. |
 | Primera vuelta | Mantener muestra de estado inicial con campos realmente disponibles y faltantes explícitos. | Debe poder inferirse sin usar el cierre de la primera vuelta. |
