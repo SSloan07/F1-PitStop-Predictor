@@ -2,6 +2,8 @@
 
 **Estado:** propuesta para revisión y validación; no autoriza generar etiquetas definitivas. Complementa las especificaciones 01 y 02.
 
+**Contrato de ejecución:** [Especificación 06: pipeline de etiquetado candidato](06_pipeline_etiquetado_candidato.md). Define entradas, etapas, revisión acotada, controles y entregables para el modelo implementador. Para esa entrega, la revisión de reglas se limita a 2022–2023; se conserva aquí el contexto exploratorio previo.
+
 ## Objetivo y separación de etapas
 
 Reconstruir, con toda la información histórica, si una entrada a boxes corresponde a un cambio de neumáticos. Después asignar a cada predicción al inicio de la vuelta N una etiqueta que indique si existe un cambio en N, N+1 o N+2. El modelo no recibe estas evidencias futuras, `PitInTime`, `PitOutTime` ni la etiqueta.
@@ -49,7 +51,7 @@ Seleccionar casos diversos de entrenamiento y validación para revisión contra 
 
 ## Plan de validación de la regla
 
-**Estado:** acordado como siguiente etapa; aún no ejecutado. El resultado será un informe revisable antes de implementar etiquetas definitivas.
+**Estado:** contraste inicial parcial documentado en [el informe de casos](../analisis/07_contraste_eventos_neumaticos.md); la validación general sigue pendiente. La especificación 06 establece cómo completar una revisión acotada y producir etiquetas candidatas, sin promoverlas a definitivas.
 
 1. Seleccionar y documentar casos de las temporadas 2022–2024 que cubran cambios de compuesto, posibles cambios al mismo compuesto, transiciones de stint inmediatas y retrasadas, entradas sin transición inmediata y registros incompletos. Incluir, si se identifican, paradas sin cambio, interrupciones y abandonos. Documentar criterios y número de casos seleccionados; la muestra debe reflejar también eventos ordinarios y no solo anomalías.
 2. Identificar fuentes independientes que permitan contrastar piloto, carrera, vuelta y, cuando sea posible, cambio de neumáticos. Registrar fuente, enlace, evidencia y limitaciones por caso. Un registro que solo confirme una entrada no confirma necesariamente el cambio; si la fuente no permite decidir, marcar el caso como no verificable.
