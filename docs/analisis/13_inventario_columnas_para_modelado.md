@@ -4,7 +4,7 @@
 
 **Corte de los recuentos:** temporadas 2022–2023, 47.997 filas, 44 carreras y 61 columnas. El archivo completo tiene 101.290 filas. Los recuentos de faltantes son `pandas.isna()` y no detectan valores físicamente inválidos ni información recibida tarde.
 
-**Estado:** inventario para socializar, no lista final de entradas ni matriz aprobada. Se aplica el [contrato temporal](../specs/08_dataset_causal_modelado.md): predecir al iniciar la vuelta `N` con información conocida hasta ese instante. La rama FFNN recibe contexto estático; la RNN, historial y estado dinámico disponibles. La [etiqueta revisada](../specs/07_objetivo_entrada_boxes.md) exige `PitInTime` y `PitOutTime` emparejados.
+**Estado:** inventario aceptado como criterio inicial para revisar las columnas. Las candidaturas y exclusiones de esta versión se mantienen; todavía no son una lista final de entradas ni una matriz aprobada para entrenar. Se aplica el [contrato temporal](../specs/08_dataset_causal_modelado.md): predecir al iniciar la vuelta `N` con información conocida hasta ese instante. La rama FFNN recibe contexto estático; la RNN, historial y estado dinámico disponibles. La [etiqueta revisada](../specs/07_objetivo_entrada_boxes.md) exige `PitInTime` y `PitOutTime` emparejados.
 
 ## Cómo leer las decisiones provisionales
 
