@@ -19,7 +19,7 @@ Descargar información por carrera y guardar resultados parciales de manera que 
 
 Integrar las vueltas con los datos pertinentes de clima, estado de pista y resúmenes de telemetría, conservando identificadores y tiempos necesarios para verificar disponibilidad. La granularidad es una fila por piloto y vuelta; las series por instante se resumirán sin multiplicar filas. Se documentará qué fuentes y columnas se incorporan y cómo se relacionan.
 
-La correspondencia entre filas históricas y el estado al **inicio** de cada vuelta se definirá explícitamente: una fila no puede ofrecer al modelo resúmenes de una vuelta todavía no completada. El estado inicial requerirá tratamiento propio.
+Las matrices históricas conservarán marcas temporales de las fuentes. Para cada predicción al **inicio** de la vuelta, el clima se alineará con la última observación registrada antes o en ese instante; si no existe, queda ausente. La telemetría agregada de una vuelta solo puede alimentar predicciones posteriores a su cierre. La fila actual de predicción no puede exponer sus resúmenes completos. La observación inicial de carrera requiere tratamiento propio. La marca temporal de registro no demuestra la latencia real de publicación; documentar esta limitación.
 
 ### 3. Validación y limpieza
 

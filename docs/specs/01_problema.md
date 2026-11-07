@@ -11,9 +11,9 @@ Ejemplo: al iniciar la vuelta 21, el horizonte comprende las vueltas 21, 22 y 23
 
 ## Información disponible y ventanas
 
-El modelo solo recibe información disponible en el instante de predicción. En el inicio de la vuelta actual no están disponibles su tiempo completo ni la telemetría que se recogerá después. Para las vueltas ya terminadas solo se admiten datos efectivamente disponibles en ese instante. La latencia de cada fuente deberá verificarse.
+El instante de predicción es el cruce de inicio de la vuelta actual. El modelo recibe resúmenes de telemetría solo de vueltas completadas; no usa telemetría ni tiempo de vuelta de la vuelta que acaba de comenzar. Para clima se alinea la última observación con marca temporal menor o igual al instante de predicción. Si no hay observación anterior disponible, el clima queda desconocido. Esta es una aproximación retrospectiva: la latencia de publicación real del clima aún debe verificarse.
 
-La longitud máxima de ventana **N** es un hiperparámetro y cuenta la observación actual. Al inicio de carrera, la ventana crece con la información disponible hasta alcanzar N; después conserva las N observaciones más recientes. Por ejemplo, con N=8, al inicio de la vuelta 1 hay una observación y al inicio de la vuelta 11 se utilizan las vueltas 4–10 y el estado disponible al iniciar la 11. El mecanismo de representación de secuencias cortas se definirá en la especificación de experimentos.
+La longitud máxima de ventana **N** es un hiperparámetro y cuenta la observación actual. Al inicio de carrera, la ventana crece con la información disponible hasta alcanzar N; después conserva las N observaciones más recientes. Por ejemplo, con N=8, al inicio de la vuelta 1 hay una observación que contiene únicamente el estado disponible antes de completar vueltas; al inicio de la vuelta 11 se utilizan siete vueltas completas, de la 4 a la 10, más el estado conocido al iniciar la 11. La observación actual no contiene resúmenes calculados con el futuro de esa vuelta. El mecanismo de representación de secuencias cortas se definirá en la especificación de experimentos.
 
 El estado inicial de carrera es la única observación disponible para la primera predicción. Sus variables concretas y disponibilidad son pendientes de investigación.
 
