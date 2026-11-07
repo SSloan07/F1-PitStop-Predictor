@@ -1,6 +1,6 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.1.
+**Versión:** 0.2.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
 
@@ -16,11 +16,11 @@ El trabajo seguirá este orden: fijar contratos y particiones; resolver contradi
 
 Se mantienen estas decisiones de la conversación:
 
-- Objetivo operativo: **entrada/visita a boxes**, según [SPEC-LABEL-002](07_objetivo_entrada_boxes.md). Una visita no exige demostrar un cambio de neumáticos. Las referencias antiguas a cambio de neumáticos en las especificaciones 01–03/06 son antecedentes; no deben cambiar silenciosamente el objetivo de esta fase.
+- Objetivo operativo acordado en la socialización: **entrada del piloto a boxes durante la carrera bajo condiciones normales o de coche de seguridad**, sin exigir demostrar un cambio de neumáticos. Las entradas durante Virtual Safety Car se tratarán como parte del mismo régimen de neutralización en la propuesta, sujeto a confirmación explícita. Los traslados del coche por comisarios no constituyen por sí solos una entrada del piloto. El alcance de entradas para abandonar sigue pendiente de precisar. Esta decisión requiere reconciliar [SPEC-LABEL-002](07_objetivo_entrada_boxes.md), que aún incluye visitas por retiro, y las referencias antiguas a cambio de neumáticos en las especificaciones 01–03/06.
 - Predicción al cruce que inicia la vuelta `N`; horizonte `N`, `N+1`, `N+2`. Es la misma frontera que terminar la vuelta `N−1` y predecir las tres siguientes. Guardaremos `prediction_lap=N` para evitar ambigüedad.
 - Ventana máxima `W` configurable que cuenta la observación actual. Es corta al inicio y crece hasta `W`.
 - Cómputo local para preparación, comprobaciones e inferencia/evaluación pequeñas. Entrenamiento y ajuste de modelos en Colab/Kaggle; datos y artefactos versionados en Drive.
-- Una sola fila y un solo valor canónico por característica y versión. La procedencia se guarda en auditoría; la separación estática/dinámica es una elección experimental.
+- Una sola fila y un solo valor canónico por característica y versión. La procedencia se guarda en auditoría. En el experimento base de la arquitectura combinada, piloto, equipo y circuito forman la rama estática FFNN; las variables que evolucionan durante la carrera forman la rama secuencial RNN. Las comparaciones por ablación pueden quitar una rama, sin cambiar este contrato base.
 
 Estas reglas concretan el [pipeline de datos](02_pipeline_datos.md), el [diseño de experimentos](05_diseno_ortogonal_experimentos.md) y el [perfil de disponibilidad](../analisis/12_perfil_disponibilidad_variables.md). En lo restante, este documento distingue propuestas de decisiones que requieren discusión.
 
@@ -45,7 +45,7 @@ Para una característica distinguiremos:
 - `available_at`: cuándo pudo recibirse/calcularse su valor.
 - `decision_time`: cuándo se produce la predicción.
 
-Se admite un valor si su intervalo de observación terminó y `available_at <= decision_time`. Los desempates con el mismo timestamp tendrán orden de procesamiento declarado: cerrar mediciones recibidas, actualizar estado y emitir la predicción. Una corrección publicada después no puede reescribir una predicción pasada.
+Se admite un valor si su intervalo de observación terminó y `available_at <= decision_time`. Ningún valor conocido solo después de la decisión puede formar parte de `X`: hacerlo sería fuga de datos. Los desempates con el mismo timestamp tendrán orden de procesamiento declarado: cerrar mediciones recibidas, actualizar estado y emitir la predicción. Una corrección publicada después no puede reescribir una predicción pasada.
 
 Las marcas de evento históricas no prueban la latencia real del feed. Cuando solo exista `event_time`, la ejecución deberá declarar el supuesto de latencia y marcarse como reproducción bajo ese supuesto. Un modo inicial con latencia cero sería una aproximación de replay, pendiente de contrastar para uso en vivo. La misma configuración de latencia se aplicará en entrenamiento y reproducción; se podrá estudiar un retraso adicional como experimento de robustez.
 
@@ -79,7 +79,7 @@ La selección de entradas será una **lista de columnas permitidas** por experim
 
 | Familia | Regla propuesta |
 |---|---|
-| Contexto estático | Circuito/evento, piloto y equipo conocidos en la inscripción de la sesión. `DriverNumber` es identificador, no magnitud. Temporada/ronda sirven inicialmente para claves y particiones. El contexto de identidad se estudiará como grupo opcional por su capacidad de memorizar estrategias. |
+| Contexto estático | Piloto, equipo y circuito conocidos antes de la decisión entran en el experimento base de la rama FFNN, con codificación aprendida solo en train y tratamiento de categorías desconocidas. `DriverNumber` es identificador, no magnitud. Temporada/ronda sirven inicialmente para claves y particiones. Se medirá también una ablación sin identidades para detectar cuánto depende el resultado de memorizar estrategias. |
 | Estado de neumático | `Compound`, edad, juego y stint solo desde registros cuyo valor esté disponible antes de la decisión. La edad observada debe distinguirse de una edad estimada. No copiar el valor de la primera vuelta del stint a instantes anteriores sin acreditar su disponibilidad. |
 | Ritmo y telemetría | Resúmenes de vueltas completadas antes de la decisión. Los datos actuales son agregados por vuelta; un modelo con toda la telemetría por instante requeriría otro contrato y otra representación. No presentar un agregado de acelerador como medida directa de desgaste. |
 | Clima | Última observación de esa carrera que cumpla la regla temporal y `K_clima`; conservar timestamp y edad en auditoría. Si expira, el valor queda ausente. Viento se codificará como dirección circular. |
@@ -183,7 +183,7 @@ La organización final se adaptará al repositorio sin mover todo su contenido c
 
 ## 11. Experimentos reproducibles en Colab/Kaggle
 
-Cada experimento tendrá pregunta, hipótesis, configuración base y factor que cambia, siguiendo la [especificación de ortogonalización](05_diseno_ortogonal_experimentos.md). Orden propuesto: baseline tabular sencillo; modelo secuencial; modelo con rama FFNN estática y rama RNN dinámica; variaciones de grupos de variables/ventanas. Una variante de fusión puede concatenar las representaciones aprendidas antes de la salida binaria. Su superioridad será una hipótesis a evaluar.
+Cada experimento tendrá pregunta, hipótesis, configuración base y factor que cambia, siguiendo la [especificación de ortogonalización](05_diseno_ortogonal_experimentos.md). La arquitectura combinada de referencia tendrá dos entradas: una FFNN para piloto, equipo y circuito, y una RNN para la secuencia temporal de neumáticos, ritmo, telemetría agregada disponible, clima y estados de carrera. Sus representaciones se fusionarán antes de la salida binaria. El modelo recibirá solo la porción de secuencia disponible al instante de decisión, con ventana adaptable y máscaras. Un baseline tabular sencillo, una RNN sin rama estática y las ablaciones de grupos/ventana servirán de comparación; no se presupone que la arquitectura combinada sea superior.
 
 Los modelos comparables usarán mismas particiones, población evaluable y contrato de tiempo. El baseline tabular tendrá acceso causal documentado a los grupos elegidos; si difiere la información o el resumen del historial, se registrará como un factor adicional. Las comparaciones de clima, identidad, telemetría y arquitectura se harán mediante ablaciones declaradas.
 
@@ -248,12 +248,12 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 
 | Punto | Propuesta para discutir | Por qué debe fijarse |
 |---|---|---|
-| Alcance exacto de visita | Mantener entradas por servicio/penalización/retiro cuando están verificadas; revisar por separado traslados asistidos y autos ya dentro de boxes al decidir. | Afecta objetivo, anclaje temporal y qué alertas son útiles. |
-| Latencia | Primera reproducción con supuestos explícitos por fuente; validar luego disponibilidad real antes de presentarla como solución en vivo. | Un timestamp de evento no acredita recepción inmediata. |
+| Alcance exacto de visita | Ya acordado: entrada del piloto a boxes en carrera normal o con coche de seguridad; traslado por comisarios no basta. Confirmar expresamente Virtual Safety Car y decidir entradas para retiro, penalización o reparación, así como autos ya dentro de boxes al decidir. | Afecta objetivo, anclaje temporal y qué alertas son útiles. |
+| Latencia | Acordado: ningún dato posterior a la decisión entra en `X`. Falta definir supuestos medibles de disponibilidad por fuente para la primera reproducción y contrastarlos antes de hablar de uso en vivo. | Un timestamp de evento no acredita recepción inmediata. |
 | `K_clima` | Una unidad temporal explícita (segundos almacenados, minutos presentados) y valor elegido tras revisar cobertura de observaciones anteriores en train. Sin valor oculto por defecto. | Controla antigüedad y ausencia de clima. |
 | Primera vuelta | Mantener muestra de estado inicial con campos realmente disponibles y faltantes explícitos. | Debe poder inferirse sin usar el cierre de la primera vuelta. |
 | Ventana y máscaras | `W` cuenta presente; usar W=8 como ejemplo de especificación, y elegir el valor base de entrenamiento en configuración. Padding y faltantes de valores con máscaras diferentes. | Evita desfases y permite el experimento adaptativo aprobado. |
-| Identidad estática | Comparar el mismo modelo con y sin contexto de piloto/equipo/circuito; no presuponer que FFNN+RNN será superior. | Aísla valor del contexto y riesgo de memorización. |
+| Identidad estática | Acordado: piloto/equipo/circuito en la FFNN del experimento base; variables que cambian con la carrera en la RNN. Comparar por ablación con y sin contexto estático. | Aísla valor del contexto y riesgo de memorización. |
 | Selección de modelos | F2 por muestra como propuesta inicial, con recall por evento y falsas alertas visibles; alternativa con un presupuesto acordado de falsas alertas. | Hace comparable la búsqueda y evita elegir criterio mirando prueba. |
 | Reserva final | Mantener 2025 para evaluación final y declarar la inspección técnica previa. Cualquier cambio del protocolo debe registrarse. | Permite interpretar honestamente qué generalización mide el resultado. |
 
