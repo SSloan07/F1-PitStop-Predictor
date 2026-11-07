@@ -40,3 +40,7 @@ Hay clima asignado en todas las filas, pero `Weather_Time` es posterior a `LapSt
 6. Generar reporte reproducible por carrera y temporada antes de publicar la matriz procesada.
 
 Este diagnóstico es agregado y no comprueba todavía integridad causal/temporal por fila. La matriz completa es materia prima de investigación, no el dataset listo para entrenamiento.
+
+## Reconstrucción adyacente propuesta
+
+El análisis de las cachés de timing de Miami y Bélgica 2025 indica que la fuente publica datos de neumáticos de forma intermitente: en Miami 2025, para VER, 34 de 36 actualizaciones tienen compuesto ausente; en Bélgica hay 57 vueltas con compuesto desconocido concentradas en COL, ALO, ANT y HUL. Los vecinos dentro del mismo stint pueden ayudar a reconstruir valores históricos, pero primero hay que verificar que no se cruce una parada o una transición. El método propuesto conserva observación original, reconstrucción, procedencia y confianza; si hay contradicción o falta de stint seguro, deja desconocido. La reconstrucción que usa un vecino posterior queda prohibida como predictor retrospectivo. Regla detallada y validación por ocultamiento controlado en `docs/specs/04_limpieza_candidata.md`.
