@@ -96,3 +96,11 @@ La actualización local filtró el `Time` de las muestras crudas; FastF1 `Lap.ge
 Se contrastaron las 79 filas de 2022–2023 con vueltas de la sesión y estado de resultados cargados desde caché. Las 79 son la última vuelta registrada de su piloto. Todas tienen `LapTime`, `PitInTime`, `PitOutTime` y `Position` ausentes; 71 tienen estado final de retiro o incidente y 8 constan como finalizados. Esto confirma que la marca no equivale directamente a abandono: FastF1 también añade una fila final generada a pilotos clasificados.
 
 Propuesta: conservar la fila para auditoría y estado terminal, pero no contarla como vuelta completa para la secuencia ni como evidencia de parada. La clasificación final puede señalar el cierre de la secuencia; no determina por sí sola si hubo una parada en un horizonte previo ni cuándo se supo que el piloto abandonó. Documentado también en `docs/specs/04_limpieza_candidata.md`.
+
+## Tiempos de sector y señales de abandono
+
+En las 47.997 filas disponibles, `Sector1SessionTime` falta en 1.147 filas, `Sector2SessionTime` en 89 y `Sector3SessionTime` en 178. Para pares de marcas disponibles, la diferencia S1–S2 tiene mediana 34,294 s y percentil 99 de 61,685 s; S2–S3, mediana 26,314 s y percentil 99 de 56,027 s. No se observaron diferencias mayores de 99,729 s en esta extracción.
+
+Los valores extremos aparecen en contextos distintos: en Japón 2022 (ronda 19 en la numeración del archivo) múltiples pilotos muestran S1–S2 de unos 90 s durante TrackStatus 4 (Safety Car); en Australia 2023 varios pilotos muestran S2–S3 de unos 90–100 s mientras `TrackStatus` figura como 1. Un sector largo, por sí solo, no permite distinguir neutralización, parada o anomalía. Hay también valores ausentes, por lo que una detección basada en esperar el siguiente split requiere manejar datos que no llegan.
+
+Propuesta aún no implementada: usar resultados finales solo para confirmación histórica; para detección en vivo combinar temporizadores desde la última señal, estado de sesión y continuidad/disponibilidad de sectores. Estudiar casos de abandono, Safety Car/VSC, bandera roja, parada larga y datos retrasados antes de establecer umbral, número de señales o tiempo de espera. La evaluación debe medir tiempo de detección y falsas alarmas; no se ha acordado criterio operacional.
