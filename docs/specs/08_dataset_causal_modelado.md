@@ -1,6 +1,6 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.3.
+**Versión:** 0.4.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
 
@@ -132,6 +132,26 @@ Una muestra en la vuelta `N` tendrá hasta `W−1` tokens de vueltas completadas
 | Inicio de vuelta 2 | 8 | Resumen causal de vuelta 1 y estado actual de vuelta 2. |
 | Inicio de vuelta 3 | 8 | Resúmenes de vueltas 1–2 y estado actual de vuelta 3. |
 | Inicio de vuelta 11 | 8 | Siete vueltas completas, 4–10, y estado actual de vuelta 11. |
+
+### Ejemplo temporal para revisar juntos
+
+Los horarios de este ejemplo son **ilustrativos**, no corresponden a una carrera del dataset. Supongamos que el piloto inicia la vuelta 11 a las `14:35:00`, que la ventana configurada es `W=8` y que la eventual entrada a boxes ocurre en la vuelta 12, con salida emparejada. El constructor forma siete posiciones históricas, vueltas 4–10, más una posición de estado actual para la 11. La etiqueta de la decisión vale `True` por la pareja `PitInTime`/`PitOutTime` de la vuelta 12, pero esos registros no aparecen en ninguna rama de entrada.
+
+| Dato del ejemplo | Instante en que queda disponible | Entrada al iniciar la vuelta 11 | Motivo |
+|---|---|---|---|
+| Piloto, equipo y circuito de esta carrera | Antes de la salida | FFNN estática | Contexto conocido antes de decidir. |
+| Ritmo/telemetría agregada de vueltas 4–9 | Como máximo `14:35:00` | RNN, tokens históricos 4–9 | Vueltas terminadas y datos ya recibidos. |
+| Resumen de telemetría de vuelta 10 | `14:35:03` | Ausente en el token histórico 10 de esta decisión | Aunque la vuelta terminó, el resumen llegó después de decidir. No se sustituye por el resumen de la 3 ni se corre la ventana. |
+| Observación meteorológica | `14:34:48` | Estado actual de RNN, si cumple `K_clima` | Última observación anterior disponible; se registra su edad. |
+| Observación meteorológica siguiente | `14:35:12` | Excluida | Se recibió después de decidir. |
+| Mensaje de Safety Car/VSC recibido | `14:34:58` | Estado actual de RNN | El estado era conocido en ese instante. |
+| Cambio de estado de pista recibido | `14:35:05` | Excluido | Pertenece al futuro de esta decisión. |
+| Sectores, tiempos y telemetría completa de vuelta 11 | Después de `14:35:00` | Excluidos | La vuelta apenas comienza. |
+| `PitInTime`/`PitOutTime` de la vuelta 12 | Después de `14:35:00` | Solo etiqueta y auditoría | Confirman el resultado real; nunca forman parte de `X`. |
+
+Si un estado de neumáticos proviene de una actualización publicada después de `14:35:00`, también queda ausente aunque una reconstrucción posterior permita conocerlo. En la vuelta 1 no hay tokens históricos: la RNN recibe únicamente el estado inicial efectivamente disponible. En la vuelta 2 recibe el token de la 1 y el estado actual; así crece hasta `W` sin alterar el horizonte de tres vueltas.
+
+El caso de la vuelta 10 distingue **posición de ventana** de **valor disponible**: el token temporal existe, pero una característica tardía dentro de él queda ausente con su máscara y motivo. La política de latencia por fuente determinará ese `available_at`; el ejemplo no presume que los archivos históricos registren la hora real de recepción.
 
 Cada token histórico `j` identifica su vuelta y contiene mediciones de esa vuelta solo si ya terminó y sus datos estaban disponibles al decidir en `N`. Los campos nombrados como «estado al inicio de j» conservan ese significado; no se rellenan con información posterior a ese inicio. El token actual `N` tiene ausentes sus agregados de vuelta completa. Las derivaciones se calculan sobre las observaciones permitidas, nunca con una media, máximo o normalización de toda la carrera futura.
 
