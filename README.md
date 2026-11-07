@@ -81,6 +81,7 @@ By combining a lap-by-lap probability chart, actual pit entries and circuit cont
 - [View the LaTeX source](ProjectDescription/ProjectDescription.tex)
 - [Experiment design and reproducibility](docs/specs/05_diseno_ortogonal_experimentos.md)
 - [Candidate labeling pipeline: implementation contract](docs/specs/06_pipeline_etiquetado_candidato.md)
+- [Initial candidate labeling run](docs/analisis/08_ejecucion_etiquetado_candidato.md)
 - [Comparison of the tyre data candidate](docs/analisis/05_comparacion_matriz_candidata.md)
 
 ## The team
