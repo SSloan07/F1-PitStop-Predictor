@@ -38,3 +38,9 @@ En Japón 2022, BOT tiene 26 vueltas con velocidad media cero; se inspeccionó l
 ## Caso que requiere decisión: Austria 2022
 
 Los compuestos desconocidos se concentran en Austria 2022: 299 de 1.324 filas afectan a 12 pilotos. La aclaración y los costos de excluir la carrera constan en `docs/aclaraciones/01_compuestos_desconocidos.md`. Conservar la fuente y la matriz maestra; la exclusión para experimentos es una opción pendiente de comparar y no una regla aprobada. Una decisión de tratamiento debe registrar su impacto y no usar información posterior al instante de predicción.
+
+## Vueltas generadas por FastF1
+
+Exploración de los archivos 2022–2023 disponibles: 79 filas marcadas `FastF1Generated`, todas últimas filas registradas para su piloto en la carrera. Las 79 carecen de `LapTime`, `PitInTime`, `PitOutTime` y `Position`. El estado de resultados asociado clasifica 71 como retiro o incidente y 8 como finalizados. Por tanto, `FastF1Generated=True` no equivale automáticamente a abandono.
+
+Propuesta: conservar las filas originales para auditoría y contexto del cierre, pero no tratarlas como vueltas completas para formar ventanas de entrenamiento ni como evidencia de parada. Usar estado final y datos de sesión para determinar el final de la secuencia del piloto; una fila generada por sí sola no basta para confirmar abandono ni para etiquetar ausencia de parada. La definición de horizonte al final de una carrera y el momento en que un abandono se confirma siguen pendientes de regla explícita. Esta propuesta debe mantenerse separada de la etiqueta booleana; si la muestra no tiene etiqueta verificable, marcarla desconocida.
