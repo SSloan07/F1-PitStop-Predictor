@@ -58,7 +58,7 @@ Los faltantes de `PitInTime` y `PitOutTime` son normales para eventos escasos. L
 | 20 | `SpeedFL` | decimal | 1.857 | Dinámica RNN | Solo historial: su ausencia en la vuelta actual revela casi directamente `PitInTime`. No imputar con cero ni entregar su máscara actual. |
 | 21 | `SpeedST` | decimal | 113 | Dinámica RNN | Punto de velocidad dependiente del circuito; FastF1 puede propagar un valor anterior. |
 | 22 | `IsPersonalBest` | booleano almacenado como texto/objeto | 64 | Excluir por ahora | Indicador retrospectivo de la vuelta. Un histórico causal podría derivarse después, pero el base usará tiempos observados. |
-| 30 | `Position` | decimal | 79 | Excluir por ahora | La posición consolidada corresponde al cierre y se calcula retrospectivamente entre pilotos. Requiere una posición reconstruida as-of antes de entrar en `X`. |
+| 30 | `Position` | decimal | 79 | Dinámica RNN condicionada | Usar la última posición de vuelta completada solo si su cierre y disponibilidad preceden a la decisión; nunca la posición final de la vuelta actual. Auditar empates y excepciones de reloj. |
 
 ## Banderas de calidad y revisión
 

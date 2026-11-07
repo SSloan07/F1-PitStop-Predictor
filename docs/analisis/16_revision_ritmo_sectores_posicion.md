@@ -2,7 +2,7 @@
 
 **Fuente local:** `EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_limpieza_v1.pkl`, corte 2022–2023 de 47.997 filas. **Alcance:** 13 columnas del [inventario](13_inventario_columnas_para_modelado.md). La [documentación primaria de FastF1](https://github.com/theOehrly/Fast-F1/blob/main/docs/api_reference/timing_data.rst) define tiempos, puntos de velocidad y `Position`; su [código fuente](https://raw.githubusercontent.com/theOehrly/Fast-F1/main/fastf1/core.py) muestra transformaciones internas relevantes. Al implementar se fijará la versión exacta de FastF1 usada por el extractor y se comprobará si su comportamiento coincide con el código consultado.
 
-**Estado:** análisis para socializar. No modifica datos ni aprueba la matriz para entrenamiento. Todas las propuestas respetan la predicción al inicio de la vuelta `N`: un valor calculado durante o al final de `N` no entra en `X_N`.
+**Estado:** revisión para socializar; ajustada después de discutir `Position`. No modifica datos ni aprueba la matriz para entrenamiento. Todas las propuestas respetan la predicción al inicio de la vuelta `N`: un valor calculado durante o al final de `N` no entra en `X_N`.
 
 ## Cobertura y consistencia
 
@@ -37,7 +37,11 @@ No se imputará una velocidad faltante con cero. Tampoco se interpretará autom�
 
 ## `Position` y `IsPersonalBest`
 
-La [documentación de FastF1](https://github.com/theOehrly/Fast-F1/blob/main/docs/api_reference/timing_data.rst) define `Position` como la posición **al final** de la vuelta, no al inicio. Su [implementación](https://raw.githubusercontent.com/theOehrly/Fast-F1/main/fastf1/core.py) ordena por `Time` las filas de todos los pilotos con el mismo `LapNumber` para asignar la posición. Por ello, la posición consolidada es retrospectiva: incluso desplazarla una vuelta para el piloto no demuestra por sí solo que se conociera exactamente al cruzar la línea siguiente, pues pueden faltar tiempos de otros pilotos en ese instante. Se propone dejar el `Position` de la matriz fuera del `X` base hasta construir una posición con feed y timestamp de disponibilidad comprobables; entonces podría entrar como estado dinámico.
+La [documentación de FastF1](https://github.com/theOehrly/Fast-F1/blob/main/docs/api_reference/timing_data.rst) define `Position` como la posición **al final** de la vuelta, no al inicio. Su [implementación](https://raw.githubusercontent.com/theOehrly/Fast-F1/main/fastf1/core.py) ordena por `Time` las filas de los pilotos con el mismo `LapNumber` para asignarla. Esto excluye `Position` de la fila **actual N** al iniciar N, pero la posición al cierre de **N−1** es una candidata valiosa: describe el lugar del piloto antes de decidir N. No se trata de quitar la posición del proyecto.
+
+En el corte analizado hay 47.123 transiciones entre vueltas de un piloto. La posición de la vuelta anterior está presente en todas; en **47.105** su `Time` es anterior o igual a `LapStartTime` de la nueva vuelta. Las **18** restantes tienen el cierre anterior después del inicio registrado y pertenecen a las excepciones de reloj revisadas en [Revisión 1](14_revision_identidad_reloj_progreso.md); no se habilitan por desplazamiento automático. Además, al recalcular el rango por `Time` dentro de cada vuelta, 47.916 de 47.918 filas originales con posición coinciden; las dos diferencias son un empate de timestamp entre Norris y Hamilton en Azerbaiyán 2022, vuelta 20. El desempate también debe ser reproducible sin datos futuros.
+
+Propuesta corregida: para una primera reproducción histórica, `Position` de la **última vuelta completada** puede alimentar la RNN o el estado actual si se satisface `Time <= decision_time` y se declara la latencia asumida. El constructor verificará prefijos de la carrera y tratará empates, correcciones tardías y las 18 excepciones como casos de auditoría; si no puede demostrar disponibilidad, dejará posición ausente en esa decisión. Para uso en vivo, la misma característica deberá provenir de una clasificación temporal recibida antes de la alerta. Una fila retrasada una vuelta es una candidata de replay, no una garantía automática de recepción en tiempo real.
 
 `IsPersonalBest` indica el mejor tiempo oficial del piloto y puede depender de la validación de vueltas, por ejemplo tras límites de pista, según la documentación de FastF1. No se habilita como predictor base. Si más adelante se desea «mejor vuelta conocida hasta ahora», se derivará cronológicamente desde tiempos y decisiones oficiales disponibles antes de cada predicción, con un nombre distinto del campo retrospectivo.
 
@@ -57,7 +61,7 @@ La [documentación de FastF1](https://github.com/theOehrly/Fast-F1/blob/main/doc
 | `SpeedFL` | Candidata RNN **solo histórica**; nunca token actual. | Faltante casi equivalente a `PitInTime` de la misma vuelta; controlar máscara y sensibilidad. |
 | `SpeedST` | Candidata RNN histórica. | Punto de medición depende del circuito; revisar *forward fill*. |
 | `IsPersonalBest` | Excluir del `X` base. | Derivar otro indicador as-of si se justifica. |
-| `Position` | Excluir el valor consolidado del `X` base. | Reconstruir posición as-of con fuente temporal; no basta desplazar la fila. |
+| `Position` | Candidata RNN: última posición de vuelta completada, nunca valor de la vuelta actual. | `Time <= decision_time`, latencia declarada, prefijos/empates auditados; si falla, valor ausente. |
 
 ## Criterios para la transformación futura
 
@@ -65,6 +69,6 @@ La [documentación de FastF1](https://github.com/theOehrly/Fast-F1/blob/main/doc
 2. La validación de `LapTime = S1 + S2 + S3` se ejecuta donde los cuatro valores existen; toda reconstrucción añade procedencia, revisión de casos extremos y versión nueva.
 3. El tratamiento de `SpeedFL` se comprueba específicamente en vueltas `PitIn`: una prueba que permita la máscara actual debe fallar antes de publicar datos para entrenar.
 4. Los faltantes de vueltas generadas y de sectores no se convierten en cero ni eliminan por defecto todas las observaciones del piloto.
-5. La posición se obtiene de una fuente as-of verificable o se mantiene ausente en `X`; ninguna posición final o rango retrospectivo de la carrera cruza el límite temporal.
+5. La posición de la vuelta anterior solo entra si pasa la comprobación temporal y de prefijos. Se reportan por separado las 18 transiciones con reloj incompatible y el empate observado; ninguna posición final de la vuelta actual cruza el límite temporal.
 
 **Siguiente grupo propuesto:** estado de pista (`TrackStatus`, `SafetyCar`, `VirtualSafetyCar`) y meteorología. Sus valores de la fila actual son especialmente sensibles al tiempo de publicación.
