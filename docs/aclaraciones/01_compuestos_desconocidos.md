@@ -18,4 +18,5 @@ Opciones: conservar la carrera e indicar valores desconocidos; excluirla de cier
 ## Referencias internas
 
 - `docs/analisis/02_calidad_inicial_entrenamiento.md`: diagnóstico y búsqueda de compuestos conocidos en el mismo stint.
+- `docs/analisis/04_validacion_reconstruccion_neumaticos.md`: validación en la matriz 2022–2025; los stints completamente desconocidos no tienen anclas locales para reconstruir el compuesto.
 - `docs/specs/04_limpieza_candidata.md`: propuesta de tratamiento de valores desconocidos.
