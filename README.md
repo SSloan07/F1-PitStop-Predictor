@@ -79,6 +79,7 @@ By combining a lap-by-lap probability chart, actual pit entries and circuit cont
 
 - [Read the project proposal](ProjectDescription/ProjectDescription.pdf)
 - [View the LaTeX source](ProjectDescription/ProjectDescription.tex)
+- [Experiment design and reproducibility](docs/specs/05_diseno_ortogonal_experimentos.md)
 
 ## The team
 
