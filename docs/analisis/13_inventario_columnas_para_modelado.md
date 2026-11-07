@@ -53,12 +53,12 @@ Los faltantes de `PitInTime` y `PitOutTime` son normales para eventos escasos. L
 | 15 | `Sector1SessionTime` | duración | 1.147 | Clave/reloj | Marca acumulada de paso por sector; útil para ordenar/validar, no como señal adicional de ritmo sin evaluar redundancia. |
 | 16 | `Sector2SessionTime` | duración | 89 | Clave/reloj | Igual: tiempo de sesión para alineación; no usar el paso de un sector futuro de la vuelta actual. |
 | 17 | `Sector3SessionTime` | duración | 178 | Clave/reloj | Igual: ayuda a cerrar la vuelta; comprobar coherencia temporal con `Time`. |
-| 18 | `SpeedI1` | decimal | 80 | Dinámica RNN | Velocidad en punto de control de vuelta cerrada y disponible; no es velocidad instantánea al decidir. |
-| 19 | `SpeedI2` | decimal | 79 | Dinámica RNN | Mismo tratamiento para segundo punto de control. |
-| 20 | `SpeedFL` | decimal | 1.857 | Dinámica RNN | Velocidad de línea final; faltantes relativamente frecuentes, no imputar con cero. |
-| 21 | `SpeedST` | decimal | 113 | Dinámica RNN | Velocidad en speed trap de vuelta cerrada y disponible. |
+| 18 | `SpeedI1` | decimal | 80 | Dinámica RNN | Punto de velocidad de vuelta cerrada; FastF1 puede propagar un valor previo. Auditar procedencia antes de llamarlo medición de esa vuelta. |
+| 19 | `SpeedI2` | decimal | 79 | Dinámica RNN | Segundo punto de velocidad; mismo riesgo de propagación y límite temporal. |
+| 20 | `SpeedFL` | decimal | 1.857 | Dinámica RNN | Solo historial: su ausencia en la vuelta actual revela casi directamente `PitInTime`. No imputar con cero ni entregar su máscara actual. |
+| 21 | `SpeedST` | decimal | 113 | Dinámica RNN | Punto de velocidad dependiente del circuito; FastF1 puede propagar un valor anterior. |
 | 22 | `IsPersonalBest` | booleano almacenado como texto/objeto | 64 | Excluir por ahora | Indicador retrospectivo de la vuelta. Un histórico causal podría derivarse después, pero el base usará tiempos observados. |
-| 30 | `Position` | decimal | 79 | Dinámica RNN | Última posición con timestamp verificable; no usar la clasificación final ni asumir que la fila actual representa el inicio. |
+| 30 | `Position` | decimal | 79 | Excluir por ahora | La posición consolidada corresponde al cierre y se calcula retrospectivamente entre pilotos. Requiere una posición reconstruida as-of antes de entrar en `X`. |
 
 ## Banderas de calidad y revisión
 
@@ -117,3 +117,4 @@ Para decidir una columna se registrará: **usar/excluir/derivar**, instante de d
 
 La primera revisión detallada de identidad, reloj y progreso quedó en [Revisión 1](14_revision_identidad_reloj_progreso.md).
 La revisión de `Stint`, `Compound`, `TyreLife` y `FreshTyre` quedó en [Revisión 2](15_revision_estado_neumaticos.md).
+La revisión de ritmo, sectores, velocidades de timing y posición quedó en [Revisión 3](16_revision_ritmo_sectores_posicion.md).
