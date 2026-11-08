@@ -1,8 +1,10 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.5.
+**Versión:** 0.6.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
+
+**Cambio en 0.6:** se especifica el anclaje de decisión y la elegibilidad de historia en reinicios tras bandera roja, a partir de la auditoría de las 98 transiciones excepcionales.
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
@@ -48,6 +50,8 @@ Para una característica distinguiremos:
 Se admite un valor si su intervalo de observación terminó y `available_at <= decision_time`. Ningún valor conocido solo después de la decisión puede formar parte de `X`: hacerlo sería fuga de datos. Los desempates con el mismo timestamp tendrán orden de procesamiento declarado: cerrar mediciones recibidas, actualizar estado y emitir la predicción. Una corrección publicada después no puede reescribir una predicción pasada.
 
 Las marcas de evento históricas no prueban la latencia real del feed. Cuando solo exista `event_time`, la ejecución deberá declarar el supuesto de latencia y marcarse como reproducción bajo ese supuesto. Se acordó un modo histórico inicial con **latencia cero supuesta** (`available_at = event_time`), etiquetado como aproximación de replay, y pruebas de sensibilidad con retrasos configurables. La misma configuración de latencia se aplicará en entrenamiento y reproducción de cada experimento. El uso en vivo requerirá comprobar o registrar recepción real; los resultados de latencia cero no se presentarán como rendimiento validado en vivo.
+
+En los 98 límites excepcionales de sesión detectados, el ancla de decisión es el `LapStartTime` que coincide con `Started` tras `Aborted`. La vuelta anterior solo puede aportar características si su `Time` de cierre no supera `decision_time`, bajo el supuesto de latencia configurado. Si `Time` es posterior, esa vuelta queda fuera de la historia de la decisión; pueden usarse vueltas anteriores que sí sean elegibles, manteniendo sus números reales y sin imputar la vuelta faltante. La representación de esos huecos en ventanas RNN se fijará en el contrato experimental antes de implementar el constructor. `PitInTime`, `PitOutTime` y agregados retrospectivos de vuelta completa nunca se habilitan como predictores por coincidir con este límite.
 
 Esta propuesta adapta el principio de reconstruir características en un instante pasado: una unión temporal busca hacia atrás, dentro de una antigüedad máxima, y debe considerar también cuándo se publicó una corrección. La documentación de [Feast sobre uniones temporales](https://docs.feast.dev/getting-started/concepts/point-in-time-joins) explica ambas restricciones; adoptar el principio no exige instalar un feature store.
 
