@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from f1_pitstop.rnn_data import read_json
 from entrenar_comparacion_dropout import _validate_pair_configs
 FILES = [
-    "requirements-experiments.txt",
+    "requirements-colab-experiments.txt",
     "scripts/entrenar_rnn.py", "scripts/evaluar_rnn.py",
     "scripts/entrenar_comparacion_dropout.py",
     "src/f1_pitstop/__init__.py", "src/f1_pitstop/rnn_data.py",
@@ -56,7 +56,7 @@ def package(output):
         raise FileNotFoundError(f"Missing package inputs: {missing}")
     hashes = {name: sha256(path) for name, path in paths}
     manifest = {
-        "artifact_version": "rnn_colab_dropout_inputs_v1",
+        "artifact_version": "rnn_colab_dropout_inputs_v2",
         "files_sha256": hashes,
         "experiment_config": "configs/experimento_dropout_02_v1.json",
         "companion_configs": ["configs/experimento_dropout_ref_v1.json"],
@@ -77,7 +77,7 @@ def package(output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path("runs/rnn_colab_dropout_v1.zip"))
+    parser.add_argument("--output", type=Path, default=Path("runs/rnn_colab_dropout_v2.zip"))
     args = parser.parse_args()
     package(args.output)
 

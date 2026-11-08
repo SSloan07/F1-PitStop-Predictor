@@ -1,0 +1,4 @@
+# Keep the CUDA-enabled PyTorch build provided by the Google Colab GPU runtime.
+# Install only the remaining Python dependencies for this notebook.
+numpy>=1.26,<3
+pandas>=2.2,<3

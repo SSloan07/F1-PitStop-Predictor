@@ -29,10 +29,10 @@ Desde la raíz:
 
 ```bash
 python scripts/empaquetar_experimento_dropout.py \
-  --output runs/rnn_colab_dropout_v1.zip
+  --output runs/rnn_colab_dropout_v2.zip
 ```
 
-Registrar el SHA-256 impreso, subir el ZIP a Colab, seleccionar GPU y ejecutar [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook comprueba el manifiesto, los hashes y la disponibilidad CUDA antes de llamar al runner. La salida esperada es `rnn32_dropout02_f2_v1_seed42.zip`; devolverla sin modificar al directorio local `runs/` para evaluar ambos hijos en CPU con el pipeline existente.
+Registrar el SHA-256 impreso, subir el ZIP a Colab, seleccionar GPU y ejecutar [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook comprueba el manifiesto y hashes, valida `nvidia-smi` y conserva el PyTorch CUDA preinstalado por Colab: solo instala NumPy y pandas. Se detiene si CUDA no está disponible. La salida esperada es `rnn32_dropout02_f2_v1_seed42.zip`; devolverla sin modificar al directorio local `runs/` para evaluar ambos hijos en CPU con el pipeline existente.
 
 ```bash
 python scripts/entrenar_comparacion_dropout.py \
