@@ -19,7 +19,10 @@ La lista reúne candidatas: cada campo necesita valor disponible en el instante 
 | Grupo/variable | Estado | Regla de entrada propuesta |
 |---|---|---|
 | LapNumber | Candidata del baseline | Progreso conocido al inicio de N; no derivar desde la última vuelta real de la carrera. |
-| Stint, Compound, TyreLife, FreshTyre | Pendientes de cierre | Último estado temporalmente observable; reconstrucción retrospectiva no se retropropaga a decisiones pasadas. |
+| Compound_asof | Propuesta para socializar como candidata base | Último compuesto conocido por unión temporal hasta `decision_time`; categoría `UNKNOWN` si no se conoce o hay conflicto de evento. No usar la fila actual reconstruida. |
+| TyreLife_last_eligible | Propuesta para socializar como candidata base | Usar `TyreLife` de la última vuelta cerrada con `Time <= decision_time`; máscara separada cuando falte o el valor aún no esté disponible. No inferirlo de otros campos. |
+| Stint_asof | Pendiente de cierre | Estado/contador de stint observado as-of; validar numeración, empates de la fuente y los seis cambios sin pareja contigua. |
+| FreshTyre_asof | Pendiente de cierre | Último `New` observado as-of; reconciliar diferencias con `FreshTyre` consolidado. No inferirlo de `TyreLife`. |
 | LapTime, Sector1Time, Sector2Time, Sector3Time | Acordadas como variables de vueltas cerradas | Solo vueltas terminadas y disponibles. Las 858 reconstrucciones posibles de Sector1Time siguen sujetas a regla/elegibilidad. |
 | SpeedI1, SpeedI2, SpeedST | Candidatas pendientes | Historial cerrado, revisar posible propagación (*forward fill*) de FastF1. |
 | SpeedFL | Candidata solo histórica | Nunca incluir su valor ni su máscara en la vuelta actual: su ausencia casi identifica PitInTime de esa vuelta. |
