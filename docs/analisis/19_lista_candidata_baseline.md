@@ -21,8 +21,8 @@ La lista reúne candidatas: cada campo necesita valor disponible en el instante 
 | LapNumber | Candidata del baseline | Progreso conocido al inicio de N; no derivar desde la última vuelta real de la carrera. |
 | Compound_asof | Acordada como candidata del baseline | Último compuesto conocido por unión temporal hasta `decision_time`; categoría `UNKNOWN` si no se conoce o hay conflicto de evento. No usar la fila actual reconstruida. |
 | TyreLife_last_eligible | Acordada como candidata del baseline | Usar `TyreLife` de la última vuelta cerrada con `Time <= decision_time`; máscara separada cuando falte o el valor aún no esté disponible. No inferirlo de otros campos. |
-| Stint_asof | Pendiente de cierre | Estado/contador de stint observado as-of; validar numeración, empates de la fuente y los seis cambios sin pareja contigua. |
-| FreshTyre_asof | Pendiente de cierre | Último `New` observado as-of; reconciliar diferencias con `FreshTyre` consolidado. No inferirlo de `TyreLife`. |
+| Stint_asof | Propuesta para socializar: candidata dinámica | Contador del stint activo ya reportado al inicio de la decisión, no número de paradas. Reconstruir por eventos as-of; revisar los seis cambios sin pareja contigua. Comparar con TyreLife mediante ablación por posible redundancia. |
+| FreshTyre_asof | Propuesta para socializar: ablación posterior, fuera del baseline inicial | Último `New` interpretable del stint activo al inicio de la decisión; `UNKNOWN` ante estado inicial incompleto. No copiar el `FreshTyre` final hacia atrás ni inferirlo de TyreLife. Puede aportar cuando falta TyreLife, pero tiene posible redundancia. |
 | LapTime, Sector1Time, Sector2Time, Sector3Time | Acordadas como variables de vueltas cerradas | Solo vueltas terminadas y disponibles. Las 858 reconstrucciones posibles de Sector1Time siguen sujetas a regla/elegibilidad. |
 | SpeedI1, SpeedI2, SpeedST | Candidatas pendientes | Historial cerrado, revisar posible propagación (*forward fill*) de FastF1. |
 | SpeedFL | Candidata solo histórica | Nunca incluir su valor ni su máscara en la vuelta actual: su ausencia casi identifica PitInTime de esa vuelta. |
@@ -56,7 +56,7 @@ En filas 2022–2023 no generadas, con LapTime presente, la correlación de Pear
 
 ## Condiciones antes de convertirla en configuración ejecutable
 
-1. Socializar y aprobar/rechazar las tres propuestas de telemetría de la tabla anterior.
+1. Socializar y aprobar/rechazar `Stint_asof` y `FreshTyre_asof` por separado; después socializar las tres propuestas de telemetría.
 2. Resolver la disponibilidad temporal de estado de neumáticos, SpeedI1/I2/ST y posición previa.
 3. Reconciliar las 18 transiciones de reloj anómalas y las 858 posibles reconstrucciones de Sector1Time.
 4. Regenerar las etiquetas con el contrato PitInTime/PitOutTime emparejados.
