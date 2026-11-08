@@ -1,10 +1,10 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.6.
+**Versión:** 0.7.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
 
-**Cambio en 0.6:** se especifica el anclaje de decisión y la elegibilidad de historia en reinicios tras bandera roja, a partir de la auditoría de las 98 transiciones excepcionales.
+**Cambio en 0.7:** se fija la máscara para posiciones históricas no disponibles en ventanas recurrentes, sin desplazar vueltas antiguas. La versión 0.6 especificó el anclaje y elegibilidad temporal en reinicios.
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
@@ -51,7 +51,7 @@ Se admite un valor si su intervalo de observación terminó y `available_at <= d
 
 Las marcas de evento históricas no prueban la latencia real del feed. Cuando solo exista `event_time`, la ejecución deberá declarar el supuesto de latencia y marcarse como reproducción bajo ese supuesto. Se acordó un modo histórico inicial con **latencia cero supuesta** (`available_at = event_time`), etiquetado como aproximación de replay, y pruebas de sensibilidad con retrasos configurables. La misma configuración de latencia se aplicará en entrenamiento y reproducción de cada experimento. El uso en vivo requerirá comprobar o registrar recepción real; los resultados de latencia cero no se presentarán como rendimiento validado en vivo.
 
-En los 98 límites excepcionales de sesión detectados, el ancla de decisión es el `LapStartTime` que coincide con `Started` tras `Aborted`. La vuelta anterior solo puede aportar características si su `Time` de cierre no supera `decision_time`, bajo el supuesto de latencia configurado. Si `Time` es posterior, esa vuelta queda fuera de la historia de la decisión; pueden usarse vueltas anteriores que sí sean elegibles, manteniendo sus números reales y sin imputar la vuelta faltante. La representación de esos huecos en ventanas RNN se fijará en el contrato experimental antes de implementar el constructor. `PitInTime`, `PitOutTime` y agregados retrospectivos de vuelta completa nunca se habilitan como predictores por coincidir con este límite.
+En los 98 límites excepcionales de sesión detectados, el ancla de decisión es el `LapStartTime` que coincide con `Started` tras `Aborted`. La vuelta anterior solo puede aportar características si su `Time` de cierre no supera `decision_time`, bajo el supuesto de latencia configurado. Si `Time` es posterior, esa vuelta queda fuera de la historia de la decisión; pueden usarse vueltas anteriores que sí sean elegibles, manteniendo sus números reales y sin imputar la vuelta faltante. `PitInTime`, `PitOutTime` y agregados retrospectivos de vuelta completa nunca se habilitan como predictores por coincidir con este límite.
 
 Esta propuesta adapta el principio de reconstruir características en un instante pasado: una unión temporal busca hacia atrás, dentro de una antigüedad máxima, y debe considerar también cuándo se publicó una corrección. La documentación de [Feast sobre uniones temporales](https://docs.feast.dev/getting-started/concepts/point-in-time-joins) explica ambas restricciones; adoptar el principio no exige instalar un feature store.
 
@@ -128,7 +128,9 @@ Las relaciones entre características y objetivo, selección de columnas y estim
 
 ## 8. Ventanas adaptativas sin desfase
 
-Una muestra en la vuelta `N` tendrá hasta `W−1` tokens de vueltas completadas y un token de estado actual. Su tamaño es `min(W, N)` cuando existe continuidad desde la primera vuelta. `W` cuenta el presente; el horizonte de etiqueta permanece fijo en 3 aunque se cambie `W`.
+Una muestra en la vuelta `N` tendrá hasta `W−1` posiciones históricas y un token de estado actual. La secuencia lógica contiene `min(W, N)` posiciones; se almacena en un tensor de forma fija `W` usando padding cuando falten posiciones iniciales. `W` cuenta el presente; el horizonte de etiqueta permanece fijo en 3 aunque se cambie `W`. La predicción se emite desde la primera vuelta: no hay un mínimo de historial ni se espera a completar `W`. Por ejemplo, al iniciar la vuelta 2 con `W=10`, el modelo predice usando el estado disponible de la vuelta 1 y el estado actual de la 2; las otras ocho posiciones son padding enmascarado.
+
+La ventana tiene forma fija de `W` posiciones y conserva la identidad de cada vuelta. Si una vuelta histórica dentro del rango configurado no había terminado al llegar `decision_time`, esa posición se marca con la máscara de disponibilidad temporal; no se desplazan vueltas más antiguas para llenarla ni se imputan sus valores. El token actual permanece en su posición y contiene solo estado conocido al inicio de la vuelta. En las primeras vueltas, las posiciones que aún no existen se rellenan como padding con una máscara de padding separada. Las máscaras de ausencia temporal, padding y faltante de una característica se distinguen entre sí. Por ejemplo, para la decisión de la vuelta 9 con `W=8`, las posiciones son vueltas 2–8 más el estado actual de la 9; si la vuelta 8 aún no era elegible, su posición queda enmascarada y la vuelta 1 no se corre a ese lugar.
 
 | Decisión | `W` | Información dinámica permitida |
 |---|---:|---|
