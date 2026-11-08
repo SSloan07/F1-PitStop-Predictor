@@ -106,8 +106,8 @@ Todos estos agregados describen la **vuelta completa**. Pueden entrar en la RNN 
 | 57 | `Telemetry_DRS_max` | entero | 0 | Excluir por ahora | Máximo del código, no magnitud de apertura; requiere diccionario y derivación. |
 | 58 | `Telemetry_Throttle_valid_samples` | entero | 0 | Auditoría | Cobertura de muestras válidas de acelerador; candidato eventual como indicador de calidad, no señal física directa. |
 | 59 | `Telemetry_Throttle_valid_fraction` | decimal | 0 | Auditoría | Proporción válida del canal; útil para enmascarar/describir calidad. Revisar antes de hacerla predictor. |
-| 60 | `Telemetry_Throttle_valid_mean` | decimal | 27 | Dinámica RNN | Media de acelerador filtrada 0–100; usar solo con cobertura suficiente y vuelta ya disponible. |
-| 61 | `Telemetry_Throttle_valid_max` | decimal | 27 | Dinámica RNN | Máximo filtrado; revisar aporte frente a media y cobertura. |
+| 60 | `Telemetry_Throttle_valid_mean` | decimal | 27 | Dinámica RNN acordada | Usar como candidata del baseline en vueltas cerradas; NA si no hubo muestra válida, sin rellenar con cero. |
+| 61 | `Telemetry_Throttle_valid_max` | decimal | 27 | Dinámica RNN acordada | Usar como candidata del baseline en vueltas cerradas; NA si no hubo muestra válida, sin rellenar con cero. |
 
 ## Columnas externas y pasos de revisión
 

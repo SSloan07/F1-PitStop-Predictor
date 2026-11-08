@@ -2,7 +2,7 @@
 
 **Fuente:** matriz `vueltas_2022_2025_limpieza_v1.pkl`, corte 2022–2023 de 47.997 filas y lógica en `EDA/dataset/consolidar_carreras.py`. No se modificaron datos ni hubo llamadas API. Revisa las columnas 45–61 del [inventario](13_inventario_columnas_para_modelado.md).
 
-**Estado:** análisis y propuesta para socializar. Estos campos resumen una vuelta completa; solo pueden alimentar la RNN como historial terminado y disponible. La matriz no contiene telemetría instantánea para la vuelta actual.
+**Estado:** decisión acordada para acelerador; las demás recomendaciones siguen siendo propuestas. Estos campos resumen una vuelta completa; solo pueden alimentar la RNN como historial terminado y disponible. La matriz no contiene telemetría instantánea para la vuelta actual.
 
 ## Cómo se construyen los agregados
 
@@ -31,7 +31,7 @@ FastF1 describe 104 como un código que puede indicar acelerador no disponible. 
 | Telemetry_Speed_mean/max | Candidatas RNN. | Solo vuelta cerrada, máscara de validez; comparar ambas y revisar ceros/extremos. |
 | Telemetry_RPM_mean/max | Candidatas RNN. | Solo vuelta cerrada; revisar ceros y trazas anómalas. |
 | Telemetry_Throttle_mean/max | Excluir variantes brutas. | Contienen valores 104. |
-| Telemetry_Throttle_valid_mean/max | Candidatas RNN. | Solo vuelta cerrada; conservar NA cuando no hay muestra válida y auditar cobertura. |
+| Telemetry_Throttle_valid_mean/max | **Acordadas como candidatas RNN del baseline.** | Solo vuelta cerrada; conservar NA cuando no hay muestra válida y auditar cobertura. |
 | Telemetry_Throttle_valid_samples/fraction | Solo auditoría al inicio. | Evitar que la cobertura del canal actúe como predictor indirecto de eventos o calidad retrospectiva. |
 | Telemetry_Brake_mean | Candidata RNN. | Interpretarla como fracción de muestras con freno. |
 | Telemetry_Brake_max | Excluir del baseline. | Casi constante y redundante con la media. |
@@ -48,4 +48,4 @@ Todos los agregados de N quedan fuera de la decisión al inicio de N. Las 79 fil
 4. Alterar datos posteriores a la decisión no debe cambiar entradas previas; ningún agregado de vuelta completa aparece en su token actual.
 5. Comparar grupos por ablación; no asumir que más señales implican mejor predicción ni atribuir desgaste directo a estos resúmenes.
 
-**Propuesta de baseline:** Speed mean/max, RPM mean/max, acelerador filtrado y Brake_mean de vueltas cerradas no generadas; conteos en auditoría; DRS y marcha en pausa hasta validación/recalculo. La matriz aún no está aprobada para entrenamiento.
+**Propuesta de baseline:** Speed mean/max, RPM mean/max, acelerador filtrado y Brake_mean de vueltas cerradas no generadas; conteos en auditoría; DRS y marcha en pausa hasta validación/recalculo. La decisión de usar los agregados filtrados de acelerador y excluir los brutos queda acordada. La matriz aún no está aprobada para entrenamiento.
