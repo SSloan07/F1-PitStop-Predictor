@@ -29,6 +29,22 @@ Las 44 cachés contienen al menos un registro de timing app por cada uno de los 
 
 En esa misma agrupación, la fuente de timing app muestra más de un valor no nulo de `Compound` en **295 stints** y más de un valor no nulo de `New` en **187**. La matriz consolidada, en cambio, registra `Compound` y `FreshTyre` constantes dentro de cada stint. Por ello, no se seleccionará una etiqueta de la caché por stint sin revisar el orden de eventos, correcciones y concordancia con los valores observados. La reconstrucción retrospectiva ya aplicada a algunos compuestos se conserva como auditoría; no se retropropaga automáticamente a `X` de vueltas anteriores.
 
+## Reproducción as-of al inicio de cada vuelta
+
+Se hizo una unión temporal hacia atrás por piloto para las **47.997 decisiones** del corte: para cada `LapStartTime`, se tomó el último registro de `timing_app_data` con `Time <= LapStartTime`, conservando el orden original de registros en empates y arrastrando el último valor no nulo de cada campo. La unión encuentra valores en las 47.997 decisiones, pero esta cobertura no demuestra recepción en vivo: `Time` solo permite un replay por tiempo de evento bajo latencia cero supuesta. La antigüedad de la última instantánea tiene mediana **88,0 s**, p90 **116,7 s**, p99 **778,3 s** y máximo **7.576,2 s**; un estado de neumático puede persistir, así que estos datos no justifican por sí solos un TTL fijo.
+
+La instantánea as-of no siempre coincide con el valor retrospectivo que FastF1 deja en la fila actual:
+
+| Estado temporal de la caché | Comparación contra la fila consolidada actual | Casos distintos |
+|---|---:|---:|
+| `Compound` | Coincide en 46.510 de 47.997 decisiones (96,9%) | 1.487; 1.253 tienen `PitOutTime` en la fila actual y 234 no. |
+| `New` frente a `FreshTyre` | Coincide en 47.004 de 47.997 (97,9%) | 993; 476 tienen `PitOutTime` actual y 517 no. |
+| `Stint` fuente + 1 frente a `Stint` matriz | Coincide en 45.711 de 47.997 (95,2%) | 2.286; la numeración de fuente parece iniciar en 0 y la matriz en 1, pero el desplazamiento no resuelve todos los casos. |
+
+Una diferencia en la fila actual puede ser precisamente información posterior a la decisión, así que no se tratará como prueba de error del as-of. Sin embargo, las **234 diferencias de `Compound`** y **517 de `New`/`FreshTyre`** aun cuando no hay `PitOutTime` en esa fila impiden dar por reconciliados los campos. Además, hay grupos de registros con el mismo piloto y `Time` pero distintos valores categóricos; el orden original del pickle no se asumirá como tiempo de recepción real. Los conflictos deben quedar desconocidos hasta fijar una regla determinista de desempate respaldada por la fuente.
+
+Para `TyreLife`, la fuente de timing app no trae un campo homónimo; contiene `TotalLaps` y `StartLaps`, cuya equivalencia no se asumirá. La última fila previa consolidada aporta `TyreLife` en **46.568** decisiones donde existe una vuelta previa elegible bajo `Time <= decision_time` y latencia cero; en las demás no se sustituirá por el valor de la fila actual ni se inferirá la edad desde `FreshTyre`. Las 18 decisiones con cierre previo posterior siguen la regla de la [máscara temporal de la especificación](../specs/08_dataset_causal_modelado.md#8-ventanas-adaptativas-sin-desfase).
+
 ## Decisión propuesta por columna
 
 | Columna | Propuesta para la RNN | Condición para habilitarla |
@@ -38,7 +54,7 @@ En esa misma agrupación, la fuente de timing app muestra más de un valor no nu
 | `TyreLife` | Edad observada del juego actual, con indicador de ausencia; una edad derivada sería una característica distinta. | Partir de una observación causal y comprobar continuidad del mismo juego. No reiniciar a 1 por cambio de stint ni extrapolar a través de un cambio no verificado. |
 | `FreshTyre` | Estado nuevo/usado del juego actual, booleano con desconocido explícito. | Respetar el instante de disponibilidad; no inferirlo de `TyreLife` ni asumir que cero faltantes en la matriz significa cobertura en vivo. |
 
-El constructor de ventanas mantendrá separadas las mediciones de neumáticos de vueltas completadas y el **estado actual conocido**. Si una actualización de compuesto/juego llega durante la vuelta `N`, solo podrá afectar decisiones posteriores a su recepción; no reescribe `X` de la decisión al inicio de `N`. Si los registros disponibles no permiten demostrar cuándo se conoció un valor, quedará fuera de esa decisión o se marcará como supuesto de replay, con una máscara distinta del padding temporal.
+El constructor de ventanas mantendrá separadas las mediciones de neumáticos de vueltas completadas y el **estado actual conocido**. Si una actualización de compuesto/juego llega durante la vuelta `N`, solo podrá afectar decisiones posteriores a su `available_at`; no reescribe `X` de la decisión al inicio de `N`. Si los registros disponibles no permiten demostrar cuándo se conoció un valor, quedará desconocido en esa decisión con una máscara distinta del padding temporal. El estado actual se reconstruirá solo desde el último evento elegible; los campos de la fila consolidada que reflejan una actualización posterior no rellenarán posiciones históricas.
 
 ## Comprobaciones para la futura transformación
 
@@ -49,4 +65,4 @@ El constructor de ventanas mantendrá separadas las mediciones de neumáticos de
 5. Los 35 stints sin `TyreLife` observado conservarán ausencia salvo evidencia causal independiente; las 36 filas sin `Compound` conservarán procedencia y política temporal explícitas.
 6. Cambios de neumático o de stint nunca generan por sí solos `y=True`; solo la pareja válida `PitInTime`/`PitOutTime` lo hace.
 
-**Siguiente grupo propuesto:** tiempos de vuelta, sectores, velocidades de timing y posición. Antes de implementarlo falta resolver el contrato de disponibilidad de neumáticos y los seis cambios de stint excepcionales.
+**Siguiente decisión para socializar:** evaluar individualmente como candidatos `Compound_asof`, `Stint_asof`, `FreshTyre_asof` y `TyreLife` de la última vuelta elegible. El as-of por `timing_app_data` es un método de replay, no evidencia de latencia de recepción; quedan por resolver las discrepancias sin `PitOutTime`, los empates categóricos y los seis inicios de stint sin pareja contigua. Después se pasa a tiempos de vuelta, sectores, velocidades de timing y posición.
