@@ -2,7 +2,7 @@
 
 **Fuente local:** matriz `vueltas_2022_2025_limpieza_v1.pkl` y cachés `track_status_data.ff1pkl`/`weather_data.ff1pkl` de las 44 carreras 2022–2023. Se revisaron 47.997 decisiones piloto-vuelta. No se hicieron llamadas a la API ni se modificaron datos. Esta revisión desarrolla las 11 columnas del [inventario](13_inventario_columnas_para_modelado.md) correspondientes a pista y clima.
 
-**Estado:** propuestas para socializar, no características construidas ni aprobadas para entrenamiento. El modelo decide al iniciar una vuelta; el dato debe haberse producido y estar disponible en ese instante. Los `Time` de las cachés son marcas del evento y **no** prueban cuándo llegó el mensaje a un consumidor en vivo.
+**Estado:** reglas de pista, clima y replay histórico acordadas en la socialización; características todavía no construidas ni matriz aprobada para entrenamiento. El modelo decide al iniciar una vuelta; el dato debe haberse producido y estar disponible bajo el supuesto declarado. Los `Time` de las cachés son marcas del evento y **no** prueban cuándo llegó el mensaje a un consumidor en vivo.
 
 ## Estado de pista: la fila completa mira más allá de la decisión
 
@@ -17,9 +17,9 @@ La diferencia frente a las banderas por vuelta revela el riesgo de fuga:
 | `SafetyCar` | 2.769 | **733** |
 | `VirtualSafetyCar` | 1.163 | **596** |
 
-Estas diferencias pueden ser cambios ocurridos **después** del inicio de la vuelta; no son necesariamente errores del feed. `SafetyCar`, `VirtualSafetyCar` y `TrackStatus` de la fila que empieza **no entrarán directamente en `X`**. Se propone derivar `track_phase_asof` del último evento de pista disponible hasta `decision_time`. El código `7` conservará su estado propio `VSC_ENDING`; una bandera derivada `virtual_safety_car_asof` puede mantenerse verdadera para `6` y `7`, y `safety_car_asof` solo para `4`. La categoría completa evita confundir una amarilla, una roja y una pista libre. Las banderas derivadas y la categoría son representaciones alternativas o ablaciones, no tres señales independientes por accidente.
+Estas diferencias pueden ser cambios ocurridos **después** del inicio de la vuelta; no son necesariamente errores del feed. `SafetyCar`, `VirtualSafetyCar` y `TrackStatus` de la fila que empieza **no entrarán directamente en `X`**. Se derivará `track_phase_asof` del último evento de pista disponible hasta `decision_time`. El código `7` conservará su estado propio `VSC_ENDING`; una bandera derivada `virtual_safety_car_asof` podrá mantenerse verdadera para `6` y `7`, y `safety_car_asof` solo para `4`. La categoría completa evita confundir una amarilla, una roja y una pista libre. Las banderas derivadas y la categoría son representaciones alternativas o ablaciones, no tres señales independientes por accidente.
 
-La bandera roja merece una regla de elegibilidad aparte: el estado `5` aparece en 14 decisiones candidatas. Se propone **no emitir alerta durante una suspensión roja**, guardar el motivo y reanudar solo cuando la sesión/estado vuelva a permitir carrera. La interacción con [las transiciones de pit lane y reloj](14_revision_identidad_reloj_progreso.md) debe revisarse antes de cerrar esa propuesta.
+La bandera roja tiene una regla de elegibilidad aparte: el estado `5` aparece en 14 decisiones candidatas. Se acordó **no emitir alerta durante una suspensión roja**, guardar el motivo y reanudar solo cuando la sesión/estado vuelva a permitir carrera. La interacción con [las transiciones de pit lane y reloj](14_revision_identidad_reloj_progreso.md) se auditará al implementarla.
 
 ## Clima: observación anterior y tolerancia configurable
 
@@ -31,13 +31,13 @@ Las 44 cachés crudas contienen **7.425 observaciones** meteorológicas, 108–2
 |---:|---:|---:|
 | 60 s | 47.977 | 20 |
 | 90 s | 47.996 | 1 |
-| **120 s (propuesta base)** | **47.997** | **0** |
+| **120 s (base acordada)** | **47.997** | **0** |
 
-Se propone `K_clima=120 s` como **configuración inicial**, escogida solo con el corte 2022–2023; continuará siendo parámetro de experimento. El paquete registrará `weather_event_time`, `weather_age_seconds`, regla de latencia y máscara de expiración. En un replay con retraso de fuente distinto de cero, la cobertura puede bajar y deberá medirse de nuevo; no se cambiará el límite observando resultados de validación/prueba. Aunque la observación anterior exista, su disponibilidad real en vivo requiere un timestamp de recepción o un supuesto explícito de latencia.
+Se acordó `K_clima=120 s` como **configuración inicial**, escogida solo con el corte 2022–2023; continuará siendo parámetro de experimento. El replay histórico inicial usará `available_at = event_time` como **supuesto de latencia cero**, nunca como afirmación de recepción inmediata en vivo. Se ejecutarán pruebas de sensibilidad con retrasos configurables y se reportará su efecto en cobertura y predicciones. El paquete registrará `weather_event_time`, `weather_age_seconds`, regla de latencia y máscara de expiración. En un replay con retraso de fuente distinto de cero, la cobertura puede bajar y deberá medirse de nuevo; no se cambiará el límite observando resultados de validación/prueba. Para uso en vivo se necesitará registrar o medir el instante real de recepción.
 
 La [referencia de FastF1](https://raw.githubusercontent.com/theOehrly/Fast-F1/main/fastf1/_api.py) indica °C para temperaturas, % para humedad, mbar para presión, grados para dirección del viento y m/s para velocidad del viento. En las 7.425 observaciones revisadas no hay valores nulos ni cero para aire, humedad, presión o pista; hay 251 direcciones de viento `0°` y 64 velocidades `0 m/s`, ambos valores posibles. El parser de FastF1 puede poner cero cuando una clave de fuente falta o no se puede convertir; por ello, una versión futura debe mantener validaciones físicas por campo y no confundir «sin nulos pandas» con calidad garantizada.
 
-## Decisión propuesta por columna
+## Tratamiento acordado por columna
 
 | Columna original | Tratamiento en el experimento base | Regla temporal/de calidad |
 |---|---|---|
@@ -61,4 +61,4 @@ La [referencia de FastF1](https://raw.githubusercontent.com/theOehrly/Fast-F1/ma
 4. La búsqueda de clima nunca toma una observación futura, nunca cruza otra carrera y devuelve `NA` cuando la observación anterior supera `K_clima`.
 5. Estado de pista desconocido, bandera roja, marca meteorológica ausente y valor meteorológico inválido tienen motivos distintos en auditoría; ninguno se rellena con `False` o cero por defecto.
 
-**Puntos a cerrar juntos:** aceptar `K_clima=120 s` como base; decidir la suspensión de alertas durante bandera roja; declarar el supuesto inicial de latencia para la reproducción histórica. Las reglas de disponibilidad en vivo necesitarán medición real cuando exista el front/replay conectado.
+**Decisiones cerradas:** `K_clima=120 s` como base configurable; pausa de alertas durante bandera roja; estado SC/VSC reconstruido desde eventos anteriores a la decisión; replay histórico inicial con latencia cero supuesta y pruebas con retraso. Las reglas de disponibilidad en vivo necesitarán medición real cuando exista el front/replay conectado.

@@ -1,6 +1,6 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.4.
+**Versión:** 0.5.
 
 **Estado:** propuesta para socializar; describe el trabajo futuro.
 
@@ -47,7 +47,7 @@ Para una característica distinguiremos:
 
 Se admite un valor si su intervalo de observación terminó y `available_at <= decision_time`. Ningún valor conocido solo después de la decisión puede formar parte de `X`: hacerlo sería fuga de datos. Los desempates con el mismo timestamp tendrán orden de procesamiento declarado: cerrar mediciones recibidas, actualizar estado y emitir la predicción. Una corrección publicada después no puede reescribir una predicción pasada.
 
-Las marcas de evento históricas no prueban la latencia real del feed. Cuando solo exista `event_time`, la ejecución deberá declarar el supuesto de latencia y marcarse como reproducción bajo ese supuesto. Un modo inicial con latencia cero sería una aproximación de replay, pendiente de contrastar para uso en vivo. La misma configuración de latencia se aplicará en entrenamiento y reproducción; se podrá estudiar un retraso adicional como experimento de robustez.
+Las marcas de evento históricas no prueban la latencia real del feed. Cuando solo exista `event_time`, la ejecución deberá declarar el supuesto de latencia y marcarse como reproducción bajo ese supuesto. Se acordó un modo histórico inicial con **latencia cero supuesta** (`available_at = event_time`), etiquetado como aproximación de replay, y pruebas de sensibilidad con retrasos configurables. La misma configuración de latencia se aplicará en entrenamiento y reproducción de cada experimento. El uso en vivo requerirá comprobar o registrar recepción real; los resultados de latencia cero no se presentarán como rendimiento validado en vivo.
 
 Esta propuesta adapta el principio de reconstruir características en un instante pasado: una unión temporal busca hacia atrás, dentro de una antigüedad máxima, y debe considerar también cuándo se publicó una corrección. La documentación de [Feast sobre uniones temporales](https://docs.feast.dev/getting-started/concepts/point-in-time-joins) explica ambas restricciones; adoptar el principio no exige instalar un feature store.
 
@@ -269,9 +269,9 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 | Punto | Propuesta para discutir | Por qué debe fijarse |
 |---|---|---|
 | Alcance exacto de visita | Acordado: carrera normal, Safety Car o Virtual Safety Car; solo `PitInTime` y `PitOutTime` válidos y emparejados. Un registro incompleto queda incierto. Auditar traslados asistidos, cruces dentro del pit lane y entradas ya iniciadas antes de decidir. | Fija objetivo, anclaje temporal y qué alertas son útiles. |
-| Latencia | Acordado: ningún dato posterior a la decisión entra en `X`. Falta definir supuestos medibles de disponibilidad por fuente para la primera reproducción y contrastarlos antes de hablar de uso en vivo. | Un timestamp de evento no acredita recepción inmediata. |
-| `K_clima` | Propuesta inicial de 120 segundos tras la [revisión de cobertura 2022–2023](../analisis/17_revision_estado_pista_clima.md); queda por aprobar y seguirá configurable. Registrar segundos y mostrar minutos. | Controla antigüedad y ausencia de clima sin elegir el valor con validación/prueba. |
-| Bandera roja | Propuesta de pausar alertas mientras el estado conocido sea rojo y reportar esas decisiones; revisar reinicios y cruces por boxes. | Una suspensión no representa una vuelta ordinaria de predicción. |
+| Latencia | Acordado: ningún dato posterior a la decisión entra en `X`; primer replay con latencia cero **supuesta** y pruebas con retrasos configurables. Registrar recepción real antes de afirmar capacidad en vivo. | Un timestamp de evento no acredita recepción inmediata. |
+| `K_clima` | Acordado: base de 120 segundos tras la [revisión de cobertura 2022–2023](../analisis/17_revision_estado_pista_clima.md); sigue configurable. Registrar segundos y mostrar minutos. | Controla antigüedad y ausencia de clima sin elegir el valor con validación/prueba. |
+| Bandera roja | Acordado: pausar alertas mientras el estado conocido sea rojo, reportar esas decisiones y auditar reinicios/cruces por boxes. | Una suspensión no representa una vuelta ordinaria de predicción. |
 | Primera vuelta | Mantener muestra de estado inicial con campos realmente disponibles y faltantes explícitos. | Debe poder inferirse sin usar el cierre de la primera vuelta. |
 | Ventana y máscaras | `W` cuenta presente; usar W=8 como ejemplo de especificación, y elegir el valor base de entrenamiento en configuración. Padding y faltantes de valores con máscaras diferentes. | Evita desfases y permite el experimento adaptativo aprobado. |
 | Identidad estática | Acordado: piloto/equipo/circuito en la FFNN del experimento base; variables que cambian con la carrera en la RNN. Comparar por ablación con y sin contexto estático. | Aísla valor del contexto y riesgo de memorización. |
