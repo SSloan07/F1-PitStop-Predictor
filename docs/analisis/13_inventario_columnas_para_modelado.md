@@ -92,13 +92,13 @@ Todos estos agregados describen la **vuelta completa**. Pueden entrar en la RNN 
 | # | Columna | Tipo | NA | Papel propuesto | Decisión que debemos revisar |
 |---:|---|---|---:|---|---|
 | 45 | `Telemetry_Samples` | entero | 0 | Auditoría | Cobertura/calidad del agregado; hay conteos extremos. No usar como predictor base sin verificar qué mide en cada caso. |
-| 46 | `Telemetry_Speed_mean` | decimal | 0 | Dinámica RNN | Velocidad media tras revisar ceros y cobertura; puede reflejar neutralización o problemas de canal. |
-| 47 | `Telemetry_Speed_max` | decimal | 0 | Dinámica RNN | Máximo de velocidad de vuelta cerrada; validar rango y cobertura. |
-| 48 | `Telemetry_RPM_mean` | decimal | 0 | Dinámica RNN | RPM media tras revisar valores cero y muestras inválidas. |
-| 49 | `Telemetry_RPM_max` | decimal | 0 | Dinámica RNN | Máximo de RPM tras validar rango/canal. |
+| 46 | `Telemetry_Speed_mean` | decimal | 0 | Dinámica RNN acordada | Candidata del baseline en vueltas cerradas no generadas; revisar ceros/cobertura. |
+| 47 | `Telemetry_Speed_max` | decimal | 0 | Dinámica RNN acordada | Candidata del baseline en vueltas cerradas no generadas; revisar rango/cobertura. |
+| 48 | `Telemetry_RPM_mean` | decimal | 0 | Dinámica RNN acordada | Candidata del baseline en vueltas cerradas no generadas; revisar ceros/trazas. |
+| 49 | `Telemetry_RPM_max` | decimal | 0 | Dinámica RNN acordada | Candidata del baseline en vueltas cerradas no generadas; validar rango. |
 | 50 | `Telemetry_Throttle_mean` | decimal | 0 | Excluir por ahora | Agregado bruto contiene valores inválidos >100; preferir versión validada, sin duplicar señales. |
 | 51 | `Telemetry_Throttle_max` | decimal | 0 | Excluir por ahora | Incluye código 104 de acelerador no disponible; no tratarlo como porcentaje real. |
-| 52 | `Telemetry_Brake_mean` | decimal | 0 | Dinámica RNN | Fracción/media de frenado solo tras confirmar codificación y cobertura de muestras. |
+| 52 | `Telemetry_Brake_mean` | decimal | 0 | Dinámica RNN acordada | Candidata del baseline en vueltas cerradas; representa proporción de muestras frenando. |
 | 53 | `Telemetry_Brake_max` | booleano | 0 | Excluir por ahora | Indica si hubo al menos una muestra con freno activado; revisar si aporta algo sobre `Brake_mean`. |
 | 54 | `Telemetry_nGear_mean` | decimal | 0 | Dinámica RNN condicionada | Algunos promedios superan 8; recalcular con muestras de marcha válidas antes de habilitar. |
 | 55 | `Telemetry_nGear_max` | entero | 0 | Dinámica RNN condicionada | Máximos llegan a 128; no introducir ni recortar silenciosamente. Validar y recalcular. |

@@ -26,10 +26,10 @@ La lista reúne candidatas: cada campo necesita valor disponible en el instante 
 | Position | Candidata acordada para el historial previo | Usar posición de la última vuelta completada si Time <= decision_time; revisar las 18 excepciones de reloj y empates. Nunca usar Position de la vuelta actual. |
 | track_phase_asof | Acordada como derivación | Último cambio de pista anterior/simultáneo a la decisión; estado 7 distingue VSC terminando. Pausar alertas durante bandera roja. |
 | Weather_AirTemp, Humidity, Pressure, Rainfall, TrackTemp, WindDirection, WindSpeed | Acordadas como candidatas derivadas | Unión hacia atrás por carrera, K_clima=120 s, latencia cero supuesta en primer replay y pruebas con retraso. Viento circular como seno/coseno. |
-| Telemetry_Speed_mean/max | Propuesta de incluir ambas | Solo vueltas cerradas no generadas; valores cero y cobertura necesitan máscara/regla. Comparar media frente a máximo por ablación. |
-| Telemetry_RPM_mean/max | Propuesta de incluir ambas | Solo vueltas cerradas no generadas; revisar ceros y extremos. Comparar media frente a máximo por ablación. |
+| Telemetry_Speed_mean/max | Acordadas como candidatas | Solo vueltas cerradas no generadas; valores cero y cobertura necesitan máscara/regla. Comparar media frente a máximo por ablación. |
+| Telemetry_RPM_mean/max | Acordadas como candidatas | Solo vueltas cerradas no generadas; revisar ceros y extremos. Comparar media frente a máximo por ablación. |
 | Telemetry_Throttle_valid_mean/max | Acordadas como candidatas | Solo vueltas cerradas; usar versiones 0–100, mantener NA sin muestras válidas. No incluir las versiones brutas. |
-| Telemetry_Brake_mean | Propuesta de incluir | Solo vuelta cerrada; se interpreta como proporción de muestras frenando, no duración. |
+| Telemetry_Brake_mean | Acordada como candidata | Solo vuelta cerrada; se interpreta como proporción de muestras frenando, no duración. |
 
 ## Fuera de X o solo para auditoría
 
@@ -47,9 +47,9 @@ La lista reúne candidatas: cada campo necesita valor disponible en el instante 
 | Telemetry_DRS_mean/max | Excluir hasta contar con semántica validada; promediar códigos no es significativo. |
 | Position de la vuelta actual | Excluir por disponibilidad posterior al inicio de esa vuelta. |
 
-## Propuesta para cerrar las candidatas restantes de telemetría
+## Decisión acordada para velocidad, RPM y freno
 
-En filas 2022–2023 no generadas, con LapTime presente, la correlación de Pearson media/máximo es 0,648 para velocidad, 0,297 para RPM y 0,101 para acelerador válido. Estas cifras descriptivas sugieren que medias y máximos no son intercambiables, sobre todo en RPM y acelerador; no demuestran que ambos ayuden al modelo. Por eso se propone incluir velocidad media/máxima, RPM media/máxima y Brake_mean en el primer baseline comparable, y medir su aporte con ablaciones posteriores. Los hiperparámetros y métricas no se seleccionarán usando prueba.
+En filas 2022–2023 no generadas, con LapTime presente, la correlación de Pearson media/máximo es 0,648 para velocidad, 0,297 para RPM y 0,101 para acelerador válido. Estas cifras descriptivas sugieren que medias y máximos no son intercambiables, sobre todo en RPM y acelerador; no demuestran que ambos ayuden al modelo. Se acordó incluir velocidad media/máxima, RPM media/máxima y Brake_mean como candidatas del primer baseline comparable, y medir su aporte con ablaciones posteriores. Los hiperparámetros y métricas no se seleccionarán usando prueba.
 
 ## Condiciones antes de convertirla en configuración ejecutable
 
