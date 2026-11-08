@@ -119,3 +119,4 @@ La primera revisión detallada de identidad, reloj y progreso quedó en [Revisi�
 La revisión de `Stint`, `Compound`, `TyreLife` y `FreshTyre` quedó en [Revisión 2](15_revision_estado_neumaticos.md).
 La revisión de ritmo, sectores, velocidades de timing y posición quedó en [Revisión 3](16_revision_ritmo_sectores_posicion.md).
 La revisión de estado de pista y meteorología quedó en [Revisión 4](17_revision_estado_pista_clima.md).
+La revisión de telemetría agregada quedó en [Revisión 5](18_revision_telemetria_agregada.md).
