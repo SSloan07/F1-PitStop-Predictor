@@ -15,6 +15,6 @@ python scripts/empaquetar_experimento_dropout.py \
   --output runs/rnn_colab_dropout_v2.zip
 ```
 
-Guardar el SHA-256 impreso. En Colab, seleccionar GPU, subir `runs/rnn_colab_dropout_v2.zip` y abrir [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook verifica el paquete y `nvidia-smi`, instala solo NumPy y pandas, conserva el PyTorch de Colab y detiene la ejecución si CUDA no está disponible.
+Guardar el SHA-256 impreso. En Colab, seleccionar GPU, subir `runs/rnn_colab_dropout_v2.zip` y abrir [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook verifica el paquete y consulta `torch.cuda.is_available()`, instala solo NumPy y pandas y conserva el PyTorch de Colab y detiene la ejecución si CUDA no está disponible.
 
 Tras la corrida, descargar `rnn32_dropout02_f2_v1_seed42.zip` y colocarlo en `runs/`. La siguiente fase es evaluar ambos hijos localmente en CPU, verificar paridad, generar el informe y actualizar el árbol. Aún no se debe afirmar que dropout mejora el modelo.
