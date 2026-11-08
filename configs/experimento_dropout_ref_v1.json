@@ -164,7 +164,7 @@
   },
   "test_policy": "2025 reserved; this training and evaluation implementation only enables train/validation",
   "pairing": {
-    "pair_id": "rnn32_dropout02_f2_v1_seed42",
+    "pair_id": "rnn32_dropout02_f2_v2_seed42",
     "role": "reference",
     "reference_config": "configs/experimento_dropout_ref_v1.json",
     "candidate_config": "configs/experimento_dropout_02_v1.json",

@@ -187,7 +187,6 @@ class SmallPitStopRNN(nn.Module):
                 self.spec["head_hidden_size"],
             ),
             nn.ReLU(),
-            nn.Dropout(p=self.spec["dropout_rate"]),
             nn.Linear(self.spec["head_hidden_size"], 1),
         )
         # Keep the historical head parameter names (head.0/head.2) so bundles

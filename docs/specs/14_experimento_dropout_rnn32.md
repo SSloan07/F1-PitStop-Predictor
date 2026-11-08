@@ -29,16 +29,16 @@ Desde la raíz:
 
 ```bash
 python scripts/empaquetar_experimento_dropout.py \
-  --output runs/rnn_colab_dropout_v2.zip
+  --output runs/rnn_colab_dropout_v3.zip
 ```
 
-Registrar el SHA-256 impreso, subir el ZIP a Colab, seleccionar GPU y ejecutar [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook comprueba el manifiesto y hashes, consulta directamente la disponibilidad CUDA de PyTorch y conserva el build preinstalado por Colab: solo instala NumPy y pandas. Se detiene si CUDA no está disponible. La salida esperada es `rnn32_dropout02_f2_v1_seed42.zip`; devolverla sin modificar al directorio local `runs/` para evaluar ambos hijos en CPU con el pipeline existente.
+Registrar el SHA-256 impreso, subir el ZIP a Colab, seleccionar GPU y ejecutar [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook comprueba el manifiesto y hashes, consulta directamente la disponibilidad CUDA de PyTorch y conserva el build preinstalado por Colab: solo instala NumPy y pandas. Se detiene si CUDA no está disponible. La salida esperada es `rnn32_dropout02_f2_v2_seed42.zip`; devolverla sin modificar al directorio local `runs/` para evaluar ambos hijos en CPU con el pipeline existente.
 
 ```bash
 python scripts/entrenar_comparacion_dropout.py \
   --reference-config configs/experimento_dropout_ref_v1.json \
   --candidate-config configs/experimento_dropout_02_v1.json \
-  --output runs/rnn32_dropout02_f2_v1_seed42
+  --output runs/rnn32_dropout02_f2_v2_seed42
 ```
 
 La evaluación local usa el mismo holdout 2024 y umbrales congelados. El bundle de Colab incluye pesos y predicciones de validación, pero ningún array de test. El ZIP padre registra checksums, controles, entorno y estado de autorización.

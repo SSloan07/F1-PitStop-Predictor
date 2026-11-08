@@ -56,7 +56,7 @@ def package(output):
         raise FileNotFoundError(f"Missing package inputs: {missing}")
     hashes = {name: sha256(path) for name, path in paths}
     manifest = {
-        "artifact_version": "rnn_colab_dropout_inputs_v2",
+        "artifact_version": "rnn_colab_dropout_inputs_v3",
         "files_sha256": hashes,
         "experiment_config": "configs/experimento_dropout_02_v1.json",
         "companion_configs": ["configs/experimento_dropout_ref_v1.json"],
@@ -77,7 +77,7 @@ def package(output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path("runs/rnn_colab_dropout_v2.zip"))
+    parser.add_argument("--output", type=Path, default=Path("runs/rnn_colab_dropout_v3.zip"))
     args = parser.parse_args()
     package(args.output)
 

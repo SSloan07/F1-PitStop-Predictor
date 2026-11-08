@@ -309,7 +309,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reference-config", type=Path, default=Path("configs/experimento_dropout_ref_v1.json"))
     parser.add_argument("--candidate-config", type=Path, default=Path("configs/experimento_dropout_02_v1.json"))
-    parser.add_argument("--output", type=Path, default=Path("runs/rnn32_dropout02_f2_v1_seed42"))
+    parser.add_argument("--output", type=Path, default=Path("runs/rnn32_dropout02_f2_v2_seed42"))
     args = parser.parse_args()
     print(train_dropout_pair(args.reference_config, args.candidate_config, args.output, ROOT))
 
