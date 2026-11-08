@@ -1,0 +1,36 @@
+{
+  "artifact_version": "experiment_family_view_v1",
+  "generator_sha256": "178c8237983de0f2dbfce17d944cf98e957fd563ea485a756493ea2b92134d4e",
+  "sources_sha256": {
+    "eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6",
+    "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36",
+    "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297",
+    "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d",
+    "runs/rnn_v1_seed42/environment.json": "e34a076c2d49aa26d693f13b420c4065239b6cbdc40a70782a7151311af6101f",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_manifest.json": "7fdfc79832fc1b1d6e46f997cc427e026fb91575e2f4381e317e88562d192afd",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_environment.json": "10e01917e0d423d210ddeb918da1d9a1425629d1b23ab7b898675b8bb7b0b006",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/manifest.json": "ba9e22fce0304fab7e2f25809ac51963e61be2cdf91562a49bf5b5cd8ea0b72a",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/manifest.json": "d13bf5659a783092adf7fa92035d4ee04c1b2dd81b8fc0ee15b7bb85c9172340",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/model_spec.json": "7f5ef299db4f1bd674c51cca83e0e1de59dd615881409ea374724fb0fc58cec0",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/model_spec.json": "6812ce3ce14ba8d163bf8602492fa1265e50480a80cc1f7e864a27d1a0a4fd8d",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/metrics.json": "5dcf39715503f7737472bf51be82444614e0c4f4db8897d31d444e86589e1459",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_manifest.json": "7470d0993c285d01b39e10185b7f2677ab38aa30e9838fa79ae2e4c8bb29b3c7",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_environment.json": "534d358bc1bcdef1dec8b41a610993a5d55f47163abf489cacdb3e536fd3fcd8",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_summary.json": "6e2b65baf806b1456bb2b429aa99fd6160efaf82d3872a365949fa48468729d7",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_reference/manifest.json": "af625e216ef93e753a166dd830f040f41bdfbb1076f9cc3fcf3312e8301ac996",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/manifest.json": "c0d3b1f6c3710f1a1853515fdf0924f20f556f43e0bec879114e53cbc79a2d8e",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_reference/model_spec.json": "20d5ea6de6b4166f182aaf670b52da074bd6b0502128c010fa8f0e887504e8dd",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/model_spec.json": "836281d3f8b03c454b3a70bb7026a1781d1967dc8408c16c1d41f132c20a104c",
+    "eval/rnn32_dropout02_f2_v2_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3",
+    "eval/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/metrics.json": "d8ff5ac78d125624a44115935fdf79ffe5fc8afdde1a0d8bb261ab16af22f09a"
+  },
+  "files_sha256": {
+    "registry.json": "fb033c5f3a23cfb24c7eb1ae7ce9973ef2f53f5b73fab1c99ebfc01cd3be1eed",
+    "arbol.dot": "f246fe587b267695bc83376ab1ecb83cdbc84284d355a0be6ccdf13ab3d3aba3",
+    "arbol.svg": "da479ccab27d71475dce0114acde5a0e937bf5c515cce1f497f6205204680bbf",
+    "arbol.html": "7c7cf5b48f45d5d5e7f389b9bc5b9b0976e350953ce328a525f5a7fdf241b46c"
+  },
+  "test_used": false
+}

@@ -1,0 +1,302 @@
+{
+  "schema_version": "experiment_family_v1",
+  "sources_sha256": {
+    "eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6",
+    "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36",
+    "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297",
+    "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d",
+    "runs/rnn_v1_seed42/environment.json": "e34a076c2d49aa26d693f13b420c4065239b6cbdc40a70782a7151311af6101f",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_manifest.json": "7fdfc79832fc1b1d6e46f997cc427e026fb91575e2f4381e317e88562d192afd",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_environment.json": "10e01917e0d423d210ddeb918da1d9a1425629d1b23ab7b898675b8bb7b0b006",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/manifest.json": "ba9e22fce0304fab7e2f25809ac51963e61be2cdf91562a49bf5b5cd8ea0b72a",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/manifest.json": "d13bf5659a783092adf7fa92035d4ee04c1b2dd81b8fc0ee15b7bb85c9172340",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/model_spec.json": "7f5ef299db4f1bd674c51cca83e0e1de59dd615881409ea374724fb0fc58cec0",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/model_spec.json": "6812ce3ce14ba8d163bf8602492fa1265e50480a80cc1f7e864a27d1a0a4fd8d",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/metrics.json": "5dcf39715503f7737472bf51be82444614e0c4f4db8897d31d444e86589e1459"
+  },
+  "context": {
+    "train": "2022–2023",
+    "validation": "2024",
+    "validation_samples": 25635,
+    "window_length": 8,
+    "seed": 42,
+    "loss": "BCE sin ponderación",
+    "final_test": "2025 reservada",
+    "preprocessed_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66"
+  },
+  "nodes": [
+    {
+      "id": "E0",
+      "title": "Referencia F2",
+      "kind": "Corrida",
+      "status": "Completada",
+      "color": "#dff3ff",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.12,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750113335213
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 652,
+        "recall_per_evaluable_event": 0.7912621359223301
+      },
+      "hidden_size": 32,
+      "note": "BCE, semilla 42. Referencia de comparación; no cambia el objetivo al dibujar el árbol.",
+      "report": "docs/aclaraciones/06_resultados_rnn_v1_validacion_2024.md"
+    },
+    {
+      "id": "C1",
+      "title": "Control de umbral F1",
+      "kind": "Control sin entrenamiento",
+      "status": "Completado",
+      "color": "#def4e8",
+      "device": "Pesos de E0",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157750877436803
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Reutiliza los pesos de E0. Solo cambia la selección de umbral; es el control más limpio del efecto de la decisión.",
+      "report": "docs/aclaraciones/07_control_f1_sobre_pesos_f2.md"
+    },
+    {
+      "id": "E1",
+      "title": "Corrida con selección F1",
+      "kind": "Corrida nueva desde cero",
+      "status": "Completada; entorno distinto",
+      "color": "#fff0d5",
+      "device": "CPU",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157752973463514
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Selección por F1 y entorno efectivo CPU/Python distinto. No heredó los pesos de E0; el parentesco indica configuración de referencia.",
+      "report": "docs/aclaraciones/08_resultados_rnn_f1_y_comparacion.md"
+    },
+    {
+      "id": "E2",
+      "title": "Referencia RNN32 pareada",
+      "kind": "Repetición desde cero",
+      "status": "Completada; pareja controlada",
+      "color": "#dff3ff",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.12,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750113335213
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 652,
+        "recall_per_evaluable_event": 0.7912621359223301
+      },
+      "hidden_size": 32,
+      "note": "Repite la especificación de E0 en la pareja de capacidad. Se entrenó desde cero; no heredó pesos históricos. El entorno y las versiones coinciden con E0. Los pesos resultantes tienen el mismo SHA-256 que E0.",
+      "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"
+    },
+    {
+      "id": "P1",
+      "title": "Candidata RNN16 pareada",
+      "kind": "Corrida nueva desde cero",
+      "status": "Completada; pareja controlada",
+      "color": "#ede9fe",
+      "device": "T4 / CUDA",
+      "epoch": 14,
+      "threshold": 0.1,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1751,
+        "fp": 8983,
+        "fn": 564,
+        "tn": 14337,
+        "precision": 0.1631265138811254,
+        "recall": 0.7563714902807775,
+        "f1": 0.26837305540654455,
+        "f2": 0.4378813644093228,
+        "false_positives_per_100_decisions": 35.04193485469085,
+        "average_precision": 0.21245820067089063
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 666,
+        "recall_per_evaluable_event": 0.808252427184466
+      },
+      "hidden_size": 16,
+      "note": "La propuesta P1 ya fue ejecutada. Se compara con E2 cambiando solo hidden_size 32→16; mantiene F2, BCE, datos, semilla y entorno pareado. Se entrenó desde cero, sin heredar pesos de E2.",
+      "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"
+    }
+  ],
+  "edges": [
+    {
+      "parent": "E0",
+      "child": "C1",
+      "relation": "derived_decision",
+      "changes": [
+        "Criterio de umbral F2 → F1",
+        "Umbral 0,12 → 0,22",
+        "Pesos congelados"
+      ],
+      "isolated_comparison": true,
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "E1",
+      "relation": "reference_comparison",
+      "changes": [
+        "Selección de checkpoint y umbral F2 → F1",
+        "T4/CUDA → CPU",
+        "Python 3.13.16 → 3.13.18"
+      ],
+      "isolated_comparison": false,
+      "caveat": "Esta comparación cambió el entorno efectivo además del criterio de selección; los deltas no pueden atribuirse a un único factor.",
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "E2",
+      "relation": "reference_repeat",
+      "changes": [
+        "Misma especificación RNN32 y selección F2",
+        "Repetición desde cero, sin herencia de pesos",
+        "Mismo entorno T4 y versiones"
+      ],
+      "isolated_comparison": true,
+      "same_historical_weights_sha256": true,
+      "caveat": null,
+      "observed_delta": {
+        "f1": 0.0,
+        "f2": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "event_recall": 0.0
+      }
+    },
+    {
+      "parent": "E2",
+      "child": "P1",
+      "relation": "paired_capacity_comparison",
+      "changes": [
+        "hidden_size 32 → 16",
+        "Misma pareja T4: datos, versiones, F2, BCE y semilla fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "rnn16_vs_rnn32_f2_v1_seed42",
+      "observed_delta": {
+        "f1": -0.011333384768272003,
+        "f2": -0.00674950807389868,
+        "precision": -0.009723058071585577,
+        "recall": 0.023758099352051865,
+        "tp": 55,
+        "fp": 867,
+        "fn": -55,
+        "tn": -867,
+        "event_recall": 0.016990291262135915
+      }
+    }
+  ],
+  "result_comparison": {
+    "nodes": [
+      "C1",
+      "E1"
+    ],
+    "relation": "same_observed_decisions_at_0_22",
+    "note": "Coinciden los conteos; pesos y probabilidades difieren numéricamente. No es herencia ni identidad del modelo."
+  }
+}

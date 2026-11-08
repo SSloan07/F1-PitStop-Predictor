@@ -1,0 +1,17 @@
+digraph Experimentos {
+graph [rankdir=TB, bgcolor="white", nodesep=0.45, ranksep=0.8, pad=0.25, fontname="DejaVu Sans"];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, margin="0.18,0.14", color="#334155"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#475569", arrowsize=0.7];
+S0 [label="CONTEXTO FIJO\nTrain 2022–2023 · Validación 2024 · W=8 · semilla 42\n25.635 muestras · preprocesador congelado · prueba 2025 reservada", fillcolor="#f8fafc"];
+E0 [id="node-E0", label="E0 · Referencia F2\nCorrida\nCompletada\nRNN 32 · T4 / CUDA\nÉpoca 10 · umbral 0,12\nF1 0,2797 | F2 0,4446\nP 17,28% | R 73,26%\nEventos 652/824", fillcolor="#dff3ff", style="rounded,filled"];
+C1 [id="node-C1", label="C1 · Control de umbral F1\nControl sin entrenamiento\nCompletado\nRNN 32 · Pesos de E0\nÉpoca 10 · umbral 0,22\nF1 0,2964 | F2 0,4222\nP 19,81% | R 58,88%\nEventos 552/824", fillcolor="#def4e8", style="rounded,filled"];
+E1 [id="node-E1", label="E1 · Corrida con selección F1\nCorrida nueva desde cero\nCompletada; entorno distinto\nRNN 32 · CPU\nÉpoca 10 · umbral 0,22\nF1 0,2964 | F2 0,4222\nP 19,81% | R 58,88%\nEventos 552/824", fillcolor="#fff0d5", style="rounded,filled"];
+E2 [id="node-E2", label="E2 · Referencia RNN32 pareada\nRepetición desde cero\nCompletada; pareja controlada\nRNN 32 · T4 / CUDA\nÉpoca 10 · umbral 0,12\nF1 0,2797 | F2 0,4446\nP 17,28% | R 73,26%\nEventos 652/824", fillcolor="#dff3ff", style="rounded,filled"];
+P1 [id="node-P1", label="P1 · Candidata RNN16 pareada\nCorrida nueva desde cero\nCompletada; pareja controlada\nRNN 16 · T4 / CUDA\nÉpoca 14 · umbral 0,10\nF1 0,2684 | F2 0,4379\nP 16,31% | R 75,64%\nEventos 666/824", fillcolor="#ede9fe", style="rounded,filled"];
+S0 -> E0 [label="Entrenamiento de referencia"];
+E0 -> C1 [color="#15803d", penwidth=2, label="SOLO DECISIÓN · pesos congelados\nCriterio de umbral F2 → F1\nUmbral 0,12 → 0,22\nΔF1 +0,0167 · ΔF2 -0,0224\nFP -2.597 · FN +333"];
+E0 -> E1 [style=dashed, color="#b45309", penwidth=2, label="NUEVO ENTRENAMIENTO\nSelección de checkpoint y umbral F2 → F1\nT4/CUDA → CPU\nPython 3.13.16 → 3.13.18\nComparación con factores adicionales"];
+E0 -> E2 [color="#475569", penwidth=1.5, label="REPETICIÓN DE REFERENCIA\nMisma especificación RNN32 y selección F2\nRepetición desde cero, sin herencia de pesos\nMismo entorno T4 y versiones\nParentesco de configuración; no pesos heredados"];
+E2 -> P1 [color="#7c3aed", penwidth=2, label="CAPACIDAD · PAREJA CONTROLADA\nhidden_size 32 → 16\nMisma pareja T4: datos, versiones, F2, BCE y semilla fijos\nΔF1 -0,0113 · ΔF2 -0,0067\nFP +867 · FN -55"];
+C1 -> E1 [dir=none, constraint=false, style=dashed, color="#2563eb", label="Comparación de resultados\nMismos conteos a umbral 0,22\nNo implica pesos idénticos"];
+}

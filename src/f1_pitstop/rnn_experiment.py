@@ -17,7 +17,14 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from .experiment_metrics import binary_metrics, select_metric_threshold, threshold_curve
 from .rnn_data import KEY, MODEL_ARRAYS, load_split, read_json, sha256, verify_preprocessed, write_json
+from .lstm_model import SmallPitStopLSTM
 from .rnn_model import SmallPitStopRNN, model_spec_from_preprocessor
+
+
+def _build_model(model_spec):
+    if model_spec.get("recurrent_cell", "rnn") == "lstm":
+        return SmallPitStopLSTM(model_spec)
+    return SmallPitStopRNN(model_spec)
 
 
 def choose_device(requested):
@@ -90,6 +97,7 @@ def _selection_protocol(config):
     protocols = {
         "rnn_reference_v1": ("f2", 2),
         "rnn_reference_f1_v1": ("f1", 1),
+        "rnn_hidden16_f2_v1": ("f2", 2),
     }
     experiment_id = config.get("experiment_id")
     if experiment_id not in protocols:
@@ -118,6 +126,23 @@ def _validate_config(config):
         raise ValueError("Learning rate and gradient clip must be positive")
     if protocol.get("loss") != "unweighted_bce_with_logits" or protocol.get("optimizer") != "Adam":
         raise ValueError("Loss/optimizer differs from the declared reference")
+    scheduler = protocol.get("lr_scheduler", {"name": "constant"})
+    if not isinstance(scheduler, dict) or scheduler.get("name") not in {"constant", "reduce_on_plateau"}:
+        raise ValueError("Unsupported learning-rate scheduler")
+    if scheduler["name"] == "reduce_on_plateau":
+        if scheduler.get("monitor") != "train_evaluation_loss" or scheduler.get("mode") != "min":
+            raise ValueError("Scheduler must monitor train_evaluation_loss in min mode")
+        factor = scheduler.get("factor")
+        if isinstance(factor, bool) or not isinstance(factor, (int, float)) or not 0 < factor < 1:
+            raise ValueError("Scheduler factor must be between zero and one")
+        for name in ("patience", "cooldown"):
+            if type(scheduler.get(name)) is not int or scheduler[name] < 0:
+                raise ValueError(f"Invalid scheduler {name}")
+        if scheduler.get("threshold_mode") not in {"rel", "abs"} or scheduler.get("threshold", -1) < 0:
+            raise ValueError("Invalid scheduler threshold")
+        min_lr = scheduler.get("min_lr")
+        if isinstance(min_lr, bool) or not isinstance(min_lr, (int, float)) or not 0 < min_lr < protocol["learning_rate"]:
+            raise ValueError("Scheduler min_lr must be positive and below the initial learning rate")
     if config["selection"]["checkpoint_threshold"] != 0.5:
         raise ValueError("Reference checkpoint threshold must remain 0.5")
     grid = np.asarray(config["selection"]["threshold_grid"], dtype=float)
@@ -151,9 +176,24 @@ def train_experiment(config_path, output, root, device_override=None):
     torch.use_deterministic_algorithms(True)
     torch.backends.cudnn.benchmark = False
     protocol = config["training"]
-    model_spec = model_spec_from_preprocessor(state, config["model"])
-    model = SmallPitStopRNN(model_spec).to(device)
+    model_options = copy.deepcopy(config["model"])
+    recurrent_cell = model_options.pop("recurrent_cell", "rnn")
+    if recurrent_cell not in {"rnn", "lstm"}:
+        raise ValueError("Unsupported recurrent_cell")
+    model_spec = model_spec_from_preprocessor(state, model_options)
+    if recurrent_cell == "lstm":
+        model_spec["recurrent_cell"] = "lstm"
+    model = _build_model(model_spec).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=protocol["learning_rate"])
+    scheduler_config = protocol.get("lr_scheduler", {"name": "constant"})
+    lr_scheduler = None
+    if scheduler_config["name"] == "reduce_on_plateau":
+        lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer, mode="min", factor=scheduler_config["factor"],
+            patience=scheduler_config["patience"], threshold=scheduler_config["threshold"],
+            threshold_mode=scheduler_config["threshold_mode"], cooldown=scheduler_config["cooldown"],
+            min_lr=scheduler_config["min_lr"],
+        )
     criterion = torch.nn.BCEWithLogitsLoss()
     training_loader = _loader(train, protocol["batch_size"], shuffle=True, seed=seed)
     training_evaluation_loader = _loader(train, protocol["batch_size"])
@@ -170,6 +210,7 @@ def train_experiment(config_path, output, root, device_override=None):
     try:
         for epoch in range(1, protocol["max_epochs"] + 1):
             epoch_start = time.perf_counter()
+            learning_rate_used = float(optimizer.param_groups[0]["lr"])
             model.train()
             loss_sum, count = 0.0, 0
             for batch in training_loader:
@@ -194,8 +235,14 @@ def train_experiment(config_path, output, root, device_override=None):
                            output / "weights.pt")
             else:
                 stale += 1
+            if lr_scheduler is not None:
+                lr_scheduler.step(train_eval_loss)
+            learning_rate_next = float(optimizer.param_groups[0]["lr"])
             row = {"epoch": epoch, "train_loss": loss_sum / count,
                    "train_evaluation_loss": train_eval_loss,
+                   "learning_rate_used": learning_rate_used,
+                   "learning_rate_next": learning_rate_next,
+                   "scheduler_monitor": scheduler_config["name"],
                    "train_f1_at_0_5": train_metrics["f1"],
                    "train_f2_at_0_5": train_metrics["f2"],
                    "train_precision_at_0_5": train_metrics["precision"],
@@ -240,7 +287,11 @@ def train_experiment(config_path, output, root, device_override=None):
                      config["selection"]["threshold_grid"])).to_csv(output / "threshold_curve.csv", index=False)
         prediction_table(validation, probabilities, threshold).to_csv(
             output / "validation_predictions.csv.gz", index=False, compression="gzip")
+        model_source_name = "lstm_model.py" if recurrent_cell == "lstm" else "rnn_model.py"
+        model_source_path = Path(__file__).parent / model_source_name
         source_names = ["rnn_model.py", "rnn_data.py", "rnn_experiment.py", "experiment_metrics.py"]
+        if recurrent_cell == "lstm":
+            source_names.append("lstm_model.py")
         sources = output / "sources"
         sources.mkdir()
         for name in source_names:
@@ -259,7 +310,8 @@ def train_experiment(config_path, output, root, device_override=None):
             "checkpoint_selection": checkpoint_selection,
             "files_sha256": files, "preprocessed_manifest_sha256": sha256(package / "manifest.json"),
             "preprocessor_sha256": input_manifest["output_files_sha256"]["preprocessor.json"],
-            "model_source_sha256": sha256(Path(__file__).parent / "rnn_model.py"),
+            "model_source_path": model_source_name,
+            "model_source_sha256": sha256(model_source_path),
             "fit_split": "train", "selection_split": "validation", "test_used": False,
             "best_epoch": best_epoch, "train_eligible_samples": len(train.positions),
             "validation_eligible_samples": len(validation.positions),
@@ -337,13 +389,16 @@ def evaluate_bundle(bundle, data, output, device_name="cpu", root=None):
             raise ValueError(f"Exported bundle hash mismatch: {name}")
     if read_json(bundle / "status.json").get("status") != "complete":
         raise ValueError("Run is not complete")
-    if sha256(Path(__file__).parent / "rnn_model.py") != manifest["model_source_sha256"]:
+    model_source_name = manifest.get("model_source_path", "rnn_model.py")
+    if model_source_name not in {"rnn_model.py", "lstm_model.py"}:
+        raise ValueError("Unsupported exported model source")
+    if sha256(Path(__file__).parent / model_source_name) != manifest["model_source_sha256"]:
         raise ValueError("Model implementation differs from the exported run; use its frozen source version")
     input_manifest, state = verify_preprocessed(data, manifest["preprocessed_manifest_sha256"])
     if sha256(data / "preprocessor.json") != sha256(bundle / "preprocessor.json"):
         raise ValueError("Evaluator must use the exported frozen preprocessor")
     validation = load_split(data, "validation", state)
-    model = SmallPitStopRNN(read_json(bundle / "model_spec.json"))
+    model = _build_model(read_json(bundle / "model_spec.json"))
     device = choose_device(device_name)
     model.load_state_dict(torch.load(bundle / "weights.pt", map_location="cpu", weights_only=True))
     model.to(device)

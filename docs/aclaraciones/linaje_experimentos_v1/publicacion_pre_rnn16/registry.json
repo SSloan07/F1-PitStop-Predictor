@@ -1,0 +1,204 @@
+{
+  "schema_version": "experiment_family_v1",
+  "sources_sha256": {
+    "eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6",
+    "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36",
+    "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297",
+    "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d"
+  },
+  "context": {
+    "train": "2022–2023",
+    "validation": "2024",
+    "validation_samples": 25635,
+    "window_length": 8,
+    "seed": 42,
+    "loss": "BCE sin ponderación",
+    "final_test": "2025 reservada",
+    "preprocessed_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66"
+  },
+  "nodes": [
+    {
+      "id": "E0",
+      "title": "Referencia F2",
+      "kind": "Corrida",
+      "status": "Completada",
+      "color": "#dff3ff",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.12,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750113335213
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 652,
+        "recall_per_evaluable_event": 0.7912621359223301
+      },
+      "hidden_size": 32,
+      "note": "BCE, semilla 42. Referencia de comparación; no cambia el objetivo al dibujar el árbol.",
+      "report": "docs/aclaraciones/06_resultados_rnn_v1_validacion_2024.md"
+    },
+    {
+      "id": "C1",
+      "title": "Control de umbral F1",
+      "kind": "Control sin entrenamiento",
+      "status": "Completado",
+      "color": "#def4e8",
+      "device": "Pesos de E0",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157750877436803
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Reutiliza los pesos de E0. Solo cambia la selección de umbral; es el control más limpio del efecto de la decisión.",
+      "report": "docs/aclaraciones/07_control_f1_sobre_pesos_f2.md"
+    },
+    {
+      "id": "E1",
+      "title": "Corrida con selección F1",
+      "kind": "Corrida nueva desde cero",
+      "status": "Completada; entorno distinto",
+      "color": "#fff0d5",
+      "device": "CPU",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157752973463514
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Selección por F1 y entorno efectivo CPU/Python distinto. No heredó los pesos de E0; el parentesco indica configuración de referencia.",
+      "report": "docs/aclaraciones/08_resultados_rnn_f1_y_comparacion.md"
+    },
+    {
+      "id": "P1",
+      "title": "Comparación de capacidad",
+      "kind": "Propuesta",
+      "status": "Sin ejecutar",
+      "color": "#f1f2f4",
+      "device": "Mantener entorno E0",
+      "epoch": null,
+      "threshold": null,
+      "metrics": null,
+      "event_metrics": null,
+      "hidden_size": 16,
+      "note": "Hipótesis: menor capacidad podría reducir la brecha de generalización. Cambiar solo hidden_size 32→16; conservar F2, BCE, datos, semilla y protocolo. Sin resultados.",
+      "report": "docs/aclaraciones/08_resultados_rnn_f1_y_comparacion.md"
+    }
+  ],
+  "edges": [
+    {
+      "parent": "E0",
+      "child": "C1",
+      "relation": "derived_decision",
+      "changes": [
+        "Criterio de umbral F2 → F1",
+        "Umbral 0,12 → 0,22",
+        "Pesos congelados"
+      ],
+      "isolated_comparison": true,
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "E1",
+      "relation": "reference_comparison",
+      "changes": [
+        "Selección de checkpoint y umbral F2 → F1",
+        "T4/CUDA → CPU",
+        "Python 3.13.16 → 3.13.18"
+      ],
+      "isolated_comparison": false,
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "P1",
+      "relation": "proposed_comparison",
+      "changes": [
+        "hidden_size 32 → 16",
+        "Resto de controles y entorno E0 fijos"
+      ],
+      "isolated_comparison": null,
+      "observed_delta": null
+    }
+  ],
+  "result_comparison": {
+    "nodes": [
+      "C1",
+      "E1"
+    ],
+    "relation": "same_observed_decisions_at_0_22",
+    "note": "Coinciden los conteos; pesos y probabilidades difieren numéricamente. No es herencia ni identidad del modelo."
+  }
+}

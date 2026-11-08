@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linaje de experimentos · F1 PitStop Predictor</title>
+<style>
+body{font:16px system-ui,sans-serif;color:#172033;background:#f5f7fb;margin:0;padding:24px}
+h1{font-size:26px;margin:0 0 12px}p{line-height:1.5}.layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(290px,1fr);gap:20px}
+.card{background:white;border:1px solid #dce2eb;border-radius:12px;padding:20px}.graph{overflow:auto}.graph svg{width:100%;height:auto;min-width:680px}
+.node{cursor:pointer}.node:focus{outline:3px solid #2563eb}.selected polygon,.selected path{stroke:#1d4ed8!important;stroke-width:3px!important}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:7px;border-bottom:1px solid #e5e7eb}.note{background:#fff5da;padding:12px;border-radius:8px}
+.small{font-size:13px;color:#475569}a{color:#1d4ed8}code{word-break:break-all}@media(max-width:1050px){.layout{grid-template-columns:1fr}}
+</style>
+<h1>Árbol de experimentos</h1>
+<p>Cada nodo es una corrida o un control. Selecciona un nodo para ver resultados y cambios respecto a su referencia de comparación.</p>
+<div class="layout"><div class="card graph"><svg width="966pt" height="913pt"
+ viewBox="0.00 0.00 966.00 913.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18 895.14)">
+<title>Experimentos</title>
+<polygon fill="white" stroke="none" points="-18,18 -18,-895.14 947.84,-895.14 947.84,18 -18,18"/>
+<!-- S0 -->
+<g id="node1" class="node">
+<title>S0</title>
+<path fill="#f8fafc" stroke="#334155" d="M638.79,-877.14C638.79,-877.14 248.38,-877.14 248.38,-877.14 242.38,-877.14 236.37,-871.14 236.37,-865.14 236.37,-865.14 236.37,-817.23 236.37,-817.23 236.37,-811.23 242.37,-805.23 248.37,-805.23 248.37,-805.23 638.79,-805.23 638.79,-805.23 644.79,-805.23 650.79,-811.23 650.79,-817.23 650.79,-817.23 650.79,-865.14 650.79,-865.14 650.79,-871.14 644.79,-877.14 638.79,-877.14"/>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-855.66" font-family="DejaVu Sans" font-size="12.00">CONTEXTO FIJO</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-838.41" font-family="DejaVu Sans" font-size="12.00">Train 2022–2023 · Validación 2024 · W=8 · semilla 42</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-821.16" font-family="DejaVu Sans" font-size="12.00">25.635 muestras · preprocesador congelado · prueba 2025 reservada</text>
+</g>
+<!-- E0 -->
+<g id="node&#45;E0" class="node">
+<title>E0</title>
+<path fill="#dff3ff" stroke="#334155" d="M507.92,-732.98C507.92,-732.98 379.25,-732.98 379.25,-732.98 373.25,-732.98 367.25,-726.98 367.25,-720.98 367.25,-720.98 367.25,-586.82 367.25,-586.82 367.25,-580.82 373.25,-574.82 379.25,-574.82 379.25,-574.82 507.92,-574.82 507.92,-574.82 513.92,-574.82 519.92,-580.82 519.92,-586.82 519.92,-586.82 519.92,-720.98 519.92,-720.98 519.92,-726.98 513.92,-732.98 507.92,-732.98"/>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-711.5" font-family="DejaVu Sans" font-size="12.00">E0 · Referencia F2</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-694.25" font-family="DejaVu Sans" font-size="12.00">Corrida</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-677" font-family="DejaVu Sans" font-size="12.00">Completada</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-659.75" font-family="DejaVu Sans" font-size="12.00">RNN 32 · T4 / CUDA</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-642.5" font-family="DejaVu Sans" font-size="12.00">Época 10 · umbral 0,12</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-625.25" font-family="DejaVu Sans" font-size="12.00">F1 0,2797 | F2 0,4446</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-608" font-family="DejaVu Sans" font-size="12.00">P 17,28% | R 73,26%</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-590.75" font-family="DejaVu Sans" font-size="12.00">Eventos 652/824</text>
+</g>
+<!-- S0&#45;&gt;E0 -->
+<g id="edge1" class="edge">
+<title>S0&#45;&gt;E0</title>
+<path fill="none" stroke="#475569" d="M443.58,-804.9C443.58,-786.93 443.58,-764.21 443.58,-741.93"/>
+<polygon fill="#475569" stroke="#475569" points="446.04,-741.94 443.59,-734.94 441.14,-741.94 446.04,-741.94"/>
+<text xml:space="preserve" text-anchor="middle" x="509.96" y="-766.73" font-family="DejaVu Sans" font-size="10.00">Entrenamiento de referencia</text>
+</g>
+<!-- C1 -->
+<g id="node&#45;C1" class="node">
+<title>C1</title>
+<path fill="#def4e8" stroke="#334155" d="M163.17,-445.57C163.17,-445.57 12,-445.57 12,-445.57 6,-445.57 0,-439.57 0,-433.57 0,-433.57 0,-299.41 0,-299.41 0,-293.41 6,-287.41 12,-287.41 12,-287.41 163.17,-287.41 163.17,-287.41 169.17,-287.41 175.17,-293.41 175.17,-299.41 175.17,-299.41 175.17,-433.57 175.17,-433.57 175.17,-439.57 169.17,-445.57 163.17,-445.57"/>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-424.09" font-family="DejaVu Sans" font-size="12.00">C1 · Control de umbral F1</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-406.84" font-family="DejaVu Sans" font-size="12.00">Control sin entrenamiento</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-389.59" font-family="DejaVu Sans" font-size="12.00">Completado</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-372.34" font-family="DejaVu Sans" font-size="12.00">RNN 32 · Pesos de E0</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-355.09" font-family="DejaVu Sans" font-size="12.00">Época 10 · umbral 0,22</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-337.84" font-family="DejaVu Sans" font-size="12.00">F1 0,2964 | F2 0,4222</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-320.59" font-family="DejaVu Sans" font-size="12.00">P 19,81% | R 58,88%</text>
+<text xml:space="preserve" text-anchor="middle" x="87.58" y="-303.34" font-family="DejaVu Sans" font-size="12.00">Eventos 552/824</text>
+</g>
+<!-- E0&#45;&gt;C1 -->
+<g id="edge2" class="edge">
+<title>E0&#45;&gt;C1</title>
+<path fill="none" stroke="#15803d" stroke-width="2" d="M366.81,-610.87C335.44,-592.42 299.47,-569.57 269.08,-545.82 233.33,-517.87 197.05,-483.64 166.41,-452.66"/>
+<polygon fill="#15803d" stroke="#15803d" stroke-width="2" points="168.34,-451.13 161.68,-447.85 164.84,-454.56 168.34,-451.13"/>
+<text xml:space="preserve" text-anchor="middle" x="350.83" y="-536.32" font-family="DejaVu Sans" font-size="10.00">SOLO DECISIÓN · pesos congelados</text>
+<text xml:space="preserve" text-anchor="middle" x="350.83" y="-522.07" font-family="DejaVu Sans" font-size="10.00">Criterio de umbral F2 → F1</text>
+<text xml:space="preserve" text-anchor="middle" x="350.83" y="-507.82" font-family="DejaVu Sans" font-size="10.00">Umbral 0,12 → 0,22</text>
+<text xml:space="preserve" text-anchor="middle" x="350.83" y="-493.57" font-family="DejaVu Sans" font-size="10.00">ΔF1 +0,0167 · ΔF2 &#45;0,0224</text>
+<text xml:space="preserve" text-anchor="middle" x="350.83" y="-479.32" font-family="DejaVu Sans" font-size="10.00">FP &#45;2.597 · FN +333</text>
+</g>
+<!-- E1 -->
+<g id="node&#45;E1" class="node">
+<title>E1</title>
+<path fill="#fff0d5" stroke="#334155" d="M528.54,-445.57C528.54,-445.57 358.62,-445.57 358.62,-445.57 352.62,-445.57 346.62,-439.57 346.62,-433.57 346.62,-433.57 346.62,-299.41 346.62,-299.41 346.62,-293.41 352.62,-287.41 358.62,-287.41 358.62,-287.41 528.54,-287.41 528.54,-287.41 534.54,-287.41 540.54,-293.41 540.54,-299.41 540.54,-299.41 540.54,-433.57 540.54,-433.57 540.54,-439.57 534.54,-445.57 528.54,-445.57"/>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-424.09" font-family="DejaVu Sans" font-size="12.00">E1 · Corrida con selección F1</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-406.84" font-family="DejaVu Sans" font-size="12.00">Corrida nueva desde cero</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-389.59" font-family="DejaVu Sans" font-size="12.00">Completada; entorno distinto</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-372.34" font-family="DejaVu Sans" font-size="12.00">RNN 32 · CPU</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-355.09" font-family="DejaVu Sans" font-size="12.00">Época 10 · umbral 0,22</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-337.84" font-family="DejaVu Sans" font-size="12.00">F1 0,2964 | F2 0,4222</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-320.59" font-family="DejaVu Sans" font-size="12.00">P 19,81% | R 58,88%</text>
+<text xml:space="preserve" text-anchor="middle" x="443.58" y="-303.34" font-family="DejaVu Sans" font-size="12.00">Eventos 552/824</text>
+</g>
+<!-- E0&#45;&gt;E1 -->
+<g id="edge3" class="edge">
+<title>E0&#45;&gt;E1</title>
+<path fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5,2" d="M441.54,-574.54C441.36,-564.87 441.19,-555.12 441.08,-545.82 440.72,-514.16 440.72,-506.23 441.08,-474.57 441.16,-468.47 441.25,-462.17 441.36,-455.83"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="2" points="443.81,-455.92 441.49,-448.88 438.91,-455.83 443.81,-455.92"/>
+<text xml:space="preserve" text-anchor="middle" x="536.34" y="-536.32" font-family="DejaVu Sans" font-size="10.00">NUEVO ENTRENAMIENTO</text>
+<text xml:space="preserve" text-anchor="middle" x="536.34" y="-522.07" font-family="DejaVu Sans" font-size="10.00">Selección de checkpoint y umbral F2 → F1</text>
+<text xml:space="preserve" text-anchor="middle" x="536.34" y="-507.82" font-family="DejaVu Sans" font-size="10.00">T4/CUDA → CPU</text>
+<text xml:space="preserve" text-anchor="middle" x="536.34" y="-493.57" font-family="DejaVu Sans" font-size="10.00">Python 3.13.16 → 3.13.18</text>
+<text xml:space="preserve" text-anchor="middle" x="536.34" y="-479.32" font-family="DejaVu Sans" font-size="10.00">Comparación con factores adicionales</text>
+</g>
+<!-- E2 -->
+<g id="node&#45;E2" class="node">
+<title>E2</title>
+<path fill="#dff3ff" stroke="#334155" d="M760.92,-445.57C760.92,-445.57 584.25,-445.57 584.25,-445.57 578.25,-445.57 572.25,-439.57 572.25,-433.57 572.25,-433.57 572.25,-299.41 572.25,-299.41 572.25,-293.41 578.25,-287.41 584.25,-287.41 584.25,-287.41 760.92,-287.41 760.92,-287.41 766.92,-287.41 772.92,-293.41 772.92,-299.41 772.92,-299.41 772.92,-433.57 772.92,-433.57 772.92,-439.57 766.92,-445.57 760.92,-445.57"/>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-424.09" font-family="DejaVu Sans" font-size="12.00">E2 · Referencia RNN32 pareada</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-406.84" font-family="DejaVu Sans" font-size="12.00">Repetición desde cero</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-389.59" font-family="DejaVu Sans" font-size="12.00">Completada; pareja controlada</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-372.34" font-family="DejaVu Sans" font-size="12.00">RNN 32 · T4 / CUDA</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-355.09" font-family="DejaVu Sans" font-size="12.00">Época 10 · umbral 0,12</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-337.84" font-family="DejaVu Sans" font-size="12.00">F1 0,2797 | F2 0,4446</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-320.59" font-family="DejaVu Sans" font-size="12.00">P 17,28% | R 73,26%</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-303.34" font-family="DejaVu Sans" font-size="12.00">Eventos 652/824</text>
+</g>
+<!-- E0&#45;&gt;E2 -->
+<g id="edge4" class="edge">
+<title>E0&#45;&gt;E2</title>
+<path fill="none" stroke="#475569" stroke-width="1.5" d="M520.3,-627.89C560.54,-610.92 607.24,-584.43 635.59,-545.82 654.75,-519.72 664.5,-485.97 669.3,-454.87"/>
+<polygon fill="#475569" stroke="#475569" stroke-width="1.5" points="671.72,-455.26 670.27,-447.99 666.87,-454.58 671.72,-455.26"/>
+<text xml:space="preserve" text-anchor="middle" x="779.08" y="-536.32" font-family="DejaVu Sans" font-size="10.00">REPETICIÓN DE REFERENCIA</text>
+<text xml:space="preserve" text-anchor="middle" x="779.08" y="-522.07" font-family="DejaVu Sans" font-size="10.00">Misma especificación RNN32 y selección F2</text>
+<text xml:space="preserve" text-anchor="middle" x="779.08" y="-507.82" font-family="DejaVu Sans" font-size="10.00">Repetición desde cero, sin herencia de pesos</text>
+<text xml:space="preserve" text-anchor="middle" x="779.08" y="-493.57" font-family="DejaVu Sans" font-size="10.00">Mismo entorno T4 y versiones</text>
+<text xml:space="preserve" text-anchor="middle" x="779.08" y="-479.32" font-family="DejaVu Sans" font-size="10.00">Parentesco de configuración; no pesos heredados</text>
+</g>
+<!-- C1&#45;&gt;E1 -->
+<g id="edge6" class="edge">
+<title>C1&#45;&gt;E1</title>
+<path fill="none" stroke="#2563eb" stroke-dasharray="5,2" d="M175.59,-366.49C227.37,-366.49 292.94,-366.49 346.27,-366.49"/>
+<text xml:space="preserve" text-anchor="middle" x="260.9" y="-402.74" font-family="DejaVu Sans" font-size="10.00">Comparación de resultados</text>
+<text xml:space="preserve" text-anchor="middle" x="260.9" y="-388.49" font-family="DejaVu Sans" font-size="10.00">Mismos conteos a umbral 0,22</text>
+<text xml:space="preserve" text-anchor="middle" x="260.9" y="-374.24" font-family="DejaVu Sans" font-size="10.00">No implica pesos idénticos</text>
+</g>
+<!-- P1 -->
+<g id="node&#45;P1" class="node">
+<title>P1</title>
+<path fill="#ede9fe" stroke="#334155" d="M760.92,-158.16C760.92,-158.16 584.25,-158.16 584.25,-158.16 578.25,-158.16 572.25,-152.16 572.25,-146.16 572.25,-146.16 572.25,-12 572.25,-12 572.25,-6 578.25,0 584.25,0 584.25,0 760.92,0 760.92,0 766.92,0 772.92,-6 772.92,-12 772.92,-12 772.92,-146.16 772.92,-146.16 772.92,-152.16 766.92,-158.16 760.92,-158.16"/>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-136.68" font-family="DejaVu Sans" font-size="12.00">P1 · Candidata RNN16 pareada</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-119.43" font-family="DejaVu Sans" font-size="12.00">Corrida nueva desde cero</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-102.18" font-family="DejaVu Sans" font-size="12.00">Completada; pareja controlada</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-84.93" font-family="DejaVu Sans" font-size="12.00">RNN 16 · T4 / CUDA</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-67.68" font-family="DejaVu Sans" font-size="12.00">Época 14 · umbral 0,10</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-50.43" font-family="DejaVu Sans" font-size="12.00">F1 0,2684 | F2 0,4379</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-33.18" font-family="DejaVu Sans" font-size="12.00">P 16,31% | R 75,64%</text>
+<text xml:space="preserve" text-anchor="middle" x="672.59" y="-15.93" font-family="DejaVu Sans" font-size="12.00">Eventos 666/824</text>
+</g>
+<!-- E2&#45;&gt;P1 -->
+<g id="edge5" class="edge">
+<title>E2&#45;&gt;P1</title>
+<path fill="none" stroke="#7c3aed" stroke-width="2" d="M672.59,-287.12C672.59,-250.31 672.59,-206.28 672.59,-168.3"/>
+<polygon fill="#7c3aed" stroke="#7c3aed" stroke-width="2" points="675.04,-168.3 672.59,-161.3 670.14,-168.3 675.04,-168.3"/>
+<text xml:space="preserve" text-anchor="middle" x="801.21" y="-248.91" font-family="DejaVu Sans" font-size="10.00">CAPACIDAD · PAREJA CONTROLADA</text>
+<text xml:space="preserve" text-anchor="middle" x="801.21" y="-234.66" font-family="DejaVu Sans" font-size="10.00">hidden_size 32 → 16</text>
+<text xml:space="preserve" text-anchor="middle" x="801.21" y="-220.41" font-family="DejaVu Sans" font-size="10.00">Misma pareja T4: datos, versiones, F2, BCE y semilla fijos</text>
+<text xml:space="preserve" text-anchor="middle" x="801.21" y="-206.16" font-family="DejaVu Sans" font-size="10.00">ΔF1 &#45;0,0113 · ΔF2 &#45;0,0067</text>
+<text xml:space="preserve" text-anchor="middle" x="801.21" y="-191.91" font-family="DejaVu Sans" font-size="10.00">FP +867 · FN &#45;55</text>
+</g>
+</g>
+</svg>
+</div><section class="card" id="detail" aria-live="polite"></section></div>
+<p class="small">Verde: control con pesos congelados. Naranja: comparación con diferencias adicionales de entorno. Gris: repetición de referencia. Morado: comparación de capacidad pareada y completada. Azul: comparación de resultados, sin relación de herencia.</p>
+<p class="small">Las flechas indican procedencia o referencia de comparación; no demuestran causalidad. Los modelos nuevos se entrenan desde cero. Validación fue usada para selección y no es prueba independiente. 2025 permanece reservada.</p>
+<script id="registry" type="application/json">{"schema_version": "experiment_family_v1", "sources_sha256": {"eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6", "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36", "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297", "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f", "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d", "runs/rnn_v1_seed42/environment.json": "e34a076c2d49aa26d693f13b420c4065239b6cbdc40a70782a7151311af6101f", "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_manifest.json": "7fdfc79832fc1b1d6e46f997cc427e026fb91575e2f4381e317e88562d192afd", "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_environment.json": "10e01917e0d423d210ddeb918da1d9a1425629d1b23ab7b898675b8bb7b0b006", "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/manifest.json": "ba9e22fce0304fab7e2f25809ac51963e61be2cdf91562a49bf5b5cd8ea0b72a", "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/manifest.json": "d13bf5659a783092adf7fa92035d4ee04c1b2dd81b8fc0ee15b7bb85c9172340", "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/model_spec.json": "7f5ef299db4f1bd674c51cca83e0e1de59dd615881409ea374724fb0fc58cec0", "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/model_spec.json": "6812ce3ce14ba8d163bf8602492fa1265e50480a80cc1f7e864a27d1a0a4fd8d", "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3", "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/metrics.json": "5dcf39715503f7737472bf51be82444614e0c4f4db8897d31d444e86589e1459"}, "context": {"train": "2022–2023", "validation": "2024", "validation_samples": 25635, "window_length": 8, "seed": 42, "loss": "BCE sin ponderación", "final_test": "2025 reservada", "preprocessed_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66"}, "nodes": [{"id": "E0", "title": "Referencia F2", "kind": "Corrida", "status": "Completada", "color": "#dff3ff", "device": "T4 / CUDA", "epoch": 10, "threshold": 0.12, "metrics": {"n_samples": 25635, "positives": 2315, "tp": 1696, "fp": 8116, "fn": 619, "tn": 15204, "precision": 0.17284957195271097, "recall": 0.7326133909287257, "f1": 0.27970644017481655, "f2": 0.4446308724832215, "false_positives_per_100_decisions": 31.659840062414666, "average_precision": 0.20157750113335213}, "event_metrics": {"confirmed_events": 824, "events_with_evaluable_opportunity": 824, "events_without_evaluable_opportunity": 0, "covered_events": 652, "recall_per_evaluable_event": 0.7912621359223301}, "hidden_size": 32, "note": "BCE, semilla 42. Referencia de comparación; no cambia el objetivo al dibujar el árbol.", "report": "docs/aclaraciones/06_resultados_rnn_v1_validacion_2024.md"}, {"id": "C1", "title": "Control de umbral F1", "kind": "Control sin entrenamiento", "status": "Completado", "color": "#def4e8", "device": "Pesos de E0", "epoch": 10, "threshold": 0.22, "metrics": {"n_samples": 25635, "positives": 2315, "tp": 1363, "fp": 5519, "fn": 952, "tn": 17801, "precision": 0.1980528916012787, "recall": 0.588768898488121, "f1": 0.2964010003261933, "f2": 0.42219055879073225, "false_positives_per_100_decisions": 21.529159352447824, "average_precision": 0.20157750877436803}, "event_metrics": {"confirmed_events": 824, "events_with_evaluable_opportunity": 824, "events_without_evaluable_opportunity": 0, "covered_events": 552, "recall_per_evaluable_event": 0.6699029126213593}, "hidden_size": 32, "note": "Reutiliza los pesos de E0. Solo cambia la selección de umbral; es el control más limpio del efecto de la decisión.", "report": "docs/aclaraciones/07_control_f1_sobre_pesos_f2.md"}, {"id": "E1", "title": "Corrida con selección F1", "kind": "Corrida nueva desde cero", "status": "Completada; entorno distinto", "color": "#fff0d5", "device": "CPU", "epoch": 10, "threshold": 0.22, "metrics": {"n_samples": 25635, "positives": 2315, "tp": 1363, "fp": 5519, "fn": 952, "tn": 17801, "precision": 0.1980528916012787, "recall": 0.588768898488121, "f1": 0.2964010003261933, "f2": 0.42219055879073225, "false_positives_per_100_decisions": 21.529159352447824, "average_precision": 0.20157752973463514}, "event_metrics": {"confirmed_events": 824, "events_with_evaluable_opportunity": 824, "events_without_evaluable_opportunity": 0, "covered_events": 552, "recall_per_evaluable_event": 0.6699029126213593}, "hidden_size": 32, "note": "Selección por F1 y entorno efectivo CPU/Python distinto. No heredó los pesos de E0; el parentesco indica configuración de referencia.", "report": "docs/aclaraciones/08_resultados_rnn_f1_y_comparacion.md"}, {"id": "E2", "title": "Referencia RNN32 pareada", "kind": "Repetición desde cero", "status": "Completada; pareja controlada", "color": "#dff3ff", "device": "T4 / CUDA", "epoch": 10, "threshold": 0.12, "metrics": {"n_samples": 25635, "positives": 2315, "tp": 1696, "fp": 8116, "fn": 619, "tn": 15204, "precision": 0.17284957195271097, "recall": 0.7326133909287257, "f1": 0.27970644017481655, "f2": 0.4446308724832215, "false_positives_per_100_decisions": 31.659840062414666, "average_precision": 0.20157750113335213}, "event_metrics": {"confirmed_events": 824, "events_with_evaluable_opportunity": 824, "events_without_evaluable_opportunity": 0, "covered_events": 652, "recall_per_evaluable_event": 0.7912621359223301}, "hidden_size": 32, "note": "Repite la especificación de E0 en la pareja de capacidad. Se entrenó desde cero; no heredó pesos históricos. El entorno y las versiones coinciden con E0. Los pesos resultantes tienen el mismo SHA-256 que E0.", "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"}, {"id": "P1", "title": "Candidata RNN16 pareada", "kind": "Corrida nueva desde cero", "status": "Completada; pareja controlada", "color": "#ede9fe", "device": "T4 / CUDA", "epoch": 14, "threshold": 0.1, "metrics": {"n_samples": 25635, "positives": 2315, "tp": 1751, "fp": 8983, "fn": 564, "tn": 14337, "precision": 0.1631265138811254, "recall": 0.7563714902807775, "f1": 0.26837305540654455, "f2": 0.4378813644093228, "false_positives_per_100_decisions": 35.04193485469085, "average_precision": 0.21245820067089063}, "event_metrics": {"confirmed_events": 824, "events_with_evaluable_opportunity": 824, "events_without_evaluable_opportunity": 0, "covered_events": 666, "recall_per_evaluable_event": 0.808252427184466}, "hidden_size": 16, "note": "La propuesta P1 ya fue ejecutada. Se compara con E2 cambiando solo hidden_size 32→16; mantiene F2, BCE, datos, semilla y entorno pareado. Se entrenó desde cero, sin heredar pesos de E2.", "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"}], "edges": [{"parent": "E0", "child": "C1", "relation": "derived_decision", "changes": ["Criterio de umbral F2 → F1", "Umbral 0,12 → 0,22", "Pesos congelados"], "isolated_comparison": true, "observed_delta": {"f1": 0.01669456015137677, "f2": -0.022440313692489222, "precision": 0.02520331964856773, "recall": -0.1438444924406047, "tp": -333, "fp": -2597, "fn": 333, "tn": 2597, "event_recall": -0.12135922330097082}}, {"parent": "E0", "child": "E1", "relation": "reference_comparison", "changes": ["Selección de checkpoint y umbral F2 → F1", "T4/CUDA → CPU", "Python 3.13.16 → 3.13.18"], "isolated_comparison": false, "caveat": "Esta comparación cambió el entorno efectivo además del criterio de selección; los deltas no pueden atribuirse a un único factor.", "observed_delta": {"f1": 0.01669456015137677, "f2": -0.022440313692489222, "precision": 0.02520331964856773, "recall": -0.1438444924406047, "tp": -333, "fp": -2597, "fn": 333, "tn": 2597, "event_recall": -0.12135922330097082}}, {"parent": "E0", "child": "E2", "relation": "reference_repeat", "changes": ["Misma especificación RNN32 y selección F2", "Repetición desde cero, sin herencia de pesos", "Mismo entorno T4 y versiones"], "isolated_comparison": true, "same_historical_weights_sha256": true, "caveat": null, "observed_delta": {"f1": 0.0, "f2": 0.0, "precision": 0.0, "recall": 0.0, "tp": 0, "fp": 0, "fn": 0, "tn": 0, "event_recall": 0.0}}, {"parent": "E2", "child": "P1", "relation": "paired_capacity_comparison", "changes": ["hidden_size 32 → 16", "Misma pareja T4: datos, versiones, F2, BCE y semilla fijos"], "isolated_comparison": true, "pair_id": "rnn16_vs_rnn32_f2_v1_seed42", "observed_delta": {"f1": -0.011333384768272003, "f2": -0.00674950807389868, "precision": -0.009723058071585577, "recall": 0.023758099352051865, "tp": 55, "fp": 867, "fn": -55, "tn": -867, "event_recall": 0.016990291262135915}}], "result_comparison": {"nodes": ["C1", "E1"], "relation": "same_observed_decisions_at_0_22", "note": "Coinciden los conteos; pesos y probabilidades difieren numéricamente. No es herencia ni identidad del modelo."}}</script>
+<script>
+const registry=JSON.parse(document.getElementById('registry').textContent);
+const rootPrefix="../../../../";
+const percent=x=>(100*x).toFixed(2)+' %';
+const score=x=>x.toFixed(4);
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function select(id){
+ const n=registry.nodes.find(n=>n.id===id), edge=registry.edges.find(e=>e.child===id);
+ for(const g of document.querySelectorAll('g.node'))g.classList.toggle('selected',g.id==='node-'+id);
+ let content='<h2>'+escape(n.id+' · '+n.title)+'</h2><p>'+escape(n.kind+' · '+n.status)+'</p><p>'+escape(n.note)+'</p>';
+ if(n.metrics){const m=n.metrics,e=n.event_metrics;
+  const rows=[['Umbral',n.threshold.toFixed(2)],['F1',score(m.f1)],['F2',score(m.f2)],['Precisión',percent(m.precision)],['Recall por muestra',percent(m.recall)],['FP',m.fp],['FN',m.fn],['Eventos cubiertos',e.covered_events+'/'+e.events_with_evaluable_opportunity+' ('+percent(e.recall_per_evaluable_event)+')']];
+  content+='<table><tbody>'+rows.map(r=>'<tr><th>'+escape(r[0])+'</th><td>'+escape(r[1])+'</td></tr>').join('')+'</tbody></table>';
+ }else content+='<p><strong>Sin métricas:</strong> todavía no se ha ejecutado.</p>';
+ if(edge){const parent=registry.nodes.find(p=>p.id===edge.parent);
+  content+='<h3>Comparación frente a '+escape(parent.id+' · '+parent.title)+'</h3><ul>'+edge.changes.map(c=>'<li>'+escape(c)+'</li>').join('')+'</ul>';
+  if(edge.isolated_comparison===false)content+='<p class="note">'+escape(edge.caveat||'Esta comparación incluye factores adicionales; los deltas observados no pueden atribuirse a un único cambio.')+'</p>';
+  if(edge.observed_delta){const d=edge.observed_delta,sign=x=>x>0?'+':'';
+   content+='<p>ΔF1: '+sign(d.f1)+score(d.f1)+' · ΔF2: '+sign(d.f2)+score(d.f2)+'<br>ΔFP: '+sign(d.fp)+d.fp+' · ΔFN: '+sign(d.fn)+d.fn+'</p>';
+  }
+ }
+ content+='<p><a href="'+rootPrefix+encodeURI(n.report)+'">Abrir informe</a></p>';
+ document.getElementById('detail').innerHTML=content;
+}
+for(const n of registry.nodes){const g=document.getElementById('node-'+n.id);g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',n.title);g.addEventListener('click',()=>select(n.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(n.id)}})}
+select('E0');
+</script></html>

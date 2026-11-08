@@ -1,0 +1,18 @@
+{
+  "artifact_version": "experiment_family_view_v1",
+  "generator_sha256": "9fd2b43d4693fc70eec13c261897b6a6e438f738432d3e7f2edf0a1bfa77d734",
+  "sources_sha256": {
+    "eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6",
+    "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36",
+    "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297",
+    "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d"
+  },
+  "files_sha256": {
+    "registry.json": "e0f26bcc88668dcde859a4c463b136218d20b34cea1f36329cacaa22a0725e15",
+    "arbol.dot": "b690f5aaada79a2ed5d38e7e8753816febc50e630cac4e0fbe8b50e6145de514",
+    "arbol.svg": "eefbd878c2a15106c54f7537ef0e4e7aef33e77070ce2373b4588db681e74260",
+    "arbol.html": "751d3bfdd864fca7c935cb45704569aa9f5c9dbc4c94199641ce34a3a6a1d2c1"
+  },
+  "test_used": false
+}

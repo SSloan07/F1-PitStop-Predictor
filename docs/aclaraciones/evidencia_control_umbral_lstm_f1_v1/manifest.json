@@ -1,0 +1,13 @@
+{
+  "artifact_version": "lstm32_f1_threshold_only_control_manifest_v1",
+  "files_sha256": {
+    "control.json": "4baf41c1893ae4be9691292647d79da8a6de125e897eea3615a11d27f9ae8c5c"
+  },
+  "test_used": false,
+  "sources_sha256": {
+    "configs/experimento_lstm32_dropout_02_v1.json": "db7d45a6a75442fa5d7afd901ae73414e7d48e53328bd4a4ac003130abd82a25",
+    "eval/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/predictions.csv.gz": "0dc041ab23f537abd6dc8521baa7923fee05b5e022f4f0c0fafd03641f5167ae",
+    "eval/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/manifest.json": "11762e427c483c05bab8bd92ae61d2db74beb49e8c6464867967a3a6e8804ae2",
+    "runs/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/manifest.json": "63324c75ee5d1e74b202309aa7bc9eacc5bdbafbacedd86e81c8080e7c38bb7e"
+  }
+}
