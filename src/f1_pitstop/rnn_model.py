@@ -1,4 +1,4 @@
-"""Small recurrent baseline with explicit numeric availability and slot masks.
+"""Small recurrent baseline with explicit masks and optional fusion-head dropout.
 
 The model receives already transformed inputs. Numeric reason code 0 means an
 observed value; every other code suppresses that value. A slot updates the hidden
@@ -23,6 +23,7 @@ _DIMENSION_DEFAULTS = {
     "head_hidden_size": 16,
     "window_length": 8,
 }
+_DROPOUT_DEFAULT = 0.0
 _COUNT_KEYS = {"num_numeric", "dynamic_cardinalities", "static_cardinalities"}
 _INTEGER_DTYPES = {torch.int8, torch.int16, torch.int32, torch.int64, torch.uint8}
 
@@ -36,7 +37,7 @@ def _positive_integer(value: Any, name: str, minimum: int = 1) -> int:
 def _validated_spec(spec: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(spec, dict):
         raise TypeError("spec must be a dict")
-    unknown = set(spec) - _COUNT_KEYS - set(_DIMENSION_DEFAULTS)
+    unknown = set(spec) - _COUNT_KEYS - set(_DIMENSION_DEFAULTS) - {"dropout_rate"}
     if unknown:
         raise ValueError(f"Unknown model spec keys: {sorted(unknown)}")
     missing = _COUNT_KEYS - set(spec)
@@ -55,6 +56,11 @@ def _validated_spec(spec: dict[str, Any]) -> dict[str, Any]:
         ]
     for name, default in _DIMENSION_DEFAULTS.items():
         result[name] = _positive_integer(spec.get(name, default), name)
+    dropout_rate = spec.get("dropout_rate", _DROPOUT_DEFAULT)
+    if (isinstance(dropout_rate, bool) or not isinstance(dropout_rate, (int, float))
+            or not 0.0 <= float(dropout_rate) < 1.0):
+        raise ValueError("dropout_rate must be a number in [0, 1)")
+    result["dropout_rate"] = float(dropout_rate)
     return result
 
 
@@ -84,7 +90,7 @@ def model_spec_from_preprocessor(
     if options is not None and not isinstance(options, dict):
         raise TypeError("options must be a dict or None")
     options = {} if options is None else options
-    unknown = set(options) - set(_DIMENSION_DEFAULTS)
+    unknown = set(options) - set(_DIMENSION_DEFAULTS) - {"dropout_rate"}
     if unknown:
         raise ValueError(f"Unsupported model options: {sorted(unknown)}")
     schema = state["schema"]
@@ -139,6 +145,9 @@ class _CategoryEmbedding(nn.Embedding):
 class SmallPitStopRNN(nn.Module):
     """One tanh RNNCell, a static branch, and a binary-logit fusion head.
 
+    Optional dropout is applied after the fusion ReLU. Its default rate is zero;
+    the layer has no parameters, so existing checkpoints retain compatible keys.
+
     ``padding_mask=True`` marks padding. ``slot_exists_mask=True`` marks a real
     timeline slot. ``slot_row_missing_mask=True`` marks an absent source row.
     These three masks have shape (batch, window), while numeric reason codes
@@ -178,8 +187,12 @@ class SmallPitStopRNN(nn.Module):
                 self.spec["head_hidden_size"],
             ),
             nn.ReLU(),
+            nn.Dropout(p=self.spec["dropout_rate"]),
             nn.Linear(self.spec["head_hidden_size"], 1),
         )
+        # Keep the historical head parameter names (head.0/head.2) so bundles
+        # trained before this factor remain loadable by the shared evaluator.
+        self.head_dropout = nn.Dropout(p=self.spec["dropout_rate"])
 
     def _validate_inputs(
         self,
@@ -286,4 +299,7 @@ class SmallPitStopRNN(nn.Module):
             dim=-1,
         )
         static_hidden = self.static_encoder(static_vectors)
-        return self.head(torch.cat([hidden, static_hidden], dim=-1)).squeeze(-1)
+        fused = self.head[0](torch.cat([hidden, static_hidden], dim=-1))
+        fused = self.head[1](fused)
+        fused = self.head_dropout(fused)
+        return self.head[2](fused).squeeze(-1)
