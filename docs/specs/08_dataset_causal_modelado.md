@@ -8,7 +8,7 @@
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
-**Resultado de esta especificación:** define el flujo experimental. Las etiquetas v3 y las particiones por carrera ya están materializadas según los contratos de esta especificación; esto no significa que haya preprocesadores ajustados ni modelos entrenados.
+**Resultado de esta especificación:** define el flujo experimental. Las etiquetas v3, las particiones por carrera y el preprocesador train-only ya están materializados según los contratos vigentes; no se han entrenado modelos.
 
 ## 1. Propuesta de trabajo y decisiones vigentes
 
@@ -227,7 +227,9 @@ La ejecución de etiquetas vigente es `etiquetado_pit_entry_v3_2022_2025`, gener
 
 La partición publicada en `muestras_causales_v1_3_etiquetas_v3_particiones_v1_1` mantiene carreras completas: train 2022–2023, validation 2024 y test final reservado 2025. Su configuración es `configs/particion_pit_entry_v1.json`; las tablas contienen pertenencia y elegibilidad supervisada, y el manifiesto fija hashes de los datos referenciados. La prueba final no se consulta para decisiones de diseño experimental.
 
-El siguiente paso es preparar y guardar preprocesadores ajustados solo con train, con transformaciones aprendidas reproducibles para variables numéricas y categóricas. Luego puede compararse un baseline neuronal MLP con la arquitectura recurrente, usando los mismos `sample_id`, particiones y protocolo. **MLP es por ahora una propuesta arquitectónica:** sus entradas, capas, regularización y protocolo de comparación deben acordarse antes de implementar el experimento. No se han ajustado preprocesadores ni entrenado modelos en la etapa de publicación de etiquetas/particiones.
+El contrato de preprocesamiento train-only está implementado en [SPEC-DATA-003](10_contrato_preprocesamiento.md). El artefacto vigente se publica en `muestras_preprocesadas_v1_3`; medias, escalas y vocabularios se ajustan solo con `train AND supervised_eligible`, y las transformaciones se aplican a train/validación con el estado congelado. No se generan transformaciones de prueba. No se han entrenado modelos ni seleccionado umbrales.
+
+El siguiente paso será acordar el protocolo experimental y los detalles de la arquitectura antes de comparar un baseline neuronal MLP con la arquitectura recurrente usando las mismas particiones e información. **MLP sigue siendo una propuesta arquitectónica:** sus entradas, capas, regularización y protocolo de comparación deben acordarse antes de implementar el experimento.
 
 El evaluador y el replay cargarán ese mismo paquete y las mismas funciones. Las nuevas categorías se transformarán con una política de desconocidos fijada desde train. Una predicción guardará clave, instante, score/probabilidad, estado de calibración, umbral, horizonte, versión de modelo y alerta. La primera implementación debe poder procesar un piloto y mantener estados aislados si después se procesan varios simultáneamente; el desarrollo del frontend queda a cargo del compañero.
 

@@ -1,0 +1,47 @@
+{
+  "preprocessing_version": "train_only_preprocessor_v1",
+  "feature_package": "EDA/dataset/muestras_causales_v1_3",
+  "feature_manifest_sha256": "5ab4c618b0bab9d5fe15b8ce83c7e7c12bde6d80860d36661ba5193c9148001a",
+  "partition_package": "EDA/dataset/muestras_causales_v1_3_etiquetas_v3_particiones_v1_1",
+  "partition_manifest_sha256": "6d9b1cafdfc199e1ee2144d303c443b7006d100fe133ef07387a4b1280413c1f",
+  "label_package": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_pit_entry_v3_2022_2025",
+  "label_manifest_sha256": "1b82917a9cc5d8f5be8441cceebcf05e0f582e2b45ab85985c9ae9a9f9955a6e",
+  "splits": {
+    "train": [2022, 2023],
+    "validation": [2024],
+    "test_final_reserved": [2025]
+  },
+  "fit_population": "split == train AND supervised_eligible == true",
+  "transform_splits": ["train", "validation"],
+  "window_length": 8,
+  "numeric": {
+    "method": "per-feature standardization",
+    "mean": "float64 mean over present, temporally available dynamic cells in fit windows",
+    "scale": "population standard deviation (ddof=0); use 1.0 when variance is exactly zero",
+    "missing_fill_after_scale": 0.0,
+    "missing_values_in_fit": "exclude using mask_reason_codes == 0, slot_exists_mask and not padding_mask",
+    "no_observed_fit_values": "reject publication with feature name"
+  },
+  "categorical": {
+    "fit_population": "train AND supervised_eligible only",
+    "order": "Unicode code-point ascending, independent of encounter order",
+    "reserved_ids": {
+      "padding": 0,
+      "absent": 1,
+      "source_unknown": 2,
+      "out_of_vocabulary": 3
+    },
+    "first_learned_id": 4,
+    "source_unknown_literal": "UNKNOWN",
+    "missing_tokens_casefold": ["", "nan", "none", "<na>"]
+  },
+  "preserve_masks": [
+    "padding_mask",
+    "slot_exists_mask",
+    "slot_row_missing_mask",
+    "temporal_unavailable_mask",
+    "feature_missing_mask",
+    "mask_reason_codes"
+  ],
+  "output_dir": "EDA/dataset/muestras_preprocesadas_v1_3"
+}
