@@ -8,7 +8,7 @@
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
-**Resultado de esta entrega:** especificación documental. Su publicación no significa que el pipeline descrito esté implementado ni que la matriz esté aprobada para entrenar.
+**Resultado de esta especificación:** define el flujo experimental. Las etiquetas v3 y las particiones por carrera ya están materializadas según los contratos de esta especificación; esto no significa que haya preprocesadores ajustados ni modelos entrenados.
 
 ## 1. Propuesta de trabajo y decisiones vigentes
 
@@ -118,7 +118,7 @@ Se mantendrán tres conceptos distintos: falta de valor de una característica, 
 
 ## 7. Particiones antes de aprender estadísticas
 
-Se conserva la división propuesta: **2022–2023 para entrenamiento, 2024 para validación y 2025 para prueba final**, condicionada a validar cobertura y etiquetas con el mismo contrato en cada temporada. Se fijará un archivo de carreras/particiones y su hash antes de comparar modelos. No basta con que las vueltas de 2024–2025 estén descargadas: sus etiquetas aún requieren el mismo procedimiento de calidad.
+La división materializada es **2022–2023 para entrenamiento, 2024 para validación y 2025 para prueba final**, con etiquetas generadas bajo el mismo contrato. El manifiesto y las listas de `sample_id` por conjunto están en `muestras_causales_v1_3_etiquetas_v3_particiones_v1_1`; las carreras completas se mantienen juntas. La cobertura por temporada y carrera acompaña la publicación.
 
 Todas las vueltas y todos los pilotos de una carrera permanecerán en un solo conjunto. Dos ventanas solapadas de un piloto, o pilotos de la misma carrera expuestos al mismo Safety Car, no deben quedar repartidos por una partición aleatoria de filas. La validación interna opcional en 2022–2023 será por bloques cronológicos de carreras completas, entrenando con bloques anteriores y validando con posteriores. En cada bloque se reajusta el preprocesador desde su train.
 
@@ -221,6 +221,14 @@ Los pesos de clase se estiman desde train. Si se estudia remuestreo, se aplicar�
 
 La salida exportada incluirá pesos, definición/hiperparámetros de arquitectura, lista y orden de características, preprocesador ajustado, categorías desconocidas, máscaras, configuración temporal, umbral, calibrador si se utiliza, historial, métricas, predicciones y manifiesto. Guardar solo pesos no permite reconstruir el experimento. Para reanudar entrenamiento tras una desconexión se guardarán además optimizador, época y estados aleatorios necesarios.
 
+## Estado de datos y siguiente paso
+
+La ejecución de etiquetas vigente es `etiquetado_pit_entry_v3_2022_2025`, generada con la regla de pareja obligatoria y el mismo horizonte N–N+2. El corte 2022–2023 es idéntico a `etiquetado_pit_entry_v2_pair_required` en las 47.997 claves comparadas. Las ventanas causales conservadas son `muestras_causales_v1_3`; su instantánea antigua de etiquetas no se consume.
+
+La partición publicada en `muestras_causales_v1_3_etiquetas_v3_particiones_v1_1` mantiene carreras completas: train 2022–2023, validation 2024 y test final reservado 2025. Su configuración es `configs/particion_pit_entry_v1.json`; las tablas contienen pertenencia y elegibilidad supervisada, y el manifiesto fija hashes de los datos referenciados. La prueba final no se consulta para decisiones de diseño experimental.
+
+El siguiente paso es preparar y guardar preprocesadores ajustados solo con train, con transformaciones aprendidas reproducibles para variables numéricas y categóricas. Luego puede compararse un baseline neuronal MLP con la arquitectura recurrente, usando los mismos `sample_id`, particiones y protocolo. **MLP es por ahora una propuesta arquitectónica:** sus entradas, capas, regularización y protocolo de comparación deben acordarse antes de implementar el experimento. No se han ajustado preprocesadores ni entrenado modelos en la etapa de publicación de etiquetas/particiones.
+
 El evaluador y el replay cargarán ese mismo paquete y las mismas funciones. Las nuevas categorías se transformarán con una política de desconocidos fijada desde train. Una predicción guardará clave, instante, score/probabilidad, estado de calibración, umbral, horizonte, versión de modelo y alerta. La primera implementación debe poder procesar un piloto y mantener estados aislados si después se procesan varios simultáneamente; el desarrollo del frontend queda a cargo del compañero.
 
 ## 12. Evaluación propuesta y elección de umbral
@@ -260,15 +268,15 @@ Estas verificaciones se implementarán en la etapa de construcción; no se ejecu
 
 Los fallos de integridad o fuga temporal bloquean la publicación para entrenamiento. Las limitaciones conocidas, latencias supuestas y características no habilitadas se enumeran en el manifiesto. Pasar estas comprobaciones acredita el contrato medido; no prueba que el modelo vaya a tener buen recall ni que el feed futuro tenga idéntica calidad.
 
-## 14. Orden de implementación después de socializar
+## 14. Estado y siguiente etapa
 
-1. Resolver los puntos de la sección siguiente, fijar versión del contrato y reconciliar referencias antiguas al objetivo.
-2. Corregir/auditar la etiqueta candidata y sus categorías de evidencia; producir una versión nueva si cambian decisiones.
-3. Registrar particiones y características, fuentes temporales y supuestos de latencia; inspeccionar estado inicial y situaciones de boxes/retiro.
-4. Implementar calidad determinista y alineación temporal en módulos pequeños; producir tabla candidata, auditoría y reportes de cobertura.
-5. Implementar/verificar constructor de ventanas, máscaras y preprocesadores. Revisar una reproducción pequeña con vueltas seleccionadas antes de publicar.
-6. Congelar una versión en Drive y preparar el notebook base ejecutable, sus dependencias y paquete de exportación.
-7. Entrenar en la nube, evaluar con el protocolo común e iterar cambiando factores declarados. Un problema de calidad vuelve a la etapa correspondiente, con nueva versión y alcance del cambio documentado.
+1. **Completado:** contratos de objetivo y tiempo causal.
+2. **Completado:** etiquetas v3 de 2022–2025, con invariancia verificada para 2022–2023.
+3. **Completado:** muestras causales y ventanas/máscaras v1_3 verificadas y conservadas.
+4. **Completado:** alineación de etiquetas v3 y particiones cronológicas por carrera, con prueba final reservada.
+5. **Pendiente:** fijar el contrato experimental detallado de preprocesamiento y ajustarlo exclusivamente con train; guardar configuración y parámetros para reutilización.
+6. **Pendiente de acuerdo:** concretar entradas, capas y regularización del baseline MLP y la comparación ortogonal con la arquitectura recurrente.
+7. **Fuera de esta etapa:** entrenar y evaluar modelos en Colab/Kaggle tras cerrar el contrato experimental.
 
 ## 15. Puntos para socializar y cerrar
 
