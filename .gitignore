@@ -1,5 +1,5 @@
 *.aux
-*.out 
+*.out
 *.fdb_latexmk
 *.fls
 *.log
@@ -7,3 +7,7 @@
 
 # Local FastF1 HTTP cache
 /EDA/dataset/cache_fastf1_carreras/fastf1_http_cache.sqlite
+
+# Local experiment runs and validation reports
+/runs/
+/eval/

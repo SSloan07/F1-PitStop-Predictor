@@ -1,0 +1,6 @@
+# Dependencias del experimento RNN. Mantener los wheels CUDA de Colab cuando
+# satisfagan estos rangos; no se fuerza un índice de PyTorch para CPU.
+# La exportación de cada corrida registra las versiones exactas utilizadas.
+torch>=2.6,<3
+numpy>=1.26,<3
+pandas>=2.2,<3

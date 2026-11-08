@@ -34,7 +34,7 @@ La partición debe mantener carreras completas en un solo conjunto y permanecer 
 
 ## Evaluación y alertas
 
-Reportar como mínimo precision, recall y F1 para la clase positiva, junto con matriz de confusión y cantidad de alertas. Dado que omitir una parada se considera especialmente costoso, el recall y F1 deben quedar visibles; el criterio principal de selección y el umbral se fijarán antes de evaluar el conjunto de prueba. No cambiar el umbral sobre prueba.
+El criterio principal acordado es **F2 de la clase positiva**. Reportar también precision, recall, F1, Average Precision, matriz de confusión y cantidad de alertas. El primer experimento usa una RNN sencilla y el protocolo de [la especificación 11](11_experimento_rnn_inicial.md): selección de checkpoint con F2 a umbral fijo 0,5 y búsqueda posterior de umbral con pesos congelados. Mostrar resultados de entrenamiento y validación bajo la misma regla de alerta permite distinguir ajuste y generalización. No cambiar el umbral sobre prueba.
 
 Además de métricas por fila piloto-vuelta, informar cuántas paradas reales fueron cubiertas por al menos una alerta dentro del horizonte permitido. Las alertas consecutivas pueden solaparse; por ello, la métrica por muestra y la cobertura por evento responden preguntas distintas y no deben confundirse.
 

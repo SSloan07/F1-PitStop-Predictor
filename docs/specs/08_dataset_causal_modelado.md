@@ -1,10 +1,12 @@
 # SPEC-DATA-001: preparación de datos para experimentos de ML/DL
 
-**Versión:** 0.7.
+**Versión:** 0.8.
 
-**Estado:** propuesta para socializar; describe el trabajo futuro.
+**Estado:** preparación de datos y primer experimento implementados; entrenamiento y resultados pendientes.
 
-**Cambio en 0.7:** se fija la máscara para posiciones históricas no disponibles en ventanas recurrentes, sin desplazar vueltas antiguas. La versión 0.6 especificó el anclaje y elegibilidad temporal en reinicios.
+**Cambio en 0.8:** RNN sencilla como primer experimento, F2 positiva acordada y protocolo Colab/evaluación local en [la especificación 11](11_experimento_rnn_inicial.md). Se actualiza el cierre de preparación train-only.
+
+**Antecedente en 0.7:** se fija la máscara para posiciones históricas no disponibles en ventanas recurrentes, sin desplazar vueltas antiguas. La versión 0.6 especificó el anclaje y elegibilidad temporal en reinicios.
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
@@ -69,7 +71,7 @@ Una visita ya iniciada antes de `decision_time` no debe contarse como una entrad
 | D. Estado temporal | Reconstruir lo observable antes de cada decisión | Fuentes con timestamps → estados y trazabilidad temporal | Local |
 | E. Características | Derivar variables autorizadas con reglas causales | Estados/vueltas completadas → tabla de características | Local |
 | F. Publicación | Congelar tablas, esquema, hashes y manifiesto | Características/etiquetas/auditoría → versión de dataset en Drive | Local |
-| G. Preparación experimental | Seleccionar columnas, ajustar preprocesadores en train y formar ventanas | Dataset/configuración → entradas del modelo y preprocesador exportable | Colab/Kaggle |
+| G. Preparación experimental | Seleccionar columnas, ajustar preprocesadores en train y formar ventanas | Dataset/configuración → entradas del modelo y preprocesador exportable | Local; estado congelado consumido en Colab |
 | H. Entrenamiento | Ajustar pesos, guardar checkpoints y registrar cada corrida | Entradas/configuración → modelo y resultados de validación | Colab/Kaggle |
 | I. Evaluación y replay | Aplicar el mismo contrato y medir predicciones/alertas | Paquete del modelo/datos → predicciones y métricas | Local si es pequeño; nube si hace falta |
 
@@ -229,15 +231,15 @@ La partición publicada en `muestras_causales_v1_3_etiquetas_v3_particiones_v1_1
 
 El contrato de preprocesamiento train-only está implementado en [SPEC-DATA-003](10_contrato_preprocesamiento.md). El artefacto vigente se publica en `muestras_preprocesadas_v1_3`; medias, escalas y vocabularios se ajustan solo con `train AND supervised_eligible`, y las transformaciones se aplican a train/validación con el estado congelado. No se generan transformaciones de prueba. No se han entrenado modelos ni seleccionado umbrales.
 
-El siguiente paso será acordar el protocolo experimental y los detalles de la arquitectura antes de comparar un baseline neuronal MLP con la arquitectura recurrente usando las mismas particiones e información. **MLP sigue siendo una propuesta arquitectónica:** sus entradas, capas, regularización y protocolo de comparación deben acordarse antes de implementar el experimento.
+El primer experimento acordado es una **RNN sencilla**, implementada con una capa recurrente de 32 unidades y una rama estática mínima. Su configuración, notebook de Colab, exportación de pesos y evaluación local están definidos en [SPEC-EXP-001](11_experimento_rnn_inicial.md). El siguiente paso es ejecutar esa referencia en Colab y devolver el paquete exportado para evaluar validación localmente. La MLP y otras arquitecturas quedan para comparaciones posteriores, sin ser un requisito previo.
 
 El evaluador y el replay cargarán ese mismo paquete y las mismas funciones. Las nuevas categorías se transformarán con una política de desconocidos fijada desde train. Una predicción guardará clave, instante, score/probabilidad, estado de calibración, umbral, horizonte, versión de modelo y alerta. La primera implementación debe poder procesar un piloto y mantener estados aislados si después se procesan varios simultáneamente; el desarrollo del frontend queda a cargo del compañero.
 
 ## 12. Evaluación propuesta y elección de umbral
 
-Proponemos **F2 de la clase positiva** como criterio inicial para seleccionar modelo/umbral en validación, conservando precision, recall, F1, Average Precision y matriz de confusión. F2 favorece recall respecto a precision; su definición está en [scikit-learn, F-beta](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.fbeta_score.html). Es una propuesta para socializar, dado que se discutieron F1 y el mayor costo de omitir una parada; todavía no fija un presupuesto aceptable de falsas alertas.
+Se acordó **maximizar F2 de la clase positiva** como criterio inicial para seleccionar modelo/umbral en validación, conservando precision, recall, F1, Average Precision y matriz de confusión. F2 favorece recall respecto a precision; su definición está en [scikit-learn, F-beta](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.fbeta_score.html). Este criterio no fija un presupuesto aceptable de falsas alertas: su costo permanece visible en las métricas auxiliares.
 
-Si se adopta F2, se predeclararán candidatos de umbral y desempate: mayor recall por evento, luego mayor precision por fila. La búsqueda y cualquier calibración usarán validación, sin ajustar de nuevo sobre prueba. Un protocolo posterior podría maximizar recall sujeto a una precision mínima o límite de alertas falsas, pero esos valores deben acordarse y versionarse antes de medir prueba. Reportar solo recall permitiría una alerta permanente, por lo que siempre se mostrará también su costo en falsas alertas.
+El protocolo inicial selecciona checkpoint por F2 a umbral fijo 0,5, con menor BCE de validación como desempate. Después congela los pesos y busca umbral en 0,05–0,95 con paso 0,01; desempata por mayor precision y luego mayor umbral. La cobertura por evento se reporta por separado. La búsqueda y cualquier calibración usarán validación, sin ajustar de nuevo sobre prueba. Un protocolo posterior podría maximizar recall sujeto a una precision mínima o límite de alertas falsas, pero esos valores deben acordarse y versionarse antes de medir prueba. Reportar solo recall permitiría una alerta permanente, por lo que siempre se mostrará también su costo en falsas alertas.
 
 Se medirán dos unidades distintas:
 
@@ -276,9 +278,9 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 2. **Completado:** etiquetas v3 de 2022–2025, con invariancia verificada para 2022–2023.
 3. **Completado:** muestras causales y ventanas/máscaras v1_3 verificadas y conservadas.
 4. **Completado:** alineación de etiquetas v3 y particiones cronológicas por carrera, con prueba final reservada.
-5. **Pendiente:** fijar el contrato experimental detallado de preprocesamiento y ajustarlo exclusivamente con train; guardar configuración y parámetros para reutilización.
-6. **Pendiente de acuerdo:** concretar entradas, capas y regularización del baseline MLP y la comparación ortogonal con la arquitectura recurrente.
-7. **Fuera de esta etapa:** entrenar y evaluar modelos en Colab/Kaggle tras cerrar el contrato experimental.
+5. **Completado:** preprocesamiento train-only publicado en `muestras_preprocesadas_v1_3`, con configuración y estado congelados.
+6. **Implementado:** primer experimento RNN sencillo, F2 positiva, notebook de Colab y exportación/evaluación local; ver especificación 11.
+7. **Pendiente de ejecución:** entrenar la referencia en Colab y evaluar sus pesos localmente sobre validación. Prueba final 2025 reservada.
 
 ## 15. Puntos para socializar y cerrar
 
@@ -291,7 +293,7 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 | Primera vuelta | Mantener muestra de estado inicial con campos realmente disponibles y faltantes explícitos. | Debe poder inferirse sin usar el cierre de la primera vuelta. |
 | Ventana y máscaras | `W` cuenta presente; usar W=8 como ejemplo de especificación, y elegir el valor base de entrenamiento en configuración. Padding y faltantes de valores con máscaras diferentes. | Evita desfases y permite el experimento adaptativo aprobado. |
 | Identidad estática | Acordado: piloto/equipo/circuito en la FFNN del experimento base; variables que cambian con la carrera en la RNN. Comparar por ablación con y sin contexto estático. | Aísla valor del contexto y riesgo de memorización. |
-| Selección de modelos | F2 por muestra como propuesta inicial, con recall por evento y falsas alertas visibles; alternativa con un presupuesto acordado de falsas alertas. | Hace comparable la búsqueda y evita elegir criterio mirando prueba. |
+| Selección de modelos | Acordado: F2 positiva por muestra; checkpoint y umbral según especificación 11, con recall por evento y falsas alertas visibles. | Hace comparable la búsqueda y evita elegir criterio mirando prueba. |
 | Reserva final | Mantener 2025 para evaluación final y declarar la inspección técnica previa. Cualquier cambio del protocolo debe registrarse. | Permite interpretar honestamente qué generalización mide el resultado. |
 
 La socialización deberá producir una versión aprobada de estas decisiones y un primer encargo de implementación acotado. Los hallazgos nuevos se registrarán con el dato, su impacto y la versión que corrige el problema; no se ajustarán reglas silenciosamente entre notebooks.
