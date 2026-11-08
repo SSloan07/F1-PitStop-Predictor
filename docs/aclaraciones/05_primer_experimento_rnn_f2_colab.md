@@ -1,6 +1,6 @@
 # Decisiones para el primer experimento: RNN, F2 y Colab
 
-**Estado:** dirección experimental implementada; entrenamiento real en Colab y resultados pendientes.
+**Estado:** primer entrenamiento F2 en Colab y evaluación local completados; ver [resultados](06_resultados_rnn_v1_validacion_2024.md).
 **Alcance:** fija la prioridad del primer experimento, la métrica y el flujo de trabajo entre Colab y la evaluación local. Los hiperparámetros y las reglas de selección quedan registrados en `configs/experimento_rnn_v1.json` y en [la especificación 11](../specs/11_experimento_rnn_inicial.md).
 
 ## Decisiones vigentes

@@ -101,4 +101,4 @@ python3.13 -B scripts/generar_diagnostico_rnn.py \
   --output eval/rnn_v1_validation_analysis_2
 ```
 
-El diagnóstico requiere matplotlib además de las dependencias del experimento. No se hizo commit ni push.
+El diagnóstico requiere matplotlib además de las dependencias del experimento. La implementación y el informe quedaron guardados en el commit local `cfcfb95`. No se hizo push.

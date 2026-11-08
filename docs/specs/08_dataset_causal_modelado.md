@@ -2,7 +2,7 @@
 
 **Versión:** 0.8.
 
-**Estado:** preparación de datos y primer experimento implementados; entrenamiento y resultados pendientes.
+**Estado:** preparación de datos completada; primera RNN entrenada en Colab y evaluada localmente sobre 2024. Prueba final 2025 reservada.
 
 **Cambio en 0.8:** RNN sencilla como primer experimento, F2 positiva acordada y protocolo Colab/evaluación local en [la especificación 11](11_experimento_rnn_inicial.md). Se actualiza el cierre de preparación train-only.
 
@@ -10,7 +10,7 @@
 
 **Alcance:** convertir los datos históricos y las etiquetas candidatas en entradas reproducibles que respeten el instante de predicción, y definir cómo las consumirán los experimentos en Colab/Kaggle.
 
-**Resultado de esta especificación:** define el flujo experimental. Las etiquetas v3, las particiones por carrera y el preprocesador train-only ya están materializados según los contratos vigentes; no se han entrenado modelos.
+**Resultado de esta especificación:** define el flujo experimental. Las etiquetas v3, las particiones por carrera y el preprocesador train-only están materializados. La primera RNN F2 fue entrenada y evaluada; ver [resultados](../aclaraciones/06_resultados_rnn_v1_validacion_2024.md).
 
 ## 1. Propuesta de trabajo y decisiones vigentes
 
@@ -229,9 +229,9 @@ La ejecución de etiquetas vigente es `etiquetado_pit_entry_v3_2022_2025`, gener
 
 La partición publicada en `muestras_causales_v1_3_etiquetas_v3_particiones_v1_1` mantiene carreras completas: train 2022–2023, validation 2024 y test final reservado 2025. Su configuración es `configs/particion_pit_entry_v1.json`; las tablas contienen pertenencia y elegibilidad supervisada, y el manifiesto fija hashes de los datos referenciados. La prueba final no se consulta para decisiones de diseño experimental.
 
-El contrato de preprocesamiento train-only está implementado en [SPEC-DATA-003](10_contrato_preprocesamiento.md). El artefacto vigente se publica en `muestras_preprocesadas_v1_3`; medias, escalas y vocabularios se ajustan solo con `train AND supervised_eligible`, y las transformaciones se aplican a train/validación con el estado congelado. No se generan transformaciones de prueba. No se han entrenado modelos ni seleccionado umbrales.
+El contrato de preprocesamiento train-only está implementado en [SPEC-DATA-003](10_contrato_preprocesamiento.md). El artefacto vigente se publica en `muestras_preprocesadas_v1_3`; medias, escalas y vocabularios se ajustan solo con `train AND supervised_eligible`, y las transformaciones se aplican a train/validación con el estado congelado. No se generan transformaciones de prueba. La primera RNN seleccionó checkpoint y umbral en validación 2024, con pesos exportados y paridad local comprobada; 2025 permanece reservada.
 
-El primer experimento acordado es una **RNN sencilla**, implementada con una capa recurrente de 32 unidades y una rama estática mínima. Su configuración, notebook de Colab, exportación de pesos y evaluación local están definidos en [SPEC-EXP-001](11_experimento_rnn_inicial.md). El siguiente paso es ejecutar esa referencia en Colab y devolver el paquete exportado para evaluar validación localmente. La MLP y otras arquitecturas quedan para comparaciones posteriores, sin ser un requisito previo.
+El primer experimento acordado es una **RNN sencilla**, implementada con una capa recurrente de 32 unidades y una rama estática mínima. Su configuración, notebook de Colab, exportación de pesos y evaluación local están definidos en [SPEC-EXP-001](11_experimento_rnn_inicial.md). Esa referencia ya se ejecutó y evaluó localmente. La siguiente comparación mantiene arquitectura y entrenamiento y cambia el criterio de selección a F1, según [la especificación 12](12_experimento_rnn_f1.md). La MLP y otras arquitecturas quedan para comparaciones posteriores, sin ser un requisito previo.
 
 El evaluador y el replay cargarán ese mismo paquete y las mismas funciones. Las nuevas categorías se transformarán con una política de desconocidos fijada desde train. Una predicción guardará clave, instante, score/probabilidad, estado de calibración, umbral, horizonte, versión de modelo y alerta. La primera implementación debe poder procesar un piloto y mantener estados aislados si después se procesan varios simultáneamente; el desarrollo del frontend queda a cargo del compañero.
 
@@ -280,7 +280,7 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 4. **Completado:** alineación de etiquetas v3 y particiones cronológicas por carrera, con prueba final reservada.
 5. **Completado:** preprocesamiento train-only publicado en `muestras_preprocesadas_v1_3`, con configuración y estado congelados.
 6. **Implementado:** primer experimento RNN sencillo, F2 positiva, notebook de Colab y exportación/evaluación local; ver especificación 11.
-7. **Pendiente de ejecución:** entrenar la referencia en Colab y evaluar sus pesos localmente sobre validación. Prueba final 2025 reservada.
+7. **Completado:** referencia F2 entrenada en Colab y evaluación local sobre validación. **Preparado:** ensayo F1 de la especificación 12. Prueba final 2025 reservada.
 
 ## 15. Puntos para socializar y cerrar
 

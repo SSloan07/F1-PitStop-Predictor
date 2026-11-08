@@ -1,7 +1,7 @@
 # Primer experimento RNN: referencia reproducible en Colab
 
 **Identificador:** `rnn_v1_seed42`.
-**Estado:** protocolo e implementación inicial; entrenamiento y resultados pendientes. Este documento no presenta métricas experimentales.
+**Estado:** primera corrida F2 entrenada en Colab y evaluada localmente; resultados en [el informe de validación 2024](../aclaraciones/06_resultados_rnn_v1_validacion_2024.md). Este documento conserva el protocolo de referencia.
 **Configuración ejecutable:** [`configs/experimento_rnn_v1.json`](../../configs/experimento_rnn_v1.json).
 **Notebook:** [`notebooks/01_rnn_inicial_colab.ipynb`](../../notebooks/01_rnn_inicial_colab.ipynb).
 

@@ -1,4 +1,4 @@
-"""Binary decision metrics and validation-only F2 threshold selection.
+"""Binary decision metrics and validation-only F1/F2 threshold selection.
 
 The caller owns the data split: select thresholds on validation predictions,
 freeze the result, and only then report metrics on the untouched test set.
@@ -149,18 +149,35 @@ def threshold_curve(
     ]
 
 
-def select_f2_threshold(
-    y_true: Any, probabilities: Any, thresholds: Any
+def select_metric_threshold(
+    y_true: Any, probabilities: Any, thresholds: Any, metric: str = "f2"
 ) -> dict[str, Any]:
-    """Select on validation data: greatest F2, then precision, then threshold.
+    """Select by F1 or F2 on validation, then precision, then threshold.
 
     The candidate grid must be provided explicitly. Its input order and repeated
-    candidates have no effect on the chosen threshold.
+    candidates have no effect on the chosen threshold. The selected metric must
+    be declared before examining validation results.
     """
+    if not isinstance(metric, str) or metric not in ("f1", "f2"):
+        raise ValueError("metric must be 'f1' or 'f2'")
     rows = threshold_curve(y_true, probabilities, thresholds)
-    best = max(rows, key=lambda row: (row["f2"], row["precision"], row["threshold"]))
+    best = max(rows, key=lambda row: (row[metric], row["precision"], row["threshold"]))
     return {
         "threshold": best["threshold"],
         "metrics": {key: value for key, value in best.items() if key != "threshold"},
-        "selection_rule": SELECTION_RULE,
+        "selection_rule": f"maximize_{metric}_then_precision_then_threshold",
     }
+
+
+def select_f2_threshold(
+    y_true: Any, probabilities: Any, thresholds: Any
+) -> dict[str, Any]:
+    """Select by F2 with the original result structure and tie rules."""
+    return select_metric_threshold(y_true, probabilities, thresholds, metric="f2")
+
+
+def select_f1_threshold(
+    y_true: Any, probabilities: Any, thresholds: Any
+) -> dict[str, Any]:
+    """Select by F1, then precision, then the higher candidate threshold."""
+    return select_metric_threshold(y_true, probabilities, thresholds, metric="f1")

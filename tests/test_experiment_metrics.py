@@ -6,7 +6,9 @@ import numpy as np
 
 from f1_pitstop.experiment_metrics import (
     binary_metrics,
+    select_f1_threshold,
     select_f2_threshold,
+    select_metric_threshold,
     threshold_curve,
 )
 
@@ -101,6 +103,52 @@ class BinaryMetricsTests(unittest.TestCase):
 
 
 class ThresholdSelectionTests(unittest.TestCase):
+    def test_declared_f1_and_f2_select_different_thresholds(self):
+        labels, scores, grid = [1, 1, 0, 0, 0], [.9, .6, .6, .6, .6], [.5, .8]
+        # At .8: TP=1, FP=0, FN=1. At .5: TP=2, FP=3, FN=0.
+        # F1 strictly favors .8 (2/3 > 4/7); F2 favors .5 (10/13 > 5/9).
+        f1 = select_metric_threshold(labels, scores, grid, metric="f1")
+        f2 = select_metric_threshold(labels, scores, grid, metric="f2")
+        self.assertEqual(f1["threshold"], .8)
+        self.assertAlmostEqual(f1["metrics"]["f1"], 2 / 3)
+        self.assertAlmostEqual(f1["metrics"]["f2"], 5 / 9)
+        self.assertEqual(f1["selection_rule"], "maximize_f1_then_precision_then_threshold")
+        self.assertEqual(f2["threshold"], .5)
+        self.assertAlmostEqual(f2["metrics"]["f2"], 10 / 13)
+        self.assertAlmostEqual(f2["metrics"]["f1"], 4 / 7)
+        self.assertEqual(select_f1_threshold(labels, scores, grid), f1)
+
+    def test_default_and_explicit_f2_preserve_original_wrapper_result(self):
+        labels, scores, grid = [1, 0, 1], [.9, .5, .3], [.8, .2, .5, .2]
+        expected = {
+            "threshold": .2,
+            "metrics": binary_metrics(labels, scores, .2),
+            "selection_rule": "maximize_f2_then_precision_then_threshold",
+        }
+        self.assertEqual(select_f2_threshold(labels, scores, grid), expected)
+        self.assertEqual(select_metric_threshold(labels, scores, grid), expected)
+        self.assertEqual(select_metric_threshold(labels, scores, grid, metric="f2"), expected)
+
+    def test_equal_f1_prefers_precision(self):
+        # F1 is 2/3 at both thresholds; precision is 1 versus 1/2.
+        result = select_metric_threshold([1, 1, 0, 0], [.9, .6, .6, .6], [.5, .8], metric="f1")
+        self.assertEqual(result["threshold"], .8)
+        self.assertEqual(result["metrics"]["precision"], 1)
+
+    def test_equal_metric_and_precision_prefers_higher_threshold_for_both_metrics(self):
+        for metric in ("f1", "f2"):
+            with self.subTest(metric=metric):
+                result = select_metric_threshold([1, 0], [.9, .1], [.5, .8, .6], metric=metric)
+                self.assertEqual(result["threshold"], .8)
+                negatives = select_metric_threshold([0, 0], [.9, .1], [.8, .2, 1], metric=metric)
+                self.assertEqual(negatives["threshold"], 1)
+
+    def test_invalid_selection_metrics_are_rejected(self):
+        for metric in ("accuracy", "precision", "f3", "F1", "", None, 1, True, ["f1"]):
+            with self.subTest(metric=metric):
+                with self.assertRaisesRegex(ValueError, "metric must be 'f1' or 'f2'"):
+                    select_metric_threshold([1, 0], [.9, .1], [.5], metric=metric)
+
     def test_f2_prefers_recovering_positives_in_analytic_example(self):
         result = select_f2_threshold(
             [1, 1, 1, 1, 0, 0, 0], [.9, .8, .4, .3, .7, .6, .2], [.75, .25]
@@ -137,7 +185,7 @@ class ThresholdSelectionTests(unittest.TestCase):
 
     def test_invalid_grids_are_rejected(self):
         for grid in ([], [[.5]], [.1, np.nan], [.1, np.inf], [-.1], [1.1], [None]):
-            for function in (threshold_curve, select_f2_threshold):
+            for function in (threshold_curve, select_f2_threshold, select_f1_threshold, select_metric_threshold):
                 with self.subTest(grid=grid, function=function.__name__):
                     with self.assertRaises(ValueError):
                         function([1, 0], [.9, .1], grid)

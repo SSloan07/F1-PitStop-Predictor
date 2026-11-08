@@ -1,0 +1,37 @@
+{
+  "kind": "f1_threshold_only_on_frozen_f2_checkpoint",
+  "new_training": false,
+  "split": "validation_2024",
+  "frozen_checkpoint_epoch": 10,
+  "selection": {
+    "threshold": 0.22,
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1363,
+      "fp": 5519,
+      "fn": 952,
+      "tn": 17801,
+      "precision": 0.1980528916012787,
+      "recall": 0.588768898488121,
+      "f1": 0.2964010003261933,
+      "f2": 0.42219055879073225,
+      "false_positives_per_100_decisions": 21.529159352447824,
+      "average_precision": 0.20157750877436803
+    },
+    "selection_rule": "maximize_f1_then_precision_then_threshold"
+  },
+  "event_coverage": {
+    "confirmed_events": 824,
+    "events_with_evaluable_opportunity": 824,
+    "events_without_evaluable_opportunity": 0,
+    "covered_events": 552,
+    "recall_per_evaluable_event": 0.6699029126213593
+  },
+  "hashes": {
+    "weights": "bef673a6ad5349848b2a484c2563f86f65a1ced714af3810b7705c51481b6106",
+    "source_predictions": "26009bbacbcba672e5e38712ed37b2b40f07de1ff712e9c192867ef6d3191ed7",
+    "source_config": "9dda82c141c65aee03ed44e7502934572c2610444e6e9efe1dceb2d5317ac060"
+  },
+  "test_used": false
+}

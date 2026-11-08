@@ -15,7 +15,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
-from .experiment_metrics import binary_metrics, select_f2_threshold, threshold_curve
+from .experiment_metrics import binary_metrics, select_metric_threshold, threshold_curve
 from .rnn_data import KEY, MODEL_ARRAYS, load_split, read_json, sha256, verify_preprocessed, write_json
 from .rnn_model import SmallPitStopRNN, model_spec_from_preprocessor
 
@@ -80,9 +80,36 @@ def prediction_table(data, probabilities, threshold):
     return table
 
 
+def _selection_protocol(config):
+    """Resolve the declared objective, including the original F2 protocol.
+
+    Older F2 configs have no explicit beta. Derive that default from the
+    experiment ID, while rejecting a supplied beta or primary metric that
+    contradicts the ID. Training loss remains unweighted BCE in both cases.
+    """
+    protocols = {
+        "rnn_reference_v1": ("f2", 2),
+        "rnn_reference_f1_v1": ("f1", 1),
+    }
+    experiment_id = config.get("experiment_id")
+    if experiment_id not in protocols:
+        raise ValueError("Unsupported RNN experiment_id")
+    metric, beta = protocols[experiment_id]
+    selection = config.get("selection", {})
+    if not isinstance(selection, dict):
+        raise ValueError("selection must be a configuration object")
+    if selection.get("primary_metric") != f"positive_class_{metric}":
+        raise ValueError("primary_metric must match experiment_id")
+    declared_beta = selection.get("beta", beta)
+    if (isinstance(declared_beta, bool)
+            or not isinstance(declared_beta, (int, float))
+            or declared_beta != beta):
+        raise ValueError("selection.beta must match the declared primary_metric")
+    return metric, beta
+
+
 def _validate_config(config):
-    if config.get("experiment_id") != "rnn_reference_v1":
-        raise ValueError("This implementation requires the rnn_reference_v1 protocol")
+    _selection_protocol(config)
     protocol = config["training"]
     for name in ("batch_size", "max_epochs", "patience"):
         if type(protocol[name]) is not int or protocol[name] < 1:
@@ -104,6 +131,11 @@ def train_experiment(config_path, output, root, device_override=None):
         raise FileExistsError("Choose a new run directory and ZIP filename")
     config = read_json(config_path)
     _validate_config(config)
+    selection_metric, selection_beta = _selection_protocol(config)
+    checkpoint_selection = (
+        f"maximum validation {selection_metric.upper()} at fixed threshold 0.5; "
+        "tie lower validation BCE"
+    )
     package = root / config["preprocessed_package"]
     input_manifest, state = verify_preprocessed(package, config["preprocessed_manifest_sha256"])
     train, validation = load_split(package, "train", state), load_split(package, "validation", state)
@@ -129,10 +161,11 @@ def train_experiment(config_path, output, root, device_override=None):
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / "status.json", {"status": "running", "purpose": config.get("run_purpose", "reference_training")})
     effective_config = copy.deepcopy(config)
+    effective_config["selection"]["beta"] = selection_beta
     effective_config["training"]["device_effective"] = str(device)
     effective_config["training"]["device_override"] = device_override
     write_json(output / "config.json", effective_config)
-    best_f2, best_loss, best_epoch, stale, history = -1.0, float("inf"), 0, 0, []
+    best_score, best_loss, best_epoch, stale, history = -1.0, float("inf"), 0, 0, []
     start = time.perf_counter()
     try:
         for epoch in range(1, protocol["max_epochs"] + 1):
@@ -153,18 +186,21 @@ def train_experiment(config_path, output, root, device_override=None):
             train_metrics = binary_metrics(train.targets, train_probabilities, 0.5)
             probabilities, val_loss = predict(model, validation_loader, device)
             metrics = binary_metrics(validation.targets, probabilities, 0.5)
-            improved = metrics["f2"] > best_f2 or (metrics["f2"] == best_f2 and val_loss < best_loss)
+            score = metrics[selection_metric]
+            improved = score > best_score or (score == best_score and val_loss < best_loss)
             if improved:
-                best_f2, best_loss, best_epoch, stale = metrics["f2"], val_loss, epoch, 0
+                best_score, best_loss, best_epoch, stale = score, val_loss, epoch, 0
                 torch.save({k: value.detach().cpu().clone() for k, value in model.state_dict().items()},
                            output / "weights.pt")
             else:
                 stale += 1
             row = {"epoch": epoch, "train_loss": loss_sum / count,
                    "train_evaluation_loss": train_eval_loss,
+                   "train_f1_at_0_5": train_metrics["f1"],
                    "train_f2_at_0_5": train_metrics["f2"],
                    "train_precision_at_0_5": train_metrics["precision"],
                    "train_recall_at_0_5": train_metrics["recall"], "validation_loss": val_loss,
+                   "validation_f1_at_0_5": metrics["f1"],
                    "validation_f2_at_0_5": metrics["f2"], "validation_precision_at_0_5": metrics["precision"],
                    "validation_recall_at_0_5": metrics["recall"], "checkpoint_selected": improved,
                    "epoch_seconds": time.perf_counter() - epoch_start}
@@ -176,7 +212,11 @@ def train_experiment(config_path, output, root, device_override=None):
         model.load_state_dict(torch.load(output / "weights.pt", map_location=device, weights_only=True))
         probabilities, val_loss = predict(model, validation_loader, device)
         train_probabilities, train_eval_loss = predict(model, training_evaluation_loader, device)
-        selected = select_f2_threshold(validation.targets, probabilities, config["selection"]["threshold_grid"])
+        selected = select_metric_threshold(
+            validation.targets, probabilities, config["selection"]["threshold_grid"],
+            metric=selection_metric,
+        )
+        selected = {**selected, "metric": selection_metric, "beta": selection_beta}
         threshold = selected["threshold"]
         write_json(output / "threshold.json", selected)
         write_json(output / "model_spec.json", model_spec)
@@ -184,7 +224,8 @@ def train_experiment(config_path, output, root, device_override=None):
         write_json(output / "schema.json", state["schema"])
         write_json(output / "metrics.json", {
             "split": "validation", "selection_epoch": best_epoch,
-            "checkpoint_selection": "maximum validation F2 at fixed threshold 0.5; tie lower validation BCE",
+            "selection_metric": selection_metric, "selection_beta": selection_beta,
+            "checkpoint_selection": checkpoint_selection,
             "validation_loss_selected_checkpoint": val_loss,
             "fixed_threshold_0_5": binary_metrics(validation.targets, probabilities, 0.5),
             "selected_threshold": selected,
@@ -214,6 +255,8 @@ def train_experiment(config_path, output, root, device_override=None):
         files = {str(p.relative_to(output)): sha256(p) for p in output.rglob("*") if p.is_file()}
         write_json(output / "manifest.json", {
             "artifact_version": "rnn_reference_bundle_v1", "experiment_id": config["experiment_id"],
+            "selection_metric": selection_metric, "selection_beta": selection_beta,
+            "checkpoint_selection": checkpoint_selection,
             "files_sha256": files, "preprocessed_manifest_sha256": sha256(package / "manifest.json"),
             "preprocessor_sha256": input_manifest["output_files_sha256"]["preprocessor.json"],
             "model_source_sha256": sha256(Path(__file__).parent / "rnn_model.py"),
@@ -305,6 +348,7 @@ def evaluate_bundle(bundle, data, output, device_name="cpu", root=None):
     model.load_state_dict(torch.load(bundle / "weights.pt", map_location="cpu", weights_only=True))
     model.to(device)
     config = read_json(bundle / "config.json")
+    selection_metric, selection_beta = _selection_protocol(config)
     probabilities, loss = predict(model, _loader(validation, config["training"]["batch_size"]), device)
     threshold = read_json(bundle / "threshold.json")["threshold"]
     reference = pd.read_csv(bundle / "validation_predictions.csv.gz", dtype={"DriverNumber": str})
@@ -348,6 +392,7 @@ def evaluate_bundle(bundle, data, output, device_name="cpu", root=None):
     event_table.to_csv(output / "event_coverage.csv", index=False)
     write_json(output / "metrics.json", {
         "split": "validation", "metrics": metrics, "bce": loss, "threshold_frozen": threshold,
+        "selection_metric": selection_metric, "selection_beta": selection_beta,
         "parity_passed": parity, "max_probability_difference": float(delta.max()),
         "threshold_decision_differences": int(np.sum(reference.alert.to_numpy() != table.alert.to_numpy())),
         "excluded_samples": len(validation.metadata) - len(validation.positions),
