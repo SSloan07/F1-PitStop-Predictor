@@ -41,4 +41,4 @@ result = select_metric_threshold(
 print(result)
 ```
 
-Esta búsqueda usa validación y sirve para desarrollo; no es una medición independiente de generalización. No se evaluó ni transformó 2025. La corrida F1 nueva queda pendiente de ejecución en Colab.
+Esta búsqueda usa validación y sirve para desarrollo; no es una medición independiente de generalización. No se evaluó ni transformó 2025. La corrida F1 nueva ya fue ejecutada y evaluada; ver [resultados y comparación](08_resultados_rnn_f1_y_comparacion.md).

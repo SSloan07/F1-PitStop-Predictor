@@ -280,7 +280,7 @@ Los fallos de integridad o fuga temporal bloquean la publicación para entrenami
 4. **Completado:** alineación de etiquetas v3 y particiones cronológicas por carrera, con prueba final reservada.
 5. **Completado:** preprocesamiento train-only publicado en `muestras_preprocesadas_v1_3`, con configuración y estado congelados.
 6. **Implementado:** primer experimento RNN sencillo, F2 positiva, notebook de Colab y exportación/evaluación local; ver especificación 11.
-7. **Completado:** referencia F2 entrenada en Colab y evaluación local sobre validación. **Preparado:** ensayo F1 de la especificación 12. Prueba final 2025 reservada.
+7. **Completado:** referencia F2 entrenada en Colab y evaluación local sobre validación. **Completado:** ensayo F1 de la especificación 12; [comparación y limitación del entorno](../aclaraciones/08_resultados_rnn_f1_y_comparacion.md). Prueba final 2025 reservada.
 
 ## 15. Puntos para socializar y cerrar
 

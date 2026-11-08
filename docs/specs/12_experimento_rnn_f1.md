@@ -2,7 +2,7 @@
 
 **Identificador:** `rnn_reference_f1_v1`.
 **Carpeta de corrida:** `runs/rnn_f1_v1_seed42`.
-**Estado:** implementación y protocolo de la segunda corrida; entrenamiento pendiente. No se anticipan resultados.
+**Estado:** corrida entrenada y evaluada localmente sobre 2024; resultados y comparación en [el informe 08](../aclaraciones/08_resultados_rnn_f1_y_comparacion.md). El entorno efectivo fue CPU y difiere de la referencia T4; el informe documenta esa limitación.
 **Configuración:** [`configs/experimento_rnn_f1_v1.json`](../../configs/experimento_rnn_f1_v1.json).
 **Notebook:** [`notebooks/02_rnn_f1_colab.ipynb`](../../notebooks/02_rnn_f1_colab.ipynb).
 **Referencia F2:** `rnn_reference_v1`, corrida `runs/rnn_v1_seed42` y [configuración F2](../../configs/experimento_rnn_v1.json).
