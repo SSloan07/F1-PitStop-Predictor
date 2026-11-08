@@ -120,3 +120,4 @@ La revisión de `Stint`, `Compound`, `TyreLife` y `FreshTyre` quedó en [Revisi�
 La revisión de ritmo, sectores, velocidades de timing y posición quedó en [Revisión 3](16_revision_ritmo_sectores_posicion.md).
 La revisión de estado de pista y meteorología quedó en [Revisión 4](17_revision_estado_pista_clima.md).
 La revisión de telemetría agregada quedó en [Revisión 5](18_revision_telemetria_agregada.md).
+La propuesta consolidada del baseline quedó en [Lista candidata](19_lista_candidata_baseline.md).
