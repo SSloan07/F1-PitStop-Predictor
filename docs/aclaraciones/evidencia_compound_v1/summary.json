@@ -1,0 +1,90 @@
+{
+  "scope": "representation proposal; no matrix written or approval inferred",
+  "rows": 101290,
+  "markers": {
+    "None": 426,
+    "nan": 354
+  },
+  "races_affected": 5,
+  "by_season": {
+    "2022": 334,
+    "2023": 35,
+    "2025": 411
+  },
+  "by_race": [
+    {
+      "Temporada": 2022,
+      "Ronda": 7,
+      "GranPremio": "Monaco Grand Prix",
+      "Compound": "None",
+      "rows": 35
+    },
+    {
+      "Temporada": 2022,
+      "Ronda": 11,
+      "GranPremio": "Austrian Grand Prix",
+      "Compound": "None",
+      "rows": 299
+    },
+    {
+      "Temporada": 2023,
+      "Ronda": 8,
+      "GranPremio": "Canadian Grand Prix",
+      "Compound": "None",
+      "rows": 35
+    },
+    {
+      "Temporada": 2025,
+      "Ronda": 6,
+      "GranPremio": "Miami Grand Prix",
+      "Compound": "nan",
+      "rows": 354
+    },
+    {
+      "Temporada": 2025,
+      "Ronda": 13,
+      "GranPremio": "Belgian Grand Prix",
+      "Compound": "None",
+      "rows": 57
+    }
+  ],
+  "identified_stints_affected": 18,
+  "driver_race_blocks_without_stint": 15,
+  "reconstructed_marker_rows": 390,
+  "reconstruction_changes_nonmarkers": 0,
+  "remaining_reconstructed_markers": {
+    "nan": 354,
+    "None": 36
+  },
+  "legacy_null_original_values": {
+    "nan": 354,
+    "None": 36
+  },
+  "proposed_normalization": {
+    "source": "master",
+    "new_nulls": 780,
+    "rows_preserved": true,
+    "other_columns_unchanged": true,
+    "idempotent": true
+  },
+  "miami_nan_rows_before_first_source_update": 354,
+  "pandas_version": "2.3.3",
+  "cache_parser_version_note": "Caches contain parser version 15, not acquisition package version",
+  "input_sha256": {
+    "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025.pkl": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+    "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_reconstruido.pkl": "60e9244ed6e9170c9882a7a487993bbaab90b406415a045d7db82b123ac6fa67",
+    "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_limpieza_v1.pkl": "7a6e60d5efcb53f8ae62bf2a953ec0a4d6b8d23d23e7c7e3a2a9dee0d82ac340",
+    "EDA/dataset/datos_carreras_completos_2022_2025/2022_07.pkl": "3a7b855d8924544294d9cc7784061513b9fd58e1a4c5e9011ea3f1aa87c29c9a",
+    "EDA/dataset/cache_fastf1_carreras/2022/2022-05-29_Monaco_Grand_Prix/2022-05-29_Race/timing_app_data.ff1pkl": "3c02d3c9f553fe9f1c558dd94a979c0f47be8878a051121de4215ccd99116374",
+    "EDA/dataset/datos_carreras_completos_2022_2025/2022_11.pkl": "e383c69b28de5b865cc043d9ce86fe9aab46c0f84eb986ac94a2289dac1be72e",
+    "EDA/dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl": "2f6009d30b7b9914900d3c6a87407ee84535dda170c4477bad203e20565aaf71",
+    "EDA/dataset/datos_carreras_completos_2022_2025/2023_08.pkl": "17a40eb798eccbd99151d1eedbc6457dc38828ad01da1ec0ca065f857457238b",
+    "EDA/dataset/cache_fastf1_carreras/2023/2023-06-18_Canadian_Grand_Prix/2023-06-18_Race/timing_app_data.ff1pkl": "9f6b35f2d5ea37af80c3ac2b44f76c2004629a379fbb421a25b9873cd0b68220",
+    "EDA/dataset/datos_carreras_completos_2022_2025/2025_06.pkl": "d19198b9f8db6046cdce2dd6aee0fbf819e04c549e52ca7d99b83a437a99cbd4",
+    "EDA/dataset/cache_fastf1_carreras/2025/2025-05-04_Miami_Grand_Prix/2025-05-04_Race/timing_app_data.ff1pkl": "179d54f66c23b77a1dc464eac5b707675589f7c0b1e4d5f8852d49fe0fe659aa",
+    "EDA/dataset/datos_carreras_completos_2022_2025/2025_13.pkl": "b0d1407566dc327b526cd0de6e4ec660d7335a7b8c2cdf47d5f56eb91bdfa966",
+    "EDA/dataset/cache_fastf1_carreras/2025/2025-07-27_Belgian_Grand_Prix/2025-07-27_Race/timing_app_data.ff1pkl": "a60f79aa0a57b7e63fc21f01b4fda24ea76112d96ecf17149ad971af276c0bdd"
+  },
+  "inputs_unchanged": true,
+  "analysis_script_sha256": "cf3940e2377b91667768577095cc7a39d3a78e0b78367831ed3f268c4f2f99f2"
+}

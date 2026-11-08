@@ -1,0 +1,628 @@
+[
+  {
+    "Temporada": 2022,
+    "Ronda": 7,
+    "GranPremio": "Monaco Grand Prix",
+    "DriverNumber": "18",
+    "Stint": 5.0,
+    "rows": 35,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD",
+      "INTERMEDIATE"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 02:27:25.820000",
+        "Compound": "INTERMEDIATE"
+      },
+      {
+        "Time": "0 days 02:45:15.883000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "10",
+    "Stint": 3.0,
+    "rows": 30,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:18:26.990000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "20",
+    "Stint": 3.0,
+    "rows": 29,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:20:47.064000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "23",
+    "Stint": 3.0,
+    "rows": 28,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:19:22.009000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "3",
+    "Stint": 3.0,
+    "rows": 26,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:18:37.003000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "31",
+    "Stint": 3.0,
+    "rows": 27,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:21:52.063000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "4",
+    "Stint": 3.0,
+    "rows": 27,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:19:52.053000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "47",
+    "Stint": 3.0,
+    "rows": 27,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:22:22.061000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "5",
+    "Stint": 3.0,
+    "rows": 25,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "MEDIUM"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:27:17.045000",
+        "Compound": "MEDIUM"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "55",
+    "Stint": 3.0,
+    "rows": 6,
+    "generated_rows": 1,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:34:37.118000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "6",
+    "Stint": 3.0,
+    "rows": 13,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:18:32.002000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "63",
+    "Stint": 3.0,
+    "rows": 31,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:17:01.962000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2022,
+    "Ronda": 11,
+    "GranPremio": "Austrian Grand Prix",
+    "DriverNumber": "77",
+    "Stint": 3.0,
+    "rows": 30,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:15:56.956000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2023,
+    "Ronda": 8,
+    "GranPremio": "Canadian Grand Prix",
+    "DriverNumber": "22",
+    "Stint": 3.0,
+    "rows": 35,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "HARD"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 01:06:01.302000",
+        "Compound": "HARD"
+      }
+    ]
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "1",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "10",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "12",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "14",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "16",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "22",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "23",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "27",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "30",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "4",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "44",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "55",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "63",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "81",
+    "Stint": null,
+    "rows": 24,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 6,
+    "GranPremio": "Miami Grand Prix",
+    "DriverNumber": "87",
+    "Stint": null,
+    "rows": 23,
+    "generated_rows": 0,
+    "raw_values": [
+      "nan"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [],
+    "source_physical_updates": []
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 13,
+    "GranPremio": "Belgian Grand Prix",
+    "DriverNumber": "12",
+    "Stint": 3.0,
+    "rows": 14,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "MEDIUM"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 02:43:36.900000",
+        "Compound": "MEDIUM"
+      }
+    ]
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 13,
+    "GranPremio": "Belgian Grand Prix",
+    "DriverNumber": "14",
+    "Stint": 3.0,
+    "rows": 15,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "MEDIUM"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 02:41:31.818000",
+        "Compound": "MEDIUM"
+      }
+    ]
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 13,
+    "GranPremio": "Belgian Grand Prix",
+    "DriverNumber": "27",
+    "Stint": 3.0,
+    "rows": 12,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "MEDIUM"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 02:41:31.818000",
+        "Compound": "MEDIUM"
+      }
+    ]
+  },
+  {
+    "Temporada": 2025,
+    "Ronda": 13,
+    "GranPremio": "Belgian Grand Prix",
+    "DriverNumber": "43",
+    "Stint": 3.0,
+    "rows": 16,
+    "generated_rows": 0,
+    "raw_values": [
+      "None"
+    ],
+    "source_stint_mapping": "raw source Stint = matrix Stint - 1; diagnostic only",
+    "source_physical_compounds": [
+      "MEDIUM"
+    ],
+    "source_physical_updates": [
+      {
+        "Time": "0 days 02:43:31.876000",
+        "Compound": "MEDIUM"
+      }
+    ]
+  }
+]
