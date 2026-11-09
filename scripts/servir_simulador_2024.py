@@ -6,6 +6,10 @@ from datetime import timedelta
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import hashlib
 import json
+import pickle
+import threading
+
+import numpy as np
 from pathlib import Path
 import sys
 from urllib.parse import parse_qs, urlparse
@@ -28,6 +32,7 @@ SAMPLE_INDEX = ROOT / "EDA/dataset/muestras_causales_v1_3/sample_index.csv.gz"
 SAMPLE_INDEX_SHA256 = "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb"
 APP = ROOT / "Frontend/app"
 CATALOG_PATH = ROOT / "configs/simulador_modelos_2024.json"
+CACHE_ROOT = ROOT / "EDA/dataset/cache_fastf1_carreras/2024"
 
 
 def sha256(path: Path) -> str:
@@ -58,6 +63,215 @@ def finite(value):
     if isinstance(value, float) and not (-float("inf") < value < float("inf")):
         return None
     return value
+
+
+
+
+class TelemetryReplay:
+    """Lazy, point-in-time coordinates and speed from local FastF1 race caches."""
+    def __init__(self, cache_dirs):
+        self.cache_dirs = cache_dirs
+        self._cache = {}
+        self._lock = threading.RLock()
+
+    @staticmethod
+    def _read(path):
+        with path.open("rb") as stream:
+            wrapped = pickle.load(stream)
+        return wrapped.get("data", wrapped) if isinstance(wrapped, dict) else wrapped
+
+    @staticmethod
+    def _arrays(frame, fields, anchor=None):
+        if not {"Date", "Time", *fields}.issubset(frame.columns):
+            return None
+        date = pd.to_datetime(frame["Date"], errors="coerce")
+        date_valid = date.notna().to_numpy()
+        date_epoch = date.astype("int64").to_numpy(dtype=np.float64) / 1e9
+        source_time = pd.to_timedelta(frame["Time"], errors="coerce").dt.total_seconds().to_numpy(dtype=np.float64)
+        if anchor is None:
+            offsets_mask = date_valid & np.isfinite(source_time)
+            return date_epoch, source_time, offsets_mask
+        session_time = date_epoch - anchor
+        result = {"time": session_time.astype(np.float32)}
+        for name in fields:
+            result[name.lower()] = pd.to_numeric(frame[name], errors="coerce").to_numpy(dtype=np.float32)
+        valid = date_valid & np.isfinite(session_time)
+        for name in fields:
+            valid &= np.isfinite(result[name.lower()])
+        if "X" in fields and "Y" in fields:
+            valid &= (result["x"] != 0) | (result["y"] != 0)
+        for name in result:
+            result[name] = result[name][valid]
+        if not len(result["time"]):
+            return None
+        order = np.argsort(result["time"], kind="stable")
+        for name in result:
+            result[name] = result[name][order]
+        return result
+
+    def _load(self, round_number, race_rows, events):
+        with self._lock:
+            return self._load_unlocked(round_number, race_rows, events)
+
+    def _load_unlocked(self, round_number, race_rows, events):
+        if round_number in self._cache:
+            return self._cache[round_number]
+        folder = self.cache_dirs.get(round_number)
+        if folder is None:
+            raise RuntimeError(f"No local FastF1 telemetry cache for round {round_number}")
+        position_frames = self._read(folder / "position_data.ff1pkl")
+        car_frames = self._read(folder / "car_data.ff1pkl")
+        offset_samples = []
+        for frames in (position_frames, car_frames):
+            for frame in frames.values():
+                if not isinstance(frame, pd.DataFrame) or not {"Date", "Time"}.issubset(frame.columns):
+                    continue
+                date = pd.to_datetime(frame["Date"], errors="coerce")
+                date_valid = date.notna().to_numpy()
+                epoch = date.astype("int64").to_numpy(dtype=np.float64) / 1e9
+                session_time = pd.to_timedelta(frame["Time"], errors="coerce").dt.total_seconds().to_numpy(dtype=np.float64)
+                valid = date_valid & np.isfinite(session_time)
+                indexes = np.flatnonzero(valid)
+                if len(indexes):
+                    stride = max(1, len(indexes) // 250)
+                    offset_samples.extend((epoch[indexes[::stride]] - session_time[indexes[::stride]]).tolist())
+        if not offset_samples:
+            raise RuntimeError(f"No timestamps in telemetry cache for round {round_number}")
+        anchor = float(np.median(np.asarray(offset_samples, dtype=np.float64)))
+        positions = {}
+        speeds = {}
+        for driver, frame in position_frames.items():
+            if isinstance(frame, pd.DataFrame):
+                arrays = self._arrays(frame, ("X", "Y"), anchor)
+                if arrays is not None:
+                    positions[clean_driver(driver)] = arrays
+        for driver, frame in car_frames.items():
+            if isinstance(frame, pd.DataFrame):
+                arrays = self._arrays(frame, ("Speed",), anchor)
+                if arrays is not None:
+                    speeds[clean_driver(driver)] = arrays
+        metadata = {}
+        for row in race_rows:
+            driver = clean_driver(row["DriverNumber"])
+            metadata.setdefault(driver, {"driver": str(row["Driver"]), "team": str(row.get("Team") or "")})
+        track_points = []
+        for row in sorted(race_rows, key=lambda x: (x["lap"], x["DriverNumber"])):
+            duration = seconds(row.get("Time")) - seconds(row.get("LapStartTime"))
+            if not 40 <= duration <= 180:
+                continue
+            series = positions.get(clean_driver(row["DriverNumber"]))
+            if series is None:
+                continue
+            start = seconds(row.get("LapStartTime"))
+            end = seconds(row.get("Time"))
+            left = int(np.searchsorted(series["time"], start, side="left"))
+            right = int(np.searchsorted(series["time"], end, side="right"))
+            if right - left < 80:
+                continue
+            track_points = self._decimate(series["x"][left:right], series["y"][left:right], 700)
+            if len(track_points) >= 40:
+                break
+        pit_lane = []
+        for event in events:
+            driver = clean_driver(event["DriverNumber"])
+            series = positions.get(driver)
+            entry = finite(event.get("entry_seconds"))
+            exit_time = finite(event.get("exit_seconds"))
+            if series is None or entry is None or exit_time is None or exit_time <= entry:
+                continue
+            left = int(np.searchsorted(series["time"], max(0.0, entry - 4.0), side="left"))
+            right = int(np.searchsorted(series["time"], exit_time + 4.0, side="right"))
+            if right - left >= 25:
+                pit_lane = self._decimate(series["x"][left:right], series["y"][left:right], 180)
+                break
+        stops = {}
+        for event in events:
+            driver = clean_driver(event["DriverNumber"])
+            series = speeds.get(driver)
+            entry = finite(event.get("entry_seconds"))
+            exit_time = finite(event.get("exit_seconds"))
+            if series is None or entry is None or exit_time is None or exit_time <= entry:
+                continue
+            left = int(np.searchsorted(series["time"], entry, side="left"))
+            right = int(np.searchsorted(series["time"], exit_time, side="right"))
+            if right <= left:
+                continue
+            local_speeds = series["speed"][left:right]
+            stopped = np.flatnonzero(local_speeds <= 2.0)
+            if not len(stopped):
+                continue
+            start_index = left + int(stopped[0])
+            start_time = float(series["time"][start_index])
+            moving_after = np.flatnonzero((series["time"][start_index + 1:right] > start_time) & (series["speed"][start_index + 1:right] > 2.0))
+            end_time = float(series["time"][start_index + 1 + int(moving_after[0])]) if len(moving_after) else min(exit_time, float(series["time"][right - 1]))
+            stops[str(event["event_id"])] = {
+                "driver": driver, "entry_lap": int(event["entry_lap"]), "entry": entry,
+                "exit": exit_time, "start": start_time, "end": max(start_time, end_time),
+            }
+        loaded = {"positions": positions, "speeds": speeds, "metadata": metadata,
+                  "track": {"points": track_points, "pit_lane": pit_lane}, "stops": stops}
+        self._cache = {round_number: loaded}
+        return loaded
+
+    @staticmethod
+    def _decimate(xs, ys, maximum):
+        if len(xs) <= maximum:
+            indexes = np.arange(len(xs))
+        else:
+            indexes = np.linspace(0, len(xs) - 1, maximum).astype(np.int64)
+        return [[float(xs[i]), float(ys[i])] for i in indexes]
+
+    def track(self, round_number, race_rows, events):
+        data = self._load(round_number, race_rows, events)
+        return {"round": round_number, **data["track"]}
+
+    def snapshot(self, round_number, now, since, race_rows, events, risks, event_matches):
+        data = self._load(round_number, race_rows, events)
+        leaderboard = {clean_driver(row["DriverNumber"]): row for row in race_rows if float(row["time_seconds"]) <= now}
+        risk_by_driver = {risk["driver"]: risk for risk in risks}
+        actual_by_driver = {}
+        for event in events:
+            entry = finite(event.get("entry_seconds"))
+            exit_time = finite(event.get("exit_seconds"))
+            if entry is not None and exit_time is not None and entry <= now <= exit_time:
+                actual_by_driver[clean_driver(event["DriverNumber"])] = event
+        cars = []
+        for driver, series in data["positions"].items():
+            index = bisect_right(series["time"], now) - 1
+            if index < 0 or now - float(series["time"][index]) > 5.0:
+                continue
+            x = float(series["x"][index]); y = float(series["y"][index])
+            speed = data["speeds"].get(driver)
+            speed_value = None
+            if speed is not None:
+                speed_index = bisect_right(speed["time"], now) - 1
+                if speed_index >= 0 and now - float(speed["time"][speed_index]) <= 5.0:
+                    speed_value = float(speed["speed"][speed_index])
+            meta = data["metadata"].get(driver, {"driver": driver, "team": ""})
+            lap_row = leaderboard.get(driver)
+            risk = risk_by_driver.get(driver, {})
+            actual = actual_by_driver.get(driver)
+            stopped = any(stop["driver"] == driver and stop["start"] <= now <= stop["end"] for stop in data["stops"].values())
+            cars.append({
+                "driver": meta["driver"], "driver_number": driver, "team": meta["team"],
+                "x": x, "y": y, "position": None if lap_row is None else finite(lap_row.get("position")),
+                "lap": None if lap_row is None else int(lap_row["lap"]), "speed_kph": speed_value,
+                "alert": bool(risk.get("alert", False)), "probability": finite(risk.get("probability")),
+                "in_pit": actual is not None, "stopped": stopped,
+                "pit_lap": None if actual is None else int(actual["entry_lap"]),
+            })
+        cars.sort(key=lambda item: (float("inf") if item["position"] is None else item["position"], item["driver_number"]))
+        new_stops = []
+        for event_id, stop in data["stops"].items():
+            if since < stop["start"] <= now:
+                new_stops.append({
+                    "event_id": event_id, "driver": data["metadata"].get(stop["driver"], {"driver": stop["driver"]})["driver"],
+                    "entry_lap": stop["entry_lap"], "stop_seconds": stop["start"],
+                    "duration_seconds": max(0.0, stop["end"] - stop["start"]),
+                    "predicted": event_matches.get(event_id, False),
+                })
+        new_stops.sort(key=lambda item: item["stop_seconds"])
+        return {"cars": cars, "new_actual_stops": new_stops}
 
 
 class ReplayStore:
@@ -101,6 +315,7 @@ class ReplayStore:
         events = events.loc[events.Temporada.eq(2024) & events.event_status.eq("pit_stop")].copy()
         events["DriverNumber"] = events.DriverNumber.map(clean_driver)
         events["entry_seconds"] = events.entry_time.map(seconds)
+        events["exit_seconds"] = events.exit_time.map(seconds)
         self.race_events = {}
         for round_number, frame in events.groupby("Ronda", sort=True):
             rows = frame.sort_values("entry_seconds").to_dict("records")
@@ -123,6 +338,25 @@ class ReplayStore:
         if len(self.races) != 24:
             raise RuntimeError(f"Expected 24 validation races in 2024; got {len(self.races)}")
         self.race_by_round = {race["round"]: race for race in self.races}
+        race_round_by_name = {race["name"].casefold(): race["round"] for race in self.races}
+        cache_dirs = {}
+        for info_path in CACHE_ROOT.glob("*/*_Race/session_info.ff1pkl"):
+            try:
+                info = self._load_fastf1_cache(info_path)
+                name = str(info["Meeting"]["Name"]).casefold()
+                if name in race_round_by_name:
+                    cache_dirs[race_round_by_name[name]] = info_path.parent
+            except Exception as exc:
+                raise RuntimeError(f"Invalid FastF1 session cache: {info_path.relative_to(ROOT)}") from exc
+        if len(cache_dirs) != 24:
+            raise RuntimeError(f"Expected telemetry caches for 24 validation races; got {len(cache_dirs)}")
+        self.telemetry = TelemetryReplay(cache_dirs)
+
+    @staticmethod
+    def _load_fastf1_cache(path):
+        with path.open("rb") as stream:
+            cached = pickle.load(stream)
+        return cached.get("data", cached) if isinstance(cached, dict) else cached
 
     def _load_model(self, entry, time_by_sample):
         zip_path = ROOT / entry["zip"]
@@ -279,6 +513,11 @@ class ReplayStore:
             summary = {"confirmed_pit_events": len(events), "evaluable_events": len(evaluable),
                        "covered_events": covered, "event_recall": None if not evaluable else covered / len(evaluable),
                        "scope": "2024 validation; development result, not an independent test"}
+        event_matches = {str(event["event_id"]): self._event_covered(model, round_number, event)
+                         for event in all_events if float(event["entry_seconds"]) <= now}
+        telemetry_snapshot = self.telemetry.snapshot(
+            round_number, now, since, all_rows, all_events, current_risks, event_matches,
+        )
         return {
             "model_id": model_id, "race": race, "time_seconds": now, "current_lap": current_lap,
             "leaderboard": leaderboard, "risks": current_risks, "new_alerts": new_alerts,
@@ -286,7 +525,8 @@ class ReplayStore:
             "new_actual_pits": [{"event_id": str(e["event_id"]), "driver": str(e["DriverNumber"]),
                                  "entry_lap": int(e["entry_lap"]), "entry_seconds": float(e["entry_seconds"]),
                                  "predicted": bool(e["predicted"])} for e in due_events],
-            "summary": summary,
+            "summary": summary, "cars": telemetry_snapshot["cars"],
+            "new_actual_stops": telemetry_snapshot["new_actual_stops"],
         }
 
     def _event_covered(self, model, round_number, event):
@@ -313,6 +553,15 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({"season": 2024, "scope": "development validation", "models": self.store.model_public,
                             "races": self.store.races, "default_round": 11,
                             "notice": "Predicciones de validación reproducidas a su decision_time. La temporada 2025 queda reservada y no participa en el replay."})
+            elif route == "/api/track":
+                round_number = int(query.get("round", ["11"])[0])
+                if round_number not in self.store.race_by_round:
+                    raise ValueError("Unknown race")
+                track = self.store.telemetry.track(
+                    round_number, self.store.race_rows[round_number],
+                    self.store.race_events.get(round_number, []),
+                )
+                self._json(track)
             elif route == "/api/snapshot":
                 model_id = query.get("model_id", [""])[0]
                 round_number = int(query.get("round", ["11"])[0])

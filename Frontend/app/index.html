@@ -43,6 +43,13 @@
 
     <section class="metric-strip" id="metricStrip"></section>
 
+    <section class="panel track-panel">
+      <div class="section-heading"><div><p class="eyebrow">TELEMETRÍA HISTÓRICA · FASTF1</p><h2>Autos en pista</h2></div><span id="trackStatus" class="track-status">Cargando coordenadas…</span></div>
+      <p class="hint">Halo rojo: alerta del modelo · ámbar: pit entry real · verde: detención registrada por velocidad. La animación usa coordenadas históricas; las alertas conservan su instante causal.</p>
+      <div class="track-canvas"><svg id="trackSvg" viewBox="0 0 1000 560" role="img" aria-label="Mapa del circuito con las posiciones históricas de los autos"><text x="500" y="280" text-anchor="middle" class="track-placeholder">Cargando trazado…</text></svg></div>
+      <div class="track-legend"><span><i class="legend-car"></i>Posición por telemetría X/Y</span><span><i class="legend-alert"></i>Alerta</span><span><i class="legend-pit"></i>Pit entry</span><span><i class="legend-stop"></i>Auto detenido</span></div>
+    </section>
+
     <section class="main-grid">
       <section class="panel leaderboard-panel">
         <div class="section-heading"><div><p class="eyebrow">ESTADO CONOCIDO EN LA REPRODUCCIÓN</p><h2>Clasificación</h2></div><span id="clockLabel" class="clock">00:00:00</span></div>
