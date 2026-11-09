@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e13">
+  <title>Pitwall · Replay 2024</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark">//</span><span>PITWALL <b>RNN</b></span></a>
+      <div class="season-pill"><span class="live-dot"></span> REPLAY HISTÓRICO · VALIDACIÓN 2024</div>
+      <div class="holdout">2025 <span>RESERVADO</span></div>
+    </header>
+
+    <section class="race-heading panel">
+      <div>
+        <p class="eyebrow">SIMULADOR DE ESTRATEGIA</p>
+        <h1 id="raceName">Cargando carrera…</h1>
+        <p class="subheading"><span id="raceSeason">2024</span> · <span id="raceProgress">Vuelta — / —</span> · reproducción por tiempo de sesión</p>
+      </div>
+      <div class="race-picker">
+        <label for="raceSelect">Carrera</label>
+        <select id="raceSelect" aria-label="Seleccionar carrera"></select>
+      </div>
+    </section>
+
+    <section class="control-row panel">
+      <div class="model-picker">
+        <label for="modelSelect">Modelo para probar</label>
+        <select id="modelSelect" aria-label="Seleccionar modelo"></select>
+      </div>
+      <div class="model-meta" id="modelMeta"></div>
+      <div class="play-controls">
+        <button id="resetButton" class="icon-button" title="Reiniciar">↺</button>
+        <button id="playButton" class="play-button" title="Reproducir">▶</button>
+        <label class="speed-picker">Velocidad
+          <select id="speedSelect"><option value="1">1×</option><option value="4">4×</option><option value="16">16×</option><option value="60" selected>60×</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="metric-strip" id="metricStrip"></section>
+
+    <section class="main-grid">
+      <section class="panel leaderboard-panel">
+        <div class="section-heading"><div><p class="eyebrow">ESTADO CONOCIDO EN LA REPRODUCCIÓN</p><h2>Clasificación</h2></div><span id="clockLabel" class="clock">00:00:00</span></div>
+        <p class="hint">Posiciones al último cierre de vuelta disponible; las predicciones aparecen en su instante de decisión.</p>
+        <div class="table-wrap"><table><thead><tr><th>P</th><th>Piloto</th><th>V</th><th>Neumático</th><th>Riesgo de pit</th></tr></thead><tbody id="leaderboard"></tbody></table></div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="panel alert-panel">
+          <div class="section-heading"><div><p class="eyebrow">SALIDA DEL MODELO</p><h2>Alertas</h2></div><span id="alertCount" class="count-badge">0</span></div>
+          <p class="hint">Probabilidad de entrada a boxes en la vuelta de decisión o en las dos siguientes.</p>
+          <div id="riskList" class="risk-list"><div class="empty-state">Inicia la reproducción para ver riesgos.</div></div>
+        </section>
+        <section class="panel feed-panel">
+          <div class="section-heading"><div><p class="eyebrow">EVENTOS REVELADOS AL OCURRIR</p><h2>Registro</h2></div></div>
+          <div id="eventFeed" class="event-feed"><div class="empty-state">Todavía no hay eventos en pantalla.</div></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="panel timeline-panel">
+      <div class="section-heading"><div><p class="eyebrow">REPLAY CAUSAL</p><h2>Tiempo de sesión</h2></div><span id="lapBadge" class="lap-badge">VUELTA —</span></div>
+      <div class="timeline-labels"><span>Inicio</span><span id="timelineEnd">Meta</span></div>
+      <input id="timeSlider" type="range" min="0" max="1" value="0" step="1" aria-label="Avance de la carrera">
+      <div class="timeline-footer"><span id="timeReadout">00:00:00</span><span>2025 queda reservada; no se usa en esta simulación.</span></div>
+    </section>
+
+    <footer><span>Predicciones históricas generadas por checkpoints exportados.</span><span>Las métricas mostradas son de desarrollo sobre 2024.</span></footer>
+  </main>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

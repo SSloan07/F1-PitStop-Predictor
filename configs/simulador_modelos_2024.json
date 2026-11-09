@@ -1,0 +1,87 @@
+{
+  "schema_version": "pitwall_model_replay_v1",
+  "season": 2024,
+  "validation_split": "2024",
+  "models": [
+    {
+      "id": "rnn32_f2",
+      "name": "RNN32 · F2",
+      "family": "RNN",
+      "architecture": "RNN tanh · 32 unidades",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/rnn16_vs_rnn32_f2_v1_seed42.zip",
+      "sha256": "934e084b8dc8cd671b61ec59931a6bb3d7f8f06cda58ca4a11af766c87af7b67",
+      "child": "rnn32_reference"
+    },
+    {
+      "id": "rnn16_f2",
+      "name": "RNN16 · F2",
+      "family": "RNN",
+      "architecture": "RNN tanh · 16 unidades",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/rnn16_vs_rnn32_f2_v1_seed42.zip",
+      "sha256": "934e084b8dc8cd671b61ec59931a6bb3d7f8f06cda58ca4a11af766c87af7b67",
+      "child": "rnn16_candidate"
+    },
+    {
+      "id": "rnn32_dropout02_f2",
+      "name": "RNN32 dropout 0,2 · F2",
+      "family": "RNN",
+      "architecture": "RNN tanh · 32 unidades · dropout 0,2",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/rnn32_dropout02_f2_v2_seed42.zip",
+      "sha256": "96b4af9a62e08ed8472bb0b7c351f54ef81392380cbd59c54760a0c7c9e80f4e",
+      "child": "rnn32_dropout"
+    },
+    {
+      "id": "lstm32_f2",
+      "name": "LSTM32 · F2",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · 1 capa",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/rnn32_lstm_vs_rnn_f2_v1_seed42.zip",
+      "sha256": "21a3d1c53514e51061c3f6d3d0588e968970c61145b6475d5221bb58e79de27e",
+      "child": "lstm32_candidate"
+    },
+    {
+      "id": "lstm32_dropout02_f2",
+      "name": "LSTM32 dropout 0,2 · F2",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · dropout 0,2",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/lstm32_dropout02_f2_v1_seed42.zip",
+      "sha256": "97ff3d0fea6306c5e700c0a94c8fd807814f63448edf7f18e95939d9177aa1d3",
+      "child": "lstm32_dropout"
+    },
+    {
+      "id": "lstm32_two_layer_f2",
+      "name": "LSTM32 · 2 capas · F2",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · 2 capas · dropout 0,2",
+      "objective": "Checkpoint y umbral por F2",
+      "zip": "runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip",
+      "sha256": "99e372b89d994146bceebd00c07c78b5e77b748b6dfba39305d9980e44b7d8db",
+      "child": "lstm32_two_layer"
+    },
+    {
+      "id": "lstm32_pos_weight2_f2",
+      "name": "LSTM32 · BCE pos_weight 2",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · dropout 0,2",
+      "objective": "BCE ponderada · selección F2",
+      "zip": "runs/lstm32_pos_weight2_f2_cpu_v1_seed42.zip",
+      "sha256": "ca1b2bb5adcc784910c6b56063acf2c8ce1591b157b36b3cf915dc814de6d481",
+      "child": "lstm32_pos_weight2"
+    },
+    {
+      "id": "lstm32_f1",
+      "name": "LSTM32 · objetivo F1",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · dropout 0,2",
+      "objective": "Checkpoint y umbral por F1",
+      "zip": "runs/lstm32_f1_objective_cpu_v1_seed42.zip",
+      "sha256": "85e4d07c6860cb7902d31ed90de387343accc81beb84d20d69a72559bc5a61b6",
+      "child": "lstm32_f1"
+    }
+  ]
+}
