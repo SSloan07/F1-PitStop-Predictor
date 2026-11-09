@@ -1,0 +1,925 @@
+{
+  "schema_version": "experiment_family_v1",
+  "sources_sha256": {
+    "eval/rnn_v1_validation/metrics.json": "4ef4496d1528c1f66f4ca0385294fbac5cf13b05d92f642c0301b13eca02cad6",
+    "eval/rnn_f1_v1_validation/metrics.json": "96fd432a941500e4ebbc57dc9f7a25bb96dbb6979cdf687d89c86a6bbceeeb36",
+    "docs/aclaraciones/evidencia_control_f1_v1/control.json": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297",
+    "runs/rnn_v1_seed42/manifest.json": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "runs/rnn_f1_v1_seed42/manifest.json": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d",
+    "runs/rnn_v1_seed42/environment.json": "e34a076c2d49aa26d693f13b420c4065239b6cbdc40a70782a7151311af6101f",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_manifest.json": "7fdfc79832fc1b1d6e46f997cc427e026fb91575e2f4381e317e88562d192afd",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/pair_environment.json": "10e01917e0d423d210ddeb918da1d9a1425629d1b23ab7b898675b8bb7b0b006",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/manifest.json": "ba9e22fce0304fab7e2f25809ac51963e61be2cdf91562a49bf5b5cd8ea0b72a",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/manifest.json": "d13bf5659a783092adf7fa92035d4ee04c1b2dd81b8fc0ee15b7bb85c9172340",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/model_spec.json": "7f5ef299db4f1bd674c51cca83e0e1de59dd615881409ea374724fb0fc58cec0",
+    "runs/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/model_spec.json": "6812ce3ce14ba8d163bf8602492fa1265e50480a80cc1f7e864a27d1a0a4fd8d",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3",
+    "eval/rnn16_vs_rnn32_f2_v1_seed42/rnn16_candidate/metrics.json": "5dcf39715503f7737472bf51be82444614e0c4f4db8897d31d444e86589e1459",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_manifest.json": "7470d0993c285d01b39e10185b7f2677ab38aa30e9838fa79ae2e4c8bb29b3c7",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_environment.json": "534d358bc1bcdef1dec8b41a610993a5d55f47163abf489cacdb3e536fd3fcd8",
+    "runs/rnn32_dropout02_f2_v2_seed42/pair_summary.json": "6e2b65baf806b1456bb2b429aa99fd6160efaf82d3872a365949fa48468729d7",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_reference/manifest.json": "af625e216ef93e753a166dd830f040f41bdfbb1076f9cc3fcf3312e8301ac996",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/manifest.json": "c0d3b1f6c3710f1a1853515fdf0924f20f556f43e0bec879114e53cbc79a2d8e",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_reference/model_spec.json": "20d5ea6de6b4166f182aaf670b52da074bd6b0502128c010fa8f0e887504e8dd",
+    "runs/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/model_spec.json": "836281d3f8b03c454b3a70bb7026a1781d1967dc8408c16c1d41f132c20a104c",
+    "eval/rnn32_dropout02_f2_v2_seed42/rnn32_reference/metrics.json": "a98637c9c486da17a207ec08afad0a42c04ef9f1fee6dcf115a2476583b9e4b3",
+    "eval/rnn32_dropout02_f2_v2_seed42/rnn32_dropout/metrics.json": "d8ff5ac78d125624a44115935fdf79ffe5fc8afdde1a0d8bb261ab16af22f09a",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/pair_manifest.json": "f2cafd85b94cfc7a567390579757d0f0c6517558f1a13ad5d15ca8c638113840",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/pair_environment.json": "9411d4d4105606ae99963c9c789444f9dc7edf73eeb41724022ca46351251e77",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/pair_summary.json": "e78ebb98c7d00c433f7506ad22503e88c65bf0103183c12d7c3e0273f57d1b68",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/rnn32_reference/manifest.json": "84e8f01767a9fd41645546b3169b6d763dcafc456f00bad05049210add630f14",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/lstm32_candidate/manifest.json": "d13f9f52e2506a5dd55328e2160d5726912a347dfefbef71547b35aec5d33228",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/rnn32_reference/model_spec.json": "20d5ea6de6b4166f182aaf670b52da074bd6b0502128c010fa8f0e887504e8dd",
+    "runs/rnn32_lstm_vs_rnn_f2_v1_seed42/lstm32_candidate/model_spec.json": "81a9ea961f634b6e657c773e31a579d6e2a8f78a757438726e6558bc77350c7a",
+    "eval/rnn32_lstm_vs_rnn_f2_v1_seed42/rnn32_reference/metrics.json": "f02f0f1b4f18fbf716ab2e66f8903ed5f0bd8b46e33bea170f2a7e7624812bc2",
+    "eval/rnn32_lstm_vs_rnn_f2_v1_seed42/lstm32_candidate/metrics.json": "c108f5188c0524ec7c4a51e0f7fad4ae715b8c5d0e23737e484c1d4922e5a44f",
+    "runs/lstm32_dropout02_f2_v1_seed42/pair_manifest.json": "0d2bd2e7215c18f932317a5fc3c37811e6add806d826fe47511b1b706b154913",
+    "runs/lstm32_dropout02_f2_v1_seed42/pair_environment.json": "d84a5d06c8d7b86b2f8693c7ad9f04049336776a94541c01f436578335a7de6e",
+    "runs/lstm32_dropout02_f2_v1_seed42/pair_summary.json": "1147942621f1e2a0cd27322ecce4d2b4444c2be59288dc4f444e6c4ed81237b7",
+    "runs/lstm32_dropout02_f2_v1_seed42/lstm32_reference/manifest.json": "c85ce5394bc3fac12cc00ffa0f34b526f4c21e6a02bb0212cc696a143f7c2f5d",
+    "runs/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/manifest.json": "63324c75ee5d1e74b202309aa7bc9eacc5bdbafbacedd86e81c8080e7c38bb7e",
+    "runs/lstm32_dropout02_f2_v1_seed42/lstm32_reference/model_spec.json": "81a9ea961f634b6e657c773e31a579d6e2a8f78a757438726e6558bc77350c7a",
+    "runs/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/model_spec.json": "fc7e3f2e6bf455636db248a457aac0420118907a2356ac6f86507308cda5a0be",
+    "eval/lstm32_dropout02_f2_v1_seed42/lstm32_reference/metrics.json": "c108f5188c0524ec7c4a51e0f7fad4ae715b8c5d0e23737e484c1d4922e5a44f",
+    "eval/lstm32_dropout02_f2_v1_seed42/lstm32_dropout/metrics.json": "984e2edbdef745df2ab8b6a3b3b52a1cece54ee6544d6168f96ce505ab224c79",
+    "eval/lstm32_dropout02_f2_v1_seed42/comparison/comparison.json": "8672094935589732c8553e93935f0e68d407cf025f3a02cfd29d5f10fedf9dbe",
+    "runs/lstm32_scheduler_f2_v1_seed42/pair_manifest.json": "6b09113a7aad310648385536c5acf4c5526154e10a0768c33da199be4ab61063",
+    "runs/lstm32_scheduler_f2_v1_seed42/pair_environment.json": "53240d9bc5399f0cd5b7308e70d233cd5a81d1055a7de62b0e3bfee822309024",
+    "runs/lstm32_scheduler_f2_v1_seed42/pair_summary.json": "e4f3e7fc96648948d215ae872abde9df8e17099b7db9c05494d348daada826de",
+    "runs/lstm32_scheduler_f2_v1_seed42/lstm32_reference/manifest.json": "a4d23785ee4beb8b0ad6364dfb098703a4d97b7b09e3890f5fd7bdde5b5ea3a4",
+    "runs/lstm32_scheduler_f2_v1_seed42/lstm32_scheduler/manifest.json": "e85f142acf9631a5080a4c1be4c8704ecb16ed3c4b9815c59960989f230c9251",
+    "runs/lstm32_scheduler_f2_v1_seed42/lstm32_reference/model_spec.json": "fc7e3f2e6bf455636db248a457aac0420118907a2356ac6f86507308cda5a0be",
+    "runs/lstm32_scheduler_f2_v1_seed42/lstm32_scheduler/model_spec.json": "fc7e3f2e6bf455636db248a457aac0420118907a2356ac6f86507308cda5a0be",
+    "eval/lstm32_scheduler_f2_v1_seed42/lstm32_reference/metrics.json": "984e2edbdef745df2ab8b6a3b3b52a1cece54ee6544d6168f96ce505ab224c79",
+    "eval/lstm32_scheduler_f2_v1_seed42/lstm32_scheduler/metrics.json": "984e2edbdef745df2ab8b6a3b3b52a1cece54ee6544d6168f96ce505ab224c79",
+    "eval/lstm32_scheduler_f2_v1_seed42/comparison/comparison.json": "b9a09c735800242d242214c922bf9da51fc6b2d00ebfd7cc83909d0acabbba10",
+    "runs/lstm32_f1_objective_cpu_v1_seed42.zip": "85e4d07c6860cb7902d31ed90de387343accc81beb84d20d69a72559bc5a61b6",
+    "runs/lstm32_pos_weight2_f2_cpu_v1_seed42.zip": "ca1b2bb5adcc784910c6b56063acf2c8ce1591b157b36b3cf915dc814de6d481",
+    "runs/lstm32_pos_weight2_f2_cpu_replicates_43_44.zip": "a64baba54c6a1f94a79bcf89b5b2353f2d1eb6a44465679fdfd8a2da154e5e19",
+    "configs/experimento_lstm32_f2_lstm32x1_cpu_v1.json": "7985ebf9d40ec6c1859c1dab7d861fe15338b8d289134551bf6021600240a56e",
+    "configs/experimento_lstm32_f2_lstm32x2_cpu_v1.json": "efa30238354c6b8af2a5b1ad86b5fb13ade20898cadcd6ea3945c5ddc71ec64f",
+    "runs/lstm_colab_lstm2layer_f2_cpu_v2.zip": "9ef2e5ca476b5e51edaef1e7245c02a4905bf30489dccda738bc1c260aaca6f8",
+    "runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip": "99e372b89d994146bceebd00c07c78b5e77b748b6dfba39305d9980e44b7d8db",
+    "docs/aclaraciones/evidencia_lstm_depth_v1.json": "3e8c2e7914f812557855d139dfa7d04fac9266348dbb35e45afa510bf5abafa9"
+  },
+  "context": {
+    "train": "2022–2023",
+    "validation": "2024",
+    "validation_samples": 25635,
+    "window_length": 8,
+    "seed": 42,
+    "loss": "BCE sin ponderación",
+    "final_test": "2025 reservada",
+    "preprocessed_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66"
+  },
+  "nodes": [
+    {
+      "id": "E0",
+      "title": "Referencia F2",
+      "kind": "Corrida",
+      "status": "Completada",
+      "color": "#dff3ff",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.12,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750113335213
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 652,
+        "recall_per_evaluable_event": 0.7912621359223301
+      },
+      "hidden_size": 32,
+      "note": "BCE, semilla 42. Referencia de comparación; no cambia el objetivo al dibujar el árbol.",
+      "report": "docs/aclaraciones/06_resultados_rnn_v1_validacion_2024.md"
+    },
+    {
+      "id": "C1",
+      "title": "Control de umbral F1",
+      "kind": "Control sin entrenamiento",
+      "status": "Completado",
+      "color": "#def4e8",
+      "device": "Pesos de E0",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157750877436803
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Reutiliza los pesos de E0. Solo cambia la selección de umbral; es el control más limpio del efecto de la decisión.",
+      "report": "docs/aclaraciones/07_control_f1_sobre_pesos_f2.md"
+    },
+    {
+      "id": "E1",
+      "title": "Corrida con selección F1",
+      "kind": "Corrida nueva desde cero",
+      "status": "Completada; entorno distinto",
+      "color": "#fff0d5",
+      "device": "CPU",
+      "epoch": 10,
+      "threshold": 0.22,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1363,
+        "fp": 5519,
+        "fn": 952,
+        "tn": 17801,
+        "precision": 0.1980528916012787,
+        "recall": 0.588768898488121,
+        "f1": 0.2964010003261933,
+        "f2": 0.42219055879073225,
+        "false_positives_per_100_decisions": 21.529159352447824,
+        "average_precision": 0.20157752973463514
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 552,
+        "recall_per_evaluable_event": 0.6699029126213593
+      },
+      "hidden_size": 32,
+      "note": "Selección por F1 y entorno efectivo CPU/Python distinto. No heredó los pesos de E0; el parentesco indica configuración de referencia.",
+      "report": "docs/aclaraciones/08_resultados_rnn_f1_y_comparacion.md"
+    },
+    {
+      "id": "E2",
+      "title": "Referencia RNN32 pareada",
+      "kind": "Repetición desde cero",
+      "status": "Completada; pareja controlada",
+      "color": "#dff3ff",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.12,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750113335213
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 652,
+        "recall_per_evaluable_event": 0.7912621359223301
+      },
+      "hidden_size": 32,
+      "note": "Repite la especificación de E0 en la pareja de capacidad. Se entrenó desde cero; no heredó pesos históricos. El entorno y las versiones coinciden con E0. Los pesos resultantes tienen el mismo SHA-256 que E0.",
+      "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"
+    },
+    {
+      "id": "P1",
+      "title": "Candidata RNN16 pareada",
+      "kind": "Corrida nueva desde cero",
+      "status": "Completada; pareja controlada",
+      "color": "#ede9fe",
+      "device": "T4 / CUDA",
+      "epoch": 14,
+      "threshold": 0.1,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1751,
+        "fp": 8983,
+        "fn": 564,
+        "tn": 14337,
+        "precision": 0.1631265138811254,
+        "recall": 0.7563714902807775,
+        "f1": 0.26837305540654455,
+        "f2": 0.4378813644093228,
+        "false_positives_per_100_decisions": 35.04193485469085,
+        "average_precision": 0.21245820067089063
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 666,
+        "recall_per_evaluable_event": 0.808252427184466
+      },
+      "hidden_size": 16,
+      "note": "La propuesta P1 ya fue ejecutada. Se compara con E2 cambiando solo hidden_size 32→16; mantiene F2, BCE, datos, semilla y entorno pareado. Se entrenó desde cero, sin heredar pesos de E2.",
+      "report": "docs/aclaraciones/12_resultados_rnn16_pareada.md"
+    },
+    {
+      "id": "D1",
+      "title": "RNN32 dropout 0,2",
+      "kind": "Regularización pareada",
+      "status": "Completada; evaluación CPU con paridad",
+      "color": "#fce7f3",
+      "device": "T4 / CUDA",
+      "epoch": 10,
+      "threshold": 0.14,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1626,
+        "fp": 7449,
+        "fn": 689,
+        "tn": 15871,
+        "precision": 0.17917355371900826,
+        "recall": 0.7023758099352052,
+        "f1": 0.28551360842844603,
+        "f2": 0.44341423506953914,
+        "false_positives_per_100_decisions": 29.057928613224107,
+        "average_precision": 0.208822066447582
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 635,
+        "recall_per_evaluable_event": 0.7706310679611651
+      },
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "note": "Cambia solo dropout 0→0,2 después de ReLU. AP y BCE mejoran, pero F2 de validación baja 0,00122 y se cubren 17 eventos menos; una semilla, sin evidencia de mejora robusta.",
+      "report": "docs/aclaraciones/14_resultados_dropout_rnn32.md"
+    },
+    {
+      "id": "L1",
+      "title": "LSTM32 causal pareada",
+      "kind": "Comparación de arquitectura",
+      "status": "Completada; evaluación CPU con paridad",
+      "color": "#dbeafe",
+      "device": "T4 / CUDA",
+      "epoch": 27,
+      "threshold": 0.08,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1664,
+        "fp": 8099,
+        "fn": 651,
+        "tn": 15221,
+        "precision": 0.170439414114514,
+        "recall": 0.7187904967602592,
+        "f1": 0.2755423083291936,
+        "f2": 0.4373652946433265,
+        "false_positives_per_100_decisions": 31.59352447825239,
+        "average_precision": 0.20888687402638637
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 642,
+        "recall_per_evaluable_event": 0.779126213592233
+      },
+      "hidden_size": 32,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "note": "Cambia solo la celda RNN→LSTM a ancho 32. F2 baja 0,00727, AP sube 0,00731, BCE empeora 0,07102 y se cubren 10 eventos menos. Usa 12.377 parámetros; evidencia de una semilla.",
+      "report": "docs/aclaraciones/16_resultados_lstm_rnn32.md"
+    },
+    {
+      "id": "L2",
+      "title": "LSTM32 dropout 0,2",
+      "kind": "Regularización pareada",
+      "status": "Completada; evaluación CPU con paridad",
+      "color": "#fce7f3",
+      "device": "T4 / CUDA",
+      "epoch": 27,
+      "threshold": 0.05,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1799,
+        "fp": 9206,
+        "fn": 516,
+        "tn": 14114,
+        "precision": 0.16347114947751024,
+        "recall": 0.7771058315334773,
+        "f1": 0.2701201201201201,
+        "f2": 0.4438687392055268,
+        "false_positives_per_100_decisions": 35.91183928223133,
+        "average_precision": 0.19731337199797694
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 682,
+        "recall_per_evaluable_event": 0.8276699029126213
+      },
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "note": "Cambia solo dropout 0→0,2 dentro de LSTM32. F2 sube 0,00650 y cubre 40 eventos más, con 1.107 FP adicionales y AP menor. El umbral 0,05 toca el límite de la cuadrícula; una semilla.",
+      "report": "docs/aclaraciones/18_resultados_lstm_dropout.md"
+    },
+    {
+      "id": "L3",
+      "title": "LSTM32 ReduceLROnPlateau",
+      "kind": "Scheduler pareado",
+      "status": "Completada; scheduler no activado",
+      "color": "#ccfbf1",
+      "device": "T4 / CUDA",
+      "epoch": 27,
+      "threshold": 0.05,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1799,
+        "fp": 9206,
+        "fn": 516,
+        "tn": 14114,
+        "precision": 0.16347114947751024,
+        "recall": 0.7771058315334773,
+        "f1": 0.2701201201201201,
+        "f2": 0.4438687392055268,
+        "false_positives_per_100_decisions": 35.91183928223133,
+        "average_precision": 0.19731337199797694
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 682,
+        "recall_per_evaluable_event": 0.8276699029126213
+      },
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "note": "ReduceLROnPlateau monitorizó BCE train, pero nunca redujo LR: ambas corridas usaron 0,001 las 30 épocas y comparten pesos exactos. ΔF2=0; el scheduler no tuvo efecto observado.",
+      "report": "docs/aclaraciones/20_resultados_lstm_scheduler.md"
+    },
+    {
+      "id": "F2C",
+      "title": "Referencia LSTM32 selección F2 (CPU)",
+      "kind": "Referencia de pareja desde cero",
+      "status": "Completada; comparación controlada",
+      "color": "#e0f2fe",
+      "device": "CPU",
+      "epoch": 20,
+      "threshold": 0.08,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1710,
+        "fp": 7911,
+        "fn": 605,
+        "tn": 15409,
+        "precision": 0.17773620205799812,
+        "recall": 0.7386609071274298,
+        "f1": 0.28652815013404825,
+        "f2": 0.4528361845241248,
+        "false_positives_per_100_decisions": 30.860152135751903,
+        "average_precision": 0.20133854057087194
+      },
+      "event_metrics": null,
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "note": "Referencia recién entrenada en CPU para la comparación pareada de objetivo. Selección de checkpoint por F2 y umbral por F2. Una semilla; validación 2024; prueba 2025 reservada. El paquete no incluye métricas de cobertura por evento.",
+      "report": "docs/aclaraciones/21_resultados_lstm_objetivo_f1.md"
+    },
+    {
+      "id": "F1C",
+      "title": "LSTM32 selección F1 (CPU)",
+      "kind": "Comparación pareada de objetivo",
+      "status": "Completada; comparación controlada",
+      "color": "#dbeafe",
+      "device": "CPU",
+      "epoch": 17,
+      "threshold": 0.32,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1108,
+        "fp": 3706,
+        "fn": 1207,
+        "tn": 19614,
+        "precision": 0.23016202742002492,
+        "recall": 0.47861771058315333,
+        "f1": 0.31084303548884834,
+        "f2": 0.39363365070342476,
+        "false_positives_per_100_decisions": 14.456797347376634,
+        "average_precision": 0.20187405837080374
+      },
+      "event_metrics": null,
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "note": "Frente a F2C cambia el criterio para seleccionar checkpoint y umbral (F2→F1); ambas corridas usan BCE, misma arquitectura, dropout, datos, semilla y CPU. F1 validación +0,0243 y F2 −0,0592 en el umbral seleccionado. Una semilla; prueba 2025 reservada. Sin métricas de cobertura por evento en el paquete.",
+      "report": "docs/aclaraciones/21_resultados_lstm_objetivo_f1.md"
+    },
+    {
+      "id": "W0",
+      "title": "BCE normal · promedio 3 semillas",
+      "kind": "Agregado de corridas pareadas",
+      "status": "Completado; resultado mixto",
+      "color": "#e0f2fe",
+      "device": "CPU · seeds 42–44",
+      "epoch": null,
+      "threshold": null,
+      "metrics": {
+        "f1": 0.2867428385557164,
+        "f2": 0.45321960207829654,
+        "precision": 0.17786436146708995,
+        "recall": 0.7395248380129589,
+        "tp": 1712.0,
+        "fp": 7915.0,
+        "fn": 603.0,
+        "tn": 15405.0,
+        "average_precision": 0.2124729246412964
+      },
+      "event_metrics": null,
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "aggregate_seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": "Promedio de tres pares independientes en validación 2024. Sirve como resumen, no como un modelo único. El F2 candidato mejora en 2/3 semillas; no hay mejora consistente. Cobertura por evento no viene en estos ZIP.",
+      "report": "docs/aclaraciones/25_resultados_pos_weight_tres_semillas.md"
+    },
+    {
+      "id": "W2",
+      "title": "BCE pos_weight=2 · promedio 3 semillas",
+      "kind": "Agregado de corridas pareadas",
+      "status": "Completado; mejora no consistente",
+      "color": "#fef3c7",
+      "device": "CPU · seeds 42–44",
+      "epoch": null,
+      "threshold": null,
+      "metrics": {
+        "f1": 0.2915176432578985,
+        "f2": 0.4578141503066065,
+        "precision": 0.18158780842673064,
+        "recall": 0.7388048956083514,
+        "tp": 1710.3333333333333,
+        "fp": 7708.333333333333,
+        "fn": 604.6666666666666,
+        "tn": 15611.666666666666,
+        "average_precision": 0.22034206073500986
+      },
+      "event_metrics": null,
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "aggregate_seeds": [
+        42,
+        43,
+        44
+      ],
+      "note": "F2 medio mayor por aproximadamente 0,0046, pero solo mejora en 2/3 semillas. AP también varía por semilla. Se conserva BCE normal como referencia; una agregación de tres semillas no demuestra superioridad.",
+      "report": "docs/aclaraciones/25_resultados_pos_weight_tres_semillas.md"
+    },
+    {
+      "id": "H1",
+      "title": "LSTM32 · una capa",
+      "kind": "Corrida de referencia pareada",
+      "status": "Completada; comparación controlada",
+      "color": "#dbeafe",
+      "device": "CPU · seed 42",
+      "epoch": 20,
+      "threshold": 0.08,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1710,
+        "fp": 7911,
+        "fn": 605,
+        "tn": 15409,
+        "precision": 0.17773620205799812,
+        "recall": 0.7386609071274298,
+        "f1": 0.28652815013404825,
+        "f2": 0.4528361845241248,
+        "false_positives_per_100_decisions": 30.860152135751903,
+        "average_precision": 0.20133854057087194
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 663,
+        "recall_per_evaluable_event": 0.8046116504854369
+      },
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 12377,
+      "num_recurrent_layers": 1,
+      "note": "Referencia de la pareja, entrenada desde cero. Validación 2024: F2 0,45284; cobertura 663/824. Evaluación CPU con paridad de probabilidades y cero cambios de decisión. Prueba 2025 reservada.",
+      "report": "docs/aclaraciones/26_resultados_lstm32_dos_capas.md",
+      "evaluation_manifest_sha256": "698e88cf88e10af733f96e2d003ff4403a092d0c41f0185d465057e1b2362f93"
+    },
+    {
+      "id": "H2",
+      "title": "LSTM32 · dos capas",
+      "kind": "Candidata arquitectónica pareada",
+      "status": "Completada; comparación controlada",
+      "color": "#ede9fe",
+      "device": "CPU · seed 42",
+      "epoch": 17,
+      "threshold": 0.07,
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1619,
+        "fp": 6792,
+        "fn": 696,
+        "tn": 16528,
+        "precision": 0.1924860301985495,
+        "recall": 0.6993520518358531,
+        "f1": 0.3018832742867798,
+        "f2": 0.45809518420010187,
+        "false_positives_per_100_decisions": 26.49502633118783,
+        "average_precision": 0.21651553282030447
+      },
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 642,
+        "recall_per_evaluable_event": 0.779126213592233
+      },
+      "hidden_size": 32,
+      "dropout_rate": 0.2,
+      "recurrent_cell": "lstm",
+      "parameter_count": 20825,
+      "num_recurrent_layers": 2,
+      "note": "Añade una segunda LSTMCell unidireccional. F2 sube 0,00526 y AP 0,01518; precisión mejora, pero recall baja 3,93 pp y se cubren 21 eventos menos. Una semilla; no demuestra mejora robusta.",
+      "report": "docs/aclaraciones/26_resultados_lstm32_dos_capas.md",
+      "evaluation_manifest_sha256": "ab2fdc23123baed9978dae38e95383aee36d9026fe6504cfef2afedec0a40857"
+    }
+  ],
+  "edges": [
+    {
+      "parent": "E0",
+      "child": "C1",
+      "relation": "derived_decision",
+      "changes": [
+        "Criterio de umbral F2 → F1",
+        "Umbral 0,12 → 0,22",
+        "Pesos congelados"
+      ],
+      "isolated_comparison": true,
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "average_precision": 7.641015903336879e-09,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "E1",
+      "relation": "reference_comparison",
+      "changes": [
+        "Selección de checkpoint y umbral F2 → F1",
+        "T4/CUDA → CPU",
+        "Python 3.13.16 → 3.13.18"
+      ],
+      "isolated_comparison": false,
+      "caveat": "Esta comparación cambió el entorno efectivo además del criterio de selección; los deltas no pueden atribuirse a un único factor.",
+      "observed_delta": {
+        "f1": 0.01669456015137677,
+        "f2": -0.022440313692489222,
+        "precision": 0.02520331964856773,
+        "recall": -0.1438444924406047,
+        "tp": -333,
+        "fp": -2597,
+        "fn": 333,
+        "tn": 2597,
+        "average_precision": 2.8601283008633516e-08,
+        "event_recall": -0.12135922330097082
+      }
+    },
+    {
+      "parent": "E0",
+      "child": "E2",
+      "relation": "reference_repeat",
+      "changes": [
+        "Misma especificación RNN32 y selección F2",
+        "Repetición desde cero, sin herencia de pesos",
+        "Mismo entorno T4 y versiones"
+      ],
+      "isolated_comparison": true,
+      "same_historical_weights_sha256": true,
+      "caveat": null,
+      "observed_delta": {
+        "f1": 0.0,
+        "f2": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "average_precision": 0.0,
+        "event_recall": 0.0
+      }
+    },
+    {
+      "parent": "E2",
+      "child": "P1",
+      "relation": "paired_capacity_comparison",
+      "changes": [
+        "hidden_size 32 → 16",
+        "Misma pareja T4: datos, versiones, F2, BCE y semilla fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "rnn16_vs_rnn32_f2_v1_seed42",
+      "observed_delta": {
+        "f1": -0.011333384768272003,
+        "f2": -0.00674950807389868,
+        "precision": -0.009723058071585577,
+        "recall": 0.023758099352051865,
+        "tp": 55,
+        "fp": 867,
+        "fn": -55,
+        "tn": -867,
+        "average_precision": 0.010880699537538507,
+        "event_recall": 0.016990291262135915
+      }
+    },
+    {
+      "parent": "E2",
+      "child": "D1",
+      "relation": "paired_dropout_comparison",
+      "changes": [
+        "Dropout de fusión 0,0 → 0,2 después de ReLU",
+        "Misma pareja T4: datos, versiones, F2, BCE y semilla fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "rnn32_dropout02_f2_v2_seed42",
+      "cpu_probability_parity_max_abs": {
+        "reference": 5.364418029785156e-07,
+        "candidate": 5.662441253662109e-07
+      },
+      "observed_delta": {
+        "f1": 0.00580716825362948,
+        "f2": -0.001216637413682331,
+        "precision": 0.006323981766297282,
+        "recall": -0.030237580993520474,
+        "tp": -70,
+        "fp": -667,
+        "fn": 70,
+        "tn": 667,
+        "average_precision": 0.007244565314229873,
+        "event_recall": -0.020631067961164984
+      }
+    },
+    {
+      "parent": "E2",
+      "child": "L1",
+      "relation": "paired_architecture_comparison",
+      "changes": [
+        "Celda recurrente RNN tanh → LSTM causal; ancho 32",
+        "Misma pareja T4: datos, FFNN, máscaras, F2, BCE y semilla fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "rnn32_vs_lstm32_f2_v1_seed42",
+      "parameter_count_delta": 8256,
+      "reference_weights_match_historical": true,
+      "cpu_probability_parity_max_abs": {
+        "reference": 5.364418029785156e-07,
+        "candidate": 7.450580596923828e-07
+      },
+      "observed_delta": {
+        "f1": -0.004164131845622976,
+        "f2": -0.007265577839894954,
+        "precision": -0.00241015783819698,
+        "recall": -0.013822894168466493,
+        "tp": -32,
+        "fp": -17,
+        "fn": 32,
+        "tn": 17,
+        "average_precision": 0.007309372893034238,
+        "event_recall": -0.012135922330097082
+      }
+    },
+    {
+      "parent": "L1",
+      "child": "L2",
+      "relation": "paired_dropout_comparison",
+      "changes": [
+        "Dropout en cabeza de fusión 0,0 → 0,2 después de ReLU",
+        "Misma pareja T4: LSTM32, datos, versiones, F2, BCE y semilla fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "lstm32_dropout02_f2_v1_seed42",
+      "reference_weights_match_parent": true,
+      "threshold_grid_lower_boundary": true,
+      "cpu_probability_parity_max_abs": {
+        "reference": 7.450580596923828e-07,
+        "candidate": 5.066394806463315e-07
+      },
+      "observed_delta": {
+        "f1": -0.005422188209073475,
+        "f2": 0.006503444562200256,
+        "precision": -0.006968264637003757,
+        "recall": 0.05831533477321815,
+        "tp": 135,
+        "fp": 1107,
+        "fn": -135,
+        "tn": -1107,
+        "average_precision": -0.011573502028409427,
+        "event_recall": 0.04854368932038833
+      }
+    },
+    {
+      "parent": "L2",
+      "child": "L3",
+      "relation": "paired_scheduler_comparison",
+      "changes": [
+        "Tasa constante 0,001 → ReduceLROnPlateau sobre BCE de entrenamiento",
+        "LSTM32, dropout 0,2, Adam, datos, semilla y selección F2 fijos"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "lstm32_scheduler_f2_v1_seed42",
+      "learning_rate_reduction_epochs": [],
+      "weights_identical_to_parent": true,
+      "cpu_probability_identical_between_children": true,
+      "cpu_probability_parity_max_abs": {
+        "reference": 5.066394806463315e-07,
+        "candidate": 5.066394806463315e-07
+      },
+      "observed_delta": {
+        "f1": 0.0,
+        "f2": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "average_precision": 0.0,
+        "event_recall": 0.0
+      }
+    },
+    {
+      "parent": "W0",
+      "child": "W2",
+      "relation": "paired_loss_comparison",
+      "changes": [
+        "BCE normal → BCE pos_weight=2",
+        "Tres pares de semillas: 42, 43 y 44",
+        "Selección F2 y entorno CPU"
+      ],
+      "isolated_comparison": true,
+      "pair_ids": [
+        "lstm32_pos_weight2_f2_cpu_v1_seed42",
+        "lstm32_pos_weight2_f2_cpu_v1_seed43",
+        "lstm32_pos_weight2_f2_cpu_v1_seed44"
+      ],
+      "seed_deltas": [
+        {
+          "seed": 42,
+          "f2": 0.010266831242701668,
+          "average_precision": 0.02195995149192903
+        },
+        {
+          "seed": 43,
+          "f2": 0.009692286396060179,
+          "average_precision": 0.01865100266334388
+        },
+        {
+          "seed": 44,
+          "f2": -0.0061754729538318065,
+          "average_precision": -0.01700354587413247
+        }
+      ],
+      "source_zip_sha256": {
+        "runs/lstm32_pos_weight2_f2_cpu_v1_seed42.zip": "ca1b2bb5adcc784910c6b56063acf2c8ce1591b157b36b3cf915dc814de6d481",
+        "runs/lstm32_pos_weight2_f2_cpu_replicates_43_44.zip": "a64baba54c6a1f94a79bcf89b5b2353f2d1eb6a44465679fdfd8a2da154e5e19"
+      },
+      "observed_delta": {
+        "f1": 0.004774804702182056,
+        "f2": 0.004594548228309958,
+        "precision": 0.0037234469596406916,
+        "recall": -0.0007199424046074876,
+        "tp": -1.6666666666667425,
+        "fp": -206.66666666666697,
+        "fn": 1.6666666666666288,
+        "tn": 206.66666666666606,
+        "average_precision": 0.007869136093713452
+      }
+    },
+    {
+      "parent": "H1",
+      "child": "H2",
+      "relation": "paired_depth_comparison",
+      "changes": [
+        "Capas recurrentes LSTM32: 1 → 2",
+        "Misma BCE normal, dropout 0,2, F2, datos, seed 42 y Colab CPU"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "lstm32_lstm2layer_f2_cpu_v1_seed42",
+      "parameter_count_delta": 8448,
+      "event_coverage_delta": -21,
+      "cpu_probability_parity_max_abs": {
+        "reference": 3.576278685968326e-07,
+        "candidate": 4.76837158203125e-07
+      },
+      "run_zip_sha256": "99e372b89d994146bceebd00c07c78b5e77b748b6dfba39305d9980e44b7d8db",
+      "observed_delta": {
+        "f1": 0.015355124152731547,
+        "f2": 0.005258999675977094,
+        "precision": 0.014749828140551396,
+        "recall": -0.03930885529157668,
+        "tp": -91,
+        "fp": -1119,
+        "fn": 91,
+        "tn": 1119,
+        "average_precision": 0.01517699224943253,
+        "event_recall": -0.025485436893203928
+      }
+    },
+    {
+      "parent": "F2C",
+      "child": "F1C",
+      "relation": "paired_selection_objective",
+      "changes": [
+        "Selección de checkpoint y umbral F2 → F1",
+        "LSTM32, dropout 0,2, BCE, datos, semilla 42 y CPU fijos",
+        "Ambos entrenamientos desde cero"
+      ],
+      "isolated_comparison": true,
+      "pair_id": "lstm32_f1_objective_cpu_v1_seed42",
+      "thresholds": {
+        "reference": 0.08,
+        "candidate": 0.32
+      },
+      "comparison_scope": "Cambio del procedimiento conjunto de selección de checkpoint y umbral; no cambia la función de pérdida.",
+      "source_zip_sha256": "85e4d07c6860cb7902d31ed90de387343accc81beb84d20d69a72559bc5a61b6",
+      "observed_delta": {
+        "f1": 0.024314885354800087,
+        "f2": -0.05920253382070001,
+        "precision": 0.05242582536202681,
+        "recall": -0.2600431965442765,
+        "tp": -602,
+        "fp": -4205,
+        "fn": 602,
+        "tn": 4205,
+        "average_precision": 0.0005355177999318006
+      }
+    }
+  ],
+  "result_comparison": {
+    "nodes": [
+      "C1",
+      "E1"
+    ],
+    "relation": "same_observed_decisions_at_0_22",
+    "note": "Coinciden los conteos; pesos y probabilidades difieren numéricamente. No es herencia ni identidad del modelo."
+  }
+}

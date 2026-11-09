@@ -84,6 +84,23 @@ def build_registry():
     scheduler_reference_eval = load(f"{scheduler_eval_root}/lstm32_reference/metrics.json", sources)
     scheduler_candidate_eval = load(f"{scheduler_eval_root}/lstm32_scheduler/metrics.json", sources)
     scheduler_comparison = load(f"{scheduler_eval_root}/comparison/comparison.json", sources)
+    objective_zip = ROOT / "runs/lstm32_f1_objective_cpu_v1_seed42.zip"
+    sources["runs/lstm32_f1_objective_cpu_v1_seed42.zip"] = hashlib.sha256(objective_zip.read_bytes()).hexdigest()
+    import zipfile
+    with zipfile.ZipFile(objective_zip) as archive:
+        objective_summary = json.loads(archive.read("pair_summary.json"))
+        objective_status = json.loads(archive.read("status.json"))
+        objective_reference_metrics = json.loads(archive.read("lstm32_reference/metrics.json"))
+        objective_candidate_metrics = json.loads(archive.read("lstm32_f1/metrics.json"))
+        objective_reference_manifest = json.loads(archive.read("lstm32_reference/manifest.json"))
+        objective_candidate_manifest = json.loads(archive.read("lstm32_f1/manifest.json"))
+        objective_environment = json.loads(archive.read("pair_environment.json"))
+    assert objective_status["status"] == "complete" and objective_status["comparison_authorized"]
+    assert objective_summary["comparison_authorized"] and objective_summary["test_used"] is False
+    assert objective_summary["seed"] == 42 and objective_summary["changed_factor"]["name"] == "selection.primary_metric"
+    assert objective_environment["children"]["lstm32_reference"]["device"] == "cpu"
+    assert objective_environment["children"]["lstm32_reference"] == objective_environment["children"]["lstm32_f1"]
+    assert objective_reference_manifest["preprocessed_manifest_sha256"] == objective_candidate_manifest["preprocessed_manifest_sha256"] == base["preprocessed_manifest_sha256"]
     assert f2["parity_passed"] and f1["parity_passed"]
     assert reference_eval["parity_passed"] and candidate_eval["parity_passed"]
     assert all(item["test_used"] is False for item in [base, trial, pair, reference, candidate])
@@ -269,7 +286,143 @@ def build_registry():
          "recurrent_cell": "lstm", "parameter_count": scheduler_candidate["parameter_count"],
          "note": "ReduceLROnPlateau monitorizó BCE train, pero nunca redujo LR: ambas corridas usaron 0,001 las 30 épocas y comparten pesos exactos. ΔF2=0; el scheduler no tuvo efecto observado.",
          "report": "docs/aclaraciones/20_resultados_lstm_scheduler.md"},
+        {"id": "F2C", "title": "Referencia LSTM32 selección F2 (CPU)", "kind": "Referencia de pareja desde cero", "status": "Completada; comparación controlada",
+         "color": "#e0f2fe", "device": "CPU", "epoch": objective_reference_metrics["selection_epoch"],
+         "threshold": objective_reference_metrics["selected_threshold"]["threshold"],
+         "metrics": objective_reference_metrics["selected_threshold"]["metrics"], "event_metrics": None,
+         "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm", "parameter_count": objective_reference_manifest["parameter_count"],
+         "note": "Referencia recién entrenada en CPU para la comparación pareada de objetivo. Selección de checkpoint por F2 y umbral por F2. Una semilla; validación 2024; prueba 2025 reservada. El paquete no incluye métricas de cobertura por evento.",
+         "report": "docs/aclaraciones/21_resultados_lstm_objetivo_f1.md"},
+        {"id": "F1C", "title": "LSTM32 selección F1 (CPU)", "kind": "Comparación pareada de objetivo", "status": "Completada; comparación controlada",
+         "color": "#dbeafe", "device": "CPU", "epoch": objective_candidate_metrics["selection_epoch"],
+         "threshold": objective_candidate_metrics["selected_threshold"]["threshold"],
+         "metrics": objective_candidate_metrics["selected_threshold"]["metrics"], "event_metrics": None,
+         "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm", "parameter_count": objective_candidate_manifest["parameter_count"],
+         "note": "Frente a F2C cambia el criterio para seleccionar checkpoint y umbral (F2→F1); ambas corridas usan BCE, misma arquitectura, dropout, datos, semilla y CPU. F1 validación +0,0243 y F2 −0,0592 en el umbral seleccionado. Una semilla; prueba 2025 reservada. Sin métricas de cobertura por evento en el paquete.",
+         "report": "docs/aclaraciones/21_resultados_lstm_objetivo_f1.md"},
     ]
+    # Three paired CPU seeds summarize the prior BCE positive-weight screen.
+    import zipfile
+    aggregate_sources = [
+        ("runs/lstm32_pos_weight2_f2_cpu_v1_seed42.zip", None),
+        ("runs/lstm32_pos_weight2_f2_cpu_replicates_43_44.zip", "runs/lstm32_pos_weight2_f2_cpu_v1_seed43/pair_summary.json"),
+    ]
+    source_summaries = []
+    for relative, inner in aggregate_sources:
+        path = ROOT / relative
+        sources[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
+        with zipfile.ZipFile(path) as archive:
+            if inner is None:
+                summary = json.loads(archive.read("pair_summary.json"))
+                status = json.loads(archive.read("status.json"))
+                assert status["status"] == "complete" and status["comparison_authorized"]
+                assert summary["comparison_authorized"] and summary["test_used"] is False
+                source_summaries.append(summary)
+            else:
+                for seed in (43, 44):
+                    name = f"runs/lstm32_pos_weight2_f2_cpu_v1_seed{seed}/pair_summary.json"
+                    summary = json.loads(archive.read(name))
+                    assert summary["comparison_authorized"] and summary["test_used"] is False
+                    source_summaries.append(summary)
+    assert sorted(item["seed"] for item in source_summaries) == [42, 43, 44]
+    assert all(item["selection_metric"] == "f2" and item["changed_factor"]["candidate"] == 2.0
+               for item in source_summaries)
+
+    def aggregate_side(side):
+        rows = [item[side]["validation"]["selected_threshold"] for item in source_summaries]
+        return {key: sum(row[key] for row in rows) / len(rows)
+                for key in ("f1", "f2", "precision", "recall", "tp", "fp", "fn", "tn", "average_precision")}
+
+    weight_reference = aggregate_side("reference")
+    weight_candidate = aggregate_side("candidate")
+    nodes.extend([
+        {"id": "W0", "title": "BCE normal · promedio 3 semillas", "kind": "Agregado de corridas pareadas",
+         "status": "Completado; resultado mixto", "color": "#e0f2fe", "device": "CPU · seeds 42–44",
+         "epoch": None, "threshold": None, "metrics": weight_reference, "event_metrics": None,
+         "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm", "parameter_count": 12377,
+         "aggregate_seeds": [42, 43, 44],
+         "note": "Promedio de tres pares independientes en validación 2024. Sirve como resumen, no como un modelo único. El F2 candidato mejora en 2/3 semillas; no hay mejora consistente. Cobertura por evento no viene en estos ZIP.",
+         "report": "docs/aclaraciones/25_resultados_pos_weight_tres_semillas.md"},
+        {"id": "W2", "title": "BCE pos_weight=2 · promedio 3 semillas", "kind": "Agregado de corridas pareadas",
+         "status": "Completado; mejora no consistente", "color": "#fef3c7", "device": "CPU · seeds 42–44",
+         "epoch": None, "threshold": None, "metrics": weight_candidate, "event_metrics": None,
+         "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm", "parameter_count": 12377,
+         "aggregate_seeds": [42, 43, 44],
+         "note": "F2 medio mayor por aproximadamente 0,0046, pero solo mejora en 2/3 semillas. AP también varía por semilla. Se conserva BCE normal como referencia; una agregación de tres semillas no demuestra superioridad.",
+         "report": "docs/aclaraciones/25_resultados_pos_weight_tres_semillas.md"},
+        {"id": "H1", "title": "LSTM32 · una capa", "kind": "Propuesta de comparación", "status": "Paquete listo; entrenamiento pendiente",
+         "color": "#dbeafe", "device": "Colab CPU", "epoch": None, "threshold": None, "metrics": None,
+         "event_metrics": None, "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm",
+         "parameter_count": 12377, "num_recurrent_layers": 1,
+         "note": "Referencia del nuevo par: LSTM32 causal de una capa, entrenada desde cero con BCE normal y selección F2.",
+         "report": "docs/aclaraciones/24_experimento_lstm32_dos_capas.md"},
+        {"id": "H2", "title": "LSTM32 · dos capas", "kind": "Propuesta de comparación", "status": "Paquete listo; entrenamiento pendiente",
+         "color": "#ede9fe", "device": "Colab CPU", "epoch": None, "threshold": None, "metrics": None,
+         "event_metrics": None, "hidden_size": 32, "dropout_rate": 0.2, "recurrent_cell": "lstm",
+         "parameter_count": 16601, "num_recurrent_layers": 2,
+         "note": "Candidata: añade una segunda LSTMCell unidireccional de 32 unidades. Cambia solo la profundidad recurrente; no añade dropout entre capas.",
+         "report": "docs/aclaraciones/24_experimento_lstm32_dos_capas.md"},
+    ])
+    sources["configs/experimento_lstm32_f2_lstm32x1_cpu_v1.json"] = hashlib.sha256((ROOT / "configs/experimento_lstm32_f2_lstm32x1_cpu_v1.json").read_bytes()).hexdigest()
+    sources["configs/experimento_lstm32_f2_lstm32x2_cpu_v1.json"] = hashlib.sha256((ROOT / "configs/experimento_lstm32_f2_lstm32x2_cpu_v1.json").read_bytes()).hexdigest()
+    sources["runs/lstm_colab_lstm2layer_f2_cpu_v2.zip"] = hashlib.sha256((ROOT / "runs/lstm_colab_lstm2layer_f2_cpu_v2.zip").read_bytes()).hexdigest()
+    depth_run_path = ROOT / "runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip"
+    sources["runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip"] = hashlib.sha256(depth_run_path.read_bytes()).hexdigest()
+    depth_evidence = load("docs/aclaraciones/evidencia_lstm_depth_v1.json", sources)
+    assert depth_evidence["run_zip_sha256"] == sources["runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip"]
+    with zipfile.ZipFile(depth_run_path) as archive:
+        depth_status = json.loads(archive.read("status.json"))
+        depth_pair_manifest = json.loads(archive.read("pair_manifest.json"))
+        depth_pair = json.loads(archive.read("pair_summary.json"))
+        assert depth_status["status"] == "complete" and depth_status["comparison_authorized"]
+        assert depth_pair_manifest["comparison_authorized"] and depth_pair_manifest["test_used"] is False
+        for name, digest in depth_pair_manifest["files_sha256"].items():
+            assert hashlib.sha256(archive.read(name)).hexdigest() == digest
+        assert depth_pair["changed_factor"]["name"] == "model.num_recurrent_layers"
+        assert depth_pair["changed_factor"]["reference"] == 1 and depth_pair["changed_factor"]["candidate"] == 2
+        assert depth_pair["selection_metric"] == "f2" and depth_pair["test_used"] is False
+        assert depth_pair_manifest["seed"] == 42
+    depth_specs = {}
+    for child in ("lstm32_reference", "lstm32_two_layer"):
+        evidence = depth_evidence["models"][child]
+        assert evidence["parity_passed"] and evidence["threshold_decision_differences"] == 0
+        assert evidence["event_metrics"]["events_with_evaluable_opportunity"] == 824
+        with zipfile.ZipFile(depth_run_path) as archive:
+            depth_specs[child] = json.loads(archive.read(f"{child}/model_spec.json"))
+    assert depth_specs["lstm32_reference"]["num_recurrent_layers"] == 1
+    assert depth_specs["lstm32_two_layer"]["num_recurrent_layers"] == 2
+    assert {k: v for k, v in depth_specs["lstm32_reference"].items() if k != "num_recurrent_layers"} == {
+        k: v for k, v in depth_specs["lstm32_two_layer"].items() if k != "num_recurrent_layers"}
+    depth_ref, depth_candidate = depth_pair["reference"], depth_pair["candidate"]
+    depth_ref_metrics = depth_ref["validation"]["selected_threshold"]
+    depth_candidate_metrics = depth_candidate["validation"]["selected_threshold"]
+    depth_nodes = {node["id"]: node for node in nodes if node["id"] in {"H1", "H2"}}
+    for node_id, child_name, child_summary, layer_count in (
+        ("H1", "lstm32_reference", depth_ref, 1),
+        ("H2", "lstm32_two_layer", depth_candidate, 2),
+    ):
+        evidence = depth_evidence["models"][child_name]
+        metric = child_summary["validation"]["selected_threshold"]
+        depth_nodes[node_id].update({
+            "kind": "Corrida de referencia pareada" if layer_count == 1 else "Candidata arquitectónica pareada",
+            "status": "Completada; comparación controlada",
+            "device": "CPU · seed 42",
+            "epoch": child_summary["best_epoch"],
+            "threshold": child_summary["threshold"],
+            "metrics": metric,
+            "event_metrics": evidence["event_metrics"],
+            "hidden_size": child_summary["hidden_size"],
+            "parameter_count": child_summary["parameter_count"],
+            "num_recurrent_layers": layer_count,
+            "note": (
+                "Referencia de la pareja, entrenada desde cero. Validación 2024: F2 0,45284; cobertura 663/824. "
+                "Evaluación CPU con paridad de probabilidades y cero cambios de decisión. Prueba 2025 reservada."
+                if layer_count == 1 else
+                "Añade una segunda LSTMCell unidireccional. F2 sube 0,00526 y AP 0,01518; precisión mejora, pero recall baja 3,93 pp y se cubren 21 eventos menos. Una semilla; no demuestra mejora robusta."
+            ),
+            "evaluation_manifest_sha256": evidence["evaluation_manifest_sha256"],
+            "report": "docs/aclaraciones/26_resultados_lstm32_dos_capas.md",
+        })
     by_id = {node["id"]: node for node in nodes}
     definitions = [
         {"parent": "E0", "child": "C1", "relation": "derived_decision",
@@ -308,13 +461,41 @@ def build_registry():
          "weights_identical_to_parent": scheduler_candidate["files_sha256"]["weights.pt"] == lstm_dropout_candidate["files_sha256"]["weights.pt"],
          "cpu_probability_identical_between_children": scheduler_comparison["probability_comparison"]["identical_after_cpu_replay"],
          "cpu_probability_parity_max_abs": {"reference": scheduler_reference_eval["max_probability_difference"], "candidate": scheduler_candidate_eval["max_probability_difference"]}},
+        {"parent": "W0", "child": "W2", "relation": "paired_loss_comparison",
+         "changes": ["BCE normal → BCE pos_weight=2", "Tres pares de semillas: 42, 43 y 44", "Selección F2 y entorno CPU"],
+         "isolated_comparison": True, "pair_ids": [item["pair_id"] for item in source_summaries],
+         "seed_deltas": [
+             {"seed": item["seed"], "f2": item["candidate"]["validation"]["selected_threshold"]["f2"] - item["reference"]["validation"]["selected_threshold"]["f2"],
+              "average_precision": item["candidate"]["validation"]["selected_threshold"]["average_precision"] - item["reference"]["validation"]["selected_threshold"]["average_precision"]}
+             for item in source_summaries],
+         "source_zip_sha256": {relative: sources[relative] for relative, _ in aggregate_sources}},
+        {"parent": "H1", "child": "H2", "relation": "paired_depth_comparison",
+         "changes": ["Capas recurrentes LSTM32: 1 → 2", "Misma BCE normal, dropout 0,2, F2, datos, seed 42 y Colab CPU"],
+         "isolated_comparison": True, "pair_id": depth_pair["pair_id"],
+         "parameter_count_delta": depth_candidate["parameter_count"] - depth_ref["parameter_count"],
+         "event_coverage_delta": depth_evidence["models"]["lstm32_two_layer"]["event_metrics"]["covered_events"] - depth_evidence["models"]["lstm32_reference"]["event_metrics"]["covered_events"],
+         "cpu_probability_parity_max_abs": {
+             "reference": depth_evidence["models"]["lstm32_reference"]["max_probability_difference"],
+             "candidate": depth_evidence["models"]["lstm32_two_layer"]["max_probability_difference"]},
+         "run_zip_sha256": sources["runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip"]},
+        {"parent": "F2C", "child": "F1C", "relation": "paired_selection_objective",
+         "changes": ["Selección de checkpoint y umbral F2 → F1", "LSTM32, dropout 0,2, BCE, datos, semilla 42 y CPU fijos", "Ambos entrenamientos desde cero"],
+         "isolated_comparison": True, "pair_id": objective_summary["pair_id"],
+         "thresholds": {"reference": objective_reference_metrics["selected_threshold"]["threshold"], "candidate": objective_candidate_metrics["selected_threshold"]["threshold"]},
+         "comparison_scope": "Cambio del procedimiento conjunto de selección de checkpoint y umbral; no cambia la función de pérdida.",
+         "source_zip_sha256": sources["runs/lstm32_f1_objective_cpu_v1_seed42.zip"]},
     ]
     edges = []
     for definition in definitions:
         parent, child = by_id[definition["parent"]], by_id[definition["child"]]
-        delta = {key: child["metrics"][key] - parent["metrics"][key]
-                 for key in ["f1", "f2", "precision", "recall", "tp", "fp", "fn", "tn"]}
-        delta["event_recall"] = child["event_metrics"]["recall_per_evaluable_event"] - parent["event_metrics"]["recall_per_evaluable_event"]
+        delta = None
+        if parent.get("metrics") is not None and child.get("metrics") is not None:
+            delta = {key: child["metrics"][key] - parent["metrics"][key]
+                     for key in ["f1", "f2", "precision", "recall", "tp", "fp", "fn", "tn"]}
+            if "average_precision" in child["metrics"] and "average_precision" in parent["metrics"]:
+                delta["average_precision"] = child["metrics"]["average_precision"] - parent["metrics"]["average_precision"]
+            if child.get("event_metrics") and parent.get("event_metrics"):
+                delta["event_recall"] = child["event_metrics"]["recall_per_evaluable_event"] - parent["event_metrics"]["recall_per_evaluable_event"]
         edges.append({**definition, "observed_delta": delta})
     return {"schema_version": "experiment_family_v1", "sources_sha256": sources,
             "context": {"train": "2022–2023", "validation": "2024", "validation_samples": 25635,
@@ -334,12 +515,20 @@ def node_label(node):
         lines.append(f"Dropout {fmt(node['dropout_rate'], 1)}")
     if node["metrics"]:
         m = node["metrics"]
-        lines += [f"Época {node['epoch']} · umbral {fmt(node['threshold'], 2)}",
-                  f"F1 {fmt(m['f1'])} | F2 {fmt(m['f2'])}",
-                  f"P {fmt(100*m['precision'], 2)}% | R {fmt(100*m['recall'], 2)}%",
-                  f"Eventos {node['event_metrics']['covered_events']}/{node['event_metrics']['events_with_evaluable_opportunity']}"]
+        if node.get("aggregate_seeds"):
+            lines.append("Promedio · n=3 pares · seeds 42–44")
+        else:
+            lines.append(f"Época {node['epoch']} · umbral {fmt(node['threshold'], 2)}")
+        lines += [f"F1 {fmt(m['f1'])} | F2 {fmt(m['f2'])}",
+                  f"P {fmt(100*m['precision'], 2)}% | R {fmt(100*m['recall'], 2)}%"]
+        if node.get("event_metrics"):
+            lines.append(f"Eventos {node['event_metrics']['covered_events']}/{node['event_metrics']['events_with_evaluable_opportunity']}")
+        elif node.get("aggregate_seeds"):
+            lines.append(f"AP media {fmt(m['average_precision'])} · validación")
     else:
-        lines += ["Métrica de selección F2", "Métricas pendientes"]
+        lines += ["Selección F2 · métrica pendiente"]
+        if node.get("num_recurrent_layers"):
+            lines.append(f"Capas recurrentes {node['num_recurrent_layers']}")
     return json.dumps("\n".join(lines), ensure_ascii=False)
 
 
@@ -353,6 +542,8 @@ def render_dot(registry):
         style = "rounded,filled,dashed" if node["kind"] == "Propuesta" else "rounded,filled"
         lines.append(f'{node["id"]} [id="node-{node["id"]}", label={node_label(node)}, fillcolor="{node["color"]}", style="{style}"];')
     lines.append('S0 -> E0 [label="Entrenamiento de referencia"];')
+    lines.append('S0 -> W0 [label="Resumen BCE ponderada · 3 semillas"];')
+    lines.append('S0 -> H1 [color="#475569", label="Referencia pareada · entrenada desde cero"];')
     for edge in registry["edges"]:
         relation = edge["relation"]
         if relation == "derived_decision":
@@ -390,6 +581,28 @@ def render_dot(registry):
             delta = edge["observed_delta"]
             label = ["OPTIMIZACIÓN · PAREJA CONTROLADA", *edge["changes"],
                      "El scheduler no redujo la tasa", f"ΔF2 {delta['f2']:+.4f} · pesos idénticos".replace(".", ",")]
+        elif relation == "paired_loss_comparison":
+            style = 'color="#a16207", penwidth=2'
+            delta = edge["observed_delta"]
+            signs = [f"seed {item['seed']}: ΔF2 {item['f2']:+.4f}".replace(".", ",") for item in edge["seed_deltas"]]
+            label = ["PÉRDIDA · 3 PARES CPU", *edge["changes"],
+                     f"Promedio ΔF2 {delta['f2']:+.4f} · ΔAP {delta['average_precision']:+.4f}".replace(".", ","),
+                     *signs, "Mejora no consistente"]
+        elif relation == "paired_depth_comparison":
+            style = 'color="#6d28d9", penwidth=2.5'
+            delta = edge["observed_delta"]
+            label = ["PROFUNDIDAD · PAREJA CONTROLADA", *edge["changes"],
+                     f"ΔF1 {delta['f1']:+.4f} · ΔF2 {delta['f2']:+.4f} · ΔAP {delta['average_precision']:+.4f}".replace(".", ","),
+                     f"Δeventos {edge['event_coverage_delta']:+d} · ΔFP {delta['fp']:+,} · ΔFN {delta['fn']:+,}".replace(",", "."),
+                     f"Parámetros {edge['parameter_count_delta']:+,}".replace(",", "."),
+                     "Una semilla · validación"]
+        elif relation == "paired_selection_objective":
+            style = 'color="#1d4ed8", penwidth=2.5'
+            delta = edge["observed_delta"]
+            label = ["OBJETIVO DE SELECCIÓN · PAREJA CONTROLADA", *edge["changes"],
+                     f"Umbral {edge['thresholds']['reference']:.2f} → {edge['thresholds']['candidate']:.2f}".replace(".", ","),
+                     f"ΔF1 {delta['f1']:+.4f} · ΔF2 {delta['f2']:+.4f}".replace(".", ","),
+                     f"FP {delta['fp']:+,} · FN {delta['fn']:+,}".replace(",", ".")]
         elif relation == "proposed_comparison":
             style = 'style=dotted, color="#64748b"'
             label = ["PROPUESTO", *edge["changes"], "Sin resultados"]
@@ -420,7 +633,7 @@ table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;p
 <h1>Árbol de experimentos</h1>
 <p>Cada nodo es una corrida o un control. Selecciona un nodo para ver resultados y cambios respecto a su referencia de comparación.</p>
 <div class="layout"><div class="card graph">''' + svg + '''</div><section class="card" id="detail" aria-live="polite"></section></div>
-<p class="small">Verde: control con pesos congelados. Naranja: comparación con diferencias adicionales de entorno. Gris: repetición de referencia. Morado: capacidad pareada. Rosa: dropout pareado. Azul: arquitectura LSTM pareada. Verde azulado: scheduler pareado. Azul oscuro sin dirección: comparación de resultados, sin relación de herencia.</p>
+<p class="small">Verde: control con pesos congelados. Naranja: comparación con diferencias adicionales de entorno. Gris: repetición de referencia. Morado: capacidad y profundidad pareadas. Rosa: dropout pareado. Azul: arquitectura LSTM pareada. Verde azulado: scheduler pareado. Ocre: pérdida ponderada, tres pares de semillas. Azul oscuro: comparación de selección F1/F2. Punteado: experimento propuesto.</p>
 <p class="small">Las flechas indican procedencia o referencia de comparación; no demuestran causalidad. Los modelos nuevos se entrenan desde cero. Validación fue usada para selección y no es prueba independiente. 2025 permanece reservada.</p>
 <script id="registry" type="application/json">''' + data + '''</script>
 <script>
@@ -434,7 +647,13 @@ function select(id){
  for(const g of document.querySelectorAll('g.node'))g.classList.toggle('selected',g.id==='node-'+id);
  let content='<h2>'+escape(n.id+' · '+n.title)+'</h2><p>'+escape(n.kind+' · '+n.status)+'</p><p>'+escape(n.note)+'</p>';
  if(n.metrics){const m=n.metrics,e=n.event_metrics;
-  const rows=[['Umbral',n.threshold.toFixed(2)],['F1',score(m.f1)],['F2',score(m.f2)],['Precisión',percent(m.precision)],['Recall por muestra',percent(m.recall)],['FP',m.fp],['FN',m.fn],['Eventos cubiertos',e.covered_events+'/'+e.events_with_evaluable_opportunity+' ('+percent(e.recall_per_evaluable_event)+')']];
+  const rows=[];
+  if(n.aggregate_seeds)rows.push(['Agregado de semillas',n.aggregate_seeds.join(', ')]);
+  else if(n.threshold!==null)rows.push(['Umbral',n.threshold.toFixed(2)]);
+  rows.push(['F1',score(m.f1)],['F2',score(m.f2)],['Precisión',percent(m.precision)],['Recall por muestra',percent(m.recall)],['FP medio',m.fp],['FN medio',m.fn]);
+  if(m.average_precision!==undefined)rows.push(['AP media',score(m.average_precision)]);
+  if(e)rows.push(['Eventos cubiertos',e.covered_events+'/'+e.events_with_evaluable_opportunity+' ('+percent(e.recall_per_evaluable_event)+')']);
+  else rows.push(['Cobertura por evento','No incluida en el ZIP de esta corrida']);
   content+='<table><tbody>'+rows.map(r=>'<tr><th>'+escape(r[0])+'</th><td>'+escape(r[1])+'</td></tr>').join('')+'</tbody></table>';
  }else content+='<p><strong>Sin métricas:</strong> todavía no se ha ejecutado.</p>';
  if(edge){const parent=registry.nodes.find(p=>p.id===edge.parent);

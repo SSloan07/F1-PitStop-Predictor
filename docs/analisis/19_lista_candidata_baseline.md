@@ -58,7 +58,7 @@ En filas 2022–2023 no generadas, con LapTime presente, la correlación de Pear
 
 1. Socializar y aprobar/rechazar `Stint_asof` y `FreshTyre_asof` por separado; después socializar las tres propuestas de telemetría.
 2. Resolver la disponibilidad temporal de estado de neumáticos, SpeedI1/I2/ST y posición previa.
-3. Reconciliar las 18 transiciones de reloj anómalas y las 858 posibles reconstrucciones de Sector1Time.
+3. Respetar el registro temporal corregido: las 18 transiciones de Australia 2023 y cuatro de Mónaco 2024 coinciden con `Started` inmediatamente después de `Aborted`; aun así, excluir el cierre de la vuelta previa cuando ocurra después de la decisión. Resolver por separado las 858 posibles reconstrucciones de Sector1Time.
 4. Regenerar las etiquetas con el contrato PitInTime/PitOutTime emparejados.
 5. Generar un registro de características versionado con unidad, fuente, available_at, regla de faltantes, transformación y rama.
 6. Solo después construir la matriz de características y ejecutar las comprobaciones contra fuga temporal.

@@ -6,6 +6,8 @@
 **Destinatario:** modelo o desarrollador que realizará la implementación.  
 **Alcance de esta entrega:** inventario de eventos, contraste externo acotado, clasificación candidata, etiqueta por horizonte e informe reproducible.
 
+> **Nota de vigencia:** este contrato y su ejecución `candidate_v1` exploran la etiqueta más estricta de cambio de neumáticos. La definición operativa aprobada después es visita a boxes registrada por `PitInTime`/`PitOutTime`; para la matriz vigente seguir [SPEC-LABEL-002](07_objetivo_entrada_boxes.md). No reutilizar las etiquetas `candidate_v1` como si correspondieran a esa definición.
+
 ## 1. Objetivo y referencias
 
 Construir para cada piloto y vuelta una variable booleana nullable que indique si, al inicio de esa vuelta, se producirá una parada con cambio de neumáticos en esa vuelta o en alguna de las dos siguientes. El etiquetado puede consultar toda la información histórica; esa autorización no se extiende a las entradas futuras de un modelo predictivo.

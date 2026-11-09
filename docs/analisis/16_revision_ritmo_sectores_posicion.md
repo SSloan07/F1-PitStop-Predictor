@@ -69,6 +69,6 @@ Propuesta corregida: para una primera reproducción histórica, `Position` de la
 2. La validación de `LapTime = S1 + S2 + S3` se ejecuta donde los cuatro valores existen; toda reconstrucción añade procedencia, revisión de casos extremos y versión nueva.
 3. El tratamiento de `SpeedFL` se comprueba específicamente en vueltas `PitIn`: una prueba que permita la máscara actual debe fallar antes de publicar datos para entrenar.
 4. Los faltantes de vueltas generadas y de sectores no se convierten en cero ni eliminan por defecto todas las observaciones del piloto.
-5. La posición de la vuelta anterior solo entra si pasa la comprobación temporal y de prefijos. Se reportan por separado las 18 transiciones con reloj incompatible y el empate observado; ninguna posición final de la vuelta actual cruza el límite temporal.
+5. La posición de la vuelta anterior solo entra si pasa la comprobación temporal y de prefijos. Las 22 transiciones revisadas (18 Australia 2023, cuatro Mónaco 2024) coinciden con reinicios después de `Aborted`; siguen siendo incompatibles con consumir el cierre de la vuelta previa antes de que ocurra. Ninguna posición final de la vuelta actual cruza el límite temporal.
 
 **Siguiente grupo propuesto:** estado de pista (`TrackStatus`, `SafetyCar`, `VirtualSafetyCar`) y meteorología. Sus valores de la fila actual son especialmente sensibles al tiempo de publicación.

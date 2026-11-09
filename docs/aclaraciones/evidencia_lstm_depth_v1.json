@@ -1,0 +1,87 @@
+{
+  "artifact_version": "lstm_depth_validation_evidence_v1",
+  "run_zip": "runs/lstm32_lstm2layer_f2_cpu_v1_seed42.zip",
+  "run_zip_sha256": "99e372b89d994146bceebd00c07c78b5e77b748b6dfba39305d9980e44b7d8db",
+  "pair_id": "lstm32_lstm2layer_f2_cpu_v1_seed42",
+  "seed": 42,
+  "test_used": false,
+  "comparison_authorized": true,
+  "evaluator": "scripts/evaluar_rnn.py::evaluate_bundle",
+  "data_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+  "events_source_sha256": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+  "decision_index_sha256": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+  "models": {
+    "lstm32_reference": {
+      "evaluation_manifest_sha256": "698e88cf88e10af733f96e2d003ff4403a092d0c41f0185d465057e1b2362f93",
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1710,
+        "fp": 7911,
+        "fn": 605,
+        "tn": 15409,
+        "precision": 0.17773620205799812,
+        "recall": 0.7386609071274298,
+        "f1": 0.28652815013404825,
+        "f2": 0.4528361845241248,
+        "false_positives_per_100_decisions": 30.860152135751903,
+        "average_precision": 0.20133854680544286
+      },
+      "threshold_frozen": 0.08,
+      "parity_passed": true,
+      "max_probability_difference": 3.576278685968326e-07,
+      "threshold_decision_differences": 0,
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 663,
+        "recall_per_evaluable_event": 0.8046116504854369
+      },
+      "evaluation_artifact_hashes": {
+        "metrics.json": "762f58942d46468d69443f95c35d802ede9c6d720cce070c8649b678caf43408",
+        "event_coverage.csv": "f4c58b6bbfcf5b7d43bf533371c9cde9b3ee04b782348ff5d85ed5dbaac6a70f",
+        "metrics_by_driver.csv": "6fe60a763f34466901f0a8ae43fa39b35efb616f7b86a7e12c3ea282f6094e2c",
+        "metrics_by_race.csv": "c5be48c43926deee0945b38d3698434febf02ae41b5f45a196842c7717bc51a1",
+        "errors.csv.gz": "0b1e25a4a35d181a7c77705775e5cec9087a60bb7c3225184ed0a670845f753f",
+        "predictions.csv.gz": "627cbb6763b704159ac28b091448c39bc098554973d1c5a12e9caa7860a5984c"
+      }
+    },
+    "lstm32_two_layer": {
+      "evaluation_manifest_sha256": "ab2fdc23123baed9978dae38e95383aee36d9026fe6504cfef2afedec0a40857",
+      "metrics": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1619,
+        "fp": 6792,
+        "fn": 696,
+        "tn": 16528,
+        "precision": 0.1924860301985495,
+        "recall": 0.6993520518358531,
+        "f1": 0.3018832742867798,
+        "f2": 0.45809518420010187,
+        "false_positives_per_100_decisions": 26.49502633118783,
+        "average_precision": 0.21651561766298397
+      },
+      "threshold_frozen": 0.07,
+      "parity_passed": true,
+      "max_probability_difference": 4.76837158203125e-07,
+      "threshold_decision_differences": 0,
+      "event_metrics": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 642,
+        "recall_per_evaluable_event": 0.779126213592233
+      },
+      "evaluation_artifact_hashes": {
+        "metrics.json": "77ff6b4c4756e3a586c151267eaa8f3c09a400804341825b05cfd4b7ea8d0e24",
+        "event_coverage.csv": "9a8d43a50731833074a06b3cce83bd38bb2b9f03c3eb2b61cdcc46b0f993a41f",
+        "metrics_by_driver.csv": "98edb45e9f24fa1e8867cbc3ed417115b51a74faf841a930fc0b264ddeee3d3c",
+        "metrics_by_race.csv": "8fed70e6e5f611d06cdc3e7fb0dc276cd535b34e5377ef352bf1784ebeac2e35",
+        "errors.csv.gz": "aa03aa0256411f5df4d81d2e0fa4b6aaeeddf7f1ae76e0a367f3a40aad4eec5d",
+        "predictions.csv.gz": "85d29f568e07f1762caf6d76c18a70445ecd628f8c9565b02babf07baf5cbba4"
+      }
+    }
+  }
+}

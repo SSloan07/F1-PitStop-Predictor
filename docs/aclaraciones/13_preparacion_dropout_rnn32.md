@@ -1,6 +1,6 @@
 # Preparación de la comparación RNN32 con dropout
 
-**Estado:** listo para Colab; todavía no se ha entrenado ni evaluado esta variante.
+**Estado:** corrida pareada completada y evaluada localmente; ver [resultados](14_resultados_dropout_rnn32.md). La candidata dropout 0,2 no superó F2 en esta semilla.
 
 Se implementó una comparación pareada que reutiliza el loader, el entrenamiento, la política F2 y el formato de artefactos del proyecto. Ambos modelos se entrenan desde cero en la misma sesión. El único cambio es `model.dropout_rate`, de 0,0 a 0,2, aplicado después de ReLU en la capa de fusión. La RNN, sus 32 unidades, la rama estática, las features y la cabeza mantienen sus dimensiones.
 
@@ -17,4 +17,4 @@ python scripts/empaquetar_experimento_dropout.py \
 
 Guardar el SHA-256 impreso. En Colab, seleccionar GPU, subir `runs/rnn_colab_dropout_v3.zip` y abrir [`04_rnn_dropout_colab.ipynb`](../../notebooks/04_rnn_dropout_colab.ipynb). El notebook verifica el paquete y consulta `torch.cuda.is_available()`, instala solo NumPy y pandas y conserva el PyTorch de Colab y detiene la ejecución si CUDA no está disponible.
 
-Tras la corrida, descargar `rnn32_dropout02_f2_v2_seed42.zip` y colocarlo en `runs/`. La siguiente fase es evaluar ambos hijos localmente en CPU, verificar paridad, generar el informe y actualizar el árbol. Aún no se debe afirmar que dropout mejora el modelo.
+La corrida completa está publicada como `runs/rnn32_dropout02_f2_v2_seed42.zip`; el intento previo fallido se conserva. Ambos hijos se evaluaron localmente en CPU con paridad aprobada. 2025 permanece reservada y no hay evidencia suficiente de estabilidad entre semillas.

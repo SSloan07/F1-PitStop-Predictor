@@ -2,6 +2,8 @@
 
 **Estado:** propuesta para revisión y validación; no autoriza generar etiquetas definitivas. Complementa las especificaciones 01 y 02.
 
+> **Decisión posterior:** la etiqueta operativa del proyecto es visita a boxes registrada por `PitInTime`/`PitOutTime`, sin exigir confirmación de cambio de neumáticos. Esta propuesta histórica de clasificar cambios se conserva como análisis separado; consultar [SPEC-LABEL-002](07_objetivo_entrada_boxes.md) para el objetivo vigente.
+
 **Contrato de ejecución:** [Especificación 06: pipeline de etiquetado candidato](06_pipeline_etiquetado_candidato.md). Define entradas, etapas, revisión acotada, controles y entregables para el modelo implementador. Para esa entrega, la revisión de reglas se limita a 2022–2023; se conserva aquí el contexto exploratorio previo.
 
 ## Objetivo y separación de etapas

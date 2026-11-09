@@ -1,6 +1,6 @@
 # Experimento de regularización: dropout en RNN32
 
-**Estado:** preparado para entrenamiento en Colab; no contiene resultados. 2025 permanece reservada.
+**Estado:** ejecutado y evaluado. La comparación pareada v2 está completa; el resultado no muestra mejora de F2 para dropout 0,2 en la semilla 42. 2025 permanece reservada.
 
 ## Pregunta
 
@@ -42,6 +42,12 @@ python scripts/entrenar_comparacion_dropout.py \
 ```
 
 La evaluación local usa el mismo holdout 2024 y umbrales congelados. El bundle de Colab incluye pesos y predicciones de validación, pero ningún array de test. El ZIP padre registra checksums, controles, entorno y estado de autorización.
+
+## Resultado observado
+
+La pareja rnn32_dropout02_f2_v2_seed42 se ejecutó en Colab con Tesla T4 y se evaluó localmente en CPU. La referencia obtuvo F2 0,44463 y dropout 0,2 obtuvo 0,44341 con sus umbrales F2 seleccionados (0,12 y 0,14). Dropout mejoró AP (0,20158 → 0,20882) y BCE (0,33111 → 0,31991), pero redujo recall y cobertura por evento. La diferencia proviene de una sola semilla; no demuestra un efecto general.
+
+El ZIP devuelto tuvo SHA-256 96b4af9a62e08ed8472bb0b7c351f54ef81392380cbd59c54760a0c7c9e80f4e; los 40 archivos del manifiesto se verificaron. La paridad entre predicciones de Colab y evaluación CPU pasó con cero decisiones distintas en ambos hijos. El informe reproducible está en [resultados de dropout](../aclaraciones/14_resultados_dropout_rnn32.md), y la rama se muestra en el [árbol de experimentos](../aclaraciones/09_arbol_experimentos.md).
 
 ## Interpretación y límites
 
