@@ -22,6 +22,7 @@ _DIMENSION_DEFAULTS = {
     "static_hidden_size": 16,
     "head_hidden_size": 16,
     "window_length": 8,
+    "num_recurrent_layers": 1,
 }
 _DROPOUT_DEFAULT = 0.0
 _COUNT_KEYS = {"num_numeric", "dynamic_cardinalities", "static_cardinalities"}
@@ -158,6 +159,8 @@ class SmallPitStopRNN(nn.Module):
     def __init__(self, spec: dict[str, Any]) -> None:
         super().__init__()
         self.spec = _validated_spec(spec)
+        if self.spec["num_recurrent_layers"] != 1:
+            raise ValueError("num_recurrent_layers is supported only by the LSTM model")
         embedding_dim = self.spec["embedding_dim"]
         self.dynamic_embeddings = nn.ModuleList(
             _CategoryEmbedding(cardinality, embedding_dim)

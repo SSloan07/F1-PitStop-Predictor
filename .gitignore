@@ -11,3 +11,9 @@
 # Local experiment runs and validation reports
 /runs/
 /eval/
+# Local credentials and Python bytecode
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]

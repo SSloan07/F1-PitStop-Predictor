@@ -1,4 +1,4 @@
-"""Create the verified Colab input ZIP for the paired LSTM32 F1 versus F2 objective experiment."""
+"""Create a verified Colab input ZIP for a paired LSTM32 F1 versus F2 objective experiment."""
 import argparse
 import hashlib
 import json
@@ -17,9 +17,9 @@ FILES = [
     "src/f1_pitstop/__init__.py", "src/f1_pitstop/rnn_data.py",
     "src/f1_pitstop/rnn_model.py", "src/f1_pitstop/lstm_model.py", "src/f1_pitstop/rnn_experiment.py",
     "src/f1_pitstop/experiment_metrics.py",
-    "configs/experimento_lstm32_f1_ref_v1.json",
-    "configs/experimento_lstm32_f1_candidate_v1.json",
 ]
+DEFAULT_REFERENCE_CONFIG = "configs/experimento_lstm32_f1_ref_v1.json"
+DEFAULT_CANDIDATE_CONFIG = "configs/experimento_lstm32_f1_candidate_v1.json"
 DATA = "EDA/dataset/muestras_preprocesadas_v1_3"
 
 
@@ -31,21 +31,26 @@ def sha256(path):
     return digest.hexdigest()
 
 
-def package(output):
+def package(output, reference_config=DEFAULT_REFERENCE_CONFIG, candidate_config=DEFAULT_CANDIDATE_CONFIG):
     output = Path(output)
     if not output.is_absolute():
         output = ROOT / output
     if output.exists():
         raise FileExistsError(f"Refusing to overwrite {output}")
-    reference = read_json(ROOT / FILES[-2])
-    candidate = read_json(ROOT / FILES[-1])
+    config_names = [str(reference_config), str(candidate_config)]
+    config_paths = [(ROOT / name).resolve() for name in config_names]
+    if any(not path.is_relative_to(ROOT.resolve()) for path in config_paths):
+        raise ValueError("Pair configurations must be inside the repository")
+    reference, candidate = [read_json(path) for path in config_paths]
     _validate_pair_configs(reference, candidate)
-    if reference["training"]["device"] != "cuda" or candidate["training"]["device"] != "cuda":
-        raise ValueError("Both configs must require CUDA explicitly")
+    device = reference["training"]["device"]
+    if device not in {"cpu", "cuda"} or candidate["training"]["device"] != device:
+        raise ValueError("Both configs must require the same explicit CPU or CUDA device")
+    names = FILES + config_names
     data_manifest = ROOT / DATA / "manifest.json"
     if sha256(data_manifest) != reference["preprocessed_manifest_sha256"]:
         raise ValueError("Preprocessed data manifest hash mismatch")
-    names = FILES + [f"{DATA}/{name}" for name in (
+    names += [f"{DATA}/{name}" for name in (
         "manifest.json", "preprocessor.json", "config.json",
         *[f"{split}_{suffix}" for split in ("train", "validation")
           for suffix in ("inputs.npz", "metadata.csv.gz", "labels.csv.gz")],
@@ -56,13 +61,13 @@ def package(output):
         raise FileNotFoundError(f"Missing package inputs: {missing}")
     hashes = {name: sha256(path) for name, path in paths}
     manifest = {
-        "artifact_version": "lstm_colab_f1_inputs_v1",
+        "artifact_version": "lstm_colab_f1_inputs_v1" if device == "cuda" else "lstm_colab_f1_cpu_inputs_v1",
         "files_sha256": hashes,
-        "experiment_config": "configs/experimento_lstm32_f1_candidate_v1.json",
-        "companion_configs": ["configs/experimento_lstm32_f1_ref_v1.json"],
+        "experiment_config": config_names[1],
+        "companion_configs": [config_names[0]],
         "preprocessed_manifest_sha256": sha256(data_manifest),
         "test_arrays_included": False,
-        "training_device_policy": "cuda_required_no_cpu_fallback",
+        "training_device_policy": "cuda_required_no_cpu_fallback" if device == "cuda" else "cpu_required_no_cuda",
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "x", zipfile.ZIP_DEFLATED) as archive:
@@ -78,8 +83,10 @@ def package(output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path("runs/lstm_colab_f1_v1.zip"))
+    parser.add_argument("--reference-config", type=Path, default=Path(DEFAULT_REFERENCE_CONFIG))
+    parser.add_argument("--candidate-config", type=Path, default=Path(DEFAULT_CANDIDATE_CONFIG))
     args = parser.parse_args()
-    package(args.output)
+    package(args.output, args.reference_config, args.candidate_config)
 
 
 if __name__ == "__main__":

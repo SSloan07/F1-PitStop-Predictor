@@ -61,8 +61,12 @@ def _validate_pair_configs(reference, candidate):
             raise ValueError("Both models must use a constant learning rate")
         if config["training"].get("learning_rate") != 0.001 or config["training"].get("optimizer") != "Adam":
             raise ValueError("Adam and initial learning rate 0.001 must remain fixed")
-        if config["training"].get("device") != "cuda" or config["training"].get("seed") != 42:
-            raise ValueError("Pair requires seed 42 and explicit CUDA")
+        if config["training"].get("seed") != 42:
+            raise ValueError("Pair requires seed 42")
+        if config["training"].get("device") not in {"cpu", "cuda"}:
+            raise ValueError("Pair requires an explicit CPU or CUDA device")
+    if reference["training"].get("device") != candidate["training"].get("device"):
+        raise ValueError("Both runs must use the same explicit device")
     left, right = _material_controls(reference), _material_controls(candidate)
     left["experiment_id"] = right["experiment_id"] = "rnn_reference_v1"
     left["selection"]["primary_metric"] = right["selection"]["primary_metric"] = "positive_class_f2"
@@ -74,8 +78,8 @@ def _validate_pair_configs(reference, candidate):
 
 def _capture_environment(protocol):
     device = choose_device(protocol["device"])
-    if device.type != "cuda":
-        raise ValueError("CUDA GPU is required for this experiment")
+    if device.type not in {"cpu", "cuda"}:
+        raise ValueError("Experiment requires an explicit CPU or CUDA device")
     return {
         "python": sys.version, "platform": platform.platform(),
         "torch": str(torch.__version__), "numpy": np.__version__,

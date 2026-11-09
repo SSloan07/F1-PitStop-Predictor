@@ -92,12 +92,14 @@ def _selection_protocol(config):
 
     Older F2 configs have no explicit beta. Derive that default from the
     experiment ID, while rejecting a supplied beta or primary metric that
-    contradicts the ID. Training loss remains unweighted BCE in both cases.
+    contradicts the ID. The configured BCE variant is recorded independently of the selection metric.
     """
     protocols = {
         "rnn_reference_v1": ("f2", 2),
         "rnn_reference_f1_v1": ("f1", 1),
         "rnn_hidden16_f2_v1": ("f2", 2),
+        "lstm32_f2_pos_weight_v1": ("f2", 2),
+        "lstm32_depth_f2_v1": ("f2", 2),
     }
     experiment_id = config.get("experiment_id")
     if experiment_id not in protocols:
@@ -124,8 +126,15 @@ def _validate_config(config):
             raise ValueError(f"Invalid {name}")
     if protocol["learning_rate"] <= 0 or protocol["gradient_clip_norm"] <= 0:
         raise ValueError("Learning rate and gradient clip must be positive")
-    if protocol.get("loss") != "unweighted_bce_with_logits" or protocol.get("optimizer") != "Adam":
-        raise ValueError("Loss/optimizer differs from the declared reference")
+    loss_name = protocol.get("loss")
+    if loss_name not in {"unweighted_bce_with_logits", "weighted_bce_with_logits"} or protocol.get("optimizer") != "Adam":
+        raise ValueError("Unsupported loss/optimizer")
+    if loss_name == "weighted_bce_with_logits":
+        weight = protocol.get("pos_weight")
+        if isinstance(weight, bool) or not isinstance(weight, (int, float)) or not np.isfinite(weight) or weight <= 0:
+            raise ValueError("weighted BCE requires a finite positive pos_weight")
+    elif "pos_weight" in protocol:
+        raise ValueError("Unweighted BCE must not declare pos_weight")
     scheduler = protocol.get("lr_scheduler", {"name": "constant"})
     if not isinstance(scheduler, dict) or scheduler.get("name") not in {"constant", "reduce_on_plateau"}:
         raise ValueError("Unsupported learning-rate scheduler")
@@ -194,7 +203,9 @@ def train_experiment(config_path, output, root, device_override=None):
             threshold_mode=scheduler_config["threshold_mode"], cooldown=scheduler_config["cooldown"],
             min_lr=scheduler_config["min_lr"],
         )
-    criterion = torch.nn.BCEWithLogitsLoss()
+    pos_weight = (torch.tensor(float(protocol["pos_weight"]), device=device)
+                  if protocol["loss"] == "weighted_bce_with_logits" else None)
+    criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight)
     training_loader = _loader(train, protocol["batch_size"], shuffle=True, seed=seed)
     training_evaluation_loader = _loader(train, protocol["batch_size"])
     validation_loader = _loader(validation, protocol["batch_size"])

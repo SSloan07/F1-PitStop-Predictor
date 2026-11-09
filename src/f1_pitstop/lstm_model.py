@@ -40,6 +40,10 @@ class SmallPitStopLSTM(SmallPitStopRNN):
             + len(self.dynamic_embeddings) * embedding_dim
         )
         self.lstm_cell = nn.LSTMCell(recurrent_input_size, self.spec["hidden_size"])
+        self.additional_lstm_cells = nn.ModuleList(
+            nn.LSTMCell(self.spec["hidden_size"], self.spec["hidden_size"])
+            for _ in range(self.spec["num_recurrent_layers"] - 1)
+        )
         self.static_encoder = nn.Sequential(
             nn.Linear(len(self.static_embeddings) * embedding_dim, self.spec["static_hidden_size"]),
             nn.ReLU(),
@@ -95,15 +99,27 @@ class SmallPitStopLSTM(SmallPitStopRNN):
         recurrent_input = torch.cat(
             [safe_numeric, available.to(numeric.dtype), *dynamic_vectors], dim=-1
         )
-        hidden = numeric.new_zeros((numeric.shape[0], self.spec["hidden_size"]))
-        cell_state = torch.zeros_like(hidden)
+        cells = (self.lstm_cell, *self.additional_lstm_cells)
+        hidden_states = [
+            numeric.new_zeros((numeric.shape[0], self.spec["hidden_size"]))
+            for _ in cells
+        ]
+        cell_states = [torch.zeros_like(hidden) for hidden in hidden_states]
         for step in range(self.spec["window_length"]):
-            candidate_hidden, candidate_cell = self.lstm_cell(
-                recurrent_input[:, step], (hidden, cell_state)
-            )
+            layer_input = recurrent_input[:, step]
             active_step = active[:, step, None]
-            hidden = torch.where(active_step, candidate_hidden, hidden)
-            cell_state = torch.where(active_step, candidate_cell, cell_state)
+            for layer_index, cell in enumerate(cells):
+                candidate_hidden, candidate_cell = cell(
+                    layer_input, (hidden_states[layer_index], cell_states[layer_index])
+                )
+                hidden_states[layer_index] = torch.where(
+                    active_step, candidate_hidden, hidden_states[layer_index]
+                )
+                cell_states[layer_index] = torch.where(
+                    active_step, candidate_cell, cell_states[layer_index]
+                )
+                layer_input = hidden_states[layer_index]
+        hidden = hidden_states[-1]
         static_vectors = torch.cat(
             [embedding(static_ids[:, index].long())
              for index, embedding in enumerate(self.static_embeddings)], dim=-1
