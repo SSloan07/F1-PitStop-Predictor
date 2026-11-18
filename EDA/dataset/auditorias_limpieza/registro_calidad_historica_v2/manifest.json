@@ -1,0 +1,80 @@
+{
+  "quality_register_version": "historical_quality_contract_v2",
+  "created_at_utc": "2026-11-08T03:03:47.983596+00:00",
+  "input": {
+    "path": "/home/simonsloan/Universidad/Semestre6/DeepLearning/F1-PitStop-Predictor/EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_normalizado_v1/vueltas_2022_2025_compound_normalizado.pkl",
+    "sha256": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "normalization_manifest_path": "/home/simonsloan/Universidad/Semestre6/DeepLearning/F1-PitStop-Predictor/EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_normalizado_v1/manifest.json",
+    "normalization_manifest_sha256": "7d982955db05afaacbaf03d467d7dd6d9c9e06987327e24a0f247c7002acea2d",
+    "compound_audit_path": "/home/simonsloan/Universidad/Semestre6/DeepLearning/F1-PitStop-Predictor/EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_normalizado_v1/compound_normalization_audit.csv",
+    "compound_audit_sha256": "3d86719dc28e247e41d4f0bf052a3df179dadca30cd27275b7db4fe8373aea45",
+    "master_source_sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+    "rows": 101290,
+    "columns": 61
+  },
+  "caches_read_only": {
+    "cache:2022/2022-10-09_Japanese_Grand_Prix/2022-10-09_Race/car_data.ff1pkl": "83efd2c84054ab1a0d314e0e5408d7d0c02b3816bd1ba2846305b4c29d76d709",
+    "cache:2022/2022-05-08_Miami_Grand_Prix/2022-05-08_Race/car_data.ff1pkl": "9a6b317675fd39616865de6cf7a9412f61644b2251aff28f3b3353ae43fc5291",
+    "cache:2022/2022-06-12_Azerbaijan_Grand_Prix/2022-06-12_Race/car_data.ff1pkl": "ba6bb36af3ea9a819367989bf0bb9eb5d09ba076b6531b89a96c47815530218d",
+    "cache:2025/2025-03-16_Australian_Grand_Prix/2025-03-16_Race/car_data.ff1pkl": "70b47e9fa5dcec48e6213892727e4d7dec7f0d878118a1e99705d3b978dcd01e",
+    "cache:2025/2025-09-07_Italian_Grand_Prix/2025-09-07_Race/car_data.ff1pkl": "0b6e6fe7d517c998bf0fa8363f73ceb500e661da27e37d647fcd13b7ac6855ee",
+    "cache:2024/2024-11-23_Las_Vegas_Grand_Prix/2024-11-23_Race/_extended_timing_data.ff1pkl": "eb971a21cd7e26198d51ad9eb08db785c3f38e64f033ade164b910891de09ad9",
+    "cache:2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/session_info.ff1pkl": "aaec054821d0f5c0329475cb49753d37ba88c0a6664b1570b07ac4ac8ceef760",
+    "cache:2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/session_status_data.ff1pkl": "686eb934cc3425599546dc0325060b0e6902d2f3895cd0f8a177d5bd7d26f2a5",
+    "cache:2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/race_control_messages.ff1pkl": "62ca37ddd934bc5a4d3b4822f7014a7b6eb249b78dbc5e9d80fbe521bd0593cd",
+    "cache:2024/2024-05-26_Monaco_Grand_Prix/2024-05-26_Race/session_info.ff1pkl": "a2482d1402e47bd2bc10d8bd4e4b59e65b779b8b3c03909e4d0535f1e92833d1",
+    "cache:2024/2024-05-26_Monaco_Grand_Prix/2024-05-26_Race/session_status_data.ff1pkl": "8e9f897d836de0107f8840fc7792865fa3bdd661833a361ce7b726f74a5f20b9",
+    "cache:2024/2024-05-26_Monaco_Grand_Prix/2024-05-26_Race/race_control_messages.ff1pkl": "fd5cc16749cb646933914722e90949d2ecc616230db4fcf1a143dc9c08a54989"
+  },
+  "matrix_output_written": false,
+  "rules": {
+    "exact_markers_only": [
+      "None",
+      "nan"
+    ],
+    "no_imputation": true,
+    "no_row_deletion": true,
+    "no_value_repair": true
+  },
+  "counts": {
+    "register_rows": 16644,
+    "register_by_reason": {
+      "compound_not_determined_normalized": 780,
+      "fresh_tyre_true_without_stint_state": 354,
+      "gear_aggregate_exceeds_physical_range_candidate": 51,
+      "generated_row": 1757,
+      "lap_start_precedes_previous_lap_time": 22,
+      "lap_time_missing_preserved": 249,
+      "missing_entire_identified_stint": 635,
+      "missing_stint_in_cached_initial_block": 708,
+      "no_valid_throttle_samples": 78,
+      "pit_in_lap_speedfl_unavailable": 3467,
+      "positive_algebraic_sector1_candidate": 1773,
+      "raw_throttle_contains_out_of_range_source_code": 1123,
+      "sector_sum_discrepancy": 56,
+      "sector_timing_missing_preserved": 4503,
+      "speedfl_present_with_pit_in_context": 2,
+      "timing_speed_missing_preserved": 932,
+      "zero_telemetry_aggregate_source_review": 154
+    },
+    "variables_profiled": 61
+  },
+  "software": {
+    "python": "3.14.7",
+    "pandas": "2.3.3",
+    "numpy": "2.5.2"
+  },
+  "code": {
+    "git_revision": "bc8fd06e72537ecde2669162db9319dbd8738629",
+    "script_sha256": "e15d0fbd6a38fc36d183b2fc9071b61a2ab80353f179c3bb6d88525d64131e4e"
+  },
+  "outputs": {
+    "quality_register.csv": "1ab8f1af20361602811258a4b5d54791f137a314a3bb040992a9e37305ad70dc",
+    "variable_quality_summary.csv": "7d59b8e96f52c43e8ada58c256188e3a4617c2f24f96275b604da77ffb15fc0f",
+    "source_case_review.csv": "6c1a2d083d4551b2830e8199dd4d8214c802c4003d3b691f20c3253d3130ec84",
+    "sector_source_review.csv": "458d7dc5f3569e5f615a1331accd863ae1fd05d17a1108ec3d569eb626378bb1",
+    "clock_boundary_review.csv": "5b22b941ec9cc876ce354fbee1f6dbb4cd7df0fb0325809972285b1a6c2eb3be",
+    "reconciliation.json": "f86d458ec452f52356b42b0e2489ed2bceca14a7fcc9d66cc0528d999ccc6778",
+    "report.md": "26c121849194e4aa2d27610e802bc218cd2e5c4560f71bbd7f95052731aec0cc"
+  }
+}

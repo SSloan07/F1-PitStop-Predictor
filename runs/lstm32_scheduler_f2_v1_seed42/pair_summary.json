@@ -1,0 +1,520 @@
+{
+  "pair_id": "lstm32_scheduler_f2_v1_seed42",
+  "comparison_authorized": true,
+  "selection_metric": "f2",
+  "selection_beta": 2,
+  "seed": 42,
+  "test_used": false,
+  "changed_factor": {
+    "name": "training.lr_scheduler",
+    "reference": {
+      "name": "constant"
+    },
+    "candidate": {
+      "name": "reduce_on_plateau",
+      "monitor": "train_evaluation_loss",
+      "mode": "min",
+      "factor": 0.5,
+      "patience": 2,
+      "threshold": 0.0001,
+      "threshold_mode": "rel",
+      "cooldown": 0,
+      "min_lr": 1e-05
+    }
+  },
+  "reference": {
+    "directory": "lstm32_reference",
+    "lr_scheduler": {
+      "name": "constant"
+    },
+    "learning_rate_by_epoch": [
+      {
+        "epoch": 1,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 2,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 3,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 4,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 5,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 6,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 7,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 8,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 9,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 10,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 11,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 12,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 13,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 14,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 15,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 16,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 17,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 18,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 19,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 20,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 21,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 22,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 23,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 24,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 25,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 26,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 27,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 28,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 29,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 30,
+        "used": 0.001,
+        "next": 0.001
+      }
+    ],
+    "reduction_epochs": [],
+    "hidden_size": 32,
+    "recurrent_cell": "lstm",
+    "dropout_rate": 0.2,
+    "parameter_count": 12377,
+    "best_epoch": 27,
+    "elapsed_seconds": 173.81562004900002,
+    "threshold": 0.05,
+    "validation": {
+      "bce": 0.3810387007042007,
+      "fixed_threshold_0_5": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 655,
+        "fp": 2194,
+        "fn": 1660,
+        "tn": 21126,
+        "precision": 0.2299052299052299,
+        "recall": 0.28293736501079914,
+        "f1": 0.2536793183578621,
+        "f2": 0.2704599884383516,
+        "false_positives_per_100_decisions": 8.558611273649307,
+        "average_precision": 0.19731322965061468
+      },
+      "selected_threshold": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1799,
+        "fp": 9206,
+        "fn": 516,
+        "tn": 14114,
+        "precision": 0.16347114947751024,
+        "recall": 0.7771058315334773,
+        "f1": 0.2701201201201201,
+        "f2": 0.4438687392055268,
+        "false_positives_per_100_decisions": 35.91183928223133,
+        "average_precision": 0.19731322965061468
+      }
+    },
+    "train": {
+      "bce": 0.17764623248490866,
+      "fixed_threshold_0_5": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 2270,
+        "fp": 906,
+        "fn": 2533,
+        "tn": 40453,
+        "precision": 0.714735516372796,
+        "recall": 0.47262127836768686,
+        "f1": 0.5689936082215816,
+        "f2": 0.5069680185813829,
+        "false_positives_per_100_decisions": 1.9626532645899224,
+        "average_precision": 0.6910263751045228
+      },
+      "selected_threshold": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 4579,
+        "fp": 11785,
+        "fn": 224,
+        "tn": 29574,
+        "precision": 0.27982155952089954,
+        "recall": 0.9533624817822195,
+        "f1": 0.43265460386450605,
+        "f2": 0.6435518326961996,
+        "false_positives_per_100_decisions": 25.5296564273645,
+        "average_precision": 0.6910263751045228
+      }
+    }
+  },
+  "candidate": {
+    "directory": "lstm32_scheduler",
+    "lr_scheduler": {
+      "name": "reduce_on_plateau",
+      "monitor": "train_evaluation_loss",
+      "mode": "min",
+      "factor": 0.5,
+      "patience": 2,
+      "threshold": 0.0001,
+      "threshold_mode": "rel",
+      "cooldown": 0,
+      "min_lr": 1e-05
+    },
+    "learning_rate_by_epoch": [
+      {
+        "epoch": 1,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 2,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 3,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 4,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 5,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 6,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 7,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 8,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 9,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 10,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 11,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 12,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 13,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 14,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 15,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 16,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 17,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 18,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 19,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 20,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 21,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 22,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 23,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 24,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 25,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 26,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 27,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 28,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 29,
+        "used": 0.001,
+        "next": 0.001
+      },
+      {
+        "epoch": 30,
+        "used": 0.001,
+        "next": 0.001
+      }
+    ],
+    "reduction_epochs": [],
+    "hidden_size": 32,
+    "recurrent_cell": "lstm",
+    "dropout_rate": 0.2,
+    "parameter_count": 12377,
+    "best_epoch": 27,
+    "elapsed_seconds": 178.37314599800004,
+    "threshold": 0.05,
+    "validation": {
+      "bce": 0.3810387007042007,
+      "fixed_threshold_0_5": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 655,
+        "fp": 2194,
+        "fn": 1660,
+        "tn": 21126,
+        "precision": 0.2299052299052299,
+        "recall": 0.28293736501079914,
+        "f1": 0.2536793183578621,
+        "f2": 0.2704599884383516,
+        "false_positives_per_100_decisions": 8.558611273649307,
+        "average_precision": 0.19731322965061468
+      },
+      "selected_threshold": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1799,
+        "fp": 9206,
+        "fn": 516,
+        "tn": 14114,
+        "precision": 0.16347114947751024,
+        "recall": 0.7771058315334773,
+        "f1": 0.2701201201201201,
+        "f2": 0.4438687392055268,
+        "false_positives_per_100_decisions": 35.91183928223133,
+        "average_precision": 0.19731322965061468
+      }
+    },
+    "train": {
+      "bce": 0.17764623248490866,
+      "fixed_threshold_0_5": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 2270,
+        "fp": 906,
+        "fn": 2533,
+        "tn": 40453,
+        "precision": 0.714735516372796,
+        "recall": 0.47262127836768686,
+        "f1": 0.5689936082215816,
+        "f2": 0.5069680185813829,
+        "false_positives_per_100_decisions": 1.9626532645899224,
+        "average_precision": 0.6910263751045228
+      },
+      "selected_threshold": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 4579,
+        "fp": 11785,
+        "fn": 224,
+        "tn": 29574,
+        "precision": 0.27982155952089954,
+        "recall": 0.9533624817822195,
+        "f1": 0.43265460386450605,
+        "f2": 0.6435518326961996,
+        "false_positives_per_100_decisions": 25.5296564273645,
+        "average_precision": 0.6910263751045228
+      }
+    }
+  },
+  "delta_candidate_minus_reference": {
+    "train_fixed_threshold_0_5": {
+      "f1": 0.0,
+      "f2": 0.0,
+      "average_precision": 0.0,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "train_selected_threshold": {
+      "f1": 0.0,
+      "f2": 0.0,
+      "average_precision": 0.0,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "validation_fixed_threshold_0_5": {
+      "f1": 0.0,
+      "f2": 0.0,
+      "average_precision": 0.0,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "validation_selected_threshold": {
+      "f1": 0.0,
+      "f2": 0.0,
+      "average_precision": 0.0,
+      "precision": 0.0,
+      "recall": 0.0
+    }
+  },
+  "note": "Validation selects checkpoints and thresholds; final test 2025 remains reserved. Historical runs are context only."
+}

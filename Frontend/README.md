@@ -11,7 +11,7 @@ python3.13 -m pip install -r requirements-simulator.txt
 python3.13 scripts/servir_simulador_2024.py
 ```
 
-Abrir `http://127.0.0.1:8765`. El backend valida SHA-256 de la matriz 2024, eventos, índice causal y ZIPs de modelo al iniciar. Los ZIPs de `runs/`, la matriz normalizada y `EDA/dataset/cache_fastf1_carreras/2024/` son artefactos locales que no se suben a Git. La vista de pista necesita las cachés `position_data.ff1pkl` y `car_data.ff1pkl` para las 24 carreras 2024.
+Abrir `http://127.0.0.1:8765`. El backend valida SHA-256 de la matriz 2024, eventos, índice causal y ZIPs de modelo al iniciar. El clon incluye los ZIP de modelos, los datos con sus hashes y los archivos de posición y velocidad de las 24 carreras. El replay se puede ejecutar sin descargar telemetría ni entrenar los modelos.
 
 ## Alcance
 

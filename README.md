@@ -36,12 +36,12 @@ We plan to train a **recurrent neural network (RNN)** on sequences of consecutiv
 | Stage | Role in the project |
 | :--- | :--- |
 | **Collect** | Use [FastF1](https://docs.fastf1.dev/) to obtain historical lap, tyre, position and track-status data. |
-| **Prepare** | Build sequences using recent lap times, tyre compound and age, race position and track status. |
-| **Label** | Set `PitWithin3Laps` to `1` if a pit entry occurs in the next three laps, and `0` otherwise. |
-| **Predict** | Train an RNN to output the probability of a pit entry within that window. |
+| **Prepare** | Use a planned static FFNN branch for driver, team and circuit context, and an RNN sequence for race-changing information such as lap times, tyre state, position and track status. |
+| **Label** | Set `PitWithin3Laps` to `1` for a paired `PitInTime`/`PitOutTime` visit in laps `N`, `N+1` or `N+2`; set it to `0` only when the full horizon is observed and has no unresolved event. Otherwise leave it unknown. |
+| **Predict** | The planned combined model will use only information available by the start of the current lap. |
 | **Replay** | Display predictions alongside the events of a historical race as each lap unfolds. |
 
-Every prediction will use information available up to that lap. Historical `PitInTime` and `LapNumber` records will provide the outcomes used for training and evaluation.
+Every prediction will use information available no later than the start of the current lap. Historical `PitInTime` anchors a candidate visit and a later paired `PitOutTime` corroborates it; both are reserved for labels and audit, never model inputs.
 
 ### Reading the race
 
@@ -64,6 +64,8 @@ We will compare the RNN with a **logistic regression baseline** trained on the c
 This will help us understand whether the recurrent model adds value and which race situations remain difficult to predict.
 
 ## Race replay
+
+[Run the 2024 replay locally](Frontend/README.md) using the included validation predictions and telemetry.
 
 The replay experience is designed to follow a historical race lap by lap and display each driver's predicted probability of entering the pits. Actual pit entries appear as the replay reaches them, allowing viewers to compare the predictions with what happened on track.
 

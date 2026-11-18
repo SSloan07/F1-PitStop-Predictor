@@ -1,0 +1,187 @@
+{
+  "pair_id": "rnn32_dropout02_f2_v2_seed42",
+  "comparison_authorized": true,
+  "selection_metric": "f2",
+  "selection_beta": 2,
+  "seed": 42,
+  "test_used": false,
+  "changed_factor": {
+    "name": "model.dropout_rate",
+    "reference": 0.0,
+    "candidate": 0.2,
+    "location": "fusion_head_after_relu"
+  },
+  "reference": {
+    "directory": "rnn32_reference",
+    "hidden_size": 32,
+    "dropout_rate": 0.0,
+    "parameter_count": 4121,
+    "best_epoch": 10,
+    "elapsed_seconds": 92.20607820500004,
+    "threshold": 0.12,
+    "validation": {
+      "bce": 0.3311139167947845,
+      "fixed_threshold_0_5": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 616,
+        "fp": 2046,
+        "fn": 1699,
+        "tn": 21274,
+        "precision": 0.23140495867768596,
+        "recall": 0.2660907127429806,
+        "f1": 0.24753867791842477,
+        "f2": 0.2583459151149136,
+        "false_positives_per_100_decisions": 7.981275599765945,
+        "average_precision": 0.20157750877436803
+      },
+      "selected_threshold": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1696,
+        "fp": 8116,
+        "fn": 619,
+        "tn": 15204,
+        "precision": 0.17284957195271097,
+        "recall": 0.7326133909287257,
+        "f1": 0.27970644017481655,
+        "f2": 0.4446308724832215,
+        "false_positives_per_100_decisions": 31.659840062414666,
+        "average_precision": 0.20157750877436803
+      }
+    },
+    "train": {
+      "bce": 0.22815825305867818,
+      "fixed_threshold_0_5": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 1510,
+        "fp": 982,
+        "fn": 3293,
+        "tn": 40377,
+        "precision": 0.6059390048154093,
+        "recall": 0.31438684155735996,
+        "f1": 0.4139821795750514,
+        "f2": 0.34786214522668635,
+        "false_positives_per_100_decisions": 2.127290845284,
+        "average_precision": 0.5218447621242147
+      },
+      "selected_threshold": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 4124,
+        "fp": 10093,
+        "fn": 679,
+        "tn": 31266,
+        "precision": 0.2900752620102694,
+        "recall": 0.8586300229023527,
+        "f1": 0.4336487907465825,
+        "f2": 0.6168296987645457,
+        "false_positives_per_100_decisions": 21.864303972964777,
+        "average_precision": 0.5218447621242147
+      }
+    }
+  },
+  "candidate": {
+    "directory": "rnn32_dropout",
+    "hidden_size": 32,
+    "dropout_rate": 0.2,
+    "parameter_count": 4121,
+    "best_epoch": 10,
+    "elapsed_seconds": 86.49192957599996,
+    "threshold": 0.14,
+    "validation": {
+      "bce": 0.3199086980929448,
+      "fixed_threshold_0_5": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 642,
+        "fp": 2081,
+        "fn": 1673,
+        "tn": 21239,
+        "precision": 0.23576937201615863,
+        "recall": 0.27732181425485963,
+        "f1": 0.2548630408892418,
+        "f2": 0.2678794959525995,
+        "false_positives_per_100_decisions": 8.11780768480593,
+        "average_precision": 0.20882204375685387
+      },
+      "selected_threshold": {
+        "n_samples": 25635,
+        "positives": 2315,
+        "tp": 1626,
+        "fp": 7449,
+        "fn": 689,
+        "tn": 15871,
+        "precision": 0.17917355371900826,
+        "recall": 0.7023758099352052,
+        "f1": 0.28551360842844603,
+        "f2": 0.44341423506953914,
+        "false_positives_per_100_decisions": 29.057928613224107,
+        "average_precision": 0.20882204375685387
+      }
+    },
+    "train": {
+      "bce": 0.23163782885549675,
+      "fixed_threshold_0_5": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 1844,
+        "fp": 1410,
+        "fn": 2959,
+        "tn": 39949,
+        "precision": 0.5666871542716656,
+        "recall": 0.38392671247137206,
+        "f1": 0.45773861238674446,
+        "f2": 0.41039793465681473,
+        "false_positives_per_100_decisions": 3.0544603786664357,
+        "average_precision": 0.5122169733658025
+      },
+      "selected_threshold": {
+        "n_samples": 46162,
+        "positives": 4803,
+        "tp": 4065,
+        "fp": 9401,
+        "fn": 738,
+        "tn": 31958,
+        "precision": 0.3018713797712758,
+        "recall": 0.8463460337289195,
+        "f1": 0.4450161475723904,
+        "f2": 0.6219780892343473,
+        "false_positives_per_100_decisions": 20.365235475066072,
+        "average_precision": 0.5122169733658025
+      }
+    }
+  },
+  "delta_candidate_minus_reference": {
+    "train_fixed_threshold_0_5": {
+      "f1": 0.04375643281169306,
+      "f2": 0.06253578943012839,
+      "average_precision": -0.009627788758412192,
+      "precision": -0.039251850543743694,
+      "recall": 0.06953987091401209
+    },
+    "train_selected_threshold": {
+      "f1": 0.011367356825807862,
+      "f2": 0.005148390469801534,
+      "average_precision": -0.009627788758412192,
+      "precision": 0.01179611776100642,
+      "recall": -0.012283989173433207
+    },
+    "validation_fixed_threshold_0_5": {
+      "f1": 0.007324362970817011,
+      "f2": 0.009533580837685907,
+      "average_precision": 0.00724453498248584,
+      "precision": 0.004364413338472678,
+      "recall": 0.01123110151187906
+    },
+    "validation_selected_threshold": {
+      "f1": 0.00580716825362948,
+      "f2": -0.001216637413682331,
+      "average_precision": 0.00724453498248584,
+      "precision": 0.006323981766297282,
+      "recall": -0.030237580993520474
+    }
+  },
+  "note": "Validation selects checkpoints and thresholds; final test 2025 remains reserved. Historical runs are context only."
+}

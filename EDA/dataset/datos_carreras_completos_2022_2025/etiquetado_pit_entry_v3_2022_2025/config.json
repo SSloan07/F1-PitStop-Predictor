@@ -1,0 +1,16 @@
+{
+  "rule_version": "pit_entry_v2",
+  "source": "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025.pkl",
+  "source_sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+  "seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "audit_path": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_candidate_v1/casos_revision_usuario.csv",
+  "reference_labels": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_pit_entry_v2_pair_required/labels.pkl",
+  "reference_labels_sha256": "01ad18dd5033b7bb91de29eff5bdcbb8f979b30257c1dd09ec491b1621929750",
+  "horizon_laps": 3,
+  "output_dir": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_pit_entry_v3_2022_2025"
+}

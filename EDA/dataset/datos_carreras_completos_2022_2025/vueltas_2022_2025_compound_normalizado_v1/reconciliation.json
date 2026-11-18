@@ -1,0 +1,64 @@
+{
+  "source_sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+  "source_sha256_after": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+  "source_unchanged": true,
+  "evidence_expected_source_sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+  "source_hash_matches_evidence": true,
+  "expected_counts_from_evidence": {
+    "None": 426,
+    "nan": 354
+  },
+  "observed_counts": {
+    "None": 426,
+    "nan": 354
+  },
+  "before": {
+    "rows": 101290,
+    "columns": 61,
+    "compound_dtype": "object",
+    "compound_nulls": 0,
+    "compound_values": {
+      "HARD": 44364,
+      "MEDIUM": 36980,
+      "SOFT": 12760,
+      "INTERMEDIATE": 5945,
+      "WET": 461,
+      "None": 426,
+      "nan": 354
+    },
+    "key_null_rows": 0,
+    "duplicate_key_rows": 0
+  },
+  "after": {
+    "rows": 101290,
+    "columns": 61,
+    "compound_dtype": "string",
+    "compound_nulls": 780,
+    "compound_values": {
+      "HARD": 44364,
+      "MEDIUM": 36980,
+      "SOFT": 12760,
+      "INTERMEDIATE": 5945,
+      "<NA>": 780,
+      "WET": 461
+    },
+    "key_null_rows": 0,
+    "duplicate_key_rows": 0
+  },
+  "conversions": {
+    "literal_none_in_consolidated": 426,
+    "literal_nan_in_consolidated": 354,
+    "total": 780
+  },
+  "rows_added": 0,
+  "rows_removed": 0,
+  "columns_added": 0,
+  "columns_removed": 0,
+  "changed_columns": [
+    "Compound"
+  ],
+  "other_columns_unchanged": true,
+  "row_order_and_keys_unchanged": true,
+  "normalization_idempotent": true,
+  "audit_reversible": true
+}

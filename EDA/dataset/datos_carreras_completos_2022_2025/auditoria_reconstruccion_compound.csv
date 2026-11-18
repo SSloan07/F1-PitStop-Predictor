@@ -1,0 +1,19 @@
+Temporada,Ronda,GranPremio,DriverNumber,Stint_matrix,Filas_afectadas,Compuesto_matriz_observado,Compuesto_timing_app,Compuesto_asignado,Stints_comparables_evento,Coincidencias_evento,Estado,Cache_fuente
+2022,7,Monaco Grand Prix,18,5,35,,HARD|INTERMEDIATE,,25,25,ambiguous_or_absent_source_compound,dataset/cache_fastf1_carreras/2022/2022-05-29_Monaco_Grand_Prix/2022-05-29_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,10,3,30,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,20,3,29,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,23,3,28,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,3,3,26,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,31,3,27,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,4,3,27,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,47,3,27,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,5,3,25,,MEDIUM,MEDIUM,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,55,3,5,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,6,3,13,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,63,3,31,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2022,11,Austrian Grand Prix,77,3,30,,HARD,HARD,44,44,reconstructed,dataset/cache_fastf1_carreras/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/timing_app_data.ff1pkl
+2023,8,Canadian Grand Prix,22,3,35,,HARD,HARD,52,52,reconstructed,dataset/cache_fastf1_carreras/2023/2023-06-18_Canadian_Grand_Prix/2023-06-18_Race/timing_app_data.ff1pkl
+2025,13,Belgian Grand Prix,12,3,14,,MEDIUM,MEDIUM,18,18,reconstructed,dataset/cache_fastf1_carreras/2025/2025-07-27_Belgian_Grand_Prix/2025-07-27_Race/timing_app_data.ff1pkl
+2025,13,Belgian Grand Prix,14,3,15,,MEDIUM,MEDIUM,18,18,reconstructed,dataset/cache_fastf1_carreras/2025/2025-07-27_Belgian_Grand_Prix/2025-07-27_Race/timing_app_data.ff1pkl
+2025,13,Belgian Grand Prix,27,3,12,,MEDIUM,MEDIUM,18,18,reconstructed,dataset/cache_fastf1_carreras/2025/2025-07-27_Belgian_Grand_Prix/2025-07-27_Race/timing_app_data.ff1pkl
+2025,13,Belgian Grand Prix,43,3,16,,MEDIUM,MEDIUM,18,18,reconstructed,dataset/cache_fastf1_carreras/2025/2025-07-27_Belgian_Grand_Prix/2025-07-27_Race/timing_app_data.ff1pkl

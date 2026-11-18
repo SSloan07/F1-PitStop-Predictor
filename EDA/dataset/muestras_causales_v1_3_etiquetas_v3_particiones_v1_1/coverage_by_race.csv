@@ -1,0 +1,93 @@
+Temporada,Ronda,GranPremio,split,samples,label_usable,prediction_eligible,supervised_eligible,published_unknown,not_published
+2022,1,Bahrain Grand Prix,train,1125,1082,1123,1082,43,0
+2022,2,Saudi Arabian Grand Prix,train,820,781,817,781,39,0
+2022,3,Australian Grand Prix,train,1045,1004,1042,1004,41,0
+2022,4,Emilia Romagna Grand Prix,train,1132,1092,1131,1092,40,0
+2022,5,Miami Grand Prix,train,1057,1012,1056,1012,45,0
+2022,6,Spanish Grand Prix,train,1230,1188,1230,1188,42,0
+2022,7,Monaco Grand Prix,train,1179,1136,1178,1136,43,0
+2022,8,Azerbaijan Grand Prix,train,891,845,889,845,46,0
+2022,9,Canadian Grand Prix,train,1264,1221,1262,1221,43,0
+2022,10,British Grand Prix,train,815,775,811,775,40,0
+2022,11,Austrian Grand Prix,train,1324,1281,1323,1281,43,0
+2022,12,French Grand Prix,train,958,913,956,913,45,0
+2022,13,Hungarian Grand Prix,train,1383,1342,1382,1342,41,0
+2022,14,Belgian Grand Prix,train,792,753,790,753,39,0
+2022,15,Dutch Grand Prix,train,1392,1352,1391,1352,40,0
+2022,16,Italian Grand Prix,train,971,927,969,927,44,0
+2022,17,Singapore Grand Prix,train,945,900,941,900,45,0
+2022,18,Japanese Grand Prix,train,507,468,504,468,39,0
+2022,19,United States Grand Prix,train,992,951,990,951,41,0
+2022,20,Mexico City Grand Prix,train,1379,1337,1378,1337,42,0
+2022,21,São Paulo Grand Prix,train,1259,1220,1256,1220,39,0
+2022,22,Abu Dhabi Grand Prix,train,1117,1074,1117,1074,43,0
+2023,1,Bahrain Grand Prix,train,1056,1014,1055,1014,42,0
+2023,2,Saudi Arabian Grand Prix,train,943,901,942,901,42,0
+2023,3,Australian Grand Prix,train,1003,973,992,970,30,0
+2023,4,Azerbaijan Grand Prix,train,962,922,961,922,40,0
+2023,5,Miami Grand Prix,train,1138,1098,1138,1098,40,0
+2023,6,Monaco Grand Prix,train,1515,1473,1514,1473,42,0
+2023,7,Spanish Grand Prix,train,1312,1272,1312,1272,40,0
+2023,8,Canadian Grand Prix,train,1317,1275,1316,1275,42,0
+2023,9,Austrian Grand Prix,train,1354,1314,1353,1314,40,0
+2023,10,British Grand Prix,train,971,928,970,928,43,0
+2023,11,Hungarian Grand Prix,train,1252,1212,1252,1212,40,0
+2023,12,Belgian Grand Prix,train,816,776,815,776,40,0
+2023,13,Dutch Grand Prix,train,1343,1300,1328,1287,43,0
+2023,14,Italian Grand Prix,train,957,909,948,909,48,0
+2023,15,Singapore Grand Prix,train,1088,1048,1084,1048,40,0
+2023,16,Japanese Grand Prix,train,880,841,880,841,39,0
+2023,17,Qatar Grand Prix,train,1006,968,1005,968,38,0
+2023,18,United States Grand Prix,train,1014,971,1014,971,43,0
+2023,19,Mexico City Grand Prix,train,1282,1239,1281,1239,43,0
+2023,20,São Paulo Grand Prix,train,1108,1069,1106,1069,39,0
+2023,21,Las Vegas Grand Prix,train,946,903,943,903,43,0
+2023,22,Abu Dhabi Grand Prix,train,1157,1118,1157,1118,39,0
+2024,1,Bahrain Grand Prix,validation,1129,1089,1129,1089,40,0
+2024,2,Saudi Arabian Grand Prix,validation,901,861,900,861,40,0
+2024,3,Australian Grand Prix,validation,998,957,996,957,41,0
+2024,4,Japanese Grand Prix,validation,907,870,905,870,37,0
+2024,5,Chinese Grand Prix,validation,1032,989,1030,989,43,0
+2024,6,Miami Grand Prix,validation,1111,1070,1110,1070,41,0
+2024,7,Emilia Romagna Grand Prix,validation,1238,1197,1238,1197,41,0
+2024,8,Monaco Grand Prix,validation,1237,1201,1233,1201,36,0
+2024,9,Canadian Grand Prix,validation,1272,1227,1270,1227,45,0
+2024,10,Spanish Grand Prix,validation,1310,1270,1310,1270,40,0
+2024,11,Austrian Grand Prix,validation,1405,1364,1405,1364,41,0
+2024,12,British Grand Prix,validation,960,921,960,921,39,0
+2024,13,Hungarian Grand Prix,validation,1355,1314,1355,1314,41,0
+2024,14,Belgian Grand Prix,validation,841,800,841,800,41,0
+2024,15,Dutch Grand Prix,validation,1426,1386,1426,1386,40,0
+2024,16,Italian Grand Prix,validation,1008,967,1008,967,41,0
+2024,17,Azerbaijan Grand Prix,validation,973,932,971,932,41,0
+2024,18,Singapore Grand Prix,validation,1177,1135,1177,1135,42,0
+2024,19,United States Grand Prix,validation,1059,1019,1058,1019,40,0
+2024,20,Mexico City Grand Prix,validation,1215,1176,1213,1176,39,0
+2024,21,São Paulo Grand Prix,validation,1134,1097,1131,1095,37,0
+2024,22,Las Vegas Grand Prix,validation,938,896,938,896,42,0
+2024,23,Qatar Grand Prix,validation,943,906,939,906,37,0
+2024,24,Abu Dhabi Grand Prix,validation,1035,993,1033,993,42,0
+2025,1,Australian Grand Prix,test_final_reserved,927,888,921,888,39,0
+2025,2,Chinese Grand Prix,test_final_reserved,1065,1024,1065,1024,41,0
+2025,3,Japanese Grand Prix,test_final_reserved,1059,1019,1059,1019,40,0
+2025,4,Bahrain Grand Prix,test_final_reserved,1128,1089,1128,1089,39,0
+2025,5,Saudi Arabian Grand Prix,test_final_reserved,898,860,897,860,38,0
+2025,6,Miami Grand Prix,test_final_reserved,1005,963,1002,963,42,0
+2025,7,Emilia Romagna Grand Prix,test_final_reserved,1207,1165,1205,1165,42,0
+2025,8,Monaco Grand Prix,test_final_reserved,1425,1384,1424,1384,41,0
+2025,9,Spanish Grand Prix,test_final_reserved,1203,1165,1202,1165,38,0
+2025,10,Canadian Grand Prix,test_final_reserved,1349,1323,1347,1323,26,0
+2025,11,Austrian Grand Prix,test_final_reserved,1126,1090,1124,1090,36,0
+2025,12,British Grand Prix,test_final_reserved,825,785,822,785,40,0
+2025,13,Belgian Grand Prix,test_final_reserved,879,839,879,839,40,0
+2025,14,Hungarian Grand Prix,test_final_reserved,1368,1327,1368,1327,41,0
+2025,15,Dutch Grand Prix,test_final_reserved,1364,1321,1362,1321,43,0
+2025,16,Italian Grand Prix,test_final_reserved,974,936,974,936,38,0
+2025,17,Azerbaijan Grand Prix,test_final_reserved,968,929,967,929,39,0
+2025,18,Singapore Grand Prix,test_final_reserved,1229,1189,1229,1189,40,0
+2025,19,United States Grand Prix,test_final_reserved,1067,1026,1066,1026,41,0
+2025,20,Mexico City Grand Prix,test_final_reserved,1263,1219,1262,1219,44,0
+2025,21,São Paulo Grand Prix,test_final_reserved,1251,1210,1249,1210,41,0
+2025,22,Las Vegas Grand Prix,test_final_reserved,886,849,885,849,37,0
+2025,23,Qatar Grand Prix,test_final_reserved,1067,1025,1066,1025,42,0
+2025,24,Abu Dhabi Grand Prix,test_final_reserved,1156,1116,1156,1116,40,0

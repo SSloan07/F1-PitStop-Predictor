@@ -1,0 +1,5 @@
+Temporada,split,samples,published_known,published_unknown,not_published,label_usable,prediction_eligible,supervised_eligible
+2022,train,23577,22654,923,0,22654,23536,22654
+2023,train,24420,23524,896,0,23524,24366,23508
+2024,validation,26604,25637,967,0,25637,26576,25635
+2025,test_final_reserved,26689,25741,948,0,25741,26659,25741

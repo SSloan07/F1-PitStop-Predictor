@@ -1,0 +1,76 @@
+{
+  "snapshots": {
+    "before": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "cuda_device_index": 0,
+      "deterministic_algorithms": false,
+      "cpu_num_threads": 1,
+      "cudnn_benchmark": false,
+      "cublas_workspace_config": null
+    },
+    "between": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "cuda_device_index": 0,
+      "deterministic_algorithms": true,
+      "cpu_num_threads": 2,
+      "cudnn_benchmark": false,
+      "cublas_workspace_config": ":4096:8"
+    },
+    "after": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "cuda_device_index": 0,
+      "deterministic_algorithms": true,
+      "cpu_num_threads": 2,
+      "cudnn_benchmark": false,
+      "cublas_workspace_config": ":4096:8"
+    }
+  },
+  "children": {
+    "rnn32_reference": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "seed": 42,
+      "deterministic_algorithms": true
+    },
+    "rnn16_candidate": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "seed": 42,
+      "deterministic_algorithms": true
+    }
+  },
+  "comparison_authorized": true
+}

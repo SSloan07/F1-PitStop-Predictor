@@ -1,0 +1,119 @@
+{
+  "artifact_version": "lstm_scheduler_local_comparison_v1",
+  "pair_id": "lstm32_scheduler_f2_v1_seed42",
+  "zip_sha256": "5bc1f86441e2702d51e9d944d921626957f4bb68f3e6f61c3cc463d14b093c69",
+  "pair_manifest_sha256": "6b09113a7aad310648385536c5acf4c5526154e10a0768c33da199be4ab61063",
+  "comparison_authorized": true,
+  "test_used": false,
+  "changed_factor": {
+    "name": "training.lr_scheduler",
+    "reference": {
+      "name": "constant"
+    },
+    "candidate": {
+      "name": "reduce_on_plateau",
+      "monitor": "train_evaluation_loss",
+      "mode": "min",
+      "factor": 0.5,
+      "patience": 2,
+      "threshold": 0.0001,
+      "threshold_mode": "rel",
+      "cooldown": 0,
+      "min_lr": 1e-05
+    }
+  },
+  "split": "validation_2024",
+  "sample_count": 25635,
+  "positive_count": 2315,
+  "reference": {
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1799,
+      "fp": 9206,
+      "fn": 516,
+      "tn": 14114,
+      "precision": 0.16347114947751024,
+      "recall": 0.7771058315334773,
+      "f1": 0.2701201201201201,
+      "f2": 0.4438687392055268,
+      "false_positives_per_100_decisions": 35.91183928223133,
+      "average_precision": 0.19731337199797694
+    },
+    "bce": 0.38103869929052314,
+    "threshold": 0.05,
+    "event_metrics": {
+      "confirmed_events": 824,
+      "events_with_evaluable_opportunity": 824,
+      "events_without_evaluable_opportunity": 0,
+      "covered_events": 682,
+      "recall_per_evaluable_event": 0.8276699029126213
+    },
+    "best_epoch": 27,
+    "epochs_run": 30,
+    "parameter_count": 12377,
+    "weights_sha256": "434307934cb256352736481e76ed0ae2f64e439b52e9a88dd3535c0a55816d0c",
+    "parity_passed": true,
+    "max_probability_difference": 5.066394806463315e-07
+  },
+  "candidate": {
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1799,
+      "fp": 9206,
+      "fn": 516,
+      "tn": 14114,
+      "precision": 0.16347114947751024,
+      "recall": 0.7771058315334773,
+      "f1": 0.2701201201201201,
+      "f2": 0.4438687392055268,
+      "false_positives_per_100_decisions": 35.91183928223133,
+      "average_precision": 0.19731337199797694
+    },
+    "bce": 0.38103869929052314,
+    "threshold": 0.05,
+    "event_metrics": {
+      "confirmed_events": 824,
+      "events_with_evaluable_opportunity": 824,
+      "events_without_evaluable_opportunity": 0,
+      "covered_events": 682,
+      "recall_per_evaluable_event": 0.8276699029126213
+    },
+    "best_epoch": 27,
+    "epochs_run": 30,
+    "parameter_count": 12377,
+    "weights_sha256": "434307934cb256352736481e76ed0ae2f64e439b52e9a88dd3535c0a55816d0c",
+    "parity_passed": true,
+    "max_probability_difference": 5.066394806463315e-07
+  },
+  "delta_candidate_minus_reference": {
+    "f1": 0.0,
+    "f2": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0,
+    "average_precision": 0.0,
+    "false_positives_per_100_decisions": 0.0
+  },
+  "bce_delta": 0.0,
+  "event_coverage_delta": 0,
+  "event_recall_delta": 0.0,
+  "probability_comparison": {
+    "identical_after_cpu_replay": true,
+    "max_absolute_difference": 0.0,
+    "threshold_decision_differences": 0
+  },
+  "learning_rate_reductions": {
+    "lstm32_reference": [],
+    "lstm32_scheduler": []
+  },
+  "learning_rate_was_reduced": false,
+  "candidate_weights_equal_reference": true,
+  "reference_weights_match_prior_lstm_dropout02": true,
+  "candidate_threshold_is_lower_grid_boundary": true,
+  "note": "ReduceLROnPlateau never fired: training evaluation BCE improved enough in each epoch; the candidate therefore followed the fixed-rate path. This single-seed result estimates no realized scheduler adjustment."
+}

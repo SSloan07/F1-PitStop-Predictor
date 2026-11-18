@@ -1,0 +1,102 @@
+{
+  "rule_version": "pit_entry_v2",
+  "target_definition": "pit_visit_recorded_by_paired_pit_in_and_pit_out",
+  "run_at_utc": "2026-11-08T04:32:35.396613+00:00",
+  "event_anchor": "PitInTime determines entry lap; only a later paired PitOutTime makes a positive visit",
+  "initial_lap_pit_out": "ignored_as_race_start_release",
+  "unpaired_pit_in": "unknown_even_if_external_source_reports_entry",
+  "orphan_pit_out": "review_only_without_assigned_entry_lap",
+  "time_assumption": "FastF1 event Time supports historical replay only; does not establish live receipt latency.",
+  "horizon_laps": 3,
+  "prediction_instant": "lap_start",
+  "seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "source": "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025.pkl",
+  "source_sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+  "config": "configs/etiquetado_pit_entry_v3_2022_2025.json",
+  "config_sha256": "fc5eb84553b15921f57c247e7fab840d26b4edc9636ca3ed58e57775146b7f6a",
+  "reference_labels": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_pit_entry_v2_pair_required/labels.pkl",
+  "reference_labels_sha256": "01ad18dd5033b7bb91de29eff5bdcbb8f979b30257c1dd09ec491b1621929750",
+  "reference_manifest": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_pit_entry_v2_pair_required/manifest.json",
+  "reference_manifest_sha256": "ed058d21b87c5eaee4b9845a92ad06552f30d455ea4f319875814dc4789c5923",
+  "historical_2022_2023_invariance": {
+    "seasons": [
+      2022,
+      2023
+    ],
+    "rows": 47997,
+    "identical": true
+  },
+  "source_rows_all_seasons": 101290,
+  "source_columns": 61,
+  "official_event_audit": "EDA/dataset/datos_carreras_completos_2022_2025/etiquetado_candidate_v1/casos_revision_usuario.csv",
+  "official_event_audit_sha256": "9d0d9076daf531ba7763a676184497c137e356e60c895051b40d3ffcf210b51b",
+  "script_sha256": "f008108bf928c3ae381c7c940177fd8d4a3309e715b5840abed336fa549a232f",
+  "spec_sha256": "49cf668ecaff2553d509d73e096ce7fd5805f713c721582a1e84727f4f981c62",
+  "git_revision": "bc8fd06e72537ecde2669162db9319dbd8738629",
+  "python_version": "3.14.7",
+  "pandas_version": "2.3.3",
+  "events": 3469,
+  "pit_stops": 3359,
+  "unresolved_events": 110,
+  "review_cases": 33,
+  "FIA_entry_claims": 28,
+  "other_source_entry_claims": 1,
+  "cross_source_entry_claims": 0,
+  "review_queue_rows": 110,
+  "review_queue_sha256": "c86fc67c68f581ea2e4f121a8e37e128149cf03d5aff8058c37929c85cfd049c",
+  "labels": 101290,
+  "positives": 9393,
+  "negatives": 88163,
+  "unknown_labels": 3734,
+  "unknown_events_by_reason": {
+    "pit_in_without_valid_pit_out": 110
+  },
+  "labels_by_season": {
+    "2022": {
+      "samples": 23577,
+      "known": 22654,
+      "positives": 2313,
+      "negatives": 20341,
+      "unknown": 923
+    },
+    "2023": {
+      "samples": 24420,
+      "known": 23524,
+      "positives": 2504,
+      "negatives": 21020,
+      "unknown": 896
+    },
+    "2024": {
+      "samples": 26604,
+      "known": 25637,
+      "positives": 2316,
+      "negatives": 23321,
+      "unknown": 967
+    },
+    "2025": {
+      "samples": 26689,
+      "known": 25741,
+      "positives": 2260,
+      "negatives": 23481,
+      "unknown": 948
+    }
+  },
+  "training_status": "candidate_for_preprocessing_not_model_approved",
+  "output_files_sha256": {
+    "config.json": "b66f13664f6aec571ef4be97a7661d2d09d094c335aee8509e024dee35644a21",
+    "events.csv": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+    "orphan_exits.csv": "d79d682f8dacb517ab240aa3520744d5fc0d1b83bc99370f41ad753c49bc1e49",
+    "labels.pkl": "a6e055d349062ef0dd230064a4e4be5e11ca33592ba4af3ca4629d421ff2822f",
+    "review_queue.csv": "c86fc67c68f581ea2e4f121a8e37e128149cf03d5aff8058c37929c85cfd049c",
+    "coverage.csv": "913d1cf425f4285dd4643b4bc87d449f1031e3c7f4650bee00e077e4afdbf5d8",
+    "coverage_by_season.csv": "27927ad548f7d2d4a55768769dd0428d96d9f393c4c65cc6cdaef45d07ec4f6e",
+    "review_decisions.json": "9b7880694dca13301aaa5955d2bce7bcc391ae34a13160cd61f50bc6854bf4d9",
+    "report.md": "dfea221022a7c59e523d44287a54af8939e147c9829c5fd73f0e6acd5c608341",
+    "reconciliation.json": "019fa7310abf24fdb6539902e0b99aac74adcbb1cabf05f13166fb4383244324"
+  }
+}

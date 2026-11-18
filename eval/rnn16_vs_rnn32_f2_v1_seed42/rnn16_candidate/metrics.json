@@ -1,0 +1,33 @@
+{
+  "split": "validation",
+  "metrics": {
+    "n_samples": 25635,
+    "positives": 2315,
+    "tp": 1751,
+    "fp": 8983,
+    "fn": 564,
+    "tn": 14337,
+    "precision": 0.1631265138811254,
+    "recall": 0.7563714902807775,
+    "f1": 0.26837305540654455,
+    "f2": 0.4378813644093228,
+    "false_positives_per_100_decisions": 35.04193485469085,
+    "average_precision": 0.21245820067089063
+  },
+  "bce": 0.315007978037177,
+  "threshold_frozen": 0.1,
+  "selection_metric": "f2",
+  "selection_beta": 2,
+  "parity_passed": true,
+  "max_probability_difference": 9.5367431640625e-07,
+  "threshold_decision_differences": 0,
+  "excluded_samples": 969,
+  "event_metrics": {
+    "confirmed_events": 824,
+    "events_with_evaluable_opportunity": 824,
+    "events_without_evaluable_opportunity": 0,
+    "covered_events": 666,
+    "recall_per_evaluable_event": 0.808252427184466
+  },
+  "note": "Diagnostic validation results, not an independent final test evaluation"
+}

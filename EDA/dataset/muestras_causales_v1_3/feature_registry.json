@@ -1,0 +1,66 @@
+{
+  "static": [
+    "Driver",
+    "Team",
+    "GranPremio"
+  ],
+  "numeric_sequence": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_AirTemp",
+    "Weather_Humidity",
+    "Weather_Pressure",
+    "Weather_Rainfall",
+    "Weather_TrackTemp",
+    "Weather_WindDirection_sin",
+    "Weather_WindDirection_cos",
+    "Weather_WindSpeed"
+  ],
+  "categorical_sequence": [
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "forbidden_from_X": [
+    "EligibleForSupervisedLearning",
+    "FreshTyre_asof",
+    "LabelBasis",
+    "LabelReason",
+    "PitInTime",
+    "PitOutTime",
+    "PitWithin3Laps",
+    "RuleVersion",
+    "Stint_asof",
+    "Telemetry_Samples",
+    "Telemetry_Throttle_valid_fraction",
+    "Telemetry_Throttle_valid_samples"
+  ],
+  "rule_version": "causal_sample_v1",
+  "units": {
+    "LapTime": "seconds",
+    "Sector1Time": "seconds",
+    "Sector2Time": "seconds",
+    "Sector3Time": "seconds",
+    "Position": "rank",
+    "TyreLife_last_eligible": "laps",
+    "Weather_AirTemp": "degC",
+    "Weather_Humidity": "percent",
+    "Weather_Pressure": "mbar",
+    "Weather_Rainfall": "boolean_as_0_1",
+    "Weather_TrackTemp": "degC",
+    "Weather_WindDirection_sin": "unitless",
+    "Weather_WindDirection_cos": "unitless",
+    "Weather_WindSpeed": "m/s"
+  }
+}

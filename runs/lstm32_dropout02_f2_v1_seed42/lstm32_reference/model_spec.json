@@ -1,0 +1,19 @@
+{
+  "num_numeric": 22,
+  "dynamic_cardinalities": [
+    9,
+    10
+  ],
+  "static_cardinalities": [
+    29,
+    14,
+    28
+  ],
+  "hidden_size": 32,
+  "embedding_dim": 4,
+  "static_hidden_size": 16,
+  "head_hidden_size": 16,
+  "window_length": 8,
+  "dropout_rate": 0.0,
+  "recurrent_cell": "lstm"
+}

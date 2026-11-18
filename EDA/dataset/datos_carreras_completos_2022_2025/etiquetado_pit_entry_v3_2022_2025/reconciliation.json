@@ -1,0 +1,14 @@
+{
+  "historical_invariance": {
+    "seasons": [
+      2022,
+      2023
+    ],
+    "rows": 47997,
+    "identical": true
+  },
+  "source_rows_selected": 101290,
+  "labels_published": 101290,
+  "missing_label_keys": 0,
+  "duplicate_label_keys": 0
+}
