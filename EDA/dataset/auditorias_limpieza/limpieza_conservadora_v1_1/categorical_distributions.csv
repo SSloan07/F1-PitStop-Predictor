@@ -1,0 +1,153 @@
+column,value,count
+GranPremio,Dutch Grand Prix,5525
+GranPremio,Hungarian Grand Prix,5358
+GranPremio,Monaco Grand Prix,5356
+GranPremio,Austrian Grand Prix,5209
+GranPremio,Canadian Grand Prix,5202
+GranPremio,Mexico City Grand Prix,5139
+GranPremio,Spanish Grand Prix,5055
+GranPremio,São Paulo Grand Prix,4752
+GranPremio,Abu Dhabi Grand Prix,4465
+GranPremio,Singapore Grand Prix,4439
+GranPremio,Bahrain Grand Prix,4438
+GranPremio,Miami Grand Prix,4311
+GranPremio,United States Grand Prix,4132
+GranPremio,Australian Grand Prix,3973
+GranPremio,Italian Grand Prix,3910
+GranPremio,Azerbaijan Grand Prix,3794
+GranPremio,Emilia Romagna Grand Prix,3577
+GranPremio,British Grand Prix,3571
+GranPremio,Saudi Arabian Grand Prix,3562
+GranPremio,Japanese Grand Prix,3353
+GranPremio,Belgian Grand Prix,3328
+GranPremio,Qatar Grand Prix,3016
+GranPremio,Las Vegas Grand Prix,2770
+GranPremio,Chinese Grand Prix,2097
+GranPremio,French Grand Prix,958
+Driver,NOR,5400
+Driver,VER,5363
+Driver,RUS,5362
+Driver,HAM,5224
+Driver,LEC,5112
+Driver,GAS,5064
+Driver,ALO,5054
+Driver,OCO,4999
+Driver,STR,4984
+Driver,TSU,4944
+Driver,SAI,4878
+Driver,ALB,4704
+Driver,PIA,4024
+Driver,HUL,3950
+Driver,BOT,3731
+Driver,PER,3669
+Driver,ZHO,3653
+Driver,MAG,3546
+Driver,RIC,2612
+Driver,LAW,1927
+Driver,SAR,1917
+Driver,BEA,1543
+Driver,COL,1447
+Driver,HAD,1344
+Driver,ANT,1312
+Driver,BOR,1233
+Driver,LAT,1157
+Driver,MSC,1144
+Driver,VET,1103
+Driver,DEV,616
+Driver,DOO,274
+DriverNumber,4,5400
+DriverNumber,1,5363
+DriverNumber,63,5362
+DriverNumber,44,5224
+DriverNumber,16,5112
+DriverNumber,10,5064
+DriverNumber,14,5054
+DriverNumber,31,4999
+DriverNumber,18,4984
+DriverNumber,22,4944
+DriverNumber,55,4878
+DriverNumber,23,4704
+DriverNumber,81,4024
+DriverNumber,27,3950
+DriverNumber,77,3731
+DriverNumber,11,3669
+DriverNumber,24,3653
+DriverNumber,20,3546
+DriverNumber,3,2612
+DriverNumber,6,2501
+DriverNumber,5,2336
+DriverNumber,2,1917
+DriverNumber,30,1634
+DriverNumber,43,1447
+DriverNumber,87,1373
+DriverNumber,12,1312
+DriverNumber,47,1144
+DriverNumber,21,563
+DriverNumber,40,293
+DriverNumber,7,217
+DriverNumber,50,120
+DriverNumber,61,57
+DriverNumber,45,53
+DriverNumber,38,50
+Team,McLaren,10622
+Team,Mercedes,10538
+Team,Red Bull Racing,10409
+Team,Ferrari,10152
+Team,Haas F1 Team,10141
+Team,Aston Martin,10127
+Team,Alpine,9867
+Team,Williams,9477
+Team,Kick Sauber,5226
+Team,AlphaTauri,4818
+Team,Alfa Romeo,4678
+Team,Racing Bulls,2629
+Team,RB,2606
+Compound,HARD,44364
+Compound,MEDIUM,36980
+Compound,SOFT,12760
+Compound,INTERMEDIATE,5945
+Compound,WET,461
+Compound,None,426
+Compound,nan,354
+TrackStatus,1,90623
+TrackStatus,12,3008
+TrackStatus,4,2846
+TrackStatus,41,1046
+TrackStatus,124,770
+TrackStatus,671,544
+TrackStatus,126,389
+TrackStatus,21,316
+TrackStatus,26,218
+TrackStatus,6,211
+TrackStatus,24,193
+TrackStatus,14,176
+TrackStatus,16,139
+TrackStatus,64,87
+TrackStatus,71,87
+TrackStatus,45,74
+TrackStatus,2,73
+TrackStatus,167,64
+TrackStatus,67,60
+TrackStatus,125,52
+TrackStatus,2671,49
+TrackStatus,451,46
+TrackStatus,1264,40
+TrackStatus,1267,29
+TrackStatus,264,23
+TrackStatus,1254,20
+TrackStatus,412,19
+TrackStatus,216,17
+TrackStatus,164,16
+TrackStatus,51,9
+TrackStatus,6712,8
+TrackStatus,1265,7
+TrackStatus,712,7
+TrackStatus,514,6
+TrackStatus,265,5
+TrackStatus,267,4
+TrackStatus,65,4
+TrackStatus,2167,1
+TrackStatus,16724,1
+TrackStatus,214,1
+TrackStatus,651,1
+TrackStatus,1246,1

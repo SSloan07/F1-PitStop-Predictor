@@ -1,0 +1,495 @@
+{
+  "preprocessor_version": "train_only_preprocessor_v1",
+  "fit_split": "train",
+  "fit_population": "partition == train AND supervised_eligible",
+  "fit_sample_count": 46162,
+  "fit_sample_ids_sha256": "ddea3fc1c0960e39d4c0192f0fd886e03b687fb7593e628ece0412e75a9f9e8d",
+  "window_length": 8,
+  "schema": {
+    "categorical_feature_names": [
+      "Compound_asof",
+      "track_phase_asof"
+    ],
+    "feature_contract_version": "causal_sample_contract_v1",
+    "mask_codes": {
+      "0": "present",
+      "1": "padding",
+      "2": "nominal_lap_row_missing",
+      "3": "temporally_unavailable",
+      "4": "feature_missing",
+      "5": "source_event_unavailable"
+    },
+    "mask_feature_order": [
+      "LapNumber",
+      "TyreLife_last_eligible",
+      "LapTime",
+      "Sector1Time",
+      "Sector2Time",
+      "Sector3Time",
+      "Position",
+      "Telemetry_Speed_mean",
+      "Telemetry_Speed_max",
+      "Telemetry_RPM_mean",
+      "Telemetry_RPM_max",
+      "Telemetry_Throttle_valid_mean",
+      "Telemetry_Throttle_valid_max",
+      "Telemetry_Brake_mean",
+      "Weather_AirTemp",
+      "Weather_Humidity",
+      "Weather_Pressure",
+      "Weather_Rainfall",
+      "Weather_TrackTemp",
+      "Weather_WindDirection_sin",
+      "Weather_WindDirection_cos",
+      "Weather_WindSpeed",
+      "Compound_asof",
+      "track_phase_asof"
+    ],
+    "numeric_feature_names": [
+      "LapNumber",
+      "TyreLife_last_eligible",
+      "LapTime",
+      "Sector1Time",
+      "Sector2Time",
+      "Sector3Time",
+      "Position",
+      "Telemetry_Speed_mean",
+      "Telemetry_Speed_max",
+      "Telemetry_RPM_mean",
+      "Telemetry_RPM_max",
+      "Telemetry_Throttle_valid_mean",
+      "Telemetry_Throttle_valid_max",
+      "Telemetry_Brake_mean",
+      "Weather_AirTemp",
+      "Weather_Humidity",
+      "Weather_Pressure",
+      "Weather_Rainfall",
+      "Weather_TrackTemp",
+      "Weather_WindDirection_sin",
+      "Weather_WindDirection_cos",
+      "Weather_WindSpeed"
+    ],
+    "static_feature_names": [
+      "Driver",
+      "Team",
+      "GranPremio"
+    ],
+    "window_length": 8
+  },
+  "numeric": {
+    "mean": {
+      "LapNumber": 27.823562952243126,
+      "TyreLife_last_eligible": 12.759740596627756,
+      "LapTime": 93.50680867121899,
+      "Sector1Time": 28.887638963293,
+      "Sector2Time": 36.04694985318219,
+      "Sector3Time": 28.503795111064274,
+      "Position": 9.740446742972452,
+      "Telemetry_Speed_mean": 193.0274607742248,
+      "Telemetry_Speed_max": 306.4473042409178,
+      "Telemetry_RPM_mean": 9893.403662682937,
+      "Telemetry_RPM_max": 12124.539893492627,
+      "Telemetry_Throttle_valid_mean": 60.38112571410929,
+      "Telemetry_Throttle_valid_max": 99.91779727584189,
+      "Telemetry_Brake_mean": 0.2091687330990651,
+      "Weather_AirTemp": 24.29791573979092,
+      "Weather_Humidity": 52.60029232995659,
+      "Weather_Pressure": 982.4276711662502,
+      "Weather_Rainfall": 0.03961215629522431,
+      "Weather_TrackTemp": 35.37612734839609,
+      "Weather_WindDirection_sin": 0.04151606289975011,
+      "Weather_WindDirection_cos": -0.12923985242187525,
+      "Weather_WindSpeed": 1.8925632634541363
+    },
+    "scale": {
+      "LapNumber": 16.945346177883017,
+      "TyreLife_last_eligible": 9.065413561581101,
+      "LapTime": 17.22343009229908,
+      "Sector1Time": 7.799971654910402,
+      "Sector2Time": 8.743196941442708,
+      "Sector3Time": 7.756575033366195,
+      "Position": 5.410682670304352,
+      "Telemetry_Speed_mean": 29.472332489526014,
+      "Telemetry_Speed_max": 21.425463788664747,
+      "Telemetry_RPM_mean": 646.9036632363582,
+      "Telemetry_RPM_max": 377.99479980857944,
+      "Telemetry_Throttle_valid_mean": 11.008914759000554,
+      "Telemetry_Throttle_valid_max": 0.6556626432949981,
+      "Telemetry_Brake_mean": 0.05179925922253375,
+      "Weather_AirTemp": 4.820904748274643,
+      "Weather_Humidity": 18.457381407554806,
+      "Weather_Pressure": 56.265271086185244,
+      "Weather_Rainfall": 0.19504623392638737,
+      "Weather_TrackTemp": 8.2658108274975,
+      "Weather_WindDirection_sin": 0.673515020017335,
+      "Weather_WindDirection_cos": 0.7266023650846397,
+      "Weather_WindSpeed": 1.216037621655231
+    },
+    "observed_cell_count": {
+      "LapNumber": 345500,
+      "TyreLife_last_eligible": 327675,
+      "LapTime": 298371,
+      "Sector1Time": 292782,
+      "Sector2Time": 299266,
+      "Sector3Time": 298958,
+      "Position": 299322,
+      "Telemetry_Speed_mean": 299322,
+      "Telemetry_Speed_max": 299322,
+      "Telemetry_RPM_mean": 299322,
+      "Telemetry_RPM_max": 299322,
+      "Telemetry_Throttle_valid_mean": 299175,
+      "Telemetry_Throttle_valid_max": 299175,
+      "Telemetry_Brake_mean": 299322,
+      "Weather_AirTemp": 345500,
+      "Weather_Humidity": 345500,
+      "Weather_Pressure": 345500,
+      "Weather_Rainfall": 345500,
+      "Weather_TrackTemp": 345500,
+      "Weather_WindDirection_sin": 345500,
+      "Weather_WindDirection_cos": 345500,
+      "Weather_WindSpeed": 345500
+    },
+    "constant_features_scale_one": [],
+    "observed_physical_zero_count": {
+      "LapNumber": 0,
+      "TyreLife_last_eligible": 0,
+      "LapTime": 0,
+      "Sector1Time": 0,
+      "Sector2Time": 0,
+      "Sector3Time": 0,
+      "Position": 0,
+      "Telemetry_Speed_mean": 147,
+      "Telemetry_Speed_max": 147,
+      "Telemetry_RPM_mean": 147,
+      "Telemetry_RPM_max": 147,
+      "Telemetry_Throttle_valid_mean": 0,
+      "Telemetry_Throttle_valid_max": 0,
+      "Telemetry_Brake_mean": 210,
+      "Weather_AirTemp": 0,
+      "Weather_Humidity": 0,
+      "Weather_Pressure": 0,
+      "Weather_Rainfall": 331814,
+      "Weather_TrackTemp": 0,
+      "Weather_WindDirection_sin": 11194,
+      "Weather_WindDirection_cos": 0,
+      "Weather_WindSpeed": 2676
+    },
+    "variance_ddof": 0
+  },
+  "vocabularies": {
+    "static": {
+      "Driver": [
+        {
+          "category": "ALB",
+          "id": 4
+        },
+        {
+          "category": "ALO",
+          "id": 5
+        },
+        {
+          "category": "BOT",
+          "id": 6
+        },
+        {
+          "category": "DEV",
+          "id": 7
+        },
+        {
+          "category": "GAS",
+          "id": 8
+        },
+        {
+          "category": "HAM",
+          "id": 9
+        },
+        {
+          "category": "HUL",
+          "id": 10
+        },
+        {
+          "category": "LAT",
+          "id": 11
+        },
+        {
+          "category": "LAW",
+          "id": 12
+        },
+        {
+          "category": "LEC",
+          "id": 13
+        },
+        {
+          "category": "MAG",
+          "id": 14
+        },
+        {
+          "category": "MSC",
+          "id": 15
+        },
+        {
+          "category": "NOR",
+          "id": 16
+        },
+        {
+          "category": "OCO",
+          "id": 17
+        },
+        {
+          "category": "PER",
+          "id": 18
+        },
+        {
+          "category": "PIA",
+          "id": 19
+        },
+        {
+          "category": "RIC",
+          "id": 20
+        },
+        {
+          "category": "RUS",
+          "id": 21
+        },
+        {
+          "category": "SAI",
+          "id": 22
+        },
+        {
+          "category": "SAR",
+          "id": 23
+        },
+        {
+          "category": "STR",
+          "id": 24
+        },
+        {
+          "category": "TSU",
+          "id": 25
+        },
+        {
+          "category": "VER",
+          "id": 26
+        },
+        {
+          "category": "VET",
+          "id": 27
+        },
+        {
+          "category": "ZHO",
+          "id": 28
+        }
+      ],
+      "Team": [
+        {
+          "category": "Alfa Romeo",
+          "id": 4
+        },
+        {
+          "category": "AlphaTauri",
+          "id": 5
+        },
+        {
+          "category": "Alpine",
+          "id": 6
+        },
+        {
+          "category": "Aston Martin",
+          "id": 7
+        },
+        {
+          "category": "Ferrari",
+          "id": 8
+        },
+        {
+          "category": "Haas F1 Team",
+          "id": 9
+        },
+        {
+          "category": "McLaren",
+          "id": 10
+        },
+        {
+          "category": "Mercedes",
+          "id": 11
+        },
+        {
+          "category": "Red Bull Racing",
+          "id": 12
+        },
+        {
+          "category": "Williams",
+          "id": 13
+        }
+      ],
+      "GranPremio": [
+        {
+          "category": "Abu Dhabi Grand Prix",
+          "id": 4
+        },
+        {
+          "category": "Australian Grand Prix",
+          "id": 5
+        },
+        {
+          "category": "Austrian Grand Prix",
+          "id": 6
+        },
+        {
+          "category": "Azerbaijan Grand Prix",
+          "id": 7
+        },
+        {
+          "category": "Bahrain Grand Prix",
+          "id": 8
+        },
+        {
+          "category": "Belgian Grand Prix",
+          "id": 9
+        },
+        {
+          "category": "British Grand Prix",
+          "id": 10
+        },
+        {
+          "category": "Canadian Grand Prix",
+          "id": 11
+        },
+        {
+          "category": "Dutch Grand Prix",
+          "id": 12
+        },
+        {
+          "category": "Emilia Romagna Grand Prix",
+          "id": 13
+        },
+        {
+          "category": "French Grand Prix",
+          "id": 14
+        },
+        {
+          "category": "Hungarian Grand Prix",
+          "id": 15
+        },
+        {
+          "category": "Italian Grand Prix",
+          "id": 16
+        },
+        {
+          "category": "Japanese Grand Prix",
+          "id": 17
+        },
+        {
+          "category": "Las Vegas Grand Prix",
+          "id": 18
+        },
+        {
+          "category": "Mexico City Grand Prix",
+          "id": 19
+        },
+        {
+          "category": "Miami Grand Prix",
+          "id": 20
+        },
+        {
+          "category": "Monaco Grand Prix",
+          "id": 21
+        },
+        {
+          "category": "Qatar Grand Prix",
+          "id": 22
+        },
+        {
+          "category": "Saudi Arabian Grand Prix",
+          "id": 23
+        },
+        {
+          "category": "Singapore Grand Prix",
+          "id": 24
+        },
+        {
+          "category": "Spanish Grand Prix",
+          "id": 25
+        },
+        {
+          "category": "São Paulo Grand Prix",
+          "id": 26
+        },
+        {
+          "category": "United States Grand Prix",
+          "id": 27
+        }
+      ]
+    },
+    "dynamic": {
+      "Compound_asof": [
+        {
+          "category": "HARD",
+          "id": 4
+        },
+        {
+          "category": "INTERMEDIATE",
+          "id": 5
+        },
+        {
+          "category": "MEDIUM",
+          "id": 6
+        },
+        {
+          "category": "SOFT",
+          "id": 7
+        },
+        {
+          "category": "WET",
+          "id": 8
+        }
+      ],
+      "track_phase_asof": [
+        {
+          "category": "GREEN",
+          "id": 4
+        },
+        {
+          "category": "RED",
+          "id": 5
+        },
+        {
+          "category": "SAFETY_CAR",
+          "id": 6
+        },
+        {
+          "category": "VSC",
+          "id": 7
+        },
+        {
+          "category": "VSC_ENDING",
+          "id": 8
+        },
+        {
+          "category": "YELLOW",
+          "id": 9
+        }
+      ]
+    }
+  },
+  "reserved_category_ids": {
+    "padding": 0,
+    "absent": 1,
+    "source_unknown": 2,
+    "out_of_vocabulary": 3
+  },
+  "missing_category_tokens_casefold": [
+    "",
+    "<na>",
+    "nan",
+    "none"
+  ],
+  "dynamic_category_mask_priority": [
+    "padding_or_nonexistent_slot",
+    "explicit_source_UNKNOWN",
+    "masked_or_absent",
+    "known_vocabulary",
+    "out_of_vocabulary"
+  ],
+  "mask_policy": "preserve every source mask; masks are auxiliary arrays, never appended to predictor features"
+}

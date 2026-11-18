@@ -1,0 +1,16 @@
+{
+  "artifact_version": "rnn_local_validation_v1",
+  "bundle_manifest_sha256": "c0d3b1f6c3710f1a1853515fdf0924f20f556f43e0bec879114e53cbc79a2d8e",
+  "data_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+  "device": "cpu",
+  "events_source_sha256": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+  "decision_index_sha256": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+  "files_sha256": {
+    "metrics.json": "d8ff5ac78d125624a44115935fdf79ffe5fc8afdde1a0d8bb261ab16af22f09a",
+    "event_coverage.csv": "ea0bfaabc5a17143f3094104c29ef0d5b6c9e7a301ef6d5ae57bbdeca2328e87",
+    "metrics_by_driver.csv": "16d0d8542ccb76d5c25ff6f9df72e9124bb38e1a2b2dd0b7466113517987223a",
+    "metrics_by_race.csv": "989da042f84fe29f0cbddef822f8bc2b03d2f6aca1050f196864be952228e468",
+    "errors.csv.gz": "6f1a8c9db6b5b2a0279b7af50909170c890dac592c68148eb2d754de4d10caec",
+    "predictions.csv.gz": "d341e247948eebb76b50a164c5c6195ddad0bd68d8f8789b6cc52f5623a76953"
+  }
+}

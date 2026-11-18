@@ -1,0 +1,14 @@
+{
+  "artifact_version": "rnn_f1_f2_comparison_v1",
+  "test_used": false,
+  "input_hashes": {
+    "F2_bundle_manifest": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f",
+    "F1_bundle_manifest": "3ea232c71e9c77d6afff9076e217784c0890d4a50d42b67427a8c64035c8fa6d",
+    "F1_local_evaluation_manifest": "c1ece59d67b724f51360022f5a3c466d0111ac5d3966ea8d287f4d7fe018a194",
+    "frozen_control": "6902a639f15138214a742a9e3a5c7c6f7772b1421db88899da62d53f45bc3297"
+  },
+  "files_sha256": {
+    "comparison.json": "d2f59a6cddf5f407e4cc655b36afd17db0bef8ee67318b5edaa8cf4b794e2198",
+    "comparison.csv": "ae823484d6c9196a7fb9e9faf7c0193a9191aa077ac08501a9ea9ffdc20ee444"
+  }
+}

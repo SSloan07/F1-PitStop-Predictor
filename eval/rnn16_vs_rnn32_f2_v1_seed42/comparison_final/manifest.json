@@ -1,0 +1,17 @@
+{
+  "artifact_version": "rnn_capacity_local_comparison_v1",
+  "test_used": false,
+  "inputs_sha256": {
+    "pair_manifest": "7fdfc79832fc1b1d6e46f997cc427e026fb91575e2f4381e317e88562d192afd",
+    "rnn32_reference_evaluation_manifest": "d001711ea3afff5b895fa42499ffed949f16b514f702e43708ee9b183e4e3b16",
+    "rnn16_candidate_evaluation_manifest": "651228d19fd04cb2a42747128004846b3089c8a6d43d3ff66b81773580c4891c",
+    "historical_manifest": "e3bd821471b2ae85b4cf5e8cd546ffbc79eaf836c61dc80a746fa814f8531e1f"
+  },
+  "matplotlib_version": "3.10.0",
+  "files_sha256": {
+    "generar_comparacion_capacidad_rnn.py": "095c614f8dce92c2f915a69b3d2530627cecc646e47902b87463ad3511907ff5",
+    "capacity_comparison.png": "afb1d18bed09454e688a41c97cc6daf47b973d82d93b469d3c1bf9008e8d855a",
+    "comparison.json": "489caa23353d3db4146a2e9a9fdbdcb4acbec010b1e26616a89085c1f99dd51d",
+    "comparison.csv": "d2966196db1a4859786eadaaba1a6b24f04545b300fcd2cded6b18734d2b02c4"
+  }
+}

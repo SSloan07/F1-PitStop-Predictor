@@ -1,0 +1,8 @@
+{
+  "0": "present",
+  "1": "padding",
+  "2": "nominal_lap_row_missing",
+  "3": "temporally_unavailable",
+  "4": "feature_missing",
+  "5": "source_event_unavailable"
+}

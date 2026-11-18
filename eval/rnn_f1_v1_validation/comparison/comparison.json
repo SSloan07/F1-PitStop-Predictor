@@ -1,0 +1,108 @@
+{
+  "scope": "2024 development validation; no fit or threshold search in this comparison",
+  "comparisons": [
+    {
+      "comparison": "F2 reference",
+      "threshold": 0.12,
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1696,
+      "fp": 8116,
+      "fn": 619,
+      "tn": 15204,
+      "precision": 0.17284957195271097,
+      "recall": 0.7326133909287257,
+      "f1": 0.27970644017481655,
+      "f2": 0.4446308724832215,
+      "false_positives_per_100_decisions": 31.659840062414666,
+      "average_precision": 0.20157750877436803,
+      "covered_events": 652,
+      "confirmed_events": 824,
+      "event_recall": 0.7912621359223301
+    },
+    {
+      "comparison": "F1 threshold on frozen F2 weights",
+      "threshold": 0.22,
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1363,
+      "fp": 5519,
+      "fn": 952,
+      "tn": 17801,
+      "precision": 0.1980528916012787,
+      "recall": 0.588768898488121,
+      "f1": 0.2964010003261933,
+      "f2": 0.42219055879073225,
+      "false_positives_per_100_decisions": 21.529159352447824,
+      "average_precision": 0.20157750877436803,
+      "covered_events": 552,
+      "confirmed_events": 824,
+      "event_recall": 0.6699029126213593
+    },
+    {
+      "comparison": "F1 new run",
+      "threshold": 0.22,
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1363,
+      "fp": 5519,
+      "fn": 952,
+      "tn": 17801,
+      "precision": 0.1980528916012787,
+      "recall": 0.588768898488121,
+      "f1": 0.2964010003261933,
+      "f2": 0.42219055879073225,
+      "false_positives_per_100_decisions": 21.529159352447824,
+      "average_precision": 0.20157752973463514,
+      "covered_events": 552,
+      "confirmed_events": 824,
+      "event_recall": 0.6699029126213593
+    }
+  ],
+  "prediction_difference": {
+    "max_absolute": 2.503395080510895e-06,
+    "mean_absolute": 9.65055622767666e-08,
+    "same_threshold_alert_differences": {
+      "0.12": 0,
+      "0.22": 0,
+      "0.5": 0
+    }
+  },
+  "weight_difference": {
+    "max_absolute": 1.5795230865478516e-06,
+    "changed_values": 3750,
+    "total_values": 4121
+  },
+  "environments": {
+    "F2": {
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cu130",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cuda",
+      "gpu": "Tesla T4",
+      "cuda": "13.0",
+      "seed": 42,
+      "deterministic_algorithms": true
+    },
+    "F1": {
+      "python": "3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "torch": "2.14.1+cpu",
+      "numpy": "2.4.6",
+      "pandas": "2.2.3",
+      "device": "cpu",
+      "gpu": null,
+      "cuda": null,
+      "seed": 42,
+      "deterministic_algorithms": true
+    }
+  },
+  "limitations": [
+    "Effective environment changed from CUDA/T4 to CPU and Python patch version changed",
+    "Validation reused for checkpoint and threshold selection",
+    "Single seed; no estimate of between-seed variability"
+  ],
+  "test_used": false
+}

@@ -1,0 +1,71 @@
+{
+  "categorical_feature_names": [
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "feature_contract_version": "causal_sample_contract_v1",
+  "mask_codes": {
+    "0": "present",
+    "1": "padding",
+    "2": "nominal_lap_row_missing",
+    "3": "temporally_unavailable",
+    "4": "feature_missing",
+    "5": "source_event_unavailable"
+  },
+  "mask_feature_order": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_AirTemp",
+    "Weather_Humidity",
+    "Weather_Pressure",
+    "Weather_Rainfall",
+    "Weather_TrackTemp",
+    "Weather_WindDirection_sin",
+    "Weather_WindDirection_cos",
+    "Weather_WindSpeed",
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "numeric_feature_names": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_AirTemp",
+    "Weather_Humidity",
+    "Weather_Pressure",
+    "Weather_Rainfall",
+    "Weather_TrackTemp",
+    "Weather_WindDirection_sin",
+    "Weather_WindDirection_cos",
+    "Weather_WindSpeed"
+  ],
+  "static_feature_names": [
+    "Driver",
+    "Team",
+    "GranPremio"
+  ],
+  "window_length": 8
+}

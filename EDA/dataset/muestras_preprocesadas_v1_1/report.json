@@ -1,0 +1,386 @@
+{
+  "fit_population": "train AND supervised_eligible only",
+  "fit_sample_count": 46162,
+  "train_samples_transformed": 47997,
+  "validation_samples_transformed": 26604,
+  "test_samples_transformed": 0,
+  "test_metadata_rows_verified_only": 26689,
+  "test_split": "reserved; no feature values transformed or summarized",
+  "dynamic_numeric_coverage_and_fit": {
+    "LapNumber": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "TyreLife_last_eligible": {
+      "fit_observed_cells": 327675,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 17825,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "LapTime": {
+      "fit_observed_cells": 298371,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 951,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Sector1Time": {
+      "fit_observed_cells": 292782,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 6540,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Sector2Time": {
+      "fit_observed_cells": 299266,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 56,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Sector3Time": {
+      "fit_observed_cells": 298958,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 364,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Position": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Telemetry_Speed_mean": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 147,
+      "constant": false
+    },
+    "Telemetry_Speed_max": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 147,
+      "constant": false
+    },
+    "Telemetry_RPM_mean": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 147,
+      "constant": false
+    },
+    "Telemetry_RPM_max": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 147,
+      "constant": false
+    },
+    "Telemetry_Throttle_valid_mean": {
+      "fit_observed_cells": 299175,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 147,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Telemetry_Throttle_valid_max": {
+      "fit_observed_cells": 299175,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 147,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Telemetry_Brake_mean": {
+      "fit_observed_cells": 299322,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 46178,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 210,
+      "constant": false
+    },
+    "Weather_AirTemp": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Weather_Humidity": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Weather_Pressure": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Weather_Rainfall": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 331814,
+      "constant": false
+    },
+    "Weather_TrackTemp": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Weather_WindDirection_sin": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 11194,
+      "constant": false
+    },
+    "Weather_WindDirection_cos": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 0,
+      "constant": false
+    },
+    "Weather_WindSpeed": {
+      "fit_observed_cells": 345500,
+      "fit_window_positions": 369296,
+      "fit_padding_positions": 23796,
+      "fit_row_missing_positions": 0,
+      "fit_temporally_unavailable_cells": 0,
+      "fit_feature_missing_cells": 0,
+      "physical_zero_fit_cells": 2676,
+      "constant": false
+    }
+  },
+  "validation_numeric_coverage": {
+    "LapNumber": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "TyreLife_last_eligible": {
+      "observed_cells": 196041,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 3740
+    },
+    "LapTime": {
+      "observed_cells": 172840,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 333
+    },
+    "Sector1Time": {
+      "observed_cells": 169624,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 3549
+    },
+    "Sector2Time": {
+      "observed_cells": 173153,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 20
+    },
+    "Sector3Time": {
+      "observed_cells": 173030,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 143
+    },
+    "Position": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_Speed_mean": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_Speed_max": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_RPM_mean": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_RPM_max": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_Throttle_valid_mean": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_Throttle_valid_max": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Telemetry_Brake_mean": {
+      "observed_cells": 173173,
+      "temporally_unavailable_cells": 26608,
+      "missing_cells": 0
+    },
+    "Weather_AirTemp": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_Humidity": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_Pressure": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_Rainfall": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_TrackTemp": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_WindDirection_sin": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_WindDirection_cos": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    },
+    "Weather_WindSpeed": {
+      "observed_cells": 199781,
+      "temporally_unavailable_cells": 0,
+      "missing_cells": 0
+    }
+  },
+  "validation_categorical_coverage": {
+    "Compound_asof": {
+      "out_of_vocabulary_cells": 0,
+      "source_unknown_cells": 176,
+      "absent_cells": 0,
+      "observed_cells": 199605
+    },
+    "track_phase_asof": {
+      "out_of_vocabulary_cells": 0,
+      "source_unknown_cells": 0,
+      "absent_cells": 0,
+      "observed_cells": 199781
+    },
+    "static:Driver": {
+      "out_of_vocabulary_samples": 625
+    },
+    "static:Team": {
+      "out_of_vocabulary_samples": 5312
+    },
+    "static:GranPremio": {
+      "out_of_vocabulary_samples": 1032
+    }
+  },
+  "vocabulary_cardinalities": {
+    "dynamic": {
+      "Compound_asof": 5,
+      "track_phase_asof": 6
+    },
+    "static": {
+      "Driver": 25,
+      "GranPremio": 24,
+      "Team": 10
+    }
+  },
+  "reserved_category_ids": {
+    "padding": 0,
+    "absent": 1,
+    "source_unknown": 2,
+    "out_of_vocabulary": 3
+  },
+  "overlapping_window_weighting": "Each observed dynamic cell occurrence in an eligible training window contributes once. A source lap/value repeated in multiple overlapping windows is therefore weighted by its number of occurrences.",
+  "fit_state_sha256_before_transform": "86dd0eb6c52629e823503704d6697fb548788ffe57c8b1da8c7d200da85af8a0",
+  "fit_state_sha256_after_transform": "86dd0eb6c52629e823503704d6697fb548788ffe57c8b1da8c7d200da85af8a0"
+}

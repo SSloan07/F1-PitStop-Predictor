@@ -1,0 +1,322 @@
+[
+  {
+    "event_id": "2022-01-1-IN-14",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 14 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-30",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 30 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-54",
+    "event_status": "unknown",
+    "evidence_basis": "unresolved",
+    "review_status": "not_verifiable",
+    "reason": "lap54_not_listed_in_FIA_race_pit_stop_summary",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "The FIA Race Pit Stop Summary lists Verstappen’s race stops on laps 14, 30 and 43, but not on lap 54. The lap-54 candidate is therefore not confirmed as a pit stop by this report. No compound or new/used status is reported for this candidate."
+  },
+  {
+    "event_id": "2022-01-11-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for PER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-6-IN-32",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 32 for LAT. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-63-IN-33",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 33 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-02-11-IN-15",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_lap_confirmed_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA race-classification pit-stop detail confirms Sergio Perez stopped on lap 15. It does not report fitted compound or new/used status."
+  },
+  {
+    "event_id": "2022-02-20-IN-37",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_lap_confirmed_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA race-classification pit-stop detail confirms Kevin Magnussen stopped on lap 37. It does not report fitted compound or new/used status."
+  },
+  {
+    "event_id": "2022-02-3-IN-36",
+    "event_status": "unknown",
+    "evidence_basis": "unresolved",
+    "review_status": "not_verifiable",
+    "reason": "lap36_not_listed_FIA_Ricciardo_lap8_listed",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA pit-stop detail lists Daniel Ricciardo’s stop on lap 8, not lap 36. The candidate lap-36 event is not confirmed as a pit stop by this report; no tyre compound or new/used status is reported for it."
+  },
+  {
+    "event_id": "2022-02-77-IN-36",
+    "event_status": "unknown",
+    "evidence_basis": "unresolved",
+    "review_status": "not_verifiable",
+    "reason": "lap36_not_listed_FIA_Bottas_laps16_35_listed",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA pit-stop detail lists Valtteri Bottas’s stops on laps 16 and 35, not lap 36. The candidate lap-36 event is not confirmed as a pit stop by this report; no tyre compound or new/used status is reported for it."
+  },
+  {
+    "event_id": "2022-04-14-IN-6",
+    "event_status": "unknown",
+    "evidence_basis": "unresolved",
+    "review_status": "not_verifiable",
+    "reason": "not_listed_in_FIA_race_pit_stop_summary",
+    "source_url": "https://www.fia.com/sites/default/files/2022_04_ita_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 Emilia Romagna Grand Prix — Race Pit Stop Summary (FIA)",
+    "evidence_summary": "The FIA Race Pit Stop Summary consulted does not list Fernando Alonso on lap 6. The candidate event is therefore not confirmed as a pit stop by this report. It gives no tyre compounds or new/used status. Keep the candidate row for audit; do not treat it as FIA-confirmed."
+  },
+  {
+    "event_id": "2022-06-22-IN-52",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 52 for TSU. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-06-4-IN-12",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 12 for NOR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-06-63-IN-51",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 51 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-07-18-IN-24",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/monaco-grand-prix/race-classification",
+    "source_title": "2022 Monaco Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 24 for STR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-08-31-IN-33",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/azerbaijan-grand-prix/race-classification",
+    "source_title": "2022 Azerbaijan Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 33 for OCO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-12-63-IN-18",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/french-grand-prix/race-classification",
+    "source_title": "2022 French Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 18 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-13-16-IN-21",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/hungarian-grand-prix/race-classification",
+    "source_title": "2022 Hungarian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 21 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-13-4-IN-14",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/hungarian-grand-prix/race-classification",
+    "source_title": "2022 Hungarian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 14 for NOR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-14-16-IN-25",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/belgian-grand-prix/race-classification",
+    "source_title": "Belgian Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 25 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-15-23-IN-56",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_15_ned_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 Dutch Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 56 for ALB. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-01-24-IN-32",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2023 Bahrain Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 32 for ZHO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-06-18-IN-51",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_07_mon_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Monaco Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 51 for STR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-08-21-IN-11",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/canadian-grand-prix/race-classification",
+    "source_title": "2023 Canadian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 11 for DEV. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-10-21-IN-27",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/british-grand-prix/race-classification",
+    "source_title": "2023 British Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 27 for DEV. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-11-14-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_12_hun_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2023 Hungarian Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for ALO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-13-10-IN-1",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_14_ned_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Dutch Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 1 for GAS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-13-55-IN-41",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/dutch-grand-prix/race-classification",
+    "source_title": "2023 Dutch Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 41 for SAI. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-10-IN-26",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 26 for GAS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-16-IN-12",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 12 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-16-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  }
+]

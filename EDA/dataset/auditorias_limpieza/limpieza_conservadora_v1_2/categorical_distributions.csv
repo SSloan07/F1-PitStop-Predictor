@@ -1,0 +1,153 @@
+column,value,count
+GranPremio,literal::Dutch Grand Prix,5525
+GranPremio,literal::Hungarian Grand Prix,5358
+GranPremio,literal::Monaco Grand Prix,5356
+GranPremio,literal::Austrian Grand Prix,5209
+GranPremio,literal::Canadian Grand Prix,5202
+GranPremio,literal::Mexico City Grand Prix,5139
+GranPremio,literal::Spanish Grand Prix,5055
+GranPremio,literal::São Paulo Grand Prix,4752
+GranPremio,literal::Abu Dhabi Grand Prix,4465
+GranPremio,literal::Singapore Grand Prix,4439
+GranPremio,literal::Bahrain Grand Prix,4438
+GranPremio,literal::Miami Grand Prix,4311
+GranPremio,literal::United States Grand Prix,4132
+GranPremio,literal::Australian Grand Prix,3973
+GranPremio,literal::Italian Grand Prix,3910
+GranPremio,literal::Azerbaijan Grand Prix,3794
+GranPremio,literal::Emilia Romagna Grand Prix,3577
+GranPremio,literal::British Grand Prix,3571
+GranPremio,literal::Saudi Arabian Grand Prix,3562
+GranPremio,literal::Japanese Grand Prix,3353
+GranPremio,literal::Belgian Grand Prix,3328
+GranPremio,literal::Qatar Grand Prix,3016
+GranPremio,literal::Las Vegas Grand Prix,2770
+GranPremio,literal::Chinese Grand Prix,2097
+GranPremio,literal::French Grand Prix,958
+Driver,literal::NOR,5400
+Driver,literal::VER,5363
+Driver,literal::RUS,5362
+Driver,literal::HAM,5224
+Driver,literal::LEC,5112
+Driver,literal::GAS,5064
+Driver,literal::ALO,5054
+Driver,literal::OCO,4999
+Driver,literal::STR,4984
+Driver,literal::TSU,4944
+Driver,literal::SAI,4878
+Driver,literal::ALB,4704
+Driver,literal::PIA,4024
+Driver,literal::HUL,3950
+Driver,literal::BOT,3731
+Driver,literal::PER,3669
+Driver,literal::ZHO,3653
+Driver,literal::MAG,3546
+Driver,literal::RIC,2612
+Driver,literal::LAW,1927
+Driver,literal::SAR,1917
+Driver,literal::BEA,1543
+Driver,literal::COL,1447
+Driver,literal::HAD,1344
+Driver,literal::ANT,1312
+Driver,literal::BOR,1233
+Driver,literal::LAT,1157
+Driver,literal::MSC,1144
+Driver,literal::VET,1103
+Driver,literal::DEV,616
+Driver,literal::DOO,274
+DriverNumber,literal::4,5400
+DriverNumber,literal::1,5363
+DriverNumber,literal::63,5362
+DriverNumber,literal::44,5224
+DriverNumber,literal::16,5112
+DriverNumber,literal::10,5064
+DriverNumber,literal::14,5054
+DriverNumber,literal::31,4999
+DriverNumber,literal::18,4984
+DriverNumber,literal::22,4944
+DriverNumber,literal::55,4878
+DriverNumber,literal::23,4704
+DriverNumber,literal::81,4024
+DriverNumber,literal::27,3950
+DriverNumber,literal::77,3731
+DriverNumber,literal::11,3669
+DriverNumber,literal::24,3653
+DriverNumber,literal::20,3546
+DriverNumber,literal::3,2612
+DriverNumber,literal::6,2501
+DriverNumber,literal::5,2336
+DriverNumber,literal::2,1917
+DriverNumber,literal::30,1634
+DriverNumber,literal::43,1447
+DriverNumber,literal::87,1373
+DriverNumber,literal::12,1312
+DriverNumber,literal::47,1144
+DriverNumber,literal::21,563
+DriverNumber,literal::40,293
+DriverNumber,literal::7,217
+DriverNumber,literal::50,120
+DriverNumber,literal::61,57
+DriverNumber,literal::45,53
+DriverNumber,literal::38,50
+Team,literal::McLaren,10622
+Team,literal::Mercedes,10538
+Team,literal::Red Bull Racing,10409
+Team,literal::Ferrari,10152
+Team,literal::Haas F1 Team,10141
+Team,literal::Aston Martin,10127
+Team,literal::Alpine,9867
+Team,literal::Williams,9477
+Team,literal::Kick Sauber,5226
+Team,literal::AlphaTauri,4818
+Team,literal::Alfa Romeo,4678
+Team,literal::Racing Bulls,2629
+Team,literal::RB,2606
+Compound,literal::HARD,44364
+Compound,literal::MEDIUM,36980
+Compound,literal::SOFT,12760
+Compound,literal::INTERMEDIATE,5945
+Compound,literal::WET,461
+Compound,literal::None,426
+Compound,literal::nan,354
+TrackStatus,literal::1,90623
+TrackStatus,literal::12,3008
+TrackStatus,literal::4,2846
+TrackStatus,literal::41,1046
+TrackStatus,literal::124,770
+TrackStatus,literal::671,544
+TrackStatus,literal::126,389
+TrackStatus,literal::21,316
+TrackStatus,literal::26,218
+TrackStatus,literal::6,211
+TrackStatus,literal::24,193
+TrackStatus,literal::14,176
+TrackStatus,literal::16,139
+TrackStatus,literal::64,87
+TrackStatus,literal::71,87
+TrackStatus,literal::45,74
+TrackStatus,literal::2,73
+TrackStatus,literal::167,64
+TrackStatus,literal::67,60
+TrackStatus,literal::125,52
+TrackStatus,literal::2671,49
+TrackStatus,literal::451,46
+TrackStatus,literal::1264,40
+TrackStatus,literal::1267,29
+TrackStatus,literal::264,23
+TrackStatus,literal::1254,20
+TrackStatus,literal::412,19
+TrackStatus,literal::216,17
+TrackStatus,literal::164,16
+TrackStatus,literal::51,9
+TrackStatus,literal::6712,8
+TrackStatus,literal::1265,7
+TrackStatus,literal::712,7
+TrackStatus,literal::514,6
+TrackStatus,literal::265,5
+TrackStatus,literal::267,4
+TrackStatus,literal::65,4
+TrackStatus,literal::2167,1
+TrackStatus,literal::16724,1
+TrackStatus,literal::214,1
+TrackStatus,literal::651,1
+TrackStatus,literal::1246,1

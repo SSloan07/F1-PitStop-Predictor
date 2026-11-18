@@ -1,0 +1,9 @@
+{
+  "artifact_version": "lstm_dropout_local_comparison_v1",
+  "files_sha256": {
+    "comparison.csv": "41ed0120fa07f0a045dbfb7a5d7c0e5fccb2dd5eb7ce7a38526bc21eebc962c5",
+    "comparison.json": "8672094935589732c8553e93935f0e68d407cf025f3a02cfd29d5f10fedf9dbe"
+  },
+  "test_used": false,
+  "pair_id": "lstm32_dropout02_f2_v1_seed42"
+}

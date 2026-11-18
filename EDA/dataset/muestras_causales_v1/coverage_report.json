@@ -1,0 +1,16 @@
+{
+  "samples": 101290,
+  "window_length": 8,
+  "labels_by_status": {
+    "not_published": 53293,
+    "published": 47997
+  },
+  "labels_known": 46178,
+  "positives": 4817,
+  "prediction_eligible": 101137,
+  "prediction_ineligible": 153,
+  "padding_slots": 50131,
+  "missing_nominal_slots": 0,
+  "temporally_unavailable_cells": 1215744,
+  "feature_missing_cells": 284959
+}

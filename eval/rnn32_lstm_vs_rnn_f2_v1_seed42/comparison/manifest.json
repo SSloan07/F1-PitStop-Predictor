@@ -1,0 +1,9 @@
+{
+  "artifact_version": "rnn_lstm_local_comparison_v1",
+  "files_sha256": {
+    "comparison.csv": "c634f0ddebcb5cdaa131bf890cc503ea91008a16babad0c58091f69e5dc56d7f",
+    "comparison.json": "14c5109f75c9ddea3e827a7cd03dde1a113047efc2758fa1e7d46fa9157a4f97"
+  },
+  "test_used": false,
+  "pair_id": "rnn32_vs_lstm32_f2_v1_seed42"
+}

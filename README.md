@@ -91,3 +91,22 @@ By combining a lap-by-lap probability chart, actual pit entries and circuit cont
 **Alejandro Tirado Ramirez** · **Simón Sloan García Villa**
 
 Built around our interest in Formula 1, race data and deep learning.
+
+## Run from a fresh clone
+
+From the repository root, create a Python 3.13 environment and install the dependencies for the stage you need.
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-data.txt -r requirements-experiments.txt
+```
+
+To verify the prepared validation inputs and train the reference RNN on CPU, run:
+
+```bash
+python EDA/dataset/muestras_preprocesadas_v1_3/example_load.py
+python scripts/entrenar_rnn.py --device cpu --output runs/local_rnn
+```
+
+The training command reads the included v1_3 package. To collect race data again with FastF1, run `python EDA/dataset/consolidar_carreras.py` with internet access. Historical sampling configurations matching the v1, v1_1 and v1_2 manifest hashes are in `configs/historicas/`. For replay alone, follow the [simulator setup](Frontend/README.md).

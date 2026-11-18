@@ -1,0 +1,1827 @@
+Temporada,Ronda,GranPremio,DriverNumber,filas,compound_ausente,tyrelife_ausente,saltos,vueltas_generadas
+2022,1,Bahrain Grand Prix,1,54,0,0,0,0
+2022,1,Bahrain Grand Prix,10,45,0,0,0,1
+2022,1,Bahrain Grand Prix,11,57,0,0,0,1
+2022,1,Bahrain Grand Prix,14,57,0,0,0,0
+2022,1,Bahrain Grand Prix,16,57,0,0,0,0
+2022,1,Bahrain Grand Prix,18,57,0,0,0,0
+2022,1,Bahrain Grand Prix,20,57,0,0,0,0
+2022,1,Bahrain Grand Prix,22,57,0,0,0,0
+2022,1,Bahrain Grand Prix,23,57,0,0,0,0
+2022,1,Bahrain Grand Prix,24,57,0,0,0,0
+2022,1,Bahrain Grand Prix,27,57,0,0,0,0
+2022,1,Bahrain Grand Prix,3,57,0,0,0,0
+2022,1,Bahrain Grand Prix,31,57,0,0,0,0
+2022,1,Bahrain Grand Prix,4,57,0,0,0,0
+2022,1,Bahrain Grand Prix,44,57,0,0,0,0
+2022,1,Bahrain Grand Prix,47,57,0,0,0,0
+2022,1,Bahrain Grand Prix,55,57,0,0,0,0
+2022,1,Bahrain Grand Prix,6,57,0,0,0,0
+2022,1,Bahrain Grand Prix,63,57,0,0,0,0
+2022,1,Bahrain Grand Prix,77,57,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,1,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,10,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,11,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,14,36,0,0,0,1
+2022,2,Saudi Arabian Grand Prix,16,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,18,49,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,20,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,23,48,0,0,0,1
+2022,2,Saudi Arabian Grand Prix,24,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,27,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,3,36,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,31,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,4,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,44,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,55,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,6,15,0,0,0,1
+2022,2,Saudi Arabian Grand Prix,63,50,0,0,0,0
+2022,2,Saudi Arabian Grand Prix,77,36,0,0,0,0
+2022,3,Australian Grand Prix,1,39,0,0,0,1
+2022,3,Australian Grand Prix,10,58,0,0,0,0
+2022,3,Australian Grand Prix,11,58,0,0,0,0
+2022,3,Australian Grand Prix,14,57,0,0,0,0
+2022,3,Australian Grand Prix,16,58,0,0,0,0
+2022,3,Australian Grand Prix,18,58,0,0,0,0
+2022,3,Australian Grand Prix,20,57,0,0,0,0
+2022,3,Australian Grand Prix,22,57,0,0,0,0
+2022,3,Australian Grand Prix,23,58,0,0,0,0
+2022,3,Australian Grand Prix,24,58,0,0,0,0
+2022,3,Australian Grand Prix,3,58,0,0,0,0
+2022,3,Australian Grand Prix,31,58,0,0,0,0
+2022,3,Australian Grand Prix,4,58,0,0,0,0
+2022,3,Australian Grand Prix,44,58,0,0,0,0
+2022,3,Australian Grand Prix,47,57,0,0,0,0
+2022,3,Australian Grand Prix,5,23,0,0,0,1
+2022,3,Australian Grand Prix,55,2,0,0,0,1
+2022,3,Australian Grand Prix,6,57,0,0,0,0
+2022,3,Australian Grand Prix,63,58,0,0,0,0
+2022,3,Australian Grand Prix,77,58,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,1,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,10,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,11,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,14,6,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,16,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,18,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,20,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,22,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,23,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,24,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,3,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,31,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,4,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,44,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,47,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,5,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,55,1,0,0,0,1
+2022,4,Emilia Romagna Grand Prix,6,62,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,63,63,0,0,0,0
+2022,4,Emilia Romagna Grand Prix,77,63,0,0,0,0
+2022,5,Miami Grand Prix,1,57,0,0,0,0
+2022,5,Miami Grand Prix,10,45,0,0,0,0
+2022,5,Miami Grand Prix,11,57,0,0,0,0
+2022,5,Miami Grand Prix,14,57,0,0,0,0
+2022,5,Miami Grand Prix,16,57,0,0,0,0
+2022,5,Miami Grand Prix,18,57,0,0,0,0
+2022,5,Miami Grand Prix,20,57,0,0,0,0
+2022,5,Miami Grand Prix,22,57,0,0,0,0
+2022,5,Miami Grand Prix,23,57,0,0,0,0
+2022,5,Miami Grand Prix,24,6,0,0,0,0
+2022,5,Miami Grand Prix,3,57,0,0,0,0
+2022,5,Miami Grand Prix,31,57,0,0,0,0
+2022,5,Miami Grand Prix,4,40,0,0,0,1
+2022,5,Miami Grand Prix,44,57,0,0,0,0
+2022,5,Miami Grand Prix,47,57,0,0,0,0
+2022,5,Miami Grand Prix,5,54,0,0,0,0
+2022,5,Miami Grand Prix,55,57,0,0,0,0
+2022,5,Miami Grand Prix,6,57,0,0,0,0
+2022,5,Miami Grand Prix,63,57,0,0,0,0
+2022,5,Miami Grand Prix,77,57,0,0,0,0
+2022,6,Spanish Grand Prix,1,66,0,0,0,0
+2022,6,Spanish Grand Prix,10,65,0,0,0,0
+2022,6,Spanish Grand Prix,11,66,0,0,0,0
+2022,6,Spanish Grand Prix,14,65,0,0,0,0
+2022,6,Spanish Grand Prix,16,27,0,0,0,0
+2022,6,Spanish Grand Prix,18,65,0,0,0,0
+2022,6,Spanish Grand Prix,20,64,0,0,0,0
+2022,6,Spanish Grand Prix,22,65,0,0,0,0
+2022,6,Spanish Grand Prix,23,64,0,0,0,0
+2022,6,Spanish Grand Prix,24,28,0,0,0,0
+2022,6,Spanish Grand Prix,3,65,0,0,0,0
+2022,6,Spanish Grand Prix,31,66,0,0,0,0
+2022,6,Spanish Grand Prix,4,66,0,0,0,0
+2022,6,Spanish Grand Prix,44,66,0,0,0,0
+2022,6,Spanish Grand Prix,47,65,0,0,0,0
+2022,6,Spanish Grand Prix,5,65,0,0,0,0
+2022,6,Spanish Grand Prix,55,66,0,0,0,0
+2022,6,Spanish Grand Prix,6,64,0,0,0,0
+2022,6,Spanish Grand Prix,63,66,0,0,0,0
+2022,6,Spanish Grand Prix,77,66,0,0,0,0
+2022,7,Monaco Grand Prix,1,64,0,4,0,0
+2022,7,Monaco Grand Prix,10,64,0,8,0,0
+2022,7,Monaco Grand Prix,11,64,0,6,0,0
+2022,7,Monaco Grand Prix,14,64,0,9,0,0
+2022,7,Monaco Grand Prix,16,64,0,3,0,0
+2022,7,Monaco Grand Prix,18,64,35,0,0,0
+2022,7,Monaco Grand Prix,20,20,0,0,0,0
+2022,7,Monaco Grand Prix,22,63,0,8,0,0
+2022,7,Monaco Grand Prix,23,49,0,4,0,0
+2022,7,Monaco Grand Prix,24,63,0,10,0,0
+2022,7,Monaco Grand Prix,3,64,0,11,0,0
+2022,7,Monaco Grand Prix,31,64,0,9,0,0
+2022,7,Monaco Grand Prix,4,64,0,5,0,0
+2022,7,Monaco Grand Prix,44,64,0,7,0,0
+2022,7,Monaco Grand Prix,47,25,0,8,0,1
+2022,7,Monaco Grand Prix,5,64,0,0,0,0
+2022,7,Monaco Grand Prix,55,64,0,9,0,0
+2022,7,Monaco Grand Prix,6,63,0,41,0,0
+2022,7,Monaco Grand Prix,63,64,0,9,0,0
+2022,7,Monaco Grand Prix,77,64,0,10,0,0
+2022,8,Azerbaijan Grand Prix,1,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,10,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,11,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,14,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,16,21,0,0,0,0
+2022,8,Azerbaijan Grand Prix,18,46,0,0,0,0
+2022,8,Azerbaijan Grand Prix,20,32,0,0,0,1
+2022,8,Azerbaijan Grand Prix,22,50,0,0,0,0
+2022,8,Azerbaijan Grand Prix,23,50,0,0,0,0
+2022,8,Azerbaijan Grand Prix,24,23,0,0,0,0
+2022,8,Azerbaijan Grand Prix,3,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,31,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,4,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,44,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,47,50,0,0,0,0
+2022,8,Azerbaijan Grand Prix,5,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,55,9,0,0,0,1
+2022,8,Azerbaijan Grand Prix,6,50,0,0,0,0
+2022,8,Azerbaijan Grand Prix,63,51,0,0,0,0
+2022,8,Azerbaijan Grand Prix,77,50,0,0,0,0
+2022,9,Canadian Grand Prix,1,70,0,0,0,0
+2022,9,Canadian Grand Prix,10,70,0,0,0,0
+2022,9,Canadian Grand Prix,11,8,0,0,0,1
+2022,9,Canadian Grand Prix,14,70,0,0,0,0
+2022,9,Canadian Grand Prix,16,70,0,0,0,0
+2022,9,Canadian Grand Prix,18,70,0,0,0,0
+2022,9,Canadian Grand Prix,20,70,0,0,0,0
+2022,9,Canadian Grand Prix,22,47,0,0,0,0
+2022,9,Canadian Grand Prix,23,70,0,0,0,0
+2022,9,Canadian Grand Prix,24,70,0,0,0,0
+2022,9,Canadian Grand Prix,3,70,0,0,0,0
+2022,9,Canadian Grand Prix,31,70,0,0,0,0
+2022,9,Canadian Grand Prix,4,70,0,0,0,0
+2022,9,Canadian Grand Prix,44,70,0,0,0,0
+2022,9,Canadian Grand Prix,47,19,0,0,0,1
+2022,9,Canadian Grand Prix,5,70,0,0,0,0
+2022,9,Canadian Grand Prix,55,70,0,0,0,0
+2022,9,Canadian Grand Prix,6,70,0,0,0,0
+2022,9,Canadian Grand Prix,63,70,0,0,0,0
+2022,9,Canadian Grand Prix,77,70,0,0,0,0
+2022,10,British Grand Prix,1,52,0,0,0,0
+2022,10,British Grand Prix,10,26,0,0,0,0
+2022,10,British Grand Prix,11,52,0,0,0,0
+2022,10,British Grand Prix,14,52,0,0,0,0
+2022,10,British Grand Prix,16,52,0,0,0,0
+2022,10,British Grand Prix,18,52,0,0,0,0
+2022,10,British Grand Prix,20,52,0,0,0,0
+2022,10,British Grand Prix,22,52,0,0,0,0
+2022,10,British Grand Prix,23,1,0,0,0,1
+2022,10,British Grand Prix,24,1,0,0,0,1
+2022,10,British Grand Prix,3,52,0,0,0,0
+2022,10,British Grand Prix,31,38,0,0,0,1
+2022,10,British Grand Prix,4,52,0,0,0,0
+2022,10,British Grand Prix,44,52,0,0,0,0
+2022,10,British Grand Prix,47,52,0,0,0,0
+2022,10,British Grand Prix,5,52,0,0,0,0
+2022,10,British Grand Prix,55,52,0,0,0,0
+2022,10,British Grand Prix,6,52,0,0,0,0
+2022,10,British Grand Prix,63,1,0,0,0,1
+2022,10,British Grand Prix,77,20,0,0,0,0
+2022,11,Austrian Grand Prix,1,71,0,13,0,0
+2022,11,Austrian Grand Prix,10,70,0,30,0,0
+2022,11,Austrian Grand Prix,11,24,0,0,0,0
+2022,11,Austrian Grand Prix,14,70,0,1,0,0
+2022,11,Austrian Grand Prix,16,71,0,9,0,0
+2022,11,Austrian Grand Prix,18,70,0,0,0,0
+2022,11,Austrian Grand Prix,20,70,0,29,0,0
+2022,11,Austrian Grand Prix,22,70,0,24,0,0
+2022,11,Austrian Grand Prix,23,70,0,28,0,0
+2022,11,Austrian Grand Prix,24,70,0,24,0,0
+2022,11,Austrian Grand Prix,3,70,0,26,0,0
+2022,11,Austrian Grand Prix,31,71,0,27,0,0
+2022,11,Austrian Grand Prix,4,70,0,27,0,0
+2022,11,Austrian Grand Prix,44,71,0,20,0,0
+2022,11,Austrian Grand Prix,47,70,0,27,0,0
+2022,11,Austrian Grand Prix,5,70,0,25,0,0
+2022,11,Austrian Grand Prix,55,57,1,6,0,1
+2022,11,Austrian Grand Prix,6,48,0,13,0,0
+2022,11,Austrian Grand Prix,63,71,0,0,0,0
+2022,11,Austrian Grand Prix,77,70,0,30,0,0
+2022,12,French Grand Prix,1,53,0,0,0,0
+2022,12,French Grand Prix,10,53,0,0,0,0
+2022,12,French Grand Prix,11,53,0,0,0,0
+2022,12,French Grand Prix,14,53,0,0,0,0
+2022,12,French Grand Prix,16,18,0,0,0,1
+2022,12,French Grand Prix,18,53,0,0,0,0
+2022,12,French Grand Prix,20,38,0,0,0,0
+2022,12,French Grand Prix,22,18,0,0,0,0
+2022,12,French Grand Prix,23,53,0,0,0,0
+2022,12,French Grand Prix,24,48,0,0,0,1
+2022,12,French Grand Prix,3,53,0,0,0,0
+2022,12,French Grand Prix,31,53,0,0,0,0
+2022,12,French Grand Prix,4,53,0,0,0,0
+2022,12,French Grand Prix,44,53,0,0,0,0
+2022,12,French Grand Prix,47,53,0,0,0,0
+2022,12,French Grand Prix,5,53,0,0,0,0
+2022,12,French Grand Prix,55,53,0,0,0,0
+2022,12,French Grand Prix,6,41,0,0,0,0
+2022,12,French Grand Prix,63,53,0,0,0,0
+2022,12,French Grand Prix,77,53,0,0,0,0
+2022,13,Hungarian Grand Prix,1,70,0,0,0,0
+2022,13,Hungarian Grand Prix,10,69,0,0,0,0
+2022,13,Hungarian Grand Prix,11,70,0,0,0,0
+2022,13,Hungarian Grand Prix,14,69,0,0,0,0
+2022,13,Hungarian Grand Prix,16,70,0,0,0,0
+2022,13,Hungarian Grand Prix,18,69,0,0,0,0
+2022,13,Hungarian Grand Prix,20,69,0,0,0,0
+2022,13,Hungarian Grand Prix,22,68,0,0,0,0
+2022,13,Hungarian Grand Prix,23,69,0,0,0,0
+2022,13,Hungarian Grand Prix,24,69,0,0,0,0
+2022,13,Hungarian Grand Prix,3,69,0,0,0,0
+2022,13,Hungarian Grand Prix,31,69,0,0,0,0
+2022,13,Hungarian Grand Prix,4,70,0,0,0,0
+2022,13,Hungarian Grand Prix,44,70,0,0,0,0
+2022,13,Hungarian Grand Prix,47,69,0,0,0,0
+2022,13,Hungarian Grand Prix,5,69,0,0,0,0
+2022,13,Hungarian Grand Prix,55,70,0,0,0,0
+2022,13,Hungarian Grand Prix,6,69,0,0,0,0
+2022,13,Hungarian Grand Prix,63,70,0,0,0,0
+2022,13,Hungarian Grand Prix,77,66,0,0,0,1
+2022,14,Belgian Grand Prix,1,44,0,0,0,0
+2022,14,Belgian Grand Prix,10,44,0,0,0,0
+2022,14,Belgian Grand Prix,11,44,0,0,0,0
+2022,14,Belgian Grand Prix,14,44,0,0,0,0
+2022,14,Belgian Grand Prix,16,44,0,0,0,0
+2022,14,Belgian Grand Prix,18,44,0,0,0,0
+2022,14,Belgian Grand Prix,20,43,0,0,0,0
+2022,14,Belgian Grand Prix,22,44,0,0,0,0
+2022,14,Belgian Grand Prix,23,44,0,0,0,0
+2022,14,Belgian Grand Prix,24,44,0,0,0,0
+2022,14,Belgian Grand Prix,3,44,0,0,0,0
+2022,14,Belgian Grand Prix,31,44,0,0,0,0
+2022,14,Belgian Grand Prix,4,44,0,0,0,0
+2022,14,Belgian Grand Prix,44,1,0,0,0,1
+2022,14,Belgian Grand Prix,47,43,0,0,0,0
+2022,14,Belgian Grand Prix,5,44,0,0,0,0
+2022,14,Belgian Grand Prix,55,44,0,0,0,0
+2022,14,Belgian Grand Prix,6,43,0,0,0,0
+2022,14,Belgian Grand Prix,63,44,0,0,0,0
+2022,14,Belgian Grand Prix,77,2,0,0,0,1
+2022,15,Dutch Grand Prix,1,72,0,0,0,0
+2022,15,Dutch Grand Prix,10,72,0,0,0,0
+2022,15,Dutch Grand Prix,11,72,0,0,0,0
+2022,15,Dutch Grand Prix,14,72,0,0,0,0
+2022,15,Dutch Grand Prix,16,72,0,0,0,0
+2022,15,Dutch Grand Prix,18,72,0,0,0,0
+2022,15,Dutch Grand Prix,20,72,0,0,0,0
+2022,15,Dutch Grand Prix,22,43,0,0,0,0
+2022,15,Dutch Grand Prix,23,72,0,0,0,0
+2022,15,Dutch Grand Prix,24,72,0,0,0,0
+2022,15,Dutch Grand Prix,3,72,0,0,0,0
+2022,15,Dutch Grand Prix,31,72,0,0,0,0
+2022,15,Dutch Grand Prix,4,72,0,0,0,0
+2022,15,Dutch Grand Prix,44,72,0,0,0,0
+2022,15,Dutch Grand Prix,47,72,0,0,0,0
+2022,15,Dutch Grand Prix,5,72,0,0,0,0
+2022,15,Dutch Grand Prix,55,72,0,0,0,0
+2022,15,Dutch Grand Prix,6,71,0,0,0,0
+2022,15,Dutch Grand Prix,63,72,0,0,0,0
+2022,15,Dutch Grand Prix,77,54,0,0,0,1
+2022,16,Italian Grand Prix,1,53,0,0,0,0
+2022,16,Italian Grand Prix,10,53,0,0,0,0
+2022,16,Italian Grand Prix,11,53,0,0,0,0
+2022,16,Italian Grand Prix,14,31,0,0,0,0
+2022,16,Italian Grand Prix,16,53,0,0,0,0
+2022,16,Italian Grand Prix,18,39,0,0,0,0
+2022,16,Italian Grand Prix,20,52,0,0,0,0
+2022,16,Italian Grand Prix,22,52,0,0,0,0
+2022,16,Italian Grand Prix,24,53,0,0,0,0
+2022,16,Italian Grand Prix,3,46,0,0,0,1
+2022,16,Italian Grand Prix,31,53,0,0,0,0
+2022,16,Italian Grand Prix,4,53,0,0,0,0
+2022,16,Italian Grand Prix,44,53,0,0,0,0
+2022,16,Italian Grand Prix,45,53,0,0,0,0
+2022,16,Italian Grand Prix,47,53,0,0,0,0
+2022,16,Italian Grand Prix,5,11,0,0,0,1
+2022,16,Italian Grand Prix,55,53,0,0,0,0
+2022,16,Italian Grand Prix,6,52,0,0,0,0
+2022,16,Italian Grand Prix,63,53,0,0,0,0
+2022,16,Italian Grand Prix,77,52,0,0,0,0
+2022,17,Singapore Grand Prix,1,59,0,0,0,0
+2022,17,Singapore Grand Prix,10,59,0,0,0,0
+2022,17,Singapore Grand Prix,11,59,0,0,0,0
+2022,17,Singapore Grand Prix,14,21,0,0,0,1
+2022,17,Singapore Grand Prix,16,59,0,0,0,0
+2022,17,Singapore Grand Prix,18,59,0,0,0,0
+2022,17,Singapore Grand Prix,20,59,0,0,0,0
+2022,17,Singapore Grand Prix,22,35,0,0,0,1
+2022,17,Singapore Grand Prix,23,25,0,0,0,0
+2022,17,Singapore Grand Prix,24,7,0,0,0,1
+2022,17,Singapore Grand Prix,3,59,0,0,0,0
+2022,17,Singapore Grand Prix,31,27,0,0,0,1
+2022,17,Singapore Grand Prix,4,59,0,0,0,0
+2022,17,Singapore Grand Prix,44,59,0,0,0,0
+2022,17,Singapore Grand Prix,47,58,0,0,0,0
+2022,17,Singapore Grand Prix,5,59,0,0,0,0
+2022,17,Singapore Grand Prix,55,59,0,0,0,0
+2022,17,Singapore Grand Prix,6,7,0,0,0,0
+2022,17,Singapore Grand Prix,63,57,0,0,0,0
+2022,17,Singapore Grand Prix,77,59,0,0,0,0
+2022,18,Japanese Grand Prix,1,29,0,0,0,1
+2022,18,Japanese Grand Prix,10,28,0,0,0,0
+2022,18,Japanese Grand Prix,11,28,0,0,0,0
+2022,18,Japanese Grand Prix,14,28,0,0,0,0
+2022,18,Japanese Grand Prix,16,28,0,0,0,0
+2022,18,Japanese Grand Prix,18,28,0,0,0,0
+2022,18,Japanese Grand Prix,20,28,0,0,0,0
+2022,18,Japanese Grand Prix,22,28,0,0,0,0
+2022,18,Japanese Grand Prix,23,1,0,0,0,1
+2022,18,Japanese Grand Prix,24,28,0,0,0,0
+2022,18,Japanese Grand Prix,3,28,0,0,0,0
+2022,18,Japanese Grand Prix,31,28,0,0,0,0
+2022,18,Japanese Grand Prix,4,28,0,0,0,0
+2022,18,Japanese Grand Prix,44,28,0,0,0,0
+2022,18,Japanese Grand Prix,47,28,0,0,0,0
+2022,18,Japanese Grand Prix,5,28,0,0,0,0
+2022,18,Japanese Grand Prix,55,1,0,0,0,1
+2022,18,Japanese Grand Prix,6,28,0,0,0,0
+2022,18,Japanese Grand Prix,63,28,0,0,0,0
+2022,18,Japanese Grand Prix,77,28,0,0,0,0
+2022,19,United States Grand Prix,1,56,0,0,0,0
+2022,19,United States Grand Prix,10,56,0,0,0,0
+2022,19,United States Grand Prix,11,56,0,0,0,0
+2022,19,United States Grand Prix,14,56,0,0,0,0
+2022,19,United States Grand Prix,16,56,0,0,0,0
+2022,19,United States Grand Prix,18,22,0,0,0,1
+2022,19,United States Grand Prix,20,56,0,0,0,0
+2022,19,United States Grand Prix,22,56,0,0,0,0
+2022,19,United States Grand Prix,23,56,0,0,0,0
+2022,19,United States Grand Prix,24,56,0,0,0,0
+2022,19,United States Grand Prix,3,56,0,0,0,0
+2022,19,United States Grand Prix,31,56,0,0,0,0
+2022,19,United States Grand Prix,4,56,0,0,0,0
+2022,19,United States Grand Prix,44,56,0,0,0,0
+2022,19,United States Grand Prix,47,56,0,0,0,0
+2022,19,United States Grand Prix,5,56,0,0,0,0
+2022,19,United States Grand Prix,55,1,0,0,0,0
+2022,19,United States Grand Prix,6,56,0,0,0,0
+2022,19,United States Grand Prix,63,56,0,0,0,0
+2022,19,United States Grand Prix,77,17,0,0,0,1
+2022,20,Mexico City Grand Prix,1,71,0,0,0,0
+2022,20,Mexico City Grand Prix,10,70,0,0,0,0
+2022,20,Mexico City Grand Prix,11,71,0,0,0,0
+2022,20,Mexico City Grand Prix,14,64,0,0,0,1
+2022,20,Mexico City Grand Prix,16,71,0,0,0,0
+2022,20,Mexico City Grand Prix,18,70,0,0,0,0
+2022,20,Mexico City Grand Prix,20,70,0,0,0,0
+2022,20,Mexico City Grand Prix,22,50,0,0,0,0
+2022,20,Mexico City Grand Prix,23,70,0,0,0,0
+2022,20,Mexico City Grand Prix,24,70,0,0,0,0
+2022,20,Mexico City Grand Prix,3,70,0,0,0,0
+2022,20,Mexico City Grand Prix,31,70,0,0,0,0
+2022,20,Mexico City Grand Prix,4,70,0,0,0,0
+2022,20,Mexico City Grand Prix,44,71,0,0,0,0
+2022,20,Mexico City Grand Prix,47,70,0,0,0,0
+2022,20,Mexico City Grand Prix,5,70,0,0,0,0
+2022,20,Mexico City Grand Prix,55,71,0,0,0,0
+2022,20,Mexico City Grand Prix,6,69,0,0,0,0
+2022,20,Mexico City Grand Prix,63,71,0,0,0,0
+2022,20,Mexico City Grand Prix,77,70,0,0,0,0
+2022,21,São Paulo Grand Prix,1,71,0,0,0,0
+2022,21,São Paulo Grand Prix,10,71,0,0,0,0
+2022,21,São Paulo Grand Prix,11,71,0,0,0,0
+2022,21,São Paulo Grand Prix,14,71,0,0,0,0
+2022,21,São Paulo Grand Prix,16,71,0,0,0,0
+2022,21,São Paulo Grand Prix,18,71,0,0,0,0
+2022,21,São Paulo Grand Prix,20,1,0,0,0,1
+2022,21,São Paulo Grand Prix,22,70,0,0,0,0
+2022,21,São Paulo Grand Prix,23,71,0,0,0,0
+2022,21,São Paulo Grand Prix,24,71,0,0,0,0
+2022,21,São Paulo Grand Prix,3,1,0,0,0,1
+2022,21,São Paulo Grand Prix,31,71,0,0,0,0
+2022,21,São Paulo Grand Prix,4,51,0,0,0,1
+2022,21,São Paulo Grand Prix,44,71,0,0,0,0
+2022,21,São Paulo Grand Prix,47,71,0,0,0,0
+2022,21,São Paulo Grand Prix,5,71,0,0,0,0
+2022,21,São Paulo Grand Prix,55,71,0,0,0,0
+2022,21,São Paulo Grand Prix,6,71,0,0,0,0
+2022,21,São Paulo Grand Prix,63,71,0,0,0,0
+2022,21,São Paulo Grand Prix,77,71,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,1,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,10,57,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,11,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,14,27,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,16,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,18,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,20,57,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,22,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,23,57,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,24,57,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,3,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,31,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,4,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,44,55,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,47,57,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,5,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,55,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,6,55,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,63,58,0,0,0,0
+2022,22,Abu Dhabi Grand Prix,77,57,0,0,0,0
+2023,1,Bahrain Grand Prix,1,57,0,0,0,0
+2023,1,Bahrain Grand Prix,10,57,0,0,0,0
+2023,1,Bahrain Grand Prix,11,57,0,0,0,0
+2023,1,Bahrain Grand Prix,14,57,0,0,0,0
+2023,1,Bahrain Grand Prix,16,40,0,0,0,1
+2023,1,Bahrain Grand Prix,18,57,0,0,0,0
+2023,1,Bahrain Grand Prix,2,56,0,0,0,0
+2023,1,Bahrain Grand Prix,20,56,0,0,0,0
+2023,1,Bahrain Grand Prix,21,56,0,0,0,0
+2023,1,Bahrain Grand Prix,22,57,0,0,0,0
+2023,1,Bahrain Grand Prix,23,57,0,0,0,0
+2023,1,Bahrain Grand Prix,24,56,0,0,0,0
+2023,1,Bahrain Grand Prix,27,56,0,0,0,0
+2023,1,Bahrain Grand Prix,31,41,0,0,0,0
+2023,1,Bahrain Grand Prix,4,55,0,0,0,0
+2023,1,Bahrain Grand Prix,44,57,0,0,0,0
+2023,1,Bahrain Grand Prix,55,57,0,0,0,0
+2023,1,Bahrain Grand Prix,63,57,0,0,0,0
+2023,1,Bahrain Grand Prix,77,57,0,0,0,0
+2023,1,Bahrain Grand Prix,81,13,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,1,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,10,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,11,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,14,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,16,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,18,17,0,0,0,1
+2023,2,Saudi Arabian Grand Prix,2,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,20,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,21,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,22,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,23,27,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,24,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,27,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,31,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,4,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,44,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,55,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,63,50,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,77,49,0,0,0,0
+2023,2,Saudi Arabian Grand Prix,81,50,0,0,0,0
+2023,3,Australian Grand Prix,1,58,0,0,0,0
+2023,3,Australian Grand Prix,10,57,0,0,0,1
+2023,3,Australian Grand Prix,11,58,0,0,0,0
+2023,3,Australian Grand Prix,14,58,0,0,0,0
+2023,3,Australian Grand Prix,16,1,0,0,0,1
+2023,3,Australian Grand Prix,18,58,0,0,0,0
+2023,3,Australian Grand Prix,2,57,0,0,0,1
+2023,3,Australian Grand Prix,20,53,0,0,0,1
+2023,3,Australian Grand Prix,21,57,0,0,0,1
+2023,3,Australian Grand Prix,22,58,0,0,0,0
+2023,3,Australian Grand Prix,23,7,0,0,0,1
+2023,3,Australian Grand Prix,24,58,0,0,0,0
+2023,3,Australian Grand Prix,27,58,0,0,0,0
+2023,3,Australian Grand Prix,31,57,0,0,0,1
+2023,3,Australian Grand Prix,4,58,0,0,0,0
+2023,3,Australian Grand Prix,44,58,0,0,0,0
+2023,3,Australian Grand Prix,55,58,0,0,0,0
+2023,3,Australian Grand Prix,63,18,0,0,0,1
+2023,3,Australian Grand Prix,77,58,0,0,0,0
+2023,3,Australian Grand Prix,81,58,0,0,0,0
+2023,4,Azerbaijan Grand Prix,1,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,10,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,11,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,14,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,16,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,18,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,2,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,20,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,21,10,0,0,0,1
+2023,4,Azerbaijan Grand Prix,22,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,23,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,24,36,0,0,0,0
+2023,4,Azerbaijan Grand Prix,27,50,0,0,0,0
+2023,4,Azerbaijan Grand Prix,31,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,4,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,44,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,55,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,63,51,0,0,0,0
+2023,4,Azerbaijan Grand Prix,77,50,0,0,0,0
+2023,4,Azerbaijan Grand Prix,81,51,0,0,0,0
+2023,5,Miami Grand Prix,1,57,0,0,0,0
+2023,5,Miami Grand Prix,10,57,0,0,0,0
+2023,5,Miami Grand Prix,11,57,0,0,0,0
+2023,5,Miami Grand Prix,14,57,0,0,0,0
+2023,5,Miami Grand Prix,16,57,0,0,0,0
+2023,5,Miami Grand Prix,18,57,0,0,0,0
+2023,5,Miami Grand Prix,2,56,0,0,0,0
+2023,5,Miami Grand Prix,20,57,0,0,0,0
+2023,5,Miami Grand Prix,21,57,0,0,0,0
+2023,5,Miami Grand Prix,22,57,0,0,0,0
+2023,5,Miami Grand Prix,23,57,0,0,0,0
+2023,5,Miami Grand Prix,24,57,0,0,0,0
+2023,5,Miami Grand Prix,27,57,0,0,0,0
+2023,5,Miami Grand Prix,31,57,0,0,0,0
+2023,5,Miami Grand Prix,4,57,0,0,0,0
+2023,5,Miami Grand Prix,44,57,0,0,0,0
+2023,5,Miami Grand Prix,55,57,0,0,0,0
+2023,5,Miami Grand Prix,63,57,0,0,0,0
+2023,5,Miami Grand Prix,77,57,0,0,0,0
+2023,5,Miami Grand Prix,81,56,0,0,0,0
+2023,6,Monaco Grand Prix,1,78,0,0,0,0
+2023,6,Monaco Grand Prix,10,78,0,0,0,0
+2023,6,Monaco Grand Prix,11,76,0,0,0,0
+2023,6,Monaco Grand Prix,14,78,0,0,0,0
+2023,6,Monaco Grand Prix,16,78,0,0,0,0
+2023,6,Monaco Grand Prix,18,54,0,0,0,1
+2023,6,Monaco Grand Prix,2,76,0,0,0,0
+2023,6,Monaco Grand Prix,20,71,0,0,0,0
+2023,6,Monaco Grand Prix,21,77,0,0,0,0
+2023,6,Monaco Grand Prix,22,76,0,0,0,0
+2023,6,Monaco Grand Prix,23,77,0,0,0,0
+2023,6,Monaco Grand Prix,24,77,0,0,0,0
+2023,6,Monaco Grand Prix,27,76,0,0,0,0
+2023,6,Monaco Grand Prix,31,78,0,0,0,0
+2023,6,Monaco Grand Prix,4,77,0,0,0,0
+2023,6,Monaco Grand Prix,44,78,0,0,0,0
+2023,6,Monaco Grand Prix,55,78,0,0,0,0
+2023,6,Monaco Grand Prix,63,78,0,0,0,0
+2023,6,Monaco Grand Prix,77,77,0,0,0,0
+2023,6,Monaco Grand Prix,81,77,0,0,0,0
+2023,7,Spanish Grand Prix,1,66,0,0,0,0
+2023,7,Spanish Grand Prix,10,66,0,0,0,0
+2023,7,Spanish Grand Prix,11,66,0,0,0,0
+2023,7,Spanish Grand Prix,14,66,0,0,0,0
+2023,7,Spanish Grand Prix,16,66,0,0,0,0
+2023,7,Spanish Grand Prix,18,66,0,0,0,0
+2023,7,Spanish Grand Prix,2,65,0,0,0,0
+2023,7,Spanish Grand Prix,20,65,0,0,0,0
+2023,7,Spanish Grand Prix,21,65,0,0,0,0
+2023,7,Spanish Grand Prix,22,66,0,0,0,0
+2023,7,Spanish Grand Prix,23,65,0,0,0,0
+2023,7,Spanish Grand Prix,24,66,0,0,0,0
+2023,7,Spanish Grand Prix,27,65,0,0,0,0
+2023,7,Spanish Grand Prix,31,66,0,0,0,0
+2023,7,Spanish Grand Prix,4,65,0,0,0,0
+2023,7,Spanish Grand Prix,44,66,0,0,0,0
+2023,7,Spanish Grand Prix,55,66,0,0,0,0
+2023,7,Spanish Grand Prix,63,66,0,0,0,0
+2023,7,Spanish Grand Prix,77,65,0,0,0,0
+2023,7,Spanish Grand Prix,81,65,0,0,0,0
+2023,8,Canadian Grand Prix,1,70,0,0,0,0
+2023,8,Canadian Grand Prix,10,70,0,0,0,0
+2023,8,Canadian Grand Prix,11,70,0,0,0,0
+2023,8,Canadian Grand Prix,14,70,0,0,0,0
+2023,8,Canadian Grand Prix,16,70,0,0,0,0
+2023,8,Canadian Grand Prix,18,70,0,0,0,0
+2023,8,Canadian Grand Prix,2,7,0,0,0,1
+2023,8,Canadian Grand Prix,20,69,0,0,0,0
+2023,8,Canadian Grand Prix,21,69,0,0,0,0
+2023,8,Canadian Grand Prix,22,70,0,35,0,0
+2023,8,Canadian Grand Prix,23,70,0,0,0,0
+2023,8,Canadian Grand Prix,24,69,0,0,0,0
+2023,8,Canadian Grand Prix,27,69,0,0,0,0
+2023,8,Canadian Grand Prix,31,70,0,0,0,0
+2023,8,Canadian Grand Prix,4,70,0,0,0,0
+2023,8,Canadian Grand Prix,44,70,0,0,0,0
+2023,8,Canadian Grand Prix,55,70,0,0,0,0
+2023,8,Canadian Grand Prix,63,54,0,0,0,0
+2023,8,Canadian Grand Prix,77,70,0,0,0,0
+2023,8,Canadian Grand Prix,81,70,0,0,0,0
+2023,9,Austrian Grand Prix,1,71,0,0,0,0
+2023,9,Austrian Grand Prix,10,71,0,0,0,0
+2023,9,Austrian Grand Prix,11,71,0,0,0,0
+2023,9,Austrian Grand Prix,14,71,0,0,0,0
+2023,9,Austrian Grand Prix,16,71,0,0,0,0
+2023,9,Austrian Grand Prix,18,71,0,0,0,0
+2023,9,Austrian Grand Prix,2,70,0,0,0,0
+2023,9,Austrian Grand Prix,20,70,0,0,0,0
+2023,9,Austrian Grand Prix,21,70,0,0,0,0
+2023,9,Austrian Grand Prix,22,70,0,0,0,0
+2023,9,Austrian Grand Prix,23,71,0,0,0,0
+2023,9,Austrian Grand Prix,24,70,0,0,0,0
+2023,9,Austrian Grand Prix,27,13,0,0,0,1
+2023,9,Austrian Grand Prix,31,70,0,0,0,0
+2023,9,Austrian Grand Prix,4,71,0,0,0,0
+2023,9,Austrian Grand Prix,44,71,0,0,0,0
+2023,9,Austrian Grand Prix,55,71,0,0,0,0
+2023,9,Austrian Grand Prix,63,71,0,0,0,0
+2023,9,Austrian Grand Prix,77,70,0,0,0,0
+2023,9,Austrian Grand Prix,81,70,0,0,0,0
+2023,10,British Grand Prix,1,52,0,0,0,0
+2023,10,British Grand Prix,10,46,0,0,0,0
+2023,10,British Grand Prix,11,52,0,0,0,0
+2023,10,British Grand Prix,14,52,0,0,0,0
+2023,10,British Grand Prix,16,52,0,0,0,0
+2023,10,British Grand Prix,18,52,0,0,0,0
+2023,10,British Grand Prix,2,52,0,0,0,0
+2023,10,British Grand Prix,20,32,0,0,0,1
+2023,10,British Grand Prix,21,52,0,0,0,0
+2023,10,British Grand Prix,22,52,0,0,0,0
+2023,10,British Grand Prix,23,52,0,0,0,0
+2023,10,British Grand Prix,24,52,0,0,0,0
+2023,10,British Grand Prix,27,52,0,0,0,0
+2023,10,British Grand Prix,31,9,0,0,0,0
+2023,10,British Grand Prix,4,52,0,0,0,0
+2023,10,British Grand Prix,44,52,0,0,0,0
+2023,10,British Grand Prix,55,52,0,0,0,0
+2023,10,British Grand Prix,63,52,0,0,0,0
+2023,10,British Grand Prix,77,52,0,0,0,0
+2023,10,British Grand Prix,81,52,0,0,0,0
+2023,11,Hungarian Grand Prix,1,70,0,0,0,0
+2023,11,Hungarian Grand Prix,10,1,0,0,0,0
+2023,11,Hungarian Grand Prix,11,70,0,0,0,0
+2023,11,Hungarian Grand Prix,14,70,0,0,0,0
+2023,11,Hungarian Grand Prix,16,70,0,0,0,0
+2023,11,Hungarian Grand Prix,18,69,0,0,0,0
+2023,11,Hungarian Grand Prix,2,67,0,0,0,0
+2023,11,Hungarian Grand Prix,20,69,0,0,0,0
+2023,11,Hungarian Grand Prix,22,69,0,0,0,0
+2023,11,Hungarian Grand Prix,23,69,0,0,0,0
+2023,11,Hungarian Grand Prix,24,69,0,0,0,0
+2023,11,Hungarian Grand Prix,27,69,0,0,0,0
+2023,11,Hungarian Grand Prix,3,69,0,0,0,0
+2023,11,Hungarian Grand Prix,31,2,0,0,0,0
+2023,11,Hungarian Grand Prix,4,70,0,0,0,0
+2023,11,Hungarian Grand Prix,44,70,0,0,0,0
+2023,11,Hungarian Grand Prix,55,70,0,0,0,0
+2023,11,Hungarian Grand Prix,63,70,0,0,0,0
+2023,11,Hungarian Grand Prix,77,69,0,0,0,0
+2023,11,Hungarian Grand Prix,81,70,0,0,0,0
+2023,12,Belgian Grand Prix,1,44,0,0,0,0
+2023,12,Belgian Grand Prix,10,44,0,0,0,0
+2023,12,Belgian Grand Prix,11,44,0,0,0,0
+2023,12,Belgian Grand Prix,14,44,0,0,0,0
+2023,12,Belgian Grand Prix,16,44,0,0,0,0
+2023,12,Belgian Grand Prix,18,44,0,0,0,0
+2023,12,Belgian Grand Prix,2,44,0,0,0,0
+2023,12,Belgian Grand Prix,20,44,0,0,0,0
+2023,12,Belgian Grand Prix,22,44,0,0,0,0
+2023,12,Belgian Grand Prix,23,44,0,0,0,0
+2023,12,Belgian Grand Prix,24,44,0,0,0,0
+2023,12,Belgian Grand Prix,27,44,0,0,0,0
+2023,12,Belgian Grand Prix,3,44,0,0,0,0
+2023,12,Belgian Grand Prix,31,44,0,0,0,0
+2023,12,Belgian Grand Prix,4,44,0,0,0,0
+2023,12,Belgian Grand Prix,44,44,0,0,0,0
+2023,12,Belgian Grand Prix,55,23,0,0,0,0
+2023,12,Belgian Grand Prix,63,44,0,0,0,0
+2023,12,Belgian Grand Prix,77,44,0,0,0,0
+2023,12,Belgian Grand Prix,81,1,0,0,0,1
+2023,13,Dutch Grand Prix,1,72,0,0,0,0
+2023,13,Dutch Grand Prix,10,72,0,0,0,0
+2023,13,Dutch Grand Prix,11,72,0,0,0,0
+2023,13,Dutch Grand Prix,14,72,0,0,0,0
+2023,13,Dutch Grand Prix,16,41,0,0,0,0
+2023,13,Dutch Grand Prix,18,72,0,0,0,0
+2023,13,Dutch Grand Prix,2,15,0,0,0,1
+2023,13,Dutch Grand Prix,20,72,0,0,0,0
+2023,13,Dutch Grand Prix,22,72,0,0,0,0
+2023,13,Dutch Grand Prix,23,72,0,0,0,0
+2023,13,Dutch Grand Prix,24,63,0,0,0,1
+2023,13,Dutch Grand Prix,27,72,0,0,0,0
+2023,13,Dutch Grand Prix,31,72,0,0,0,0
+2023,13,Dutch Grand Prix,4,72,0,0,0,0
+2023,13,Dutch Grand Prix,40,72,0,0,0,0
+2023,13,Dutch Grand Prix,44,72,0,0,0,0
+2023,13,Dutch Grand Prix,55,72,0,0,0,0
+2023,13,Dutch Grand Prix,63,72,0,0,0,0
+2023,13,Dutch Grand Prix,77,72,0,0,0,0
+2023,13,Dutch Grand Prix,81,72,0,0,0,0
+2023,14,Italian Grand Prix,1,51,0,0,0,0
+2023,14,Italian Grand Prix,10,51,0,0,0,1
+2023,14,Italian Grand Prix,11,51,0,0,0,0
+2023,14,Italian Grand Prix,14,51,0,0,0,0
+2023,14,Italian Grand Prix,16,51,0,0,0,0
+2023,14,Italian Grand Prix,18,51,0,0,0,1
+2023,14,Italian Grand Prix,2,51,0,0,0,1
+2023,14,Italian Grand Prix,20,51,0,0,0,1
+2023,14,Italian Grand Prix,23,51,0,0,0,0
+2023,14,Italian Grand Prix,24,51,0,0,0,1
+2023,14,Italian Grand Prix,27,51,0,0,0,1
+2023,14,Italian Grand Prix,31,39,0,0,0,0
+2023,14,Italian Grand Prix,4,51,0,0,0,0
+2023,14,Italian Grand Prix,40,51,0,0,0,1
+2023,14,Italian Grand Prix,44,51,0,0,0,0
+2023,14,Italian Grand Prix,55,51,0,0,0,0
+2023,14,Italian Grand Prix,63,51,0,0,0,0
+2023,14,Italian Grand Prix,77,51,0,0,0,1
+2023,14,Italian Grand Prix,81,51,0,0,0,1
+2023,15,Singapore Grand Prix,1,62,0,0,0,0
+2023,15,Singapore Grand Prix,10,62,0,0,0,0
+2023,15,Singapore Grand Prix,11,62,0,0,0,0
+2023,15,Singapore Grand Prix,14,62,0,0,0,0
+2023,15,Singapore Grand Prix,16,62,0,0,0,0
+2023,15,Singapore Grand Prix,2,62,0,0,0,0
+2023,15,Singapore Grand Prix,20,62,0,0,0,0
+2023,15,Singapore Grand Prix,22,1,0,0,0,1
+2023,15,Singapore Grand Prix,23,62,0,0,0,0
+2023,15,Singapore Grand Prix,24,62,0,0,0,0
+2023,15,Singapore Grand Prix,27,62,0,0,0,0
+2023,15,Singapore Grand Prix,31,43,0,0,0,1
+2023,15,Singapore Grand Prix,4,62,0,0,0,0
+2023,15,Singapore Grand Prix,40,62,0,0,0,0
+2023,15,Singapore Grand Prix,44,62,0,0,0,0
+2023,15,Singapore Grand Prix,55,62,0,0,0,0
+2023,15,Singapore Grand Prix,63,62,0,0,0,1
+2023,15,Singapore Grand Prix,77,52,0,0,0,1
+2023,15,Singapore Grand Prix,81,62,0,0,0,0
+2023,16,Japanese Grand Prix,1,53,0,0,0,0
+2023,16,Japanese Grand Prix,10,53,0,0,0,0
+2023,16,Japanese Grand Prix,11,15,0,0,0,0
+2023,16,Japanese Grand Prix,14,53,0,0,0,0
+2023,16,Japanese Grand Prix,16,53,0,0,0,0
+2023,16,Japanese Grand Prix,18,20,0,0,0,0
+2023,16,Japanese Grand Prix,2,22,0,0,0,0
+2023,16,Japanese Grand Prix,20,52,0,0,0,0
+2023,16,Japanese Grand Prix,22,52,0,0,0,0
+2023,16,Japanese Grand Prix,23,26,0,0,0,0
+2023,16,Japanese Grand Prix,24,52,0,0,0,0
+2023,16,Japanese Grand Prix,27,52,0,0,0,0
+2023,16,Japanese Grand Prix,31,53,0,0,0,0
+2023,16,Japanese Grand Prix,4,53,0,0,0,0
+2023,16,Japanese Grand Prix,40,52,0,0,0,0
+2023,16,Japanese Grand Prix,44,53,0,0,0,0
+2023,16,Japanese Grand Prix,55,53,0,0,0,0
+2023,16,Japanese Grand Prix,63,53,0,0,0,0
+2023,16,Japanese Grand Prix,77,7,0,0,0,0
+2023,16,Japanese Grand Prix,81,53,0,0,0,0
+2023,17,Qatar Grand Prix,1,57,0,0,0,0
+2023,17,Qatar Grand Prix,10,57,0,0,0,0
+2023,17,Qatar Grand Prix,11,57,0,0,0,0
+2023,17,Qatar Grand Prix,14,57,0,0,0,0
+2023,17,Qatar Grand Prix,16,57,0,0,0,0
+2023,17,Qatar Grand Prix,18,57,0,0,0,0
+2023,17,Qatar Grand Prix,2,40,0,0,0,0
+2023,17,Qatar Grand Prix,20,56,0,0,0,0
+2023,17,Qatar Grand Prix,22,56,0,0,0,0
+2023,17,Qatar Grand Prix,23,57,0,0,0,0
+2023,17,Qatar Grand Prix,24,57,0,0,0,0
+2023,17,Qatar Grand Prix,27,56,0,0,0,0
+2023,17,Qatar Grand Prix,31,57,0,0,0,0
+2023,17,Qatar Grand Prix,4,57,0,0,0,0
+2023,17,Qatar Grand Prix,40,56,0,0,0,0
+2023,17,Qatar Grand Prix,44,1,0,0,0,1
+2023,17,Qatar Grand Prix,63,57,0,0,0,0
+2023,17,Qatar Grand Prix,77,57,0,0,0,0
+2023,17,Qatar Grand Prix,81,57,0,0,0,0
+2023,18,United States Grand Prix,1,56,0,0,0,0
+2023,18,United States Grand Prix,10,56,0,0,0,0
+2023,18,United States Grand Prix,11,56,0,0,0,0
+2023,18,United States Grand Prix,14,49,0,0,0,0
+2023,18,United States Grand Prix,16,56,0,0,0,0
+2023,18,United States Grand Prix,18,56,0,0,0,0
+2023,18,United States Grand Prix,2,56,0,0,0,0
+2023,18,United States Grand Prix,20,55,0,0,0,0
+2023,18,United States Grand Prix,22,56,0,0,0,0
+2023,18,United States Grand Prix,23,56,0,0,0,0
+2023,18,United States Grand Prix,24,55,0,0,0,0
+2023,18,United States Grand Prix,27,56,0,0,0,0
+2023,18,United States Grand Prix,3,55,0,0,0,0
+2023,18,United States Grand Prix,31,6,0,0,0,0
+2023,18,United States Grand Prix,4,56,0,0,0,0
+2023,18,United States Grand Prix,44,56,0,0,0,0
+2023,18,United States Grand Prix,55,56,0,0,0,0
+2023,18,United States Grand Prix,63,56,0,0,0,0
+2023,18,United States Grand Prix,77,56,0,0,0,0
+2023,18,United States Grand Prix,81,10,0,0,0,0
+2023,19,Mexico City Grand Prix,1,71,0,0,0,0
+2023,19,Mexico City Grand Prix,10,71,0,0,0,0
+2023,19,Mexico City Grand Prix,11,1,0,0,0,0
+2023,19,Mexico City Grand Prix,14,47,0,0,0,0
+2023,19,Mexico City Grand Prix,16,71,0,0,0,0
+2023,19,Mexico City Grand Prix,18,66,0,0,0,0
+2023,19,Mexico City Grand Prix,2,71,0,0,0,0
+2023,19,Mexico City Grand Prix,20,32,0,0,0,1
+2023,19,Mexico City Grand Prix,22,71,0,0,0,0
+2023,19,Mexico City Grand Prix,23,71,0,0,0,0
+2023,19,Mexico City Grand Prix,24,71,0,0,0,0
+2023,19,Mexico City Grand Prix,27,71,0,0,0,0
+2023,19,Mexico City Grand Prix,3,71,0,0,0,0
+2023,19,Mexico City Grand Prix,31,71,0,0,0,0
+2023,19,Mexico City Grand Prix,4,71,0,0,0,0
+2023,19,Mexico City Grand Prix,44,71,0,0,0,0
+2023,19,Mexico City Grand Prix,55,71,0,0,0,0
+2023,19,Mexico City Grand Prix,63,71,0,0,0,0
+2023,19,Mexico City Grand Prix,77,71,0,0,0,0
+2023,19,Mexico City Grand Prix,81,71,0,0,0,0
+2023,20,São Paulo Grand Prix,1,71,0,0,0,0
+2023,20,São Paulo Grand Prix,10,71,0,0,0,0
+2023,20,São Paulo Grand Prix,11,71,0,0,0,0
+2023,20,São Paulo Grand Prix,14,71,0,0,0,0
+2023,20,São Paulo Grand Prix,18,71,0,0,0,0
+2023,20,São Paulo Grand Prix,2,70,0,0,0,0
+2023,20,São Paulo Grand Prix,20,1,0,0,0,1
+2023,20,São Paulo Grand Prix,22,71,0,0,0,0
+2023,20,São Paulo Grand Prix,23,1,0,0,0,1
+2023,20,São Paulo Grand Prix,24,22,0,0,0,0
+2023,20,São Paulo Grand Prix,27,70,0,0,0,0
+2023,20,São Paulo Grand Prix,3,70,0,0,0,0
+2023,20,São Paulo Grand Prix,31,70,0,0,0,0
+2023,20,São Paulo Grand Prix,4,71,0,0,0,0
+2023,20,São Paulo Grand Prix,44,71,0,0,0,0
+2023,20,São Paulo Grand Prix,55,71,0,0,0,0
+2023,20,São Paulo Grand Prix,63,57,0,0,0,0
+2023,20,São Paulo Grand Prix,77,39,0,0,0,0
+2023,20,São Paulo Grand Prix,81,69,0,0,0,0
+2023,21,Las Vegas Grand Prix,1,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,10,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,11,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,14,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,16,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,18,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,2,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,20,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,22,47,0,0,0,1
+2023,21,Las Vegas Grand Prix,23,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,24,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,27,46,0,0,0,1
+2023,21,Las Vegas Grand Prix,3,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,31,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,4,3,0,0,0,1
+2023,21,Las Vegas Grand Prix,44,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,55,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,63,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,77,50,0,0,0,0
+2023,21,Las Vegas Grand Prix,81,50,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,1,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,10,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,11,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,14,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,16,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,18,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,2,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,20,57,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,22,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,23,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,24,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,27,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,3,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,31,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,4,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,44,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,55,57,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,63,58,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,77,57,0,0,0,0
+2023,22,Abu Dhabi Grand Prix,81,58,0,0,0,0
+2024,1,Bahrain Grand Prix,1,57,0,0,0,0
+2024,1,Bahrain Grand Prix,10,56,0,0,0,0
+2024,1,Bahrain Grand Prix,11,57,0,0,0,0
+2024,1,Bahrain Grand Prix,14,57,0,0,0,0
+2024,1,Bahrain Grand Prix,16,57,0,0,0,0
+2024,1,Bahrain Grand Prix,18,57,0,0,0,0
+2024,1,Bahrain Grand Prix,2,55,0,0,0,0
+2024,1,Bahrain Grand Prix,20,56,0,0,0,0
+2024,1,Bahrain Grand Prix,22,56,0,0,0,0
+2024,1,Bahrain Grand Prix,23,56,0,0,0,0
+2024,1,Bahrain Grand Prix,24,56,0,0,0,0
+2024,1,Bahrain Grand Prix,27,56,0,0,0,0
+2024,1,Bahrain Grand Prix,3,56,0,0,0,0
+2024,1,Bahrain Grand Prix,31,56,0,0,0,0
+2024,1,Bahrain Grand Prix,4,57,0,0,0,0
+2024,1,Bahrain Grand Prix,44,57,0,0,0,0
+2024,1,Bahrain Grand Prix,55,57,0,0,0,0
+2024,1,Bahrain Grand Prix,63,57,0,0,0,0
+2024,1,Bahrain Grand Prix,77,56,0,0,0,0
+2024,1,Bahrain Grand Prix,81,57,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,1,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,10,1,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,11,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,14,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,16,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,18,6,0,0,0,1
+2024,2,Saudi Arabian Grand Prix,2,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,20,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,22,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,23,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,24,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,27,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,3,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,31,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,38,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,4,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,44,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,63,50,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,77,49,0,0,0,0
+2024,2,Saudi Arabian Grand Prix,81,50,0,0,0,0
+2024,3,Australian Grand Prix,1,4,0,0,0,0
+2024,3,Australian Grand Prix,10,57,0,0,0,0
+2024,3,Australian Grand Prix,11,58,0,0,0,0
+2024,3,Australian Grand Prix,14,58,0,0,0,0
+2024,3,Australian Grand Prix,16,58,0,0,0,0
+2024,3,Australian Grand Prix,18,58,0,0,0,0
+2024,3,Australian Grand Prix,20,57,0,0,0,0
+2024,3,Australian Grand Prix,22,58,0,0,0,0
+2024,3,Australian Grand Prix,23,57,0,0,0,0
+2024,3,Australian Grand Prix,24,57,0,0,0,0
+2024,3,Australian Grand Prix,27,58,0,0,0,0
+2024,3,Australian Grand Prix,3,57,0,0,0,0
+2024,3,Australian Grand Prix,31,57,0,0,0,0
+2024,3,Australian Grand Prix,4,58,0,0,0,0
+2024,3,Australian Grand Prix,44,16,0,0,0,1
+2024,3,Australian Grand Prix,55,58,0,0,0,0
+2024,3,Australian Grand Prix,63,57,0,0,0,1
+2024,3,Australian Grand Prix,77,57,0,0,0,0
+2024,3,Australian Grand Prix,81,58,0,0,0,0
+2024,4,Japanese Grand Prix,1,53,0,0,0,0
+2024,4,Japanese Grand Prix,10,52,0,0,0,0
+2024,4,Japanese Grand Prix,11,53,0,0,0,0
+2024,4,Japanese Grand Prix,14,53,0,0,0,0
+2024,4,Japanese Grand Prix,16,53,0,0,0,0
+2024,4,Japanese Grand Prix,18,52,0,0,0,0
+2024,4,Japanese Grand Prix,2,52,0,0,0,0
+2024,4,Japanese Grand Prix,20,52,0,0,0,0
+2024,4,Japanese Grand Prix,22,52,0,0,0,0
+2024,4,Japanese Grand Prix,23,1,0,0,0,1
+2024,4,Japanese Grand Prix,24,12,0,0,0,0
+2024,4,Japanese Grand Prix,27,52,0,0,0,0
+2024,4,Japanese Grand Prix,3,1,0,0,0,1
+2024,4,Japanese Grand Prix,31,52,0,0,0,0
+2024,4,Japanese Grand Prix,4,53,0,0,0,0
+2024,4,Japanese Grand Prix,44,53,0,0,0,0
+2024,4,Japanese Grand Prix,55,53,0,0,0,0
+2024,4,Japanese Grand Prix,63,53,0,0,0,0
+2024,4,Japanese Grand Prix,77,52,0,0,0,0
+2024,4,Japanese Grand Prix,81,53,0,0,0,0
+2024,5,Chinese Grand Prix,1,56,0,0,0,0
+2024,5,Chinese Grand Prix,10,56,0,0,0,0
+2024,5,Chinese Grand Prix,11,56,0,0,0,0
+2024,5,Chinese Grand Prix,14,56,0,0,0,0
+2024,5,Chinese Grand Prix,16,56,0,0,0,0
+2024,5,Chinese Grand Prix,18,56,0,0,0,0
+2024,5,Chinese Grand Prix,2,56,0,0,0,0
+2024,5,Chinese Grand Prix,20,56,0,0,0,0
+2024,5,Chinese Grand Prix,22,27,0,0,0,1
+2024,5,Chinese Grand Prix,23,56,0,0,0,0
+2024,5,Chinese Grand Prix,24,56,0,0,0,0
+2024,5,Chinese Grand Prix,27,56,0,0,0,0
+2024,5,Chinese Grand Prix,3,33,0,0,0,0
+2024,5,Chinese Grand Prix,31,56,0,0,0,0
+2024,5,Chinese Grand Prix,4,56,0,0,0,0
+2024,5,Chinese Grand Prix,44,56,0,0,0,0
+2024,5,Chinese Grand Prix,55,56,0,0,0,0
+2024,5,Chinese Grand Prix,63,56,0,0,0,0
+2024,5,Chinese Grand Prix,77,20,0,0,0,1
+2024,5,Chinese Grand Prix,81,56,0,0,0,0
+2024,6,Miami Grand Prix,1,57,0,0,0,0
+2024,6,Miami Grand Prix,10,57,0,0,0,0
+2024,6,Miami Grand Prix,11,57,0,0,0,0
+2024,6,Miami Grand Prix,14,57,0,0,0,0
+2024,6,Miami Grand Prix,16,57,0,0,0,0
+2024,6,Miami Grand Prix,18,57,0,0,0,0
+2024,6,Miami Grand Prix,2,28,0,0,0,1
+2024,6,Miami Grand Prix,20,57,0,0,0,0
+2024,6,Miami Grand Prix,22,57,0,0,0,0
+2024,6,Miami Grand Prix,23,57,0,0,0,0
+2024,6,Miami Grand Prix,24,57,0,0,0,0
+2024,6,Miami Grand Prix,27,57,0,0,0,0
+2024,6,Miami Grand Prix,3,57,0,0,0,0
+2024,6,Miami Grand Prix,31,57,0,0,0,0
+2024,6,Miami Grand Prix,4,57,0,0,0,0
+2024,6,Miami Grand Prix,44,57,0,0,0,0
+2024,6,Miami Grand Prix,55,57,0,0,0,0
+2024,6,Miami Grand Prix,63,57,0,0,0,0
+2024,6,Miami Grand Prix,77,57,0,0,0,0
+2024,6,Miami Grand Prix,81,57,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,1,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,10,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,11,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,14,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,16,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,18,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,2,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,20,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,22,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,23,51,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,24,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,27,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,3,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,31,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,4,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,44,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,55,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,63,63,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,77,62,0,0,0,0
+2024,7,Emilia Romagna Grand Prix,81,63,0,0,0,0
+2024,8,Monaco Grand Prix,1,78,0,0,0,0
+2024,8,Monaco Grand Prix,10,77,0,0,0,0
+2024,8,Monaco Grand Prix,11,1,0,0,0,1
+2024,8,Monaco Grand Prix,14,76,0,0,0,0
+2024,8,Monaco Grand Prix,16,78,0,0,0,0
+2024,8,Monaco Grand Prix,18,76,0,0,0,0
+2024,8,Monaco Grand Prix,2,76,0,0,0,0
+2024,8,Monaco Grand Prix,20,1,0,0,0,1
+2024,8,Monaco Grand Prix,22,77,0,0,0,0
+2024,8,Monaco Grand Prix,23,77,0,0,0,0
+2024,8,Monaco Grand Prix,24,76,0,0,0,0
+2024,8,Monaco Grand Prix,27,1,0,0,0,1
+2024,8,Monaco Grand Prix,3,76,0,0,0,0
+2024,8,Monaco Grand Prix,31,1,0,0,0,1
+2024,8,Monaco Grand Prix,4,78,0,0,0,0
+2024,8,Monaco Grand Prix,44,78,0,0,0,0
+2024,8,Monaco Grand Prix,55,78,0,0,0,0
+2024,8,Monaco Grand Prix,63,78,0,0,0,0
+2024,8,Monaco Grand Prix,77,76,0,0,0,0
+2024,8,Monaco Grand Prix,81,78,0,0,0,0
+2024,9,Canadian Grand Prix,1,70,0,0,0,0
+2024,9,Canadian Grand Prix,10,70,0,0,0,0
+2024,9,Canadian Grand Prix,11,52,0,0,0,0
+2024,9,Canadian Grand Prix,14,70,0,0,0,0
+2024,9,Canadian Grand Prix,16,41,0,0,0,0
+2024,9,Canadian Grand Prix,18,70,0,0,0,0
+2024,9,Canadian Grand Prix,2,24,0,0,0,1
+2024,9,Canadian Grand Prix,20,70,0,0,0,0
+2024,9,Canadian Grand Prix,22,70,0,0,0,0
+2024,9,Canadian Grand Prix,23,53,0,0,0,1
+2024,9,Canadian Grand Prix,24,69,0,0,0,0
+2024,9,Canadian Grand Prix,27,70,0,0,0,0
+2024,9,Canadian Grand Prix,3,70,0,0,0,0
+2024,9,Canadian Grand Prix,31,70,0,0,0,0
+2024,9,Canadian Grand Prix,4,70,0,0,0,0
+2024,9,Canadian Grand Prix,44,70,0,0,0,0
+2024,9,Canadian Grand Prix,55,53,0,0,0,0
+2024,9,Canadian Grand Prix,63,70,0,0,0,0
+2024,9,Canadian Grand Prix,77,70,0,0,0,0
+2024,9,Canadian Grand Prix,81,70,0,0,0,0
+2024,10,Spanish Grand Prix,1,66,0,0,0,0
+2024,10,Spanish Grand Prix,10,66,0,0,0,0
+2024,10,Spanish Grand Prix,11,66,0,0,0,0
+2024,10,Spanish Grand Prix,14,65,0,0,0,0
+2024,10,Spanish Grand Prix,16,66,0,0,0,0
+2024,10,Spanish Grand Prix,18,65,0,0,0,0
+2024,10,Spanish Grand Prix,2,64,0,0,0,0
+2024,10,Spanish Grand Prix,20,65,0,0,0,0
+2024,10,Spanish Grand Prix,22,65,0,0,0,0
+2024,10,Spanish Grand Prix,23,65,0,0,0,0
+2024,10,Spanish Grand Prix,24,65,0,0,0,0
+2024,10,Spanish Grand Prix,27,66,0,0,0,0
+2024,10,Spanish Grand Prix,3,65,0,0,0,0
+2024,10,Spanish Grand Prix,31,66,0,0,0,0
+2024,10,Spanish Grand Prix,4,66,0,0,0,0
+2024,10,Spanish Grand Prix,44,66,0,0,0,0
+2024,10,Spanish Grand Prix,55,66,0,0,0,0
+2024,10,Spanish Grand Prix,63,66,0,0,0,0
+2024,10,Spanish Grand Prix,77,65,0,0,0,0
+2024,10,Spanish Grand Prix,81,66,0,0,0,0
+2024,11,Austrian Grand Prix,1,71,0,0,0,0
+2024,11,Austrian Grand Prix,10,71,0,0,0,0
+2024,11,Austrian Grand Prix,11,71,0,0,0,0
+2024,11,Austrian Grand Prix,14,70,0,0,0,0
+2024,11,Austrian Grand Prix,16,71,0,0,0,0
+2024,11,Austrian Grand Prix,18,70,0,0,0,0
+2024,11,Austrian Grand Prix,2,69,0,0,0,0
+2024,11,Austrian Grand Prix,20,71,0,0,0,0
+2024,11,Austrian Grand Prix,22,70,0,0,0,0
+2024,11,Austrian Grand Prix,23,70,0,0,0,0
+2024,11,Austrian Grand Prix,24,70,0,0,0,0
+2024,11,Austrian Grand Prix,27,71,0,0,0,0
+2024,11,Austrian Grand Prix,3,71,0,0,0,0
+2024,11,Austrian Grand Prix,31,71,0,0,0,0
+2024,11,Austrian Grand Prix,4,64,0,0,0,0
+2024,11,Austrian Grand Prix,44,71,0,0,0,0
+2024,11,Austrian Grand Prix,55,71,0,0,0,0
+2024,11,Austrian Grand Prix,63,71,0,0,0,0
+2024,11,Austrian Grand Prix,77,70,0,0,0,0
+2024,11,Austrian Grand Prix,81,71,0,0,0,0
+2024,12,British Grand Prix,1,52,0,0,0,0
+2024,12,British Grand Prix,11,50,0,0,0,0
+2024,12,British Grand Prix,14,52,0,0,0,0
+2024,12,British Grand Prix,16,51,0,0,0,0
+2024,12,British Grand Prix,18,52,0,0,0,0
+2024,12,British Grand Prix,2,52,0,0,0,0
+2024,12,British Grand Prix,20,52,0,0,0,0
+2024,12,British Grand Prix,22,52,0,0,0,0
+2024,12,British Grand Prix,23,52,0,0,0,0
+2024,12,British Grand Prix,24,50,0,0,0,0
+2024,12,British Grand Prix,27,52,0,0,0,0
+2024,12,British Grand Prix,3,51,0,0,0,0
+2024,12,British Grand Prix,31,50,0,0,0,0
+2024,12,British Grand Prix,4,52,0,0,0,0
+2024,12,British Grand Prix,44,52,0,0,0,0
+2024,12,British Grand Prix,55,52,0,0,0,0
+2024,12,British Grand Prix,63,33,0,0,0,0
+2024,12,British Grand Prix,77,51,0,0,0,0
+2024,12,British Grand Prix,81,52,0,0,0,0
+2024,13,Hungarian Grand Prix,1,70,0,0,0,0
+2024,13,Hungarian Grand Prix,10,33,0,0,0,0
+2024,13,Hungarian Grand Prix,11,70,0,0,0,0
+2024,13,Hungarian Grand Prix,14,70,0,0,0,0
+2024,13,Hungarian Grand Prix,16,70,0,0,0,0
+2024,13,Hungarian Grand Prix,18,70,0,0,0,0
+2024,13,Hungarian Grand Prix,2,69,0,0,0,0
+2024,13,Hungarian Grand Prix,20,69,0,0,0,0
+2024,13,Hungarian Grand Prix,22,70,0,0,0,0
+2024,13,Hungarian Grand Prix,23,69,0,0,0,0
+2024,13,Hungarian Grand Prix,24,69,0,0,0,0
+2024,13,Hungarian Grand Prix,27,69,0,0,0,0
+2024,13,Hungarian Grand Prix,3,69,0,0,0,0
+2024,13,Hungarian Grand Prix,31,69,0,0,0,0
+2024,13,Hungarian Grand Prix,4,70,0,0,0,0
+2024,13,Hungarian Grand Prix,44,70,0,0,0,0
+2024,13,Hungarian Grand Prix,55,70,0,0,0,0
+2024,13,Hungarian Grand Prix,63,70,0,0,0,0
+2024,13,Hungarian Grand Prix,77,69,0,0,0,0
+2024,13,Hungarian Grand Prix,81,70,0,0,0,0
+2024,14,Belgian Grand Prix,1,44,0,0,0,0
+2024,14,Belgian Grand Prix,10,44,0,0,0,0
+2024,14,Belgian Grand Prix,11,44,0,0,0,0
+2024,14,Belgian Grand Prix,14,44,0,0,0,0
+2024,14,Belgian Grand Prix,16,44,0,0,0,0
+2024,14,Belgian Grand Prix,18,44,0,0,0,0
+2024,14,Belgian Grand Prix,2,44,0,0,0,0
+2024,14,Belgian Grand Prix,20,44,0,0,0,0
+2024,14,Belgian Grand Prix,22,44,0,0,0,0
+2024,14,Belgian Grand Prix,23,44,0,0,0,0
+2024,14,Belgian Grand Prix,24,5,0,0,0,0
+2024,14,Belgian Grand Prix,27,44,0,0,0,0
+2024,14,Belgian Grand Prix,3,44,0,0,0,0
+2024,14,Belgian Grand Prix,31,44,0,0,0,0
+2024,14,Belgian Grand Prix,4,44,0,0,0,0
+2024,14,Belgian Grand Prix,44,44,0,0,0,0
+2024,14,Belgian Grand Prix,55,44,0,0,0,0
+2024,14,Belgian Grand Prix,63,44,0,0,0,0
+2024,14,Belgian Grand Prix,77,44,0,0,0,0
+2024,14,Belgian Grand Prix,81,44,0,0,0,0
+2024,15,Dutch Grand Prix,1,72,0,0,0,0
+2024,15,Dutch Grand Prix,10,71,0,0,0,0
+2024,15,Dutch Grand Prix,11,72,0,0,0,0
+2024,15,Dutch Grand Prix,14,71,0,0,0,0
+2024,15,Dutch Grand Prix,16,72,0,0,0,0
+2024,15,Dutch Grand Prix,18,71,0,0,0,0
+2024,15,Dutch Grand Prix,2,71,0,0,0,0
+2024,15,Dutch Grand Prix,20,71,0,0,0,0
+2024,15,Dutch Grand Prix,22,71,0,0,0,0
+2024,15,Dutch Grand Prix,23,71,0,0,0,0
+2024,15,Dutch Grand Prix,24,70,0,0,0,0
+2024,15,Dutch Grand Prix,27,71,0,0,0,0
+2024,15,Dutch Grand Prix,3,71,0,0,0,0
+2024,15,Dutch Grand Prix,31,71,0,0,0,0
+2024,15,Dutch Grand Prix,4,72,0,0,0,0
+2024,15,Dutch Grand Prix,44,72,0,0,0,0
+2024,15,Dutch Grand Prix,55,72,0,0,0,0
+2024,15,Dutch Grand Prix,63,72,0,0,0,0
+2024,15,Dutch Grand Prix,77,70,0,0,0,0
+2024,15,Dutch Grand Prix,81,72,0,0,0,0
+2024,16,Italian Grand Prix,1,53,0,0,0,0
+2024,16,Italian Grand Prix,10,52,0,0,0,0
+2024,16,Italian Grand Prix,11,53,0,0,0,0
+2024,16,Italian Grand Prix,14,53,0,0,0,0
+2024,16,Italian Grand Prix,16,53,0,0,0,0
+2024,16,Italian Grand Prix,18,52,0,0,0,0
+2024,16,Italian Grand Prix,20,53,0,0,0,0
+2024,16,Italian Grand Prix,22,7,0,0,0,0
+2024,16,Italian Grand Prix,23,53,0,0,0,0
+2024,16,Italian Grand Prix,24,52,0,0,0,0
+2024,16,Italian Grand Prix,27,52,0,0,0,0
+2024,16,Italian Grand Prix,3,53,0,0,0,0
+2024,16,Italian Grand Prix,31,52,0,0,0,0
+2024,16,Italian Grand Prix,4,53,0,0,0,0
+2024,16,Italian Grand Prix,43,53,0,0,0,0
+2024,16,Italian Grand Prix,44,53,0,0,0,0
+2024,16,Italian Grand Prix,55,53,0,0,0,0
+2024,16,Italian Grand Prix,63,53,0,0,0,0
+2024,16,Italian Grand Prix,77,52,0,0,0,0
+2024,16,Italian Grand Prix,81,53,0,0,0,0
+2024,17,Azerbaijan Grand Prix,1,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,10,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,11,50,0,0,0,1
+2024,17,Azerbaijan Grand Prix,14,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,16,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,18,45,0,0,0,0
+2024,17,Azerbaijan Grand Prix,22,14,0,0,0,0
+2024,17,Azerbaijan Grand Prix,23,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,24,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,27,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,3,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,31,50,0,0,0,0
+2024,17,Azerbaijan Grand Prix,4,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,43,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,44,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,50,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,55,50,0,0,0,1
+2024,17,Azerbaijan Grand Prix,63,51,0,0,0,0
+2024,17,Azerbaijan Grand Prix,77,50,0,0,0,0
+2024,17,Azerbaijan Grand Prix,81,51,0,0,0,0
+2024,18,Singapore Grand Prix,1,62,0,0,0,0
+2024,18,Singapore Grand Prix,10,61,0,0,0,0
+2024,18,Singapore Grand Prix,11,61,0,0,0,0
+2024,18,Singapore Grand Prix,14,61,0,0,0,0
+2024,18,Singapore Grand Prix,16,62,0,0,0,0
+2024,18,Singapore Grand Prix,18,61,0,0,0,0
+2024,18,Singapore Grand Prix,20,57,0,0,0,0
+2024,18,Singapore Grand Prix,22,61,0,0,0,0
+2024,18,Singapore Grand Prix,23,15,0,0,0,0
+2024,18,Singapore Grand Prix,24,61,0,0,0,0
+2024,18,Singapore Grand Prix,27,61,0,0,0,0
+2024,18,Singapore Grand Prix,3,61,0,0,0,0
+2024,18,Singapore Grand Prix,31,61,0,0,0,0
+2024,18,Singapore Grand Prix,4,62,0,0,0,0
+2024,18,Singapore Grand Prix,43,61,0,0,0,0
+2024,18,Singapore Grand Prix,44,62,0,0,0,0
+2024,18,Singapore Grand Prix,55,62,0,0,0,0
+2024,18,Singapore Grand Prix,63,62,0,0,0,0
+2024,18,Singapore Grand Prix,77,61,0,0,0,0
+2024,18,Singapore Grand Prix,81,62,0,0,0,0
+2024,19,United States Grand Prix,1,56,0,0,0,0
+2024,19,United States Grand Prix,10,56,0,0,0,0
+2024,19,United States Grand Prix,11,56,0,0,0,0
+2024,19,United States Grand Prix,14,55,0,0,0,0
+2024,19,United States Grand Prix,16,56,0,0,0,0
+2024,19,United States Grand Prix,18,55,0,0,0,0
+2024,19,United States Grand Prix,20,56,0,0,0,0
+2024,19,United States Grand Prix,22,55,0,0,0,0
+2024,19,United States Grand Prix,23,55,0,0,0,0
+2024,19,United States Grand Prix,24,55,0,0,0,0
+2024,19,United States Grand Prix,27,56,0,0,0,0
+2024,19,United States Grand Prix,30,56,0,0,0,0
+2024,19,United States Grand Prix,31,55,0,0,0,0
+2024,19,United States Grand Prix,4,56,0,0,0,0
+2024,19,United States Grand Prix,43,56,0,0,0,0
+2024,19,United States Grand Prix,44,2,0,0,0,1
+2024,19,United States Grand Prix,55,56,0,0,0,0
+2024,19,United States Grand Prix,63,56,0,0,0,0
+2024,19,United States Grand Prix,77,55,0,0,0,0
+2024,19,United States Grand Prix,81,56,0,0,0,0
+2024,20,Mexico City Grand Prix,1,71,0,0,0,0
+2024,20,Mexico City Grand Prix,10,70,0,0,0,0
+2024,20,Mexico City Grand Prix,11,70,0,0,0,0
+2024,20,Mexico City Grand Prix,14,15,0,0,0,0
+2024,20,Mexico City Grand Prix,16,71,0,0,0,0
+2024,20,Mexico City Grand Prix,18,70,0,0,0,0
+2024,20,Mexico City Grand Prix,20,71,0,0,0,0
+2024,20,Mexico City Grand Prix,22,1,0,0,0,1
+2024,20,Mexico City Grand Prix,23,1,0,0,0,1
+2024,20,Mexico City Grand Prix,24,70,0,0,0,0
+2024,20,Mexico City Grand Prix,27,70,0,0,0,0
+2024,20,Mexico City Grand Prix,30,70,0,0,0,0
+2024,20,Mexico City Grand Prix,31,70,0,0,0,0
+2024,20,Mexico City Grand Prix,4,71,0,0,0,0
+2024,20,Mexico City Grand Prix,43,70,0,0,0,0
+2024,20,Mexico City Grand Prix,44,71,0,0,0,0
+2024,20,Mexico City Grand Prix,55,71,0,0,0,0
+2024,20,Mexico City Grand Prix,63,71,0,0,0,0
+2024,20,Mexico City Grand Prix,77,70,0,0,0,0
+2024,20,Mexico City Grand Prix,81,71,0,0,0,0
+2024,21,São Paulo Grand Prix,1,69,0,0,0,0
+2024,21,São Paulo Grand Prix,10,69,0,0,0,0
+2024,21,São Paulo Grand Prix,11,69,0,0,0,0
+2024,21,São Paulo Grand Prix,14,69,0,0,0,0
+2024,21,São Paulo Grand Prix,16,69,0,0,0,0
+2024,21,São Paulo Grand Prix,22,69,0,0,0,0
+2024,21,São Paulo Grand Prix,24,69,0,0,0,0
+2024,21,São Paulo Grand Prix,27,30,0,0,0,0
+2024,21,São Paulo Grand Prix,30,69,0,0,0,0
+2024,21,São Paulo Grand Prix,31,69,0,0,0,0
+2024,21,São Paulo Grand Prix,4,69,0,0,0,0
+2024,21,São Paulo Grand Prix,43,30,0,0,0,0
+2024,21,São Paulo Grand Prix,44,69,0,0,0,0
+2024,21,São Paulo Grand Prix,50,69,0,0,0,0
+2024,21,São Paulo Grand Prix,55,39,0,0,0,1
+2024,21,São Paulo Grand Prix,63,69,0,0,0,0
+2024,21,São Paulo Grand Prix,77,69,0,0,0,0
+2024,21,São Paulo Grand Prix,81,69,0,0,0,0
+2024,22,Las Vegas Grand Prix,1,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,10,15,0,0,0,0
+2024,22,Las Vegas Grand Prix,11,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,14,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,16,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,18,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,20,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,22,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,23,25,0,0,0,0
+2024,22,Las Vegas Grand Prix,24,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,27,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,30,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,31,49,0,0,0,0
+2024,22,Las Vegas Grand Prix,4,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,43,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,44,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,55,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,63,50,0,0,0,0
+2024,22,Las Vegas Grand Prix,77,49,0,0,0,0
+2024,22,Las Vegas Grand Prix,81,50,0,0,0,0
+2024,23,Qatar Grand Prix,1,57,0,0,0,0
+2024,23,Qatar Grand Prix,10,57,0,0,0,0
+2024,23,Qatar Grand Prix,11,39,0,0,0,1
+2024,23,Qatar Grand Prix,14,57,0,0,0,0
+2024,23,Qatar Grand Prix,16,57,0,0,0,0
+2024,23,Qatar Grand Prix,18,8,0,0,0,0
+2024,23,Qatar Grand Prix,20,57,0,0,0,0
+2024,23,Qatar Grand Prix,22,57,0,0,0,0
+2024,23,Qatar Grand Prix,23,56,0,0,0,0
+2024,23,Qatar Grand Prix,24,57,0,0,0,0
+2024,23,Qatar Grand Prix,27,40,0,0,0,1
+2024,23,Qatar Grand Prix,30,57,0,0,0,0
+2024,23,Qatar Grand Prix,31,1,0,0,0,1
+2024,23,Qatar Grand Prix,4,57,0,0,0,0
+2024,23,Qatar Grand Prix,43,1,0,0,0,1
+2024,23,Qatar Grand Prix,44,57,0,0,0,0
+2024,23,Qatar Grand Prix,55,57,0,0,0,0
+2024,23,Qatar Grand Prix,63,57,0,0,0,0
+2024,23,Qatar Grand Prix,77,57,0,0,0,0
+2024,23,Qatar Grand Prix,81,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,1,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,10,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,11,1,0,0,0,1
+2024,24,Abu Dhabi Grand Prix,14,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,16,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,18,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,20,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,22,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,23,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,24,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,27,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,30,56,0,0,0,1
+2024,24,Abu Dhabi Grand Prix,4,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,43,26,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,44,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,55,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,61,57,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,63,58,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,77,30,0,0,0,0
+2024,24,Abu Dhabi Grand Prix,81,58,0,0,0,0
+2025,1,Australian Grand Prix,1,57,0,0,0,0
+2025,1,Australian Grand Prix,10,57,0,0,0,0
+2025,1,Australian Grand Prix,12,57,0,0,0,0
+2025,1,Australian Grand Prix,14,33,0,0,0,1
+2025,1,Australian Grand Prix,16,57,0,0,0,0
+2025,1,Australian Grand Prix,18,57,0,0,0,0
+2025,1,Australian Grand Prix,22,57,0,0,0,0
+2025,1,Australian Grand Prix,23,57,0,0,0,0
+2025,1,Australian Grand Prix,27,57,0,0,0,0
+2025,1,Australian Grand Prix,30,47,0,0,0,1
+2025,1,Australian Grand Prix,31,57,0,0,0,0
+2025,1,Australian Grand Prix,4,57,0,0,0,0
+2025,1,Australian Grand Prix,44,57,0,0,0,0
+2025,1,Australian Grand Prix,5,46,0,0,0,1
+2025,1,Australian Grand Prix,55,1,0,0,0,1
+2025,1,Australian Grand Prix,6,1,0,0,0,1
+2025,1,Australian Grand Prix,63,57,0,0,0,0
+2025,1,Australian Grand Prix,7,1,0,0,0,1
+2025,1,Australian Grand Prix,81,57,0,0,0,0
+2025,1,Australian Grand Prix,87,57,0,5,0,0
+2025,2,Chinese Grand Prix,1,56,0,0,0,0
+2025,2,Chinese Grand Prix,10,56,0,0,0,0
+2025,2,Chinese Grand Prix,12,56,0,0,0,0
+2025,2,Chinese Grand Prix,14,4,0,0,0,0
+2025,2,Chinese Grand Prix,16,56,0,0,0,0
+2025,2,Chinese Grand Prix,18,56,0,0,0,0
+2025,2,Chinese Grand Prix,22,55,0,0,0,0
+2025,2,Chinese Grand Prix,23,56,0,0,0,0
+2025,2,Chinese Grand Prix,27,55,0,0,0,0
+2025,2,Chinese Grand Prix,30,56,0,0,0,0
+2025,2,Chinese Grand Prix,31,56,0,0,0,0
+2025,2,Chinese Grand Prix,4,56,0,0,0,0
+2025,2,Chinese Grand Prix,44,56,0,0,0,0
+2025,2,Chinese Grand Prix,5,55,0,0,0,0
+2025,2,Chinese Grand Prix,55,56,0,0,0,0
+2025,2,Chinese Grand Prix,6,56,0,0,0,0
+2025,2,Chinese Grand Prix,63,56,0,0,0,0
+2025,2,Chinese Grand Prix,7,56,0,0,0,0
+2025,2,Chinese Grand Prix,81,56,0,0,0,0
+2025,2,Chinese Grand Prix,87,56,0,0,0,0
+2025,3,Japanese Grand Prix,1,53,0,0,0,0
+2025,3,Japanese Grand Prix,10,53,0,0,0,0
+2025,3,Japanese Grand Prix,12,53,0,0,0,0
+2025,3,Japanese Grand Prix,14,53,0,0,0,0
+2025,3,Japanese Grand Prix,16,53,0,0,0,0
+2025,3,Japanese Grand Prix,18,52,0,0,0,0
+2025,3,Japanese Grand Prix,22,53,0,0,0,0
+2025,3,Japanese Grand Prix,23,53,0,0,0,0
+2025,3,Japanese Grand Prix,27,53,0,0,0,0
+2025,3,Japanese Grand Prix,30,53,0,0,0,0
+2025,3,Japanese Grand Prix,31,53,0,0,0,0
+2025,3,Japanese Grand Prix,4,53,0,0,0,0
+2025,3,Japanese Grand Prix,44,53,0,0,0,0
+2025,3,Japanese Grand Prix,5,53,0,0,0,0
+2025,3,Japanese Grand Prix,55,53,0,0,0,0
+2025,3,Japanese Grand Prix,6,53,0,0,0,0
+2025,3,Japanese Grand Prix,63,53,0,0,0,0
+2025,3,Japanese Grand Prix,7,53,0,0,0,0
+2025,3,Japanese Grand Prix,81,53,0,0,0,0
+2025,3,Japanese Grand Prix,87,53,0,0,0,0
+2025,4,Bahrain Grand Prix,1,57,0,0,0,0
+2025,4,Bahrain Grand Prix,10,57,0,0,0,0
+2025,4,Bahrain Grand Prix,12,57,0,0,0,0
+2025,4,Bahrain Grand Prix,14,57,0,0,0,0
+2025,4,Bahrain Grand Prix,16,57,0,0,0,0
+2025,4,Bahrain Grand Prix,18,57,0,0,0,0
+2025,4,Bahrain Grand Prix,22,57,0,0,0,0
+2025,4,Bahrain Grand Prix,23,57,0,0,0,0
+2025,4,Bahrain Grand Prix,27,57,0,0,0,0
+2025,4,Bahrain Grand Prix,30,57,0,0,0,0
+2025,4,Bahrain Grand Prix,31,57,0,0,0,0
+2025,4,Bahrain Grand Prix,4,57,0,0,0,0
+2025,4,Bahrain Grand Prix,44,57,0,0,0,0
+2025,4,Bahrain Grand Prix,5,57,0,0,0,0
+2025,4,Bahrain Grand Prix,55,45,0,0,0,0
+2025,4,Bahrain Grand Prix,6,57,0,0,0,0
+2025,4,Bahrain Grand Prix,63,57,0,0,0,0
+2025,4,Bahrain Grand Prix,7,57,0,0,0,0
+2025,4,Bahrain Grand Prix,81,57,0,0,0,0
+2025,4,Bahrain Grand Prix,87,57,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,1,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,10,1,0,0,0,1
+2025,5,Saudi Arabian Grand Prix,12,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,14,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,16,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,18,49,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,22,1,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,23,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,27,49,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,30,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,31,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,4,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,44,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,5,49,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,55,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,6,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,63,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,7,49,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,81,50,0,0,0,0
+2025,5,Saudi Arabian Grand Prix,87,50,0,0,0,0
+2025,6,Miami Grand Prix,1,57,24,24,0,0
+2025,6,Miami Grand Prix,10,57,23,23,0,0
+2025,6,Miami Grand Prix,12,57,24,24,0,0
+2025,6,Miami Grand Prix,14,56,23,23,0,0
+2025,6,Miami Grand Prix,16,57,24,24,0,0
+2025,6,Miami Grand Prix,18,56,0,0,0,0
+2025,6,Miami Grand Prix,22,57,24,24,0,0
+2025,6,Miami Grand Prix,23,57,24,24,0,0
+2025,6,Miami Grand Prix,27,56,23,23,0,0
+2025,6,Miami Grand Prix,30,36,23,23,0,0
+2025,6,Miami Grand Prix,31,57,0,0,0,0
+2025,6,Miami Grand Prix,4,57,24,24,0,0
+2025,6,Miami Grand Prix,44,57,23,23,0,0
+2025,6,Miami Grand Prix,5,31,0,0,0,1
+2025,6,Miami Grand Prix,55,57,24,24,0,0
+2025,6,Miami Grand Prix,6,57,0,0,0,0
+2025,6,Miami Grand Prix,63,57,24,24,0,0
+2025,6,Miami Grand Prix,7,1,0,0,0,1
+2025,6,Miami Grand Prix,81,57,24,24,0,0
+2025,6,Miami Grand Prix,87,28,23,23,0,1
+2025,7,Emilia Romagna Grand Prix,1,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,10,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,12,45,0,0,0,1
+2025,7,Emilia Romagna Grand Prix,14,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,16,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,18,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,22,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,23,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,27,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,30,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,31,28,0,0,0,1
+2025,7,Emilia Romagna Grand Prix,4,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,43,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,44,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,5,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,55,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,6,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,63,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,81,63,0,0,0,0
+2025,7,Emilia Romagna Grand Prix,87,63,0,0,0,0
+2025,8,Monaco Grand Prix,1,78,0,0,0,0
+2025,8,Monaco Grand Prix,10,8,0,0,0,0
+2025,8,Monaco Grand Prix,12,75,0,0,0,0
+2025,8,Monaco Grand Prix,14,37,0,0,0,1
+2025,8,Monaco Grand Prix,16,78,0,0,0,0
+2025,8,Monaco Grand Prix,18,76,0,0,0,0
+2025,8,Monaco Grand Prix,22,76,0,0,0,0
+2025,8,Monaco Grand Prix,23,76,0,0,0,0
+2025,8,Monaco Grand Prix,27,76,0,0,0,0
+2025,8,Monaco Grand Prix,30,77,0,0,0,0
+2025,8,Monaco Grand Prix,31,77,0,0,0,0
+2025,8,Monaco Grand Prix,4,78,0,0,0,0
+2025,8,Monaco Grand Prix,43,76,0,0,0,0
+2025,8,Monaco Grand Prix,44,78,0,0,0,0
+2025,8,Monaco Grand Prix,5,76,0,0,0,0
+2025,8,Monaco Grand Prix,55,76,0,0,0,0
+2025,8,Monaco Grand Prix,6,77,0,0,0,0
+2025,8,Monaco Grand Prix,63,76,0,0,0,0
+2025,8,Monaco Grand Prix,81,78,0,0,0,0
+2025,8,Monaco Grand Prix,87,76,0,0,0,0
+2025,9,Spanish Grand Prix,1,66,0,0,0,0
+2025,9,Spanish Grand Prix,10,66,0,0,0,0
+2025,9,Spanish Grand Prix,12,54,0,0,0,1
+2025,9,Spanish Grand Prix,14,66,0,0,0,0
+2025,9,Spanish Grand Prix,16,66,0,0,0,0
+2025,9,Spanish Grand Prix,22,66,0,0,0,0
+2025,9,Spanish Grand Prix,23,27,0,0,0,0
+2025,9,Spanish Grand Prix,27,66,0,0,0,0
+2025,9,Spanish Grand Prix,30,66,0,0,0,0
+2025,9,Spanish Grand Prix,31,66,0,0,0,0
+2025,9,Spanish Grand Prix,4,66,0,0,0,0
+2025,9,Spanish Grand Prix,43,66,0,0,0,0
+2025,9,Spanish Grand Prix,44,66,0,0,0,0
+2025,9,Spanish Grand Prix,5,66,0,0,0,0
+2025,9,Spanish Grand Prix,55,66,0,0,0,0
+2025,9,Spanish Grand Prix,6,66,0,0,0,0
+2025,9,Spanish Grand Prix,63,66,0,0,0,0
+2025,9,Spanish Grand Prix,81,66,0,0,0,0
+2025,9,Spanish Grand Prix,87,66,0,0,0,0
+2025,10,Canadian Grand Prix,1,70,0,0,0,0
+2025,10,Canadian Grand Prix,10,69,0,0,0,0
+2025,10,Canadian Grand Prix,12,70,0,0,0,0
+2025,10,Canadian Grand Prix,14,70,0,0,0,0
+2025,10,Canadian Grand Prix,16,70,0,0,0,0
+2025,10,Canadian Grand Prix,18,69,0,0,0,0
+2025,10,Canadian Grand Prix,22,69,0,0,0,0
+2025,10,Canadian Grand Prix,23,47,0,0,0,1
+2025,10,Canadian Grand Prix,27,70,0,0,0,0
+2025,10,Canadian Grand Prix,30,54,0,0,0,0
+2025,10,Canadian Grand Prix,31,69,0,0,0,0
+2025,10,Canadian Grand Prix,4,67,0,0,0,1
+2025,10,Canadian Grand Prix,43,69,0,0,0,0
+2025,10,Canadian Grand Prix,44,70,0,0,0,0
+2025,10,Canadian Grand Prix,5,69,0,0,0,0
+2025,10,Canadian Grand Prix,55,69,0,0,0,0
+2025,10,Canadian Grand Prix,6,69,0,0,0,0
+2025,10,Canadian Grand Prix,63,70,0,0,0,0
+2025,10,Canadian Grand Prix,81,70,0,0,0,0
+2025,10,Canadian Grand Prix,87,69,0,0,0,0
+2025,11,Austrian Grand Prix,1,1,0,0,0,1
+2025,11,Austrian Grand Prix,10,69,0,0,0,0
+2025,11,Austrian Grand Prix,12,1,0,0,0,1
+2025,11,Austrian Grand Prix,14,69,0,0,0,0
+2025,11,Austrian Grand Prix,16,70,0,0,0,0
+2025,11,Austrian Grand Prix,18,69,0,0,0,0
+2025,11,Austrian Grand Prix,22,68,0,0,0,0
+2025,11,Austrian Grand Prix,23,15,0,0,0,0
+2025,11,Austrian Grand Prix,27,69,0,0,0,0
+2025,11,Austrian Grand Prix,30,70,0,0,0,0
+2025,11,Austrian Grand Prix,31,69,0,0,0,0
+2025,11,Austrian Grand Prix,4,70,0,0,0,0
+2025,11,Austrian Grand Prix,43,69,0,0,0,0
+2025,11,Austrian Grand Prix,44,70,0,0,0,0
+2025,11,Austrian Grand Prix,5,69,0,0,0,0
+2025,11,Austrian Grand Prix,6,69,0,0,0,0
+2025,11,Austrian Grand Prix,63,70,0,0,0,0
+2025,11,Austrian Grand Prix,81,70,0,0,0,0
+2025,11,Austrian Grand Prix,87,69,0,0,0,0
+2025,12,British Grand Prix,1,52,0,0,0,0
+2025,12,British Grand Prix,10,52,0,0,0,0
+2025,12,British Grand Prix,12,23,0,0,0,0
+2025,12,British Grand Prix,14,52,0,0,0,0
+2025,12,British Grand Prix,16,52,0,0,0,0
+2025,12,British Grand Prix,18,52,0,0,0,0
+2025,12,British Grand Prix,22,51,0,0,0,0
+2025,12,British Grand Prix,23,52,0,0,0,0
+2025,12,British Grand Prix,27,52,0,0,0,0
+2025,12,British Grand Prix,30,1,0,0,0,1
+2025,12,British Grand Prix,31,52,0,0,0,0
+2025,12,British Grand Prix,4,52,0,0,0,0
+2025,12,British Grand Prix,44,52,0,0,0,0
+2025,12,British Grand Prix,5,4,0,0,0,1
+2025,12,British Grand Prix,55,52,0,0,0,0
+2025,12,British Grand Prix,6,18,0,0,0,1
+2025,12,British Grand Prix,63,52,0,0,0,0
+2025,12,British Grand Prix,81,52,0,0,0,0
+2025,12,British Grand Prix,87,52,0,0,0,0
+2025,13,Belgian Grand Prix,1,44,0,0,0,0
+2025,13,Belgian Grand Prix,10,44,0,0,0,0
+2025,13,Belgian Grand Prix,12,44,0,14,0,0
+2025,13,Belgian Grand Prix,14,44,0,15,0,0
+2025,13,Belgian Grand Prix,16,44,0,0,0,0
+2025,13,Belgian Grand Prix,18,44,0,0,0,0
+2025,13,Belgian Grand Prix,22,44,0,0,0,0
+2025,13,Belgian Grand Prix,23,44,0,0,0,0
+2025,13,Belgian Grand Prix,27,44,0,12,0,0
+2025,13,Belgian Grand Prix,30,44,0,0,0,0
+2025,13,Belgian Grand Prix,31,44,0,0,0,0
+2025,13,Belgian Grand Prix,4,44,0,0,0,0
+2025,13,Belgian Grand Prix,43,44,0,16,0,0
+2025,13,Belgian Grand Prix,44,44,0,0,0,0
+2025,13,Belgian Grand Prix,5,44,0,0,0,0
+2025,13,Belgian Grand Prix,55,44,0,18,0,0
+2025,13,Belgian Grand Prix,6,43,0,0,0,0
+2025,13,Belgian Grand Prix,63,44,0,0,0,0
+2025,13,Belgian Grand Prix,81,44,0,0,0,0
+2025,13,Belgian Grand Prix,87,44,0,0,0,0
+2025,14,Hungarian Grand Prix,1,70,0,0,0,0
+2025,14,Hungarian Grand Prix,10,69,0,0,0,0
+2025,14,Hungarian Grand Prix,12,69,0,0,0,0
+2025,14,Hungarian Grand Prix,14,70,0,0,0,0
+2025,14,Hungarian Grand Prix,16,70,0,0,0,0
+2025,14,Hungarian Grand Prix,18,70,0,0,0,0
+2025,14,Hungarian Grand Prix,22,69,0,0,0,0
+2025,14,Hungarian Grand Prix,23,69,0,0,0,0
+2025,14,Hungarian Grand Prix,27,69,0,0,0,0
+2025,14,Hungarian Grand Prix,30,70,0,0,0,0
+2025,14,Hungarian Grand Prix,31,69,0,0,0,0
+2025,14,Hungarian Grand Prix,4,70,0,0,0,0
+2025,14,Hungarian Grand Prix,43,69,0,0,0,0
+2025,14,Hungarian Grand Prix,44,69,0,0,0,0
+2025,14,Hungarian Grand Prix,5,70,0,0,0,0
+2025,14,Hungarian Grand Prix,55,69,0,0,0,0
+2025,14,Hungarian Grand Prix,6,69,0,0,0,0
+2025,14,Hungarian Grand Prix,63,70,0,0,0,0
+2025,14,Hungarian Grand Prix,81,70,0,0,0,0
+2025,14,Hungarian Grand Prix,87,48,0,0,0,0
+2025,15,Dutch Grand Prix,1,72,0,0,0,0
+2025,15,Dutch Grand Prix,10,72,0,0,0,0
+2025,15,Dutch Grand Prix,12,72,0,0,0,0
+2025,15,Dutch Grand Prix,14,72,0,0,0,0
+2025,15,Dutch Grand Prix,16,52,0,0,0,0
+2025,15,Dutch Grand Prix,18,72,0,0,0,0
+2025,15,Dutch Grand Prix,22,72,0,0,0,0
+2025,15,Dutch Grand Prix,23,72,0,0,0,0
+2025,15,Dutch Grand Prix,27,72,0,0,0,0
+2025,15,Dutch Grand Prix,30,72,0,0,0,0
+2025,15,Dutch Grand Prix,31,72,0,0,0,0
+2025,15,Dutch Grand Prix,4,65,0,0,0,1
+2025,15,Dutch Grand Prix,43,72,0,0,0,0
+2025,15,Dutch Grand Prix,44,23,0,0,0,1
+2025,15,Dutch Grand Prix,5,72,0,0,0,0
+2025,15,Dutch Grand Prix,55,72,0,0,0,0
+2025,15,Dutch Grand Prix,6,72,0,0,0,0
+2025,15,Dutch Grand Prix,63,72,0,0,0,0
+2025,15,Dutch Grand Prix,81,72,0,0,0,0
+2025,15,Dutch Grand Prix,87,72,0,0,0,0
+2025,16,Italian Grand Prix,1,53,0,0,0,0
+2025,16,Italian Grand Prix,10,52,0,0,0,0
+2025,16,Italian Grand Prix,12,53,0,0,0,0
+2025,16,Italian Grand Prix,14,24,0,0,0,0
+2025,16,Italian Grand Prix,16,53,0,0,0,0
+2025,16,Italian Grand Prix,18,52,0,0,0,0
+2025,16,Italian Grand Prix,22,53,0,0,0,0
+2025,16,Italian Grand Prix,23,53,0,0,0,0
+2025,16,Italian Grand Prix,30,53,0,0,0,0
+2025,16,Italian Grand Prix,31,52,0,0,0,0
+2025,16,Italian Grand Prix,4,53,0,0,0,0
+2025,16,Italian Grand Prix,43,52,0,0,0,0
+2025,16,Italian Grand Prix,44,53,0,0,0,0
+2025,16,Italian Grand Prix,5,53,0,0,0,0
+2025,16,Italian Grand Prix,55,53,0,0,0,0
+2025,16,Italian Grand Prix,6,53,0,0,0,0
+2025,16,Italian Grand Prix,63,53,0,0,0,0
+2025,16,Italian Grand Prix,81,53,0,0,0,0
+2025,16,Italian Grand Prix,87,53,0,0,0,0
+2025,17,Azerbaijan Grand Prix,1,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,10,50,0,0,0,0
+2025,17,Azerbaijan Grand Prix,12,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,14,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,16,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,18,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,22,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,23,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,27,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,30,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,31,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,4,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,43,50,0,0,0,0
+2025,17,Azerbaijan Grand Prix,44,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,5,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,55,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,6,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,63,51,0,0,0,0
+2025,17,Azerbaijan Grand Prix,81,1,0,0,0,1
+2025,17,Azerbaijan Grand Prix,87,51,0,0,0,0
+2025,18,Singapore Grand Prix,1,62,0,0,0,0
+2025,18,Singapore Grand Prix,10,61,0,0,0,0
+2025,18,Singapore Grand Prix,12,62,0,0,0,0
+2025,18,Singapore Grand Prix,14,62,0,0,0,0
+2025,18,Singapore Grand Prix,16,62,0,0,0,0
+2025,18,Singapore Grand Prix,18,61,0,0,0,0
+2025,18,Singapore Grand Prix,22,61,0,0,0,0
+2025,18,Singapore Grand Prix,23,61,0,0,0,0
+2025,18,Singapore Grand Prix,27,61,0,0,0,0
+2025,18,Singapore Grand Prix,30,61,0,0,0,0
+2025,18,Singapore Grand Prix,31,61,0,0,0,0
+2025,18,Singapore Grand Prix,4,62,0,0,0,0
+2025,18,Singapore Grand Prix,43,61,0,0,0,0
+2025,18,Singapore Grand Prix,44,62,0,0,0,0
+2025,18,Singapore Grand Prix,5,61,0,0,0,0
+2025,18,Singapore Grand Prix,55,61,0,0,0,0
+2025,18,Singapore Grand Prix,6,61,0,0,0,0
+2025,18,Singapore Grand Prix,63,62,0,0,0,0
+2025,18,Singapore Grand Prix,81,62,0,0,0,0
+2025,18,Singapore Grand Prix,87,62,0,0,0,0
+2025,19,United States Grand Prix,1,56,0,0,0,0
+2025,19,United States Grand Prix,10,55,0,0,0,0
+2025,19,United States Grand Prix,12,56,0,0,0,0
+2025,19,United States Grand Prix,14,56,0,0,0,0
+2025,19,United States Grand Prix,16,56,0,0,0,0
+2025,19,United States Grand Prix,18,56,0,0,0,0
+2025,19,United States Grand Prix,22,56,0,0,0,0
+2025,19,United States Grand Prix,23,56,0,0,0,0
+2025,19,United States Grand Prix,27,56,0,0,0,0
+2025,19,United States Grand Prix,30,56,0,0,0,0
+2025,19,United States Grand Prix,31,56,0,0,0,0
+2025,19,United States Grand Prix,4,56,0,0,0,0
+2025,19,United States Grand Prix,43,55,0,0,0,0
+2025,19,United States Grand Prix,44,56,0,0,0,0
+2025,19,United States Grand Prix,5,55,0,0,0,0
+2025,19,United States Grand Prix,55,6,0,0,0,1
+2025,19,United States Grand Prix,6,56,0,0,0,0
+2025,19,United States Grand Prix,63,56,0,0,0,0
+2025,19,United States Grand Prix,81,56,0,0,0,0
+2025,19,United States Grand Prix,87,56,0,0,0,0
+2025,20,Mexico City Grand Prix,1,71,0,0,0,0
+2025,20,Mexico City Grand Prix,10,70,0,0,0,0
+2025,20,Mexico City Grand Prix,12,71,0,0,0,0
+2025,20,Mexico City Grand Prix,14,34,0,0,0,0
+2025,20,Mexico City Grand Prix,16,71,0,0,0,0
+2025,20,Mexico City Grand Prix,18,70,0,0,0,0
+2025,20,Mexico City Grand Prix,22,71,0,0,0,0
+2025,20,Mexico City Grand Prix,23,70,0,0,0,0
+2025,20,Mexico City Grand Prix,27,25,0,0,0,0
+2025,20,Mexico City Grand Prix,30,5,0,0,0,0
+2025,20,Mexico City Grand Prix,31,71,0,0,0,0
+2025,20,Mexico City Grand Prix,4,71,0,0,0,0
+2025,20,Mexico City Grand Prix,43,70,0,0,0,0
+2025,20,Mexico City Grand Prix,44,71,0,0,0,0
+2025,20,Mexico City Grand Prix,5,71,0,0,0,0
+2025,20,Mexico City Grand Prix,55,68,0,0,0,1
+2025,20,Mexico City Grand Prix,6,70,0,0,0,0
+2025,20,Mexico City Grand Prix,63,71,0,0,0,0
+2025,20,Mexico City Grand Prix,81,71,0,0,0,0
+2025,20,Mexico City Grand Prix,87,71,0,0,0,0
+2025,21,São Paulo Grand Prix,1,71,0,0,0,0
+2025,21,São Paulo Grand Prix,10,71,0,0,0,0
+2025,21,São Paulo Grand Prix,12,71,0,0,0,0
+2025,21,São Paulo Grand Prix,14,71,0,0,0,0
+2025,21,São Paulo Grand Prix,16,6,0,0,0,1
+2025,21,São Paulo Grand Prix,18,71,0,0,0,0
+2025,21,São Paulo Grand Prix,22,71,0,0,0,0
+2025,21,São Paulo Grand Prix,23,71,0,0,0,0
+2025,21,São Paulo Grand Prix,27,71,0,0,0,0
+2025,21,São Paulo Grand Prix,30,71,0,0,0,0
+2025,21,São Paulo Grand Prix,31,71,0,0,0,0
+2025,21,São Paulo Grand Prix,4,71,0,0,0,0
+2025,21,São Paulo Grand Prix,43,71,0,0,0,0
+2025,21,São Paulo Grand Prix,44,37,0,0,0,0
+2025,21,São Paulo Grand Prix,5,1,0,0,0,1
+2025,21,São Paulo Grand Prix,55,71,0,0,0,0
+2025,21,São Paulo Grand Prix,6,71,0,0,0,0
+2025,21,São Paulo Grand Prix,63,71,0,0,0,0
+2025,21,São Paulo Grand Prix,81,71,0,0,0,0
+2025,21,São Paulo Grand Prix,87,71,0,0,0,0
+2025,22,Las Vegas Grand Prix,1,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,10,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,12,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,14,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,16,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,18,1,0,0,0,1
+2025,22,Las Vegas Grand Prix,22,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,23,35,0,0,0,0
+2025,22,Las Vegas Grand Prix,27,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,30,49,0,0,0,0
+2025,22,Las Vegas Grand Prix,31,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,4,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,43,49,0,0,0,0
+2025,22,Las Vegas Grand Prix,44,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,5,2,0,0,0,0
+2025,22,Las Vegas Grand Prix,55,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,6,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,63,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,81,50,0,0,0,0
+2025,22,Las Vegas Grand Prix,87,50,0,0,0,0
+2025,23,Qatar Grand Prix,1,57,0,0,0,0
+2025,23,Qatar Grand Prix,10,56,0,0,0,0
+2025,23,Qatar Grand Prix,12,57,0,0,0,0
+2025,23,Qatar Grand Prix,14,57,0,0,0,0
+2025,23,Qatar Grand Prix,16,57,0,0,0,0
+2025,23,Qatar Grand Prix,18,55,0,0,0,0
+2025,23,Qatar Grand Prix,22,57,0,0,0,0
+2025,23,Qatar Grand Prix,23,57,0,0,0,0
+2025,23,Qatar Grand Prix,27,7,0,0,0,1
+2025,23,Qatar Grand Prix,30,57,0,0,0,0
+2025,23,Qatar Grand Prix,31,56,0,0,0,0
+2025,23,Qatar Grand Prix,4,57,0,0,0,0
+2025,23,Qatar Grand Prix,43,56,0,0,0,0
+2025,23,Qatar Grand Prix,44,57,0,0,0,0
+2025,23,Qatar Grand Prix,5,57,0,0,0,0
+2025,23,Qatar Grand Prix,55,57,0,0,0,0
+2025,23,Qatar Grand Prix,6,55,0,0,0,0
+2025,23,Qatar Grand Prix,63,57,0,0,0,0
+2025,23,Qatar Grand Prix,81,57,0,0,0,0
+2025,23,Qatar Grand Prix,87,41,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,1,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,10,57,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,12,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,14,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,16,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,18,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,22,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,23,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,27,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,30,57,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,31,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,4,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,43,57,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,44,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,5,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,55,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,6,57,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,63,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,81,58,0,0,0,0
+2025,24,Abu Dhabi Grand Prix,87,58,0,0,0,0

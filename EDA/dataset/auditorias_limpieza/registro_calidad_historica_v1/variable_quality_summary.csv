@@ -1,0 +1,62 @@
+field,dtype,rows,missing_count,distinct_non_null,decision_status,current_treatment,rule_version
+Temporada,int64,101290,0,4,agreed_integrity_key,require complete unique key; no automatic row selection,historical_quality_contract_v1
+Ronda,int64,101290,0,24,agreed_integrity_key,require complete unique key; no automatic row selection,historical_quality_contract_v1
+GranPremio,object,101290,0,25,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+Time,timedelta64[ns],101290,0,100488,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+Driver,object,101290,0,31,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+DriverNumber,object,101290,0,34,agreed_integrity_key,require complete unique key; no automatic row selection,historical_quality_contract_v1
+LapTime,timedelta64[ns],101290,384,42486,preserve_timing_values,no reconstruction or correction in this phase; source discrepancies are separately registered,historical_quality_contract_v1
+LapNumber,float64,101290,0,78,agreed_integrity_key,require complete unique key; no automatic row selection,historical_quality_contract_v1
+Stint,float64,101290,354,8,preserve_missing,do not infer stint count or use retrospective value as as-of state,historical_quality_contract_v1
+PitOutTime,timedelta64[ns],101290,97823,3467,preserve_event_missingness,missing event time is not numeric zero or proof that no event occurred,historical_quality_contract_v1
+PitInTime,timedelta64[ns],101290,97821,3468,preserve_event_missingness,missing event time is not numeric zero or proof that no event occurred,historical_quality_contract_v1
+Sector1Time,timedelta64[ns],101290,2094,25226,preserve_timing_values,no reconstruction or correction in this phase; source discrepancies are separately registered,historical_quality_contract_v1
+Sector2Time,timedelta64[ns],101290,169,27864,preserve_timing_values,no reconstruction or correction in this phase; source discrepancies are separately registered,historical_quality_contract_v1
+Sector3Time,timedelta64[ns],101290,282,25945,preserve_timing_values,no reconstruction or correction in this phase; source discrepancies are separately registered,historical_quality_contract_v1
+Sector1SessionTime,timedelta64[ns],101290,2317,98226,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+Sector2SessionTime,timedelta64[ns],101290,169,100370,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+Sector3SessionTime,timedelta64[ns],101290,282,100270,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+SpeedI1,float64,101290,136,318,preserve_timing_speed_missingness,no zero fill; SpeedFL absence is contextual and two PitIn rows with values remain flagged,historical_quality_contract_v1
+SpeedI2,float64,101290,1020,299,preserve_timing_speed_missingness,no zero fill; SpeedFL absence is contextual and two PitIn rows with values remain flagged,historical_quality_contract_v1
+SpeedFL,float64,101290,3602,327,preserve_timing_speed_missingness,no zero fill; SpeedFL absence is contextual and two PitIn rows with values remain flagged,historical_quality_contract_v1
+SpeedST,float64,101290,181,308,preserve_timing_speed_missingness,no zero fill; SpeedFL absence is contextual and two PitIn rows with values remain flagged,historical_quality_contract_v1
+IsPersonalBest,object,101290,98,2,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+Compound,string,101290,780,5,approved_historical_normalization,exact None/nan markers are NA; Compound_asof is a separate causal replay,historical_quality_contract_v1
+TyreLife,float64,101290,989,78,preserve_missing,"no imputation from neighbors, FreshTyre, TotalLaps, or future rows",historical_quality_contract_v1
+FreshTyre,bool,101290,0,2,preserve_with_coverage_caveat,354 initial Miami 2025 rows lack preceding cached tyre state; no backfill,historical_quality_contract_v1
+Team,object,101290,0,13,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+LapStartTime,timedelta64[ns],101290,0,98684,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+LapStartDate,datetime64[ns],101290,0,99428,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+TrackStatus,object,101290,0,42,preserve_retrospective_lap_state,per-lap aggregate is not live as-of state; replay race control later,historical_quality_contract_v1
+Position,float64,101290,135,20,preserve_generated_missingness,135 missing positions coincide with generated rows; no imputation,historical_quality_contract_v1
+Deleted,bool,101290,0,2,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+DeletedReason,object,101290,98,679,preserve_historical_value,"no deletion, imputation, or semantic conversion without field-specific approval",historical_quality_contract_v1
+FastF1Generated,bool,101290,0,2,preserve_context_flag,flag alone does not prove retirement or authorize dropping rows,historical_quality_contract_v1
+IsAccurate,bool,101290,0,2,preserve_context_flag,not a global filter; assess field/case evidence separately,historical_quality_contract_v1
+SafetyCar,boolean,101290,0,2,preserve_retrospective_lap_state,per-lap aggregate is not live as-of state; replay race control later,historical_quality_contract_v1
+VirtualSafetyCar,boolean,101290,0,2,preserve_retrospective_lap_state,per-lap aggregate is not live as-of state; replay race control later,historical_quality_contract_v1
+Weather_Time,timedelta64[ns],101290,0,8140,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_AirTemp,float64,101290,0,216,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_Humidity,float64,101290,0,82,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_Pressure,float64,101290,0,363,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_Rainfall,bool,101290,0,2,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_TrackTemp,float64,101290,0,392,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_WindDirection,int64,101290,0,360,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Weather_WindSpeed,float64,101290,0,78,preserve_retrospective_weather_join,Weather_Time may follow lap start; as-of selection belongs to later causal feature construction,historical_quality_contract_v1
+Telemetry_Samples,int64,101290,0,656,audit_only_coverage,"coverage metadata retained for QA, not a baseline predictor",historical_quality_contract_v1
+Telemetry_Speed_mean,float64,101290,0,97626,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_Speed_max,float64,101290,0,190,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_RPM_mean,float64,101290,0,101080,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_RPM_max,float64,101290,0,1937,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_Throttle_mean,float64,101290,0,94791,audit_only_raw_code,"contains source code 104; excluded from baseline, not rewritten",historical_quality_contract_v1
+Telemetry_Throttle_max,float64,101290,0,43,audit_only_raw_code,"contains source code 104; excluded from baseline, not rewritten",historical_quality_contract_v1
+Telemetry_Brake_mean,float64,101290,0,14556,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_Brake_max,bool,101290,0,2,preserve_historical_aggregate,zeros and missing values reported; only completed eligible laps belong to later causal windows,historical_quality_contract_v1
+Telemetry_nGear_mean,float64,101290,0,58646,paused_pending_raw_recalculation,values above 8 retained; do not clip or use pending validation,historical_quality_contract_v1
+Telemetry_nGear_max,int64,101290,0,35,paused_pending_raw_recalculation,values above 8 retained; do not clip or use pending validation,historical_quality_contract_v1
+Telemetry_DRS_mean,float64,101290,0,23374,excluded_pending_semantic_validation,DRS aggregates include state codes; do not interpret as continuous values,historical_quality_contract_v1
+Telemetry_DRS_max,int64,101290,0,12,excluded_pending_semantic_validation,DRS aggregates include state codes; do not interpret as continuous values,historical_quality_contract_v1
+Telemetry_Throttle_valid_samples,int64,101290,0,676,baseline_candidate_with_mask,retain missing aggregate when zero valid samples; assert fraction/count/range,historical_quality_contract_v1
+Telemetry_Throttle_valid_fraction,float64,101290,0,628,baseline_candidate_with_mask,retain missing aggregate when zero valid samples; assert fraction/count/range,historical_quality_contract_v1
+Telemetry_Throttle_valid_mean,float64,101290,40,94795,baseline_candidate_with_mask,retain missing aggregate when zero valid samples; assert fraction/count/range,historical_quality_contract_v1
+Telemetry_Throttle_valid_max,float64,101290,40,44,baseline_candidate_with_mask,retain missing aggregate when zero valid samples; assert fraction/count/range,historical_quality_contract_v1

@@ -1,0 +1,237 @@
+{
+  "seed": 42,
+  "seasons": [
+    2022,
+    2023
+  ],
+  "random_target": 24,
+  "random_event_ids": [
+    "2022-01-6-IN-32",
+    "2022-01-63-IN-33",
+    "2022-02-11-IN-15",
+    "2022-02-20-IN-37",
+    "2022-06-22-IN-52",
+    "2022-06-4-IN-12",
+    "2022-06-63-IN-51",
+    "2022-07-18-IN-24",
+    "2022-08-31-IN-33",
+    "2022-12-63-IN-18",
+    "2022-13-16-IN-21",
+    "2022-13-4-IN-14",
+    "2022-14-16-IN-25",
+    "2022-15-23-IN-56",
+    "2023-01-24-IN-32",
+    "2023-06-18-IN-51",
+    "2023-08-21-IN-11",
+    "2023-10-21-IN-27",
+    "2023-11-14-IN-43",
+    "2023-13-10-IN-1",
+    "2023-13-55-IN-41",
+    "2023-17-10-IN-26",
+    "2023-17-16-IN-12",
+    "2023-17-16-IN-43"
+  ],
+  "stratum_counts": {
+    "same_compound": 2,
+    "different_compound": 2,
+    "used_tyre": 0,
+    "no_immediate_stint_increase": 2,
+    "incomplete_stint_evidence": 2
+  },
+  "cases": [
+    {
+      "event_id": "2022-01-1-IN-14",
+      "strata": [
+        "same_compound"
+      ]
+    },
+    {
+      "event_id": "2022-01-1-IN-30",
+      "strata": [
+        "different_compound"
+      ]
+    },
+    {
+      "event_id": "2022-01-1-IN-43",
+      "strata": [
+        "different_compound"
+      ]
+    },
+    {
+      "event_id": "2022-01-1-IN-54",
+      "strata": [
+        "no_immediate_stint_increase"
+      ]
+    },
+    {
+      "event_id": "2022-01-11-IN-43",
+      "strata": [
+        "same_compound"
+      ]
+    },
+    {
+      "event_id": "2022-01-6-IN-32",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-01-63-IN-33",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-02-11-IN-15",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-02-20-IN-37",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-02-3-IN-36",
+      "strata": [
+        "no_immediate_stint_increase"
+      ]
+    },
+    {
+      "event_id": "2022-02-77-IN-36",
+      "strata": [
+        "incomplete_stint_evidence"
+      ]
+    },
+    {
+      "event_id": "2022-04-14-IN-6",
+      "strata": [
+        "incomplete_stint_evidence"
+      ]
+    },
+    {
+      "event_id": "2022-06-22-IN-52",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-06-4-IN-12",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-06-63-IN-51",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-07-18-IN-24",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-08-31-IN-33",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-12-63-IN-18",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-13-16-IN-21",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-13-4-IN-14",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-14-16-IN-25",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2022-15-23-IN-56",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-01-24-IN-32",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-06-18-IN-51",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-08-21-IN-11",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-10-21-IN-27",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-11-14-IN-43",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-13-10-IN-1",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-13-55-IN-41",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-17-10-IN-26",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-17-16-IN-12",
+      "strata": [
+        "random"
+      ]
+    },
+    {
+      "event_id": "2023-17-16-IN-43",
+      "strata": [
+        "random"
+      ]
+    }
+  ],
+  "sources_per_case_max": 3,
+  "manual_review_required": true
+}

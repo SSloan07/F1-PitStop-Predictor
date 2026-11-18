@@ -1,0 +1,922 @@
+[
+  {
+    "event_id": "2022-01-1-IN-14",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 14 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-30",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 30 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for VER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-1-IN-54",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "official_report_confirms_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "The FIA Race Pit Stop Summary lists Verstappen’s race stops on laps 14, 30 and 43, but not on lap 54. The lap-54 candidate is therefore not confirmed as a pit stop by this report. No compound or new/used status is reported for this candidate."
+  },
+  {
+    "event_id": "2022-01-11-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for PER. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-6-IN-32",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 32 for LAT. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-01-63-IN-33",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Bahrain Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 33 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-02-11-IN-15",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_lap_confirmed_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA race-classification pit-stop detail confirms Sergio Perez stopped on lap 15. It does not report fitted compound or new/used status."
+  },
+  {
+    "event_id": "2022-02-20-IN-37",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_lap_confirmed_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA race-classification pit-stop detail confirms Kevin Magnussen stopped on lap 37. It does not report fitted compound or new/used status."
+  },
+  {
+    "event_id": "2022-02-3-IN-36",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — Formula 1 race report",
+    "evidence_summary": "El informe de carrera de Formula 1 sitúa a Ricciardo detenido justo en la entrada de boxes durante la secuencia de abandonos. Esto corrobora la señal PitIn observada por FastF1; el resumen FIA de paradas solo registra su parada de servicio de la vuelta 8. Se valida visita/entrada, no un cambio de neumáticos en la vuelta candidata."
+  },
+  {
+    "event_id": "2022-02-77-IN-36",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "official_report_confirms_pit_entry",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/saudi-arabian-grand-prix/race-classification",
+    "source_title": "2022 Saudi Arabian Grand Prix — FIA Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA pit-stop detail lists Valtteri Bottas’s stops on laps 16 and 35, not lap 36. The candidate lap-36 event is not confirmed as a pit stop by this report; no tyre compound or new/used status is reported for it."
+  },
+  {
+    "event_id": "2022-04-14-IN-6",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_04_ita_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Emilia Romagna Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Fernando Alonso, coche 14, en la vuelta 6. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-06-22-IN-52",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 52 for TSU. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-06-4-IN-12",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 12 for NOR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-06-63-IN-51",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/spanish-grand-prix/race-classification",
+    "source_title": "2022 Spanish Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 51 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-07-18-IN-24",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/monaco-grand-prix/race-classification",
+    "source_title": "2022 Monaco Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 24 for STR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-08-31-IN-33",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/azerbaijan-grand-prix/race-classification",
+    "source_title": "2022 Azerbaijan Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 33 for OCO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-12-63-IN-18",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/french-grand-prix/race-classification",
+    "source_title": "2022 French Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 18 for RUS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-13-16-IN-21",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/hungarian-grand-prix/race-classification",
+    "source_title": "2022 Hungarian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 21 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-13-4-IN-14",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/hungarian-grand-prix/race-classification",
+    "source_title": "2022 Hungarian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 14 for NOR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-14-16-IN-25",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/belgian-grand-prix/race-classification",
+    "source_title": "Belgian Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 25 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-15-23-IN-56",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2022_15_ned_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 Dutch Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 56 for ALB. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-01-24-IN-32",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_01_brn_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2023 Bahrain Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 32 for ZHO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-06-18-IN-51",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_07_mon_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Monaco Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 51 for STR. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-08-21-IN-11",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/canadian-grand-prix/race-classification",
+    "source_title": "2023 Canadian Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 11 for DEV. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-10-21-IN-27",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/british-grand-prix/race-classification",
+    "source_title": "2023 British Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 27 for DEV. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-11-14-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_12_hun_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2023 Hungarian Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for ALO. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-13-10-IN-1",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_14_ned_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Dutch Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 1 for GAS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-13-55-IN-41",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2023/dutch-grand-prix/race-classification",
+    "source_title": "2023 Dutch Grand Prix — Race Classification / Pit Stop Detail",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 41 for SAI. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-10-IN-26",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 26 for GAS. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-16-IN-12",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 12 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2023-17-16-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_stop_recorded_compounds_not_reported",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "Qatar Grand Prix — FIA Race Pit Stop Summary",
+    "evidence_summary": "FIA official race pit-stop timing source records the candidate stop at lap 43 for LEC. The source does not report the fitted tyre compound or new/used status; candidate compound fields remain unverified against FIA."
+  },
+  {
+    "event_id": "2022-08-16-IN-20",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "official_report_confirms_pit_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/verstappen-leads-red-bull-1-2-as-both-leclerc-and-sainz-retire-in-azerbaijan.Hfh10Nl59OKh2MNOIvhcy.Hfh10Nl59OKh2MNOIvhcy",
+    "source_title": "Verstappen leads Red Bull 1-2 as both Leclerc and Sainz retire in Azerbaijan — Formula 1 official race report",
+    "evidence_summary": "FastF1 records PitInTime for Leclerc on lap 20 and no PitOutTime. The FIA Race Pit Stop Summary lists his service stop on lap 9, not lap 20; the official F1 race report states that after the engine failure he crawled back to the pits to retire. Under the current target (any pit-lane visit), the lap-20 entry is confirmed as a visit, not a tyre-service stop."
+  },
+  {
+    "event_id": "2022-06-16-IN-27",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_report_confirms_pit_entry",
+    "source_url": "https://www.fia.com/news/f1-verstappen-wins-spain-take-title-lead-leclerc-exits-power-unit-problem",
+    "source_title": "2022 FIA Formula 1 Spanish Grand Prix — Race",
+    "evidence_summary": "La crónica oficial FIA ubica explícitamente a Leclerc entrando al pit lane en la vuelta 27 tras una falla de potencia."
+  },
+  {
+    "event_id": "2022-09-22-IN-47",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_pit_stop_summary_confirms_stop",
+    "source_url": "https://www.fia.com/sites/default/files/2022_09_can_f1_r0_timing_racepitstopsummary_v01.pdf",
+    "source_title": "2022 FIA Formula 1 Canadian Grand Prix — Race Pit Stop Summary",
+    "evidence_summary": "La fila FIA registra la parada de Tsunoda en la vuelta 47; su evento FastF1 tiene PitInTime en la vuelta 47 y no encontró PitOutTime emparejado."
+  },
+  {
+    "event_id": "2023-04-24-IN-36",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_04_aze_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 FIA Formula 1 Azerbaijan Grand Prix — Race Lap Analysis",
+    "evidence_summary": "El documento de análisis por vuelta de FIA marca P en la vuelta 36 de Zhou."
+  },
+  {
+    "event_id": "2023-22-55-IN-57",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_23_uae_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 FIA Formula 1 Abu Dhabi Grand Prix — Race Lap Analysis",
+    "evidence_summary": "La marca P del análisis FIA en v57 y la clasificación final con DNF tras 57 vueltas corroboran el PitInTime terminal."
+  },
+  {
+    "event_id": "2022-15-22-IN-43",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_pit_stop_summary_confirms_stop",
+    "source_url": "https://www.fia.com/events/fia-formula-one-world-championship/season-2022/dutch-grand-prix/race-classification",
+    "source_title": "2022 Dutch Grand Prix — FIA Race Classification / Pit Stop Summary",
+    "evidence_summary": "El resumen de paradas FIA registra una segunda parada de Tsunoda en la vuelta 42. El informe oficial de F1 confirma que, tras detenerse en pista, volvió al pit lane, el equipo ajustó sus cinturones y salió de nuevo antes del retiro. La fila PitInTime de FastF1 está asignada a la vuelta 43; se conserva esa vuelta de la matriz y se documenta la diferencia de conteo FIA/FastF1. No se infieren compuestos ni condición nuevo/usado."
+  },
+  {
+    "event_id": "2023-16-11-IN-15",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_17_jpn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Japanese Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 11 en la vuelta 15; confirma una visita a pit lane en la vuelta candidata. El documento no reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-16-18-IN-20",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_17_jpn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Japanese Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 18 en la vuelta 20; confirma una visita a pit lane en la vuelta candidata. El documento no reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-16-2-IN-22",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_17_jpn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Japanese Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 2 en la vuelta 22; confirma una visita a pit lane en la vuelta candidata. El documento no reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-16-23-IN-26",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_17_jpn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Japanese Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 23 en la vuelta 26; confirma una visita a pit lane en la vuelta candidata. El documento no reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-16-77-IN-7",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_17_jpn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Japanese Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 77 en la vuelta 7; confirma una visita a pit lane en la vuelta candidata. El documento no reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-20-24-IN-22",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_21_bra_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 São Paulo Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial FIA marca P para el coche 24 en la vuelta 22; confirma una visita a pit lane en la vuelta candidata. No reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-20-63-IN-57",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_21_bra_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 São Paulo Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial FIA marca P para el coche 63 en la vuelta 57; confirma una visita a pit lane en la vuelta candidata. No reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2023-20-77-IN-39",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_21_bra_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 São Paulo Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial FIA marca P para el coche 77 en la vuelta 39; confirma una visita a pit lane en la vuelta candidata. No reporta compuesto ni estado nuevo/usado."
+  },
+  {
+    "event_id": "2022-06-24-IN-28",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_06_esp_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Spanish Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis oficial de vueltas de FIA marca P para el coche 24 en la vuelta 28, confirmando visita a pit lane. No informa compuesto ni nuevo/usado."
+  },
+  {
+    "event_id": "2022-10-10-IN-26",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_10_gbr_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 British Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis oficial de vueltas de FIA marca P para el coche 10 en la vuelta 26, confirmando visita a pit lane. No informa compuesto ni nuevo/usado."
+  },
+  {
+    "event_id": "2022-10-77-IN-20",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_10_gbr_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 British Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis oficial de vueltas de FIA marca P para el coche 77 en la vuelta 20, confirmando visita a pit lane. No informa compuesto ni nuevo/usado."
+  },
+  {
+    "event_id": "2022-16-14-IN-31",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_16_ita_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Italian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis oficial de vueltas de FIA marca P para el coche 14 en la vuelta 31, confirmando visita a pit lane. No informa compuesto ni nuevo/usado."
+  },
+  {
+    "event_id": "2022-16-18-IN-39",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_16_ita_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Italian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis oficial de vueltas de FIA marca P para el coche 18 en la vuelta 39, confirmando visita a pit lane. No informa compuesto ni nuevo/usado."
+  },
+  {
+    "event_id": "2022-08-18-IN-46",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_08_aze_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Azerbaijan Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis FIA marca P para el coche 18 en la vuelta 46, confirmando visita. Sin información de compuestos."
+  },
+  {
+    "event_id": "2022-08-24-IN-23",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "official_report_confirms_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_08_aze_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Azerbaijan Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El informe oficial de Formula 1 declara que Zhou entró a boxes durante la vuelta 24 para retirar el coche. FastF1 registra el PitInTime en la vuelta 23 y la FIA lo clasifica con 23 vueltas completadas; se conserva la vuelta de la matriz y se anota la diferencia. El informe no precisa el servicio ni el compuesto."
+  },
+  {
+    "event_id": "2023-01-81-IN-13",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_01_brn_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Bahrain Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El análisis FIA registra la vuelta de entrada al pit lane; el informe oficial de F1 indica que Piastri fue llamado al pit lane en la vuelta 13 y se retiró allí por un fallo de caja/eléctrico. Visita confirmada; sin inferir neumáticos."
+  },
+  {
+    "event_id": "2022-11-11-IN-24",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_11_aut_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Austrian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 11 en la vuelta 24. Visita al pit lane confirmada; el documento no identifica el servicio ni compuestos."
+  },
+  {
+    "event_id": "2022-11-6-IN-48",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_11_aut_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Austrian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis oficial de FIA marca P para el coche 6 en la vuelta 48. Visita al pit lane confirmada; el documento no identifica el servicio ni compuestos."
+  },
+  {
+    "event_id": "2022-17-23-IN-25",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_17_sgp_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Singapore Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Alexander Albon, coche 23, en la vuelta 25. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-17-6-IN-7",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_17_sgp_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Singapore Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Nicholas Latifi, coche 6, en la vuelta 7. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-22-14-IN-27",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_22_uae_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Abu Dhabi Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Fernando Alonso, coche 14, en la vuelta 27. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-22-44-IN-55",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_22_uae_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Abu Dhabi Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Lewis Hamilton, coche 44, en la vuelta 55. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-22-6-IN-55",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_22_uae_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Abu Dhabi Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Nicholas Latifi, coche 6, en la vuelta 55. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-11-2-IN-67",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_12_hun_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Hungarian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Logan Sargeant, coche 2, en la vuelta 67. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-11-31-IN-2",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_12_hun_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Hungarian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Esteban Ocon, coche 31, en la vuelta 2. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-17-2-IN-40",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_18_qat_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Qatar Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Logan Sargeant, coche 2, en la vuelta 40. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-20-22-IN-50",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_20_mex_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Mexican Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para el coche 22 en la vuelta 50. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-10-10-IN-46",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_11_gbr_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 British Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Pierre Gasly, coche 10, en la vuelta 46. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-10-31-IN-9",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_11_gbr_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 British Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Esteban Ocon, coche 31, en la vuelta 9. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-11-10-IN-1",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_12_hun_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Hungarian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Pierre Gasly, coche 10, en la vuelta 1. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-12-55-IN-23",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_13_bel_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Belgian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Carlos Sainz, coche 55, en la vuelta 23. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-13-16-IN-41",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_14_ned_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Dutch Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Charles Leclerc, coche 16, en la vuelta 41. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-14-31-IN-39",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_15_ita_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Italian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Esteban Ocon, coche 31, en la vuelta 39. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-18-14-IN-49",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_19_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 United States Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Fernando Alonso, coche 14, en la vuelta 49. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-18-31-IN-6",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_19_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 United States Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Esteban Ocon, coche 31, en la vuelta 6. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-18-81-IN-10",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_19_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 United States Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Oscar Piastri, coche 81, en la vuelta 10. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-19-11-IN-1",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_20_mex_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Mexico City Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Sergio Pérez, coche 11, en la vuelta 1. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-19-14-IN-47",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_20_mex_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Mexico City Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Fernando Alonso, coche 14, en la vuelta 47. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2023-19-18-IN-66",
+    "event_status": "pit_stop",
+    "evidence_basis": "external_review",
+    "review_status": "verified_pit_stop",
+    "reason": "FIA_race_lap_analysis_marks_pit_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_20_mex_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Mexico City Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "El Race Lap Analysis de la FIA marca P para Lance Stroll, coche 18, en la vuelta 66. Se confirma la visita al pit lane; no se infieren servicio ni compuesto."
+  },
+  {
+    "event_id": "2022-07-20-IN-20",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_07_mon_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Monaco Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "La FIA registra que Magnussen completó hasta la vuelta 19; el informe de carrera de F1 informa que se retiró por una falla mecánica. RacingNews365 reporta que Haas le pidió regresar al pit lane. El cruce de fuentes respalda la visita; no se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2023-02-23-IN-27",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2023_02_ksa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2023 Saudi Arabian Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "La clasificación FIA registra el retiro de Albon en la vuelta 27. Grandprix.com informa que el piloto condujo lentamente hasta los boxes con un problema de frenos y se retiró allí. El cruce confirma la entrada al pit lane; no se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2022-05-24-IN-6",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_05_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Miami Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "La clasificación FIA registra el retiro de Zhou tras 6 vueltas; F1 reporta que fue llevado a boxes en la vuelta 7. El cruce respalda la visita a boxes asociada con el PitIn local de la vuelta 6; existe diferencia de convención de una vuelta entre fuentes. No se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2022-05-5-IN-54",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_05_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Miami Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "La FIA clasifica a Vettel como retirado tras la colisión de la vuelta 54; una crónica contemporánea informa que el piloto se dirigió al pit lane tras el choque. Se confirma la visita por cruce de fuentes; no se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2022-07-23-IN-49",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_07_mon_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 Monaco Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "La FIA clasifica a Albon como retirado tras 48 vueltas; el reporte oficial de F1 dice que entró a boxes tarde en la carrera tras su retiro. La entrada registrada localmente en la vuelta 49 concuerda con el cruce de vuelta; no se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2022-19-55-IN-1",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.fia.com/sites/default/files/2022_19_usa_f1_r0_timing_racelapanalysis_v01.pdf",
+    "source_title": "2022 United States Grand Prix — FIA Race Lap Analysis",
+    "evidence_summary": "F1 confirma que Sainz abandonó en la primera vuelta; RaceFans reporta que llegó cojeando al pit lane y se retiró por pérdida de presión de agua. Se confirma la visita; no se infieren servicio ni neumáticos."
+  },
+  {
+    "event_id": "2022-05-10-IN-45",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/video/pierre-gasly-extremely-disappointed-with-end-to-miami-gp.1732296948953501243",
+    "source_title": "Pierre Gasly: extremely disappointed with end to Miami GP — Formula 1",
+    "evidence_summary": "Gasly describe que, cuando regresaba a boxes para retirarse, tuvo el contacto con Norris; el informe de Formula 1 confirma que se retiró unos laps después del choque. Esto corrobora la entrada a boxes registrada por FastF1 en la vuelta del piloto 45."
+  },
+  {
+    "event_id": "2022-05-20-IN-57",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.haasf1team.com/news/miami-grand-prix-race-recap",
+    "source_title": "Miami Grand Prix: Race Recap — Haas F1 Team",
+    "evidence_summary": "El informe de Haas dice que Magnussen entró a boxes en la última vuelta por daños y fue clasificado 16.º. El reporte del equipo corrobora una entrada en boxes; el evento FastF1 está numerado como vuelta 57 del piloto, aunque la carrera tuvo 57 vueltas de líder."
+  },
+  {
+    "event_id": "2022-12-20-IN-38",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.haasf1team.com/news/french-grand-prix-race-recap-2",
+    "source_title": "French Grand Prix: Race Recap — Haas F1 Team",
+    "evidence_summary": "Haas confirma explícitamente que Magnussen entró a boxes al final de la vuelta 38 para retirar el coche tras el contacto con Latifi. La fuente coincide con el evento candidato FastF1 de la vuelta 38."
+  },
+  {
+    "event_id": "2022-12-6-IN-41",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/verstappen-wins-the-2022-french-grand-prix-as-pole-sitter-leclerc-crashes.11eNOAzyvZfPOnRnY3AYuz.11eNOAzyvZfPOnRnY3AYuz",
+    "source_title": "2022 French Grand Prix report — Formula 1",
+    "evidence_summary": "El informe oficial de Formula 1 indica que Latifi siguió a Magnussen a boxes un par de vueltas después del contacto de la vuelta 38. La candidata FastF1 está en la vuelta 41 del piloto; el informe confirma su visita a boxes tras el choque, aunque expresa el lapso relativo y no enumera la vuelta del piloto."
+  },
+  {
+    "event_id": "2023-01-31-IN-41",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/everything-went-wrong-today-says-ocon-after-being-penalised-three-times-and.1Obkye7mOTceYVpzCX9Bp6",
+    "source_title": "2023 Bahrain Grand Prix — Ocon retirement report — Formula 1",
+    "evidence_summary": "Formula 1 afirma explícitamente que Ocon entró al pit lane y fue retirado en la vuelta 43 de carrera. La vuelta candidata 41 corresponde al contador de vueltas completadas por el coche de Ocon, que iba dos vueltas detrás; se confirma la entrada, manteniendo visible la diferencia de convenciones."
+  },
+  {
+    "event_id": "2023-06-20-IN-71",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/magnussen-says-haas-tried-everything-in-monaco-as-hulkenberg-hopes-struggles.6iiHcCX7kdQPYvfJ3IVzwP",
+    "source_title": "Magnussen says Haas tried everything in Monaco — Formula 1",
+    "evidence_summary": "Formula 1 informa que Magnussen regresó a boxes y se unió a Stroll entre los abandonos. La candidata FastF1 de la vuelta 71 del piloto queda respaldada como entrada a boxes; la fuente narrativa no proporciona el contador de vuelta del piloto."
+  },
+  {
+    "event_id": "2023-08-63-IN-54",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/verstappen-wins-canadian-gp-to-claim-red-bulls-100th-victory-and-equal.7A6g45iAe5jqGGUc5k153Y",
+    "source_title": "2023 Canadian Grand Prix report — Formula 1",
+    "evidence_summary": "Formula 1 relata que en la vuelta 55 de carrera Mercedes instruyó a Russell entrar a boxes y retirar el coche. Russell llevaba una vuelta perdida; el evento local está en la vuelta 54 del contador del piloto. La instrucción y la señal FastF1 corroboran la entrada, aunque el texto no especifica el paso por la línea de entrada."
+  },
+  {
+    "event_id": "2023-19-2-IN-71",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.williamsf1.com/articles/47ee7941-cf34-4fef-9d09-d6ecd72f085d/report-2023-mexico-city-grand-prix",
+    "source_title": "Report: Mexico City delivers more points — Williams Racing",
+    "evidence_summary": "Williams confirma que decidió llevar a Sargeant a boxes en la última vuelta en vez de tomar la bandera, para proteger la unidad de potencia. Esto respalda la candidata FastF1 de la vuelta 71 del piloto; el equipo confirma que había completado 71 vueltas antes de esa decisión."
+  },
+  {
+    "event_id": "2022-12-22-IN-18",
+    "event_status": "pit_stop",
+    "evidence_basis": "cross_source_review",
+    "review_status": "verified_pit_entry",
+    "reason": "cross_source_confirms_pit_lane_entry",
+    "source_url": "https://www.formula1.com/en/latest/article/verstappen-wins-the-2022-french-grand-prix-as-pole-sitter-leclerc-crashes.11eNOAzyvZfPOnRnY3AYuz.11eNOAzyvZfPOnRnY3AYuz",
+    "source_title": "2022 French Grand Prix driver ratings — RaceFans; cross-checked with Formula 1 race report",
+    "evidence_summary": "RaceFans states Tsunoda was brought in to retire on lap 18; Formula 1 confirms his early retirement with damage. Together with FastF1 PitIn, these sources support the pit-lane entry at the candidate driver lap. Tyre service/compound is not inferred."
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "artifact_version": "rnn_validation_descriptive_analysis_v1",
+  "test_used": false,
+  "input_hashes": {
+    "bundle_manifest": "d13bf5659a783092adf7fa92035d4ee04c1b2dd81b8fc0ee15b7bb85c9172340",
+    "local_evaluation_manifest": "651228d19fd04cb2a42747128004846b3089c8a6d43d3ff66b81773580c4891c",
+    "events": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516"
+  },
+  "matplotlib_version": "3.10.0",
+  "files_sha256": {
+    "generar_diagnostico_rnn.py": "94586c5be02049c25c82f3858046299b04b342f432fa89461e316bd3aff6b029",
+    "diagnostics.png": "4fac90758c29811140e3be7b55c584b6fff59e056041a910d8c672144aaa3f0e",
+    "summary.json": "2cba9585cd2b2838a103486b753e656dd7a37947ed52d096bff31c5fe9fde086",
+    "metrics_by_named_race.csv": "3e252ad4243c612527027ea3cbd8d1f66cd9e8b31048c0019134896a4f1e6a8f"
+  }
+}

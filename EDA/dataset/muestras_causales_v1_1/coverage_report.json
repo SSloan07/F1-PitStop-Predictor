@@ -1,0 +1,49 @@
+{
+  "samples": 101290,
+  "window_length": 8,
+  "labels_by_status": {
+    "not_published": 53293,
+    "published": 47997
+  },
+  "labels_known": 46178,
+  "positives": 4817,
+  "prediction_eligible": 101137,
+  "prediction_ineligible": 153,
+  "padding_slots": 50131,
+  "missing_nominal_slots": 0,
+  "temporally_unavailable_cells": 1215744,
+  "feature_missing_cells": 284959,
+  "prediction_ineligible_reasons": {
+    "current_lap_generated": 135,
+    "session_aborted_or_unknown;track_red": 15,
+    "session_aborted_or_unknown": 3
+  },
+  "label_reasons": {
+    "no_published_label_for_key": 53293,
+    "incomplete_horizon": 1567,
+    "unresolved_pit_event": 173,
+    "invalid_current_sample": 79
+  },
+  "labels_by_season": {
+    "2022": {
+      "rows": 23577,
+      "published": 22654,
+      "unknown": 923
+    },
+    "2023": {
+      "rows": 24420,
+      "published": 23524,
+      "unknown": 896
+    },
+    "2024": {
+      "rows": 26604,
+      "published": 0,
+      "unknown": 26604
+    },
+    "2025": {
+      "rows": 26689,
+      "published": 0,
+      "unknown": 26689
+    }
+  }
+}

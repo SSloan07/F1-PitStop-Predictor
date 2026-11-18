@@ -1,0 +1,15 @@
+{
+  "artifact_version": "rnn_dropout_local_comparison_v1",
+  "pair_zip_sha256": "96b4af9a62e08ed8472bb0b7c351f54ef81392380cbd59c54760a0c7c9e80f4e",
+  "pair_manifest_sha256": "7470d0993c285d01b39e10185b7f2677ab38aa30e9838fa79ae2e4c8bb29b3c7",
+  "evaluation_manifests_sha256": {
+    "rnn32_reference": "bb69a052906b5390d2a7150a5b84a7e849e37586f264f86aa36d296ca512c3d5",
+    "rnn32_dropout": "2ed446e38c42e77f8766c7bb28b3ea768282485005d273995e749343fe933a4a"
+  },
+  "test_used": false,
+  "files_sha256": {
+    "dropout_comparison.png": "748444c42e7091eba97eb9c8cc738de3294f672ea66914907ff5b1e290889735",
+    "comparison.csv": "a5138296069c89429c95a6c80fee4a1deb69c9fb6fa5ee8f369255e68ba5faf0",
+    "comparison.json": "6d9b86327ae1c727fdc7fe8b150b8e2456284b146784a3eaf7e3b525867ff390"
+  }
+}

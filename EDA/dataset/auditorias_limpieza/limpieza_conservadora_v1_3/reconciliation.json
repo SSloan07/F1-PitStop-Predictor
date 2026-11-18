@@ -1,0 +1,17 @@
+{
+  "input": {
+    "path": "/home/simonsloan/Universidad/Semestre6/DeepLearning/F1-PitStop-Predictor/EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025.pkl",
+    "sha256": "9f8eb3f40d66869778c30d75f0a1ebc45196b8ad03c3a4258cc8f5e335dab65c",
+    "rows": 101290,
+    "columns": 61,
+    "key_null_rows": 0,
+    "duplicate_key_rows": 0
+  },
+  "output_matrix": null,
+  "rows_added": 0,
+  "rows_removed": 0,
+  "columns_added": 0,
+  "columns_removed": 0,
+  "values_changed": 0,
+  "reason": "No value-level transformation is authorized by the current domain decisions."
+}

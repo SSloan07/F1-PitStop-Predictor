@@ -1,0 +1,12 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "torch": "2.14.1+cu130",
+  "numpy": "2.4.6",
+  "pandas": "2.2.3",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "cuda": "13.0",
+  "seed": 42,
+  "deterministic_algorithms": true
+}

@@ -1,0 +1,103 @@
+{
+  "artifact_version": "rnn_lstm_local_comparison_v1",
+  "pair_id": "rnn32_vs_lstm32_f2_v1_seed42",
+  "zip_sha256": "21a3d1c53514e51061c3f6d3d0588e968970c61145b6475d5221bb58e79de27e",
+  "selection_metric": "f2",
+  "selection_beta": 2,
+  "split": "validation_2024",
+  "test_used": false,
+  "changed_factor": {
+    "name": "model.recurrent_cell",
+    "reference": "rnn",
+    "candidate": "lstm",
+    "location": "causal_recurrent_branch"
+  },
+  "comparison_authorized": true,
+  "reference": {
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1696,
+      "fp": 8116,
+      "fn": 619,
+      "tn": 15204,
+      "precision": 0.17284957195271097,
+      "recall": 0.7326133909287257,
+      "f1": 0.27970644017481655,
+      "f2": 0.4446308724832215,
+      "false_positives_per_100_decisions": 31.659840062414666,
+      "average_precision": 0.20157750113335213
+    },
+    "bce": 0.33111390567137433,
+    "threshold": 0.12,
+    "event_metrics": {
+      "confirmed_events": 824,
+      "events_with_evaluable_opportunity": 824,
+      "events_without_evaluable_opportunity": 0,
+      "covered_events": 652,
+      "recall_per_evaluable_event": 0.7912621359223301
+    },
+    "parameter_count": 4121,
+    "best_epoch": 10,
+    "epochs_run": 16,
+    "elapsed_seconds": 91.47082065799998,
+    "parity_passed": true,
+    "max_probability_difference": 5.364418029785156e-07,
+    "threshold_decision_differences": 0
+  },
+  "candidate": {
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1664,
+      "fp": 8099,
+      "fn": 651,
+      "tn": 15221,
+      "precision": 0.170439414114514,
+      "recall": 0.7187904967602592,
+      "f1": 0.2755423083291936,
+      "f2": 0.4373652946433265,
+      "false_positives_per_100_decisions": 31.59352447825239,
+      "average_precision": 0.20888687402638637
+    },
+    "bce": 0.402138140719142,
+    "threshold": 0.08,
+    "event_metrics": {
+      "confirmed_events": 824,
+      "events_with_evaluable_opportunity": 824,
+      "events_without_evaluable_opportunity": 0,
+      "covered_events": 642,
+      "recall_per_evaluable_event": 0.779126213592233
+    },
+    "parameter_count": 12377,
+    "best_epoch": 27,
+    "epochs_run": 30,
+    "elapsed_seconds": 175.71363980800004,
+    "parity_passed": true,
+    "max_probability_difference": 7.450580596923828e-07,
+    "threshold_decision_differences": 0
+  },
+  "delta_candidate_minus_reference": {
+    "f2": -0.007265577839894954,
+    "f1": -0.004164131845622976,
+    "precision": -0.00241015783819698,
+    "recall": -0.013822894168466493,
+    "average_precision": 0.007309372893034238,
+    "bce": 0.07102423504776767,
+    "tp": -32,
+    "fp": -17,
+    "fn": 32,
+    "tn": 17,
+    "false_positives_per_100_decisions": -0.06631558416227534,
+    "covered_events": -10,
+    "event_recall": -0.012135922330097082,
+    "parameter_count": 8256,
+    "elapsed_seconds": 84.24281915000006
+  },
+  "source_sha256": {
+    "pair_manifest": "f2cafd85b94cfc7a567390579757d0f0c6517558f1a13ad5d15ca8c638113840",
+    "reference_metrics": "f02f0f1b4f18fbf716ab2e66f8903ed5f0bd8b46e33bea170f2a7e7624812bc2",
+    "candidate_metrics": "c108f5188c0524ec7c4a51e0f7fad4ae715b8c5d0e23737e484c1d4922e5a44f"
+  },
+  "interpretation": "Single-seed development comparison. LSTM improves average precision but not selected-threshold validation F2; 2025 test remains untouched."
+}

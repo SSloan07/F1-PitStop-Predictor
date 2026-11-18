@@ -1,0 +1,16 @@
+{
+  "scope": "Descriptive validation analysis; no model/threshold changes",
+  "selection_metric": "f2",
+  "selected_epoch": 14,
+  "epochs_completed": 20,
+  "threshold_frozen": 0.1,
+  "prevalence": 0.0903062219621611,
+  "always_alert_f2_sanity_control": 0.33170941395615416,
+  "always_alert_f1_sanity_control": 0.16565295169946334,
+  "alert_count": 10734,
+  "false_fraction_of_alerts": 0.8368734861188746,
+  "missed_events": 158,
+  "train_validation_f2_gap": 0.1598280128276135,
+  "train_validation_f1_gap": 0.1386263596841164,
+  "test_used": false
+}

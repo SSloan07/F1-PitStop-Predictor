@@ -1,0 +1,6 @@
+exception_type,column,affected_count,status,treatment
+compound_text_sentinel,Compound,426,domain_decision_pending,preserve literal 'NONE'; do not coerce to null
+compound_text_sentinel,Compound,354,domain_decision_pending,preserve literal 'NAN'; do not coerce to null
+event_field_missing,PitInTime,97821,preserve_as_unrecorded,do not impute; missingness alone does not prove event absence
+event_field_missing,PitOutTime,97823,preserve_as_unrecorded,do not impute; missingness alone does not prove event absence
+fastf1_generated_row,FastF1Generated,135,preserve_audit_only,retain; do not equate automatically with retirement or a complete lap

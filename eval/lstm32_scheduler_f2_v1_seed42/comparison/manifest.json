@@ -1,0 +1,17 @@
+{
+  "artifact_version": "lstm_scheduler_local_comparison_manifest_v1",
+  "source_sha256": {
+    "pair_manifest.json": "6b09113a7aad310648385536c5acf4c5526154e10a0768c33da199be4ab61063",
+    "pair_summary.json": "e4f3e7fc96648948d215ae872abde9df8e17099b7db9c05494d348daada826de",
+    "reference_metrics.json": "984e2edbdef745df2ab8b6a3b3b52a1cece54ee6544d6168f96ce505ab224c79",
+    "scheduler_metrics.json": "984e2edbdef745df2ab8b6a3b3b52a1cece54ee6544d6168f96ce505ab224c79",
+    "comparison.json": "b9a09c735800242d242214c922bf9da51fc6b2d00ebfd7cc83909d0acabbba10",
+    "comparison.csv": "6a2224b2a1fe4d428da082260c97c8aa5b591ab4f2d9928bbe02c5786a656572"
+  },
+  "zip_sha256": "5bc1f86441e2702d51e9d944d921626957f4bb68f3e6f61c3cc463d14b093c69",
+  "test_used": false,
+  "files_sha256": {
+    "comparison.json": "b9a09c735800242d242214c922bf9da51fc6b2d00ebfd7cc83909d0acabbba10",
+    "comparison.csv": "6a2224b2a1fe4d428da082260c97c8aa5b591ab4f2d9928bbe02c5786a656572"
+  }
+}

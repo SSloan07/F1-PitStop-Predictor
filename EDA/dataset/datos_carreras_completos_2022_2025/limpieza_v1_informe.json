@@ -1,0 +1,14 @@
+{
+  "version": "limpieza_v1",
+  "origen": "vueltas_2022_2025_compound_reconstruido.pkl",
+  "sha256_origen": "60e9244ed6e9170c9882a7a487993bbaab90b406415a045d7db82b123ac6fa67",
+  "salida": "vueltas_2022_2025_limpieza_v1.pkl",
+  "sha256_salida": "7a6e60d5efcb53f8ae62bf2a953ec0a4d6b8d23d23e7c7e3a2a9dee0d82ac340",
+  "filas": 101290,
+  "columnas": 61,
+  "compound_marcadores_normalizados": 390,
+  "compound_ausente": 390,
+  "tyrelife_ausente": 989,
+  "saltos_entre_vueltas": 0,
+  "advertencia": "Matriz histórica: no valida etiquetas ni disponibilidad temporal para entrenamiento."
+}
