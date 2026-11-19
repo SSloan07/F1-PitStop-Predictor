@@ -384,8 +384,8 @@ class ReplayStore:
             by_race_driver[key].sort(key=lambda item: (item["decision_seconds"], item["lap"]))
         return rows, by_sample, by_race_driver
 
-    def _load_frozen_lightgbm(self, entry, time_by_sample):
-        """Frozen final LightGBM (modelos/lightgbm_final_v1): validation-2024 predictions only."""
+    def _load_frozen_model(self, entry, time_by_sample):
+        """Frozen model directory (LightGBM final or strategy LSTM): validation-2024 predictions only."""
         directory = ROOT / entry["path"]
         manifest_path = directory / "manifest.json"
         if not manifest_path.is_file() or sha256(manifest_path) != entry["manifest_sha256"]:
@@ -409,12 +409,12 @@ class ReplayStore:
             "f1": float(metrics["f1"]), "f2": float(metrics["f2"]),
             "precision": float(metrics["precision"]), "recall": float(metrics["recall"]),
             "average_precision": float(metrics["average_precision"]),
-            "parameter_count": None, "best_epoch": None,
+            "parameter_count": model.get("parameter_count"), "best_epoch": None,
             "run_id": entry["id"], "artifact_sha256": entry["manifest_sha256"],
             "validation_scope": "2024 · development validation",
             "model_spec": {"algorithm": model["model"], "seeds": seeds,
-                           "boosting_rounds_by_seed": model["boosting_rounds_by_seed"],
-                           "config_name": model["config_name"]},
+                           **{key: model[key] for key in ("boosting_rounds_by_seed", "config_name", "inputs")
+                              if key in model}},
         }
         self.models[entry["id"]] = {
             "public": public, "predictions": rows, "predictions_by_sample": by_sample,
@@ -422,8 +422,8 @@ class ReplayStore:
         }
 
     def _load_model(self, entry, time_by_sample):
-        if entry.get("kind") == "frozen_lightgbm":
-            return self._load_frozen_lightgbm(entry, time_by_sample)
+        if entry.get("kind") in {"frozen_lightgbm", "frozen_lstm"}:
+            return self._load_frozen_model(entry, time_by_sample)
         zip_path = ROOT / entry["zip"]
         if not zip_path.is_file() or sha256(zip_path) != entry["sha256"]:
             raise RuntimeError(f"Missing or changed model artifact: {entry['zip']}")

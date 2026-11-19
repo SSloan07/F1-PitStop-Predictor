@@ -14,6 +14,16 @@
       "manifest_sha256": "e23908f3b6b0e6a4c077d53d2b2498aa9ee526a81744267ff9db56ea275f5f06"
     },
     {
+      "id": "lstm32_estrategia",
+      "name": "LSTM32 · telemetría + estrategia",
+      "family": "LSTM",
+      "architecture": "LSTM · 32 unidades · 24 variables por vuelta · media de 3 semillas",
+      "objective": "Sin contexto estático · BCE pos_weight 2 · umbral por F2",
+      "kind": "frozen_lstm",
+      "path": "modelos/lstm32_estrategia_v1",
+      "manifest_sha256": "e5921051d48add1565fa62fd2c1912d925d05086bcea382d9c531b46642dd643"
+    },
+    {
       "id": "rnn32_f2",
       "name": "RNN32 · F2",
       "family": "RNN",

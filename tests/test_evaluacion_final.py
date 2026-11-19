@@ -7,6 +7,7 @@ import unittest
 STAGING = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(STAGING / "scripts"))
 import evaluar_modelo_final as final
+import evaluar_lstm_2025 as lstm_final
 
 
 class FinalEvaluationGuardTest(unittest.TestCase):
@@ -22,6 +23,14 @@ class FinalEvaluationGuardTest(unittest.TestCase):
         model, features = final.verify_frozen()
         self.assertEqual(model["threshold"], 0.14)
         self.assertEqual(features["count"], 66)
+
+
+    def test_lstm_comparison_requires_confirmation_and_new_output(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(SystemExit):
+                lstm_final.run(Path(tmp) / "out", confirmed=False)
+            with self.assertRaises(FileExistsError):
+                lstm_final.run(Path(tmp), confirmed=True)
 
 
 if __name__ == "__main__":

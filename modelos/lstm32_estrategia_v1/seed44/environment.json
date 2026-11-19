@@ -1,0 +1,12 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "torch": "2.15.0+cpu",
+  "numpy": "2.5.5",
+  "pandas": "2.3.3",
+  "device": "cpu",
+  "gpu": null,
+  "cuda": null,
+  "seed": 44,
+  "deterministic_algorithms": true
+}

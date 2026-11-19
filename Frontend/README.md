@@ -15,7 +15,7 @@ Abrir `http://127.0.0.1:8765`. El backend valida SHA-256 de la matriz 2024, even
 
 ## Alcance
 
-- Nueve modelos disponibles. El primero del selector es el **modelo final congelado** (`modelos/lightgbm_final_v1/`): LightGBM con 66 variables de telemetría y estrategia, media de 3 semillas y umbral 0,14 (validación 2024: F2 0,540, AP 0,387). Los otros ocho son checkpoints RNN y LSTM, incluidos objetivos F1/F2 y variantes de regularización/pérdida.
+- Diez modelos disponibles. El primero del selector es el **modelo final congelado** (`modelos/lightgbm_final_v1/`): LightGBM con 66 variables de telemetría y estrategia, media de 3 semillas y umbral 0,14 (validación 2024: F2 0,540, AP 0,387). El segundo es la **LSTM32 con telemetría + estrategia** congelada (`modelos/lstm32_estrategia_v1/`, media de 3 semillas, umbral 0,28; validación 2024: F2 0,513, AP 0,343). Los otros ocho son checkpoints RNN y LSTM, incluidos objetivos F1/F2 y variantes de regularización/pérdida.
 - El backend verifica el SHA-256 del manifiesto congelado y de cada fichero que lista antes de servir sus predicciones. El modelo final se evaluó una sola vez en 2025 (F2 0,474; ver `docs/aclaraciones/35_resultado_final_test_2025.md`), pero el replay sigue mostrando solo la validación 2024.
 - Todos exponen predicciones de las mismas 25.635 muestras de validación y 24 carreras de 2024.
 - El mapa anima los autos con coordenadas X/Y y velocidad de las cachés locales FastF1 de 2024; el trazado se deriva de una vuelta registrada. Halo rojo = alerta, ámbar = entrada real al pit lane y verde = detención observada a ≤2 km/h dentro del intervalo PitIn/PitOut. La posición de la tabla sigue siendo la última vuelta cerrada.
