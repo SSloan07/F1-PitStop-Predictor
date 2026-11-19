@@ -1,0 +1,89 @@
+{
+  "model": "lightgbm_mean_of_seeds",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "boosting_rounds_by_seed": [
+    315,
+    306,
+    334
+  ],
+  "params_by_seed": {
+    "42": {
+      "objective": "binary",
+      "learning_rate": 0.01,
+      "num_leaves": 127,
+      "min_child_samples": 100,
+      "feature_fraction": 0.7,
+      "bagging_fraction": 0.6,
+      "bagging_freq": 1,
+      "lambda_l2": 5.0,
+      "verbose": -1,
+      "seed": 42,
+      "deterministic": true,
+      "force_row_wise": true,
+      "num_threads": 4,
+      "min_gain_to_split": 0.5,
+      "max_bin": 63
+    },
+    "43": {
+      "objective": "binary",
+      "learning_rate": 0.01,
+      "num_leaves": 127,
+      "min_child_samples": 100,
+      "feature_fraction": 0.7,
+      "bagging_fraction": 0.6,
+      "bagging_freq": 1,
+      "lambda_l2": 5.0,
+      "verbose": -1,
+      "seed": 43,
+      "deterministic": true,
+      "force_row_wise": true,
+      "num_threads": 4,
+      "min_gain_to_split": 0.5,
+      "max_bin": 63
+    },
+    "44": {
+      "objective": "binary",
+      "learning_rate": 0.01,
+      "num_leaves": 127,
+      "min_child_samples": 100,
+      "feature_fraction": 0.7,
+      "bagging_fraction": 0.6,
+      "bagging_freq": 1,
+      "lambda_l2": 5.0,
+      "verbose": -1,
+      "seed": 44,
+      "deterministic": true,
+      "force_row_wise": true,
+      "num_threads": 4,
+      "min_gain_to_split": 0.5,
+      "max_bin": 63
+    }
+  },
+  "config_name": "random_06",
+  "combination": "mean of seed probabilities",
+  "threshold": 0.14,
+  "threshold_source": "maximize F2 on validation 2024, grid 0.05..0.95, tie: precision then threshold",
+  "train_seasons": [
+    2022,
+    2023
+  ],
+  "validation_season": 2024,
+  "test_season_reserved": 2025,
+  "lightgbm_version": "4.7.0",
+  "validation_2024": {
+    "average_precision": 0.3866848663409667,
+    "f2": 0.5399418066393334,
+    "f1": 0.39941298764828176,
+    "precision": 0.2785738655748891,
+    "recall": 0.7053995680345573,
+    "tp": 1633,
+    "fp": 4229,
+    "fn": 682,
+    "n_samples": 25635,
+    "positives": 2315
+  }
+}
