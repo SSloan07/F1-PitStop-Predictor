@@ -1,0 +1,67 @@
+{
+  "split": "test",
+  "season": 2025,
+  "threshold": 0.14,
+  "primary_f2": 0.4740051137481151,
+  "metrics": {
+    "average_precision": 0.3316684259886362,
+    "f2": 0.4740051137481151,
+    "f1": 0.3413194854242889,
+    "precision": 0.23273780782230807,
+    "recall": 0.6398230088495576,
+    "tp": 1446,
+    "fp": 4767,
+    "fn": 814,
+    "tn": 18714,
+    "n_samples": 25741,
+    "positives": 2260
+  },
+  "event_coverage": {
+    "confirmed_events": 820,
+    "events_with_evaluable_opportunity": 820,
+    "events_without_evaluable_opportunity": 0,
+    "covered_events": 613,
+    "recall_per_evaluable_event": 0.7475609756097561,
+    "by_type": {
+      "verde_stint_normal": {
+        "events": 543,
+        "covered": 450,
+        "coverage": 0.8287292817679558
+      },
+      "sc_vsc_stint_normal": {
+        "events": 196,
+        "covered": 135,
+        "coverage": 0.6887755102040817
+      },
+      "stint_corto": {
+        "events": 81,
+        "covered": 28,
+        "coverage": 0.345679012345679
+      }
+    }
+  },
+  "tolerance_plus3_plus4": {
+    "early_alarms_plus3_plus4": 789,
+    "fp_strict": 4767,
+    "fp_tolerant": 3978,
+    "precision_tolerant": 0.2665929203539823,
+    "recall": 0.6398230088495576,
+    "f2_tolerant": 0.49986172566371684
+  },
+  "false_positives_by_laps_to_next_entry": {
+    "+11 o más": 1483,
+    "+7 a +10": 1042,
+    "sin_parada_posterior": 784,
+    "+5 a +6": 669,
+    "+3": 414,
+    "+4": 375
+  },
+  "per_race_f2": {
+    "min": 0.16176470588235295,
+    "median": 0.48106444383040126,
+    "max": 0.738255033557047
+  },
+  "frozen_manifest_sha256": "e23908f3b6b0e6a4c077d53d2b2498aa9ee526a81744267ff9db56ea275f5f06",
+  "protocol": "docs/specs/22_modelo_final_y_protocolo_test_2025.md",
+  "refit_on_this_split": false
+}

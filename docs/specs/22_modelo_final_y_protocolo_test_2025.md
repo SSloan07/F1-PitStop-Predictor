@@ -1,6 +1,6 @@
 # Modelo final congelado y protocolo de evaluación en 2025
 
-**Estado:** modelo congelado; **2025 todavía no se ha cargado ni evaluado.** Este documento fija, antes de mirar 2025, qué se evalúa y cómo se reporta. Cualquier cambio posterior a este documento invalida la evaluación como prueba independiente y debe declararse.
+**Estado:** modelo congelado y **evaluado una sola vez en 2025** (2026-11-19): F2 0,474, AP 0,332, precisión 23,3 %, recall 64,0 %. Resultados completos en [el informe final](../aclaraciones/35_resultado_final_test_2025.md). Este documento se escribió y se commiteó antes de esa evaluación; no se modificó después, salvo esta línea de estado.
 
 ## 1. Modelo congelado
 
