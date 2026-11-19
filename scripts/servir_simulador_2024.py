@@ -358,7 +358,72 @@ class ReplayStore:
             cached = pickle.load(stream)
         return cached.get("data", cached) if isinstance(cached, dict) else cached
 
+    def _prediction_rows(self, entry, predictions, threshold, time_by_sample):
+        if not predictions.Temporada.eq(2024).all() or predictions.sample_id.duplicated().any():
+            raise RuntimeError(f"Invalid validation prediction population: {entry['id']}")
+        if len(predictions) != 25635:
+            raise RuntimeError(f"Unexpected validation row count for {entry['id']}: {len(predictions)}")
+        rows, by_sample, by_race_driver = [], {}, {}
+        for row in predictions[["sample_id", "Ronda", "DriverNumber", "prediction_lap", "probability"]].to_dict("records"):
+            sample_id = int(row["sample_id"])
+            if sample_id not in time_by_sample:
+                raise RuntimeError(f"No causal timestamp for sample {sample_id}")
+            item = {
+                "sample_id": sample_id,
+                "round": int(row["Ronda"]),
+                "driver": clean_driver(row["DriverNumber"]),
+                "lap": int(row["prediction_lap"]),
+                "decision_seconds": float(time_by_sample[sample_id]),
+                "probability": float(row["probability"]),
+                "alert": float(row["probability"]) >= threshold,
+            }
+            rows.append(item)
+            by_sample[sample_id] = item
+            by_race_driver.setdefault((item["round"], item["driver"]), []).append(item)
+        for key in by_race_driver:
+            by_race_driver[key].sort(key=lambda item: (item["decision_seconds"], item["lap"]))
+        return rows, by_sample, by_race_driver
+
+    def _load_frozen_model(self, entry, time_by_sample):
+        """Frozen model directory (LightGBM final or strategy LSTM): validation-2024 predictions only."""
+        directory = ROOT / entry["path"]
+        manifest_path = directory / "manifest.json"
+        if not manifest_path.is_file() or sha256(manifest_path) != entry["manifest_sha256"]:
+            raise RuntimeError(f"Missing or changed frozen model manifest: {entry['path']}")
+        manifest = json.loads(manifest_path.read_text())
+        if manifest.get("test_2025_loaded") is not False:
+            raise RuntimeError(f"Frozen model manifest does not certify a clean validation: {entry['id']}")
+        for name, digest in manifest["files_sha256"].items():
+            if sha256(directory / name) != digest:
+                raise RuntimeError(f"Frozen model file hash mismatch: {entry['id']}/{name}")
+        model = json.loads((directory / "model.json").read_text())
+        threshold = float(model["threshold"])
+        predictions = pd.read_csv(directory / "validation_predictions.csv.gz", dtype={"DriverNumber": str})
+        rows, by_sample, by_race_driver = self._prediction_rows(entry, predictions, threshold, time_by_sample)
+        metrics = model["validation_2024"]
+        seeds = model["seeds"]
+        public = {
+            "id": entry["id"], "name": entry["name"], "family": entry["family"],
+            "architecture": entry["architecture"], "objective": entry["objective"],
+            "threshold": threshold, "seed": f"{seeds[0]}–{seeds[-1]}",
+            "f1": float(metrics["f1"]), "f2": float(metrics["f2"]),
+            "precision": float(metrics["precision"]), "recall": float(metrics["recall"]),
+            "average_precision": float(metrics["average_precision"]),
+            "parameter_count": model.get("parameter_count"), "best_epoch": None,
+            "run_id": entry["id"], "artifact_sha256": entry["manifest_sha256"],
+            "validation_scope": "2024 · development validation",
+            "model_spec": {"algorithm": model["model"], "seeds": seeds,
+                           **{key: model[key] for key in ("boosting_rounds_by_seed", "config_name", "inputs")
+                              if key in model}},
+        }
+        self.models[entry["id"]] = {
+            "public": public, "predictions": rows, "predictions_by_sample": by_sample,
+            "by_race_driver": by_race_driver, "events_cache": {},
+        }
+
     def _load_model(self, entry, time_by_sample):
+        if entry.get("kind") in {"frozen_lightgbm", "frozen_lstm"}:
+            return self._load_frozen_model(entry, time_by_sample)
         zip_path = ROOT / entry["zip"]
         if not zip_path.is_file() or sha256(zip_path) != entry["sha256"]:
             raise RuntimeError(f"Missing or changed model artifact: {entry['zip']}")
@@ -384,31 +449,7 @@ class ReplayStore:
             selected_metrics = selected.get("metrics", selected)
             threshold = float(json.loads(archive.read(f"{child}/threshold.json"))["threshold"])
             predictions = pd.read_csv(BytesIO(archive.read(f"{child}/validation_predictions.csv.gz")), compression="gzip", dtype={"DriverNumber": str})
-            if not predictions.Temporada.eq(2024).all() or predictions.sample_id.duplicated().any():
-                raise RuntimeError(f"Invalid validation prediction population: {entry['id']}")
-            if len(predictions) != 25635:
-                raise RuntimeError(f"Unexpected validation row count for {entry['id']}: {len(predictions)}")
-            rows = []
-            by_sample = {}
-            by_race_driver = {}
-            for row in predictions[["sample_id", "Ronda", "DriverNumber", "prediction_lap", "probability", "alert"]].to_dict("records"):
-                sample_id = int(row["sample_id"])
-                if sample_id not in time_by_sample:
-                    raise RuntimeError(f"No causal timestamp for sample {sample_id}")
-                item = {
-                    "sample_id": sample_id,
-                    "round": int(row["Ronda"]),
-                    "driver": clean_driver(row["DriverNumber"]),
-                    "lap": int(row["prediction_lap"]),
-                    "decision_seconds": float(time_by_sample[sample_id]),
-                    "probability": float(row["probability"]),
-                    "alert": float(row["probability"]) >= threshold,
-                }
-                rows.append(item)
-                by_sample[sample_id] = item
-                by_race_driver.setdefault((item["round"], item["driver"]), []).append(item)
-            for key in by_race_driver:
-                by_race_driver[key].sort(key=lambda item: (item["decision_seconds"], item["lap"]))
+            rows, by_sample, by_race_driver = self._prediction_rows(entry, predictions, threshold, time_by_sample)
             model_spec = json.loads(archive.read(f"{child}/model_spec.json"))
             public = {
                 "id": entry["id"], "name": entry["name"], "family": entry["family"],

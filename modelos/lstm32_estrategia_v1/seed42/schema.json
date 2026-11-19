@@ -1,0 +1,73 @@
+{
+  "categorical_feature_names": [
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "feature_contract_version": "causal_sample_contract_v1",
+  "mask_codes": {
+    "0": "present",
+    "1": "padding",
+    "2": "nominal_lap_row_missing",
+    "3": "temporally_unavailable",
+    "4": "feature_missing",
+    "5": "source_event_unavailable"
+  },
+  "mask_feature_order": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_Rainfall",
+    "tyre_life_vs_typical_stint",
+    "laps_since_last_stop",
+    "pace_vs_stint_best",
+    "field_pit_entries_last2laps",
+    "laps_remaining",
+    "gap_ahead_s",
+    "race_fraction",
+    "stops_done",
+    "two_dry_compounds_used",
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "numeric_feature_names": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_Rainfall",
+    "tyre_life_vs_typical_stint",
+    "laps_since_last_stop",
+    "pace_vs_stint_best",
+    "field_pit_entries_last2laps",
+    "laps_remaining",
+    "gap_ahead_s",
+    "race_fraction",
+    "stops_done",
+    "two_dry_compounds_used"
+  ],
+  "static_feature_names": [
+    "SinContextoEstatico"
+  ],
+  "window_length": 8
+}

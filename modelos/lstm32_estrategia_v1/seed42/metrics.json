@@ -1,0 +1,74 @@
+{
+  "split": "validation",
+  "selection_epoch": 15,
+  "selection_metric": "f2",
+  "selection_beta": 2,
+  "checkpoint_selection": "maximum validation F2 at fixed threshold 0.5; tie lower validation BCE",
+  "validation_loss_selected_checkpoint": 0.39246524571209873,
+  "fixed_threshold_0_5": {
+    "n_samples": 25635,
+    "positives": 2315,
+    "tp": 1281,
+    "fp": 3386,
+    "fn": 1034,
+    "tn": 19934,
+    "precision": 0.27448039425755305,
+    "recall": 0.5533477321814255,
+    "f1": 0.366943569177886,
+    "f2": 0.45989803977884686,
+    "false_positives_per_100_decisions": 13.208503998439634,
+    "average_precision": 0.28603358018551783
+  },
+  "selected_threshold": {
+    "threshold": 0.27,
+    "metrics": {
+      "n_samples": 25635,
+      "positives": 2315,
+      "tp": 1552,
+      "fp": 5315,
+      "fn": 763,
+      "tn": 18005,
+      "precision": 0.22600844619193244,
+      "recall": 0.6704103671706263,
+      "f1": 0.3380527118274886,
+      "f2": 0.4811806287592237,
+      "false_positives_per_100_decisions": 20.733372342500488,
+      "average_precision": 0.28603358018551783
+    },
+    "selection_rule": "maximize_f2_then_precision_then_threshold",
+    "metric": "f2",
+    "beta": 2
+  },
+  "train_selected_checkpoint": {
+    "bce": 0.1980050414920726,
+    "fixed_threshold_0_5": {
+      "n_samples": 46162,
+      "positives": 4803,
+      "tp": 3752,
+      "fp": 2891,
+      "fn": 1051,
+      "tn": 38468,
+      "precision": 0.5648050579557429,
+      "recall": 0.7811784301478243,
+      "f1": 0.6556002096802377,
+      "f2": 0.7255849932314833,
+      "false_positives_per_100_decisions": 6.262726918244444,
+      "average_precision": 0.7181627505918279
+    },
+    "validation_selected_threshold": {
+      "n_samples": 46162,
+      "positives": 4803,
+      "tp": 4241,
+      "fp": 5701,
+      "fn": 562,
+      "tn": 35658,
+      "precision": 0.4265741299537316,
+      "recall": 0.8829897980428899,
+      "f1": 0.5752458460495083,
+      "f2": 0.7273444467311518,
+      "false_positives_per_100_decisions": 12.349984836012304,
+      "average_precision": 0.7181627505918279
+    }
+  },
+  "warning": "Validation was used for checkpoint and threshold selection; final test remains reserved"
+}

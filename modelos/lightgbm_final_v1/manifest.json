@@ -1,0 +1,27 @@
+{
+  "artifact_version": "frozen_lightgbm_final_v1",
+  "inputs_sha256": {
+    "preprocessed_manifest": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "tuning_metrics": "c36ff63d893cd21f3dd9389989b017057dc901e6ffa9e0d2a92649058e99981a"
+  },
+  "sources_sha256": {
+    "src/f1_pitstop/strategy_features.py": "f009e4b8915d04545bb579c6bf16996f51d36a6c277947e05e2ae947fe58df04",
+    "src/f1_pitstop/strategy_features_r2.py": "20bd2ab31a60b4afadd5c85820783f06efb3215e1ee3de7ccba23ffe82dc4c2a",
+    "src/f1_pitstop/strategy_features_r3.py": "9498da8649a8ec671aa9b019e8025ae5f221e24c249a4a882a341771c590c1e6",
+    "scripts/diagnostico_gbm.py": "568f3d550d48b4e054b9551fcc218ad26c310b7d1bb03a02e73be14ab81e3bb1",
+    "scripts/diagnostico_gbm_ronda2.py": "716aad9906ba314ef5b123947bef17897f188cc6e28790a0330691919471ed47",
+    "scripts/ajuste_gbm.py": "ec9c63aead1b2611051930c6818184432200c1f0cf7b8a6c71110b55c2f24aca",
+    "scripts/congelar_modelo_final.py": "e11e7f00edb0b061b4f484e7fdbc6158645d028bd43d7412626b9840bf425e72"
+  },
+  "files_sha256": {
+    "features.json": "6f896d5fe8f01c66a8d7f170d0fc5b42d7c3a69f5e0dc11404ec437ceedc83a1",
+    "lightgbm_seed42.txt": "35b3eb1c7f37aa0a167820fd64a8704d96c7b099b055e6e97e695853bdb5ec91",
+    "lightgbm_seed43.txt": "e3541888df9414e1964766b28e78c036e328625a2b733af918d1a599c3baf1ce",
+    "lightgbm_seed44.txt": "3c0106b03b9340cafc9a123e733a4665c0f3ede01ae0606e105043dcc445ea41",
+    "model.json": "c7f4b7d7234124ae55e8308eb19d96c771b662775401a23df7a4d77e6323f943",
+    "validation_predictions.csv.gz": "0e3aeba21fb4afa0bf29b0b8f2aa6f90e097eb0a38891366ede5e1ad4caa171f"
+  },
+  "test_2025_loaded": false
+}

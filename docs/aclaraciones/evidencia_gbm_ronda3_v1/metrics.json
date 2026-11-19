@@ -1,0 +1,117 @@
+{
+  "protocol": {
+    "selection_split": "train 2022-2023 only, 5-fold GroupKFold by race, inner 20% race early stopping",
+    "selection_rule": "mean fold ΔAP > 0.002 and positive in >= 4/5 folds",
+    "confirmation_split": "validation 2024, used once for this round",
+    "test_2025_loaded": false,
+    "base": "telemetry + round-1 + round-2 strategy (61 features)",
+    "lightgbm_params": {
+      "objective": "binary",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "min_child_samples": 50,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 1.0,
+      "verbose": -1,
+      "seed": 42,
+      "deterministic": true,
+      "force_row_wise": true,
+      "num_threads": 4
+    },
+    "lightgbm_version": "4.7.0"
+  },
+  "train_priors": {
+    "long_stint_p90": {
+      "HARD": 42.0,
+      "MEDIUM": 31.0,
+      "SOFT": 26.0
+    },
+    "races_with_stop_counts": 44
+  },
+  "cv": {
+    "base_r1_r2": {
+      "fold_ap": [
+        0.37352282015331884,
+        0.42220216883464645,
+        0.4544740077236576,
+        0.25600983432025787,
+        0.26533423938490597
+      ],
+      "oof_ap": 0.3432615636001166,
+      "oof_f2": 0.5075343093804444,
+      "oof_threshold": 0.11
+    },
+    "base_r1_r2+paradas": {
+      "fold_ap": [
+        0.38068323673935167,
+        0.4490705609556433,
+        0.4267722057242573,
+        0.2831385877157631,
+        0.26982826769891605
+      ],
+      "oof_ap": 0.35758515637023225,
+      "oof_f2": 0.5089325927037982,
+      "oof_threshold": 0.1
+    }
+  },
+  "decision": {
+    "mean_delta_ap": 0.007589957683428938,
+    "folds_positive": 4,
+    "per_fold": [
+      0.007160416586032836,
+      0.026868392120996842,
+      -0.02770180199940031,
+      0.027128753395505245,
+      0.004494028314010079
+    ],
+    "adopted": true
+  },
+  "confirmation_2024": {
+    "base_r1_r2": {
+      "n_features": 61,
+      "boosting_rounds": 112,
+      "threshold": 0.15,
+      "average_precision": 0.36930163588285525,
+      "f2": 0.5343922466011576,
+      "f1": 0.40136484266397066,
+      "precision": 0.28367274026438016,
+      "recall": 0.6859611231101512,
+      "tp": 1588,
+      "fp": 4010,
+      "fn": 727,
+      "false_positives_by_laps_to_next_entry": {
+        "+11 o más": 1004,
+        "+7 a +10": 813,
+        "sin_parada_posterior": 761,
+        "+5 a +6": 625,
+        "+3": 421,
+        "+4": 386
+      },
+      "pure_false_alarms": 1765
+    },
+    "base_r1_r2+paradas": {
+      "n_features": 66,
+      "boosting_rounds": 117,
+      "threshold": 0.14,
+      "average_precision": 0.3782794437135518,
+      "f2": 0.5327284510693454,
+      "f1": 0.38750736593989393,
+      "precision": 0.26645056726094,
+      "recall": 0.7101511879049676,
+      "tp": 1644,
+      "fp": 4526,
+      "fn": 671,
+      "false_positives_by_laps_to_next_entry": {
+        "+11 o más": 1197,
+        "+7 a +10": 943,
+        "sin_parada_posterior": 836,
+        "+5 a +6": 681,
+        "+3": 456,
+        "+4": 413
+      },
+      "pure_false_alarms": 2033
+    }
+  }
+}

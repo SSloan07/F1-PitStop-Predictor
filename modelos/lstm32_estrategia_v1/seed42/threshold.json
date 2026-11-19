@@ -1,0 +1,20 @@
+{
+  "threshold": 0.27,
+  "metrics": {
+    "n_samples": 25635,
+    "positives": 2315,
+    "tp": 1552,
+    "fp": 5315,
+    "fn": 763,
+    "tn": 18005,
+    "precision": 0.22600844619193244,
+    "recall": 0.6704103671706263,
+    "f1": 0.3380527118274886,
+    "f2": 0.4811806287592237,
+    "false_positives_per_100_decisions": 20.733372342500488,
+    "average_precision": 0.28603358018551783
+  },
+  "selection_rule": "maximize_f2_then_precision_then_threshold",
+  "metric": "f2",
+  "beta": 2
+}

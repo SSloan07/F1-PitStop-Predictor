@@ -100,6 +100,9 @@ def _selection_protocol(config):
         "rnn_hidden16_f2_v1": ("f2", 2),
         "lstm32_f2_pos_weight_v1": ("f2", 2),
         "lstm32_depth_f2_v1": ("f2", 2),
+        "lstm32_telemetria_f2_v1": ("f2", 2),
+        "lstm32_estrategia_f2_v1": ("f2", 2),
+        "lstm32_estrategia_r2_f2_v1": ("f2", 2),
     }
     experiment_id = config.get("experiment_id")
     if experiment_id not in protocols:

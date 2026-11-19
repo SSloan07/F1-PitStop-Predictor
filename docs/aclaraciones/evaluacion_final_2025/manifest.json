@@ -1,0 +1,17 @@
+{
+  "artifact_version": "final_model_evaluation_v1",
+  "split": "test",
+  "inputs_sha256": {
+    "frozen_manifest": "e23908f3b6b0e6a4c077d53d2b2498aa9ee526a81744267ff9db56ea275f5f06",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "events": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+    "script": "79bd612201cc2c658dfb1674016a71470f799237bc52017124756c5050331196"
+  },
+  "files_sha256": {
+    "eventos.csv": "95f085423877c11985bb2fb8e1f321b2c535e1069602224482f8ba56fe7dd67a",
+    "metrics.json": "edc7ed8a18a2ade750e22ad5eea0355bfadc1e9804625704ae5acaad9a1a8903",
+    "por_carrera.csv": "289004dcf8fbc5a465685246fd6bb04bb0d3490425d54a17c1322efbac63ec6e",
+    "predicciones.csv.gz": "7c910459491e6f2649c09b014fca1d4b45fab76de7684ea625fb446adfa7ea64"
+  }
+}

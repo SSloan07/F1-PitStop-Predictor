@@ -1,0 +1,303 @@
+{
+  "protocol": {
+    "train": [
+      2022,
+      2023
+    ],
+    "validation": [
+      2024
+    ],
+    "test_2025_loaded": false,
+    "rounds_selection": "median best iteration of 5-fold GroupKFold by race on train (AP early stopping)",
+    "threshold_selection": "F2 on validation grid 0.05..0.95, same rule as LSTM",
+    "lightgbm_params": {
+      "objective": "binary",
+      "learning_rate": 0.03,
+      "num_leaves": 31,
+      "min_child_samples": 50,
+      "feature_fraction": 0.8,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 1.0,
+      "verbose": -1,
+      "seed": 42,
+      "deterministic": true,
+      "force_row_wise": true,
+      "num_threads": 4
+    },
+    "lightgbm_version": "4.7.0"
+  },
+  "train_eligible": 46162,
+  "validation_eligible": 25635,
+  "validation_positive_rate": 0.0903062219621611,
+  "stint_median_train": {
+    "HARD": 21.5,
+    "MEDIUM": 17.0,
+    "SOFT": 14.0
+  },
+  "variants": {
+    "equivalente_lstm": {
+      "n_features": 49,
+      "boosting_rounds": 191,
+      "cv_fold_rounds": [
+        211,
+        25,
+        120,
+        191,
+        220
+      ],
+      "validation_selected_threshold": {
+        "threshold": 0.11,
+        "metrics": {
+          "n_samples": 25635,
+          "positives": 2315,
+          "tp": 1621,
+          "fp": 6807,
+          "fn": 694,
+          "tn": 16513,
+          "precision": 0.19233507356430946,
+          "recall": 0.7002159827213823,
+          "f1": 0.3017779018896025,
+          "f2": 0.45822026232473995,
+          "false_positives_per_100_decisions": 26.55354008191925,
+          "average_precision": 0.22844079761944722
+        },
+        "selection_rule": "maximize_f2_then_precision_then_threshold"
+      },
+      "validation_average_precision": 0.22844079761944722,
+      "train_average_precision": 0.7578032792323294
+    },
+    "telemetria": {
+      "n_features": 32,
+      "boosting_rounds": 383,
+      "cv_fold_rounds": [
+        201,
+        304,
+        620,
+        533,
+        383
+      ],
+      "validation_selected_threshold": {
+        "threshold": 0.11,
+        "metrics": {
+          "n_samples": 25635,
+          "positives": 2315,
+          "tp": 1580,
+          "fp": 5700,
+          "fn": 735,
+          "tn": 17620,
+          "precision": 0.21703296703296704,
+          "recall": 0.6825053995680346,
+          "f1": 0.3293381969775925,
+          "f2": 0.47762998790810157,
+          "false_positives_per_100_decisions": 22.235225277940316,
+          "average_precision": 0.2691067838876083
+        },
+        "selection_rule": "maximize_f2_then_precision_then_threshold"
+      },
+      "validation_average_precision": 0.2691067838876083,
+      "train_average_precision": 0.8070063973815813
+    },
+    "telemetria_estrategia": {
+      "n_features": 48,
+      "boosting_rounds": 73,
+      "cv_fold_rounds": [
+        73,
+        275,
+        105,
+        70,
+        71
+      ],
+      "validation_selected_threshold": {
+        "threshold": 0.11,
+        "metrics": {
+          "n_samples": 25635,
+          "positives": 2315,
+          "tp": 1773,
+          "fp": 6456,
+          "fn": 542,
+          "tn": 16864,
+          "precision": 0.2154575282537368,
+          "recall": 0.7658747300215982,
+          "f1": 0.3363050075872534,
+          "f2": 0.5068900451712505,
+          "false_positives_per_100_decisions": 25.184318314803978,
+          "average_precision": 0.3332585517735181
+        },
+        "selection_rule": "maximize_f2_then_precision_then_threshold"
+      },
+      "validation_average_precision": 0.3332585517735181,
+      "train_average_precision": 0.6405939562609069,
+      "group_permutation_ap_drop": {
+        "progreso_carrera": 0.07774765714347774,
+        "neumatico_y_stint": 0.2178250000593209,
+        "ritmo": 0.03025898794665675,
+        "posicion_y_rivales": 0.053337531122644756,
+        "telemetria_coche": 0.023694349890062028,
+        "clima": 0.0023533741949092746,
+        "estado_pista": -0.001244270488181043
+      },
+      "by_track_phase_at_decision": {
+        "GREEN": {
+          "samples": 24648,
+          "positives": 2152,
+          "n_samples": 24648,
+          "tp": 1702,
+          "fp": 6286,
+          "fn": 450,
+          "tn": 16210,
+          "precision": 0.2130696044066099,
+          "recall": 0.7908921933085502,
+          "f1": 0.3357001972386588,
+          "f2": 0.5127741624487828,
+          "false_positives_per_100_decisions": 25.50308341447582,
+          "average_precision": 0.3381724214617805
+        },
+        "NO_GREEN": {
+          "samples": 987,
+          "positives": 163,
+          "n_samples": 987,
+          "tp": 71,
+          "fp": 170,
+          "fn": 92,
+          "tn": 654,
+          "precision": 0.2946058091286307,
+          "recall": 0.43558282208588955,
+          "f1": 0.35148514851485146,
+          "f2": 0.3975363941769317,
+          "false_positives_per_100_decisions": 17.223910840932117,
+          "average_precision": 0.3022927345193194
+        }
+      },
+      "validation_positive_rate_by_value": {
+        "stops_done": [
+          {
+            "stops_done": 0,
+            "count": 8404,
+            "mean": 0.15349833412660638
+          },
+          {
+            "stops_done": 1,
+            "count": 11062,
+            "mean": 0.0715060567709275
+          },
+          {
+            "stops_done": 2,
+            "count": 5056,
+            "mean": 0.03698575949367089
+          },
+          {
+            "stops_done": 3,
+            "count": 1113,
+            "mean": 0.042228212039532795
+          }
+        ],
+        "two_dry_compounds_used": [
+          {
+            "two_dry_compounds_used": 0.0,
+            "count": 11002,
+            "mean": 0.14306489729140157
+          },
+          {
+            "two_dry_compounds_used": 1.0,
+            "count": 14633,
+            "mean": 0.05063896671905966
+          }
+        ],
+        "field_pit_entries_last2laps": [
+          {
+            "field_pit_entries_last2laps": 0,
+            "count": 14231,
+            "mean": 0.06282060290914201
+          },
+          {
+            "field_pit_entries_last2laps": 1,
+            "count": 5454,
+            "mean": 0.09882654932159883
+          },
+          {
+            "field_pit_entries_last2laps": 2,
+            "count": 2511,
+            "mean": 0.13142174432497014
+          },
+          {
+            "field_pit_entries_last2laps": 3,
+            "count": 3439,
+            "mean": 0.16051177667926722
+          }
+        ],
+        "ahead_pitted_last2laps": [
+          {
+            "ahead_pitted_last2laps": 0.0,
+            "count": 22439,
+            "mean": 0.08601096305539463
+          },
+          {
+            "ahead_pitted_last2laps": 1.0,
+            "count": 1359,
+            "mean": 0.13980868285504047
+          }
+        ]
+      }
+    },
+    "todo": {
+      "n_features": 65,
+      "boosting_rounds": 141,
+      "cv_fold_rounds": [
+        75,
+        141,
+        159,
+        339,
+        49
+      ],
+      "validation_selected_threshold": {
+        "threshold": 0.21,
+        "metrics": {
+          "n_samples": 25635,
+          "positives": 2315,
+          "tp": 1465,
+          "fp": 3658,
+          "fn": 850,
+          "tn": 19662,
+          "precision": 0.28596525473355455,
+          "recall": 0.6328293736501079,
+          "f1": 0.39392309760688354,
+          "f2": 0.5092817910032678,
+          "false_positives_per_100_decisions": 14.269553345036083,
+          "average_precision": 0.3408728006759688
+        },
+        "selection_rule": "maximize_f2_then_precision_then_threshold"
+      },
+      "validation_average_precision": 0.3408728006759688,
+      "train_average_precision": 0.7736753490339157,
+      "group_permutation_ap_drop": {
+        "progreso_carrera": 0.07846119981382986,
+        "neumatico_y_stint": 0.2227023450170275,
+        "ritmo": 0.0027639177825545627,
+        "posicion_y_rivales": 0.03862156940373279,
+        "telemetria_coche": 0.017468301060411657,
+        "clima": 0.02128047153307,
+        "estado_pista": 0.002675728035535415,
+        "contexto_estatico": 0.05953350573371199
+      }
+    }
+  },
+  "strategy_features": [
+    "race_fraction",
+    "laps_remaining",
+    "stops_done",
+    "laps_since_last_stop",
+    "dry_compounds_used",
+    "two_dry_compounds_used",
+    "used_wet_tyres",
+    "field_pit_entries_last2laps",
+    "field_share_stopped",
+    "gap_ahead_s",
+    "ahead_pitted_last2laps",
+    "gap_behind_s",
+    "behind_pitted_last2laps",
+    "tyre_life_vs_typical_stint",
+    "pace_vs_stint_best",
+    "pace_slope_last5"
+  ]
+}

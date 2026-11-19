@@ -1,0 +1,289 @@
+{
+  "models": {
+    "gbm_media_3": {
+      "threshold": 0.15,
+      "strict": {
+        "f2": 0.5353052149306023,
+        "precision": 0.2846649946255822,
+        "recall": 0.6863930885529158,
+        "fp": 3993,
+        "fn": 726
+      },
+      "false_positives": {
+        "total": 3993,
+        "by_laps_to_next_entry": {
+          "+3": 431,
+          "+4": 376,
+          "+5 a +6": 615,
+          "+7 a +10": 804,
+          "+11 o más": 1030,
+          "sin_parada_posterior": 737
+        },
+        "share_plus3_plus4": 0.2021036814425244,
+        "share_within_plus6": 0.35612321562734783,
+        "within_2_laps_after_own_stop": 131,
+        "next_entry_unknown_status": 14
+      },
+      "tolerance_plus2_laps": {
+        "early_alarms_plus3_plus4": 807,
+        "fp_strict": 3993,
+        "fp_tolerant": 3186,
+        "precision_tolerant": 0.33277486910994764,
+        "recall": 0.6863930885529158,
+        "f2_tolerant": 0.5660847880299252
+      },
+      "events": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 640,
+        "recall_per_evaluable_event": 0.7766990291262136,
+        "by_situation": {
+          "bajo_sc_vsc": {
+            "events": 171,
+            "covered": 111,
+            "coverage": 0.6491228070175439
+          },
+          "en_verde": {
+            "events": 653,
+            "covered": 529,
+            "coverage": 0.8101071975497703
+          },
+          "primera_parada": {
+            "events": 457,
+            "covered": 380,
+            "coverage": 0.8315098468271335
+          },
+          "parada_intermedia": {
+            "events": 92,
+            "covered": 59,
+            "coverage": 0.6413043478260869
+          },
+          "ultima_parada_de_varias": {
+            "events": 275,
+            "covered": 201,
+            "coverage": 0.730909090909091
+          },
+          "parada_temprana_stint_menor_50pct": {
+            "events": 136,
+            "covered": 53,
+            "coverage": 0.3897058823529412
+          },
+          "stint_normal_o_largo": {
+            "events": 688,
+            "covered": 587,
+            "coverage": 0.8531976744186046
+          }
+        },
+        "maximum_lead_laps_of_covered": {
+          "0": 71,
+          "1": 64,
+          "2": 505
+        }
+      },
+      "worst_races_by_f2": [
+        {
+          "GranPremio": "Saudi Arabian Grand Prix",
+          "f2": 0.15988372093023256,
+          "recall": 0.19298245614035087,
+          "covered_events": 5,
+          "events": 19
+        },
+        {
+          "GranPremio": "Monaco Grand Prix",
+          "f2": 0.2391304347826087,
+          "recall": 0.2972972972972973,
+          "covered_events": 10,
+          "events": 23
+        },
+        {
+          "GranPremio": "Qatar Grand Prix",
+          "f2": 0.31776913099870296,
+          "recall": 0.4224137931034483,
+          "covered_events": 41,
+          "events": 60
+        },
+        {
+          "GranPremio": "Emilia Romagna Grand Prix",
+          "f2": 0.35714285714285715,
+          "recall": 0.5949367088607594,
+          "covered_events": 17,
+          "events": 27
+        }
+      ],
+      "best_races_by_f2": [
+        {
+          "GranPremio": "Bahrain Grand Prix",
+          "f2": 0.7856191744340879,
+          "recall": 0.9291338582677166,
+          "covered_events": 42,
+          "events": 43
+        },
+        {
+          "GranPremio": "Australian Grand Prix",
+          "f2": 0.7348242811501597,
+          "recall": 0.8518518518518519,
+          "covered_events": 34,
+          "events": 36
+        },
+        {
+          "GranPremio": "Spanish Grand Prix",
+          "f2": 0.7177914110429447,
+          "recall": 0.9285714285714286,
+          "covered_events": 41,
+          "events": 42
+        },
+        {
+          "GranPremio": "São Paulo Grand Prix",
+          "f2": 0.7102272727272727,
+          "recall": 0.7894736842105263,
+          "covered_events": 32,
+          "events": 34
+        }
+      ]
+    },
+    "ensamble_50_50": {
+      "threshold": 0.2,
+      "strict": {
+        "f2": 0.529393468118196,
+        "precision": 0.24974321349963316,
+        "recall": 0.7352051835853132,
+        "fp": 5113,
+        "fn": 613
+      },
+      "false_positives": {
+        "total": 5113,
+        "by_laps_to_next_entry": {
+          "+3": 461,
+          "+4": 422,
+          "+5 a +6": 714,
+          "+7 a +10": 1003,
+          "+11 o más": 1387,
+          "sin_parada_posterior": 1126
+        },
+        "share_plus3_plus4": 0.17269704674359476,
+        "share_within_plus6": 0.31234109133581067,
+        "within_2_laps_after_own_stop": 218,
+        "next_entry_unknown_status": 17
+      },
+      "tolerance_plus2_laps": {
+        "early_alarms_plus3_plus4": 883,
+        "fp_strict": 5113,
+        "fp_tolerant": 4230,
+        "precision_tolerant": 0.2869184086311531,
+        "recall": 0.7352051835853132,
+        "f2_tolerant": 0.560163243812533
+      },
+      "events": {
+        "confirmed_events": 824,
+        "events_with_evaluable_opportunity": 824,
+        "events_without_evaluable_opportunity": 0,
+        "covered_events": 672,
+        "recall_per_evaluable_event": 0.8155339805825242,
+        "by_situation": {
+          "bajo_sc_vsc": {
+            "events": 171,
+            "covered": 129,
+            "coverage": 0.7543859649122807
+          },
+          "en_verde": {
+            "events": 653,
+            "covered": 543,
+            "coverage": 0.8315467075038285
+          },
+          "primera_parada": {
+            "events": 457,
+            "covered": 406,
+            "coverage": 0.888402625820569
+          },
+          "parada_intermedia": {
+            "events": 92,
+            "covered": 63,
+            "coverage": 0.6847826086956522
+          },
+          "ultima_parada_de_varias": {
+            "events": 275,
+            "covered": 203,
+            "coverage": 0.7381818181818182
+          },
+          "parada_temprana_stint_menor_50pct": {
+            "events": 136,
+            "covered": 68,
+            "coverage": 0.5
+          },
+          "stint_normal_o_largo": {
+            "events": 688,
+            "covered": 604,
+            "coverage": 0.877906976744186
+          }
+        },
+        "maximum_lead_laps_of_covered": {
+          "0": 65,
+          "1": 56,
+          "2": 551
+        }
+      },
+      "worst_races_by_f2": [
+        {
+          "GranPremio": "Monaco Grand Prix",
+          "f2": 0.17523364485981308,
+          "recall": 0.40540540540540543,
+          "covered_events": 11,
+          "events": 23
+        },
+        {
+          "GranPremio": "Saudi Arabian Grand Prix",
+          "f2": 0.2840909090909091,
+          "recall": 0.3508771929824561,
+          "covered_events": 12,
+          "events": 19
+        },
+        {
+          "GranPremio": "Qatar Grand Prix",
+          "f2": 0.33672172808132145,
+          "recall": 0.45689655172413796,
+          "covered_events": 45,
+          "events": 60
+        },
+        {
+          "GranPremio": "Canadian Grand Prix",
+          "f2": 0.4,
+          "recall": 0.5873015873015873,
+          "covered_events": 29,
+          "events": 42
+        }
+      ],
+      "best_races_by_f2": [
+        {
+          "GranPremio": "Bahrain Grand Prix",
+          "f2": 0.773955773955774,
+          "recall": 0.9921259842519685,
+          "covered_events": 43,
+          "events": 43
+        },
+        {
+          "GranPremio": "Australian Grand Prix",
+          "f2": 0.7179930795847751,
+          "recall": 0.7685185185185185,
+          "covered_events": 33,
+          "events": 36
+        },
+        {
+          "GranPremio": "Spanish Grand Prix",
+          "f2": 0.7046979865771812,
+          "recall": 1.0,
+          "covered_events": 42,
+          "events": 42
+        },
+        {
+          "GranPremio": "Belgian Grand Prix",
+          "f2": 0.6672297297297297,
+          "recall": 0.7745098039215687,
+          "covered_events": 31,
+          "events": 34
+        }
+      ]
+    }
+  },
+  "note": "Frozen validation-2024 predictions and thresholds; no retraining or re-selection."
+}

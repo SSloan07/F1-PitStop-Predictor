@@ -1,0 +1,17 @@
+{
+  "artifact_version": "final_model_evaluation_v1",
+  "split": "validation",
+  "inputs_sha256": {
+    "frozen_manifest": "e23908f3b6b0e6a4c077d53d2b2498aa9ee526a81744267ff9db56ea275f5f06",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "events": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+    "script": "79bd612201cc2c658dfb1674016a71470f799237bc52017124756c5050331196"
+  },
+  "files_sha256": {
+    "eventos.csv": "8b276aa355aa51319e118efa17509c121714242f6af2c5a014ccb7a6906eac70",
+    "metrics.json": "34bc145b0e4f9b4ef9736e4d471a5fad08751ae94c84bcc64b41613e24cfa2e4",
+    "por_carrera.csv": "91405f3f7c2f89f8410a64b02756036524fa384d79db9e4d098d4cf96216c3a9",
+    "predicciones.csv.gz": "42898828ae48a4fe593aff02e9adc5b143e82a42e3312748eb0a2293dac4a873"
+  }
+}

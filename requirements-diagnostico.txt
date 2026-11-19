@@ -1,0 +1,5 @@
+# Diagnóstico con gradient boosting (scripts/diagnostico_gbm.py). CPU, sin GPU.
+numpy>=1.26,<3
+pandas>=2.2,<3
+lightgbm>=4.5,<5
+scikit-learn>=1.5,<2

@@ -1,0 +1,123 @@
+{
+  "artifact_version": "preprocessed_causal_inputs_v1",
+  "derivation_version": "strategy_feature_extension_v1",
+  "derived_from": {
+    "package": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_v1",
+    "manifest_sha256": "300126e6e6c5bc943990b64cc1985a8616ea2250e525629257f63f30de534417",
+    "fit_state_sha256": "51bf5ed278a848943648a609b87e0e05a080376ef5532d9811d858499f460faa"
+  },
+  "fit_state_sha256": "b8c98d61e40843a6f81eb756243b40da26f029c72bbc15e0e249d4db0862157e",
+  "fit_split": "train",
+  "fit_eligibility": "supervised_eligible",
+  "split_membership": {
+    "test_final_reserved": 26689,
+    "train": 47997,
+    "validation": 26604
+  },
+  "source_hashes": {
+    "config": "57c8c5285ee6cf22592ce8d4b2dd013957fab03c47cd10abd4c86a9fa606acd9",
+    "preprocessing_script": "ce6b4f04ad4771dc9f45ca452e6f702cf8114d1190d1c1d9d7b6360fe992f94e",
+    "preprocessing_module": "cc67e6716bbe5f2eb865950d012102f5f3a5d281adc3c74ae84106f7a8d45cb2",
+    "contract_document": "7a31f996eb3b8a8b7628dbf57c23e9c9d8d5eccaeb6662044455ff2f63352bbe",
+    "feature_manifest": "5ab4c618b0bab9d5fe15b8ce83c7e7c12bde6d80860d36661ba5193c9148001a",
+    "partition_manifest": "6d9b1cafdfc199e1ee2144d303c443b7006d100fe133ef07387a4b1280413c1f",
+    "labels_manifest": "1b82917a9cc5d8f5be8441cceebcf05e0f582e2b45ab85985c9ae9a9f9955a6e",
+    "feature_arrays": "6dfa2de84e2a119f3185d3ee2930d1acb7fdd6f00f1d0041f302f2545c9b8659",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "static_features": "86392fd8d8a3e14d81e170df5bf2f3f398a4a58a157d43f358bb917070a059bb",
+    "partition_table": "7382329a9ea38d9513c9809cd8ca9d63af8d063a982d79185f0967feba647726",
+    "aligned_labels": "a7afb1e4bde75671f7aa4230d5be0932f924e31273634806efd748333612ea55",
+    "derivation_config": "1b978a169ff906f61f1f7df41075b3c77476f2d67405146d4057b84f40050ecb",
+    "derivation_script": "e53ed4e4f2cc94f842a8917ea5bc1e820c07f90ec4c88af2116d5af5fcf03fcf",
+    "strategy_config": "3a6f69d9f6e15b53864f0f492d6089821e6e83f695936b382ad4b6cedbfb861a",
+    "strategy_script": "72593cd5a242774b07d39d20de64f9cb0a20f8d51900898344ef49233de55aa5",
+    "strategy_module": "f009e4b8915d04545bb579c6bf16996f51d36a6c277947e05e2ae947fe58df04",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0"
+  },
+  "feature_order": {
+    "window_length": 8,
+    "numeric_feature_names": [
+      "LapNumber",
+      "TyreLife_last_eligible",
+      "LapTime",
+      "Sector1Time",
+      "Sector2Time",
+      "Sector3Time",
+      "Position",
+      "Telemetry_Speed_mean",
+      "Telemetry_Speed_max",
+      "Telemetry_RPM_mean",
+      "Telemetry_RPM_max",
+      "Telemetry_Throttle_valid_mean",
+      "Telemetry_Throttle_valid_max",
+      "Telemetry_Brake_mean",
+      "Weather_Rainfall",
+      "tyre_life_vs_typical_stint",
+      "laps_since_last_stop",
+      "pace_vs_stint_best",
+      "field_pit_entries_last2laps",
+      "laps_remaining",
+      "gap_ahead_s",
+      "race_fraction",
+      "stops_done",
+      "two_dry_compounds_used"
+    ],
+    "categorical_feature_names": [
+      "Compound_asof",
+      "track_phase_asof"
+    ],
+    "static_feature_names": [
+      "SinContextoEstatico"
+    ],
+    "mask_codes": {
+      "0": "present",
+      "1": "padding",
+      "2": "nominal_lap_row_missing",
+      "3": "temporally_unavailable",
+      "4": "feature_missing",
+      "5": "source_event_unavailable"
+    },
+    "mask_feature_order": [
+      "LapNumber",
+      "TyreLife_last_eligible",
+      "LapTime",
+      "Sector1Time",
+      "Sector2Time",
+      "Sector3Time",
+      "Position",
+      "Telemetry_Speed_mean",
+      "Telemetry_Speed_max",
+      "Telemetry_RPM_mean",
+      "Telemetry_RPM_max",
+      "Telemetry_Throttle_valid_mean",
+      "Telemetry_Throttle_valid_max",
+      "Telemetry_Brake_mean",
+      "Weather_Rainfall",
+      "tyre_life_vs_typical_stint",
+      "laps_since_last_stop",
+      "pace_vs_stint_best",
+      "field_pit_entries_last2laps",
+      "laps_remaining",
+      "gap_ahead_s",
+      "race_fraction",
+      "stops_done",
+      "two_dry_compounds_used",
+      "Compound_asof",
+      "track_phase_asof"
+    ],
+    "feature_contract_version": "causal_sample_contract_v1"
+  },
+  "test_features_transformed": false,
+  "test_label_values_used": false,
+  "output_files_sha256": {
+    "preprocessor.json": "257f59e85104dd01287cc4e9b1b52d01288117180bda0e1f11d2019e39fd66b3",
+    "report.json": "a4cc370fdd17f1f02030c6122c8c797af18740d8abb008d843d8dcfbfd4a44f0",
+    "config.json": "3a6f69d9f6e15b53864f0f492d6089821e6e83f695936b382ad4b6cedbfb861a",
+    "train_inputs.npz": "c06a621bf6bc1233decc6dcf722a70c2450a86d7a06f27a6ae960b95fe58af67",
+    "train_metadata.csv.gz": "4e7ae769c099f2a9063ea9037e1e815dc007a3d0f1f4c5f39b0fa307b8031ffd",
+    "train_labels.csv.gz": "17183acfb1df92fdf3cc734781ce6956fb737f8a07780ef1e15e0dfa7f538dc6",
+    "validation_inputs.npz": "5335c16b42a950474cf95745ab45a9af420429dc06ff14f322b3bda14c28da46",
+    "validation_metadata.csv.gz": "c8785b84e2549f9f5f4ccabe98603d3d397cae8cc4ebfc0be4d5524df4f64eb8",
+    "validation_labels.csv.gz": "fa5e97efb2fec8a383b8003aef5623f018c07bd2b69d053f0ad7211eb847b4b1"
+  }
+}

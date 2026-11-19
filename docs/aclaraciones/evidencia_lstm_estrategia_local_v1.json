@@ -1,0 +1,177 @@
+{
+  "status": "local_preliminary",
+  "environment_note": "Local Linux CPU, Python 3.12, PyTorch CPU wheel; not the official Colab run",
+  "test_used": false,
+  "seeds": {
+    "42": {
+      "reference": {
+        "best_epoch": 14,
+        "threshold": 0.21,
+        "parameter_count": 10189,
+        "validation_selected_threshold": {
+          "f2": 0.4588482031515701,
+          "f1": 0.3027016920631953,
+          "average_precision": 0.2115856718456256,
+          "precision": 0.1931519923645908,
+          "recall": 0.6993520518358531,
+          "tp": 1619,
+          "fp": 6763,
+          "fn": 696
+        },
+        "covered_events": 614,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "candidate": {
+        "best_epoch": 15,
+        "threshold": 0.27,
+        "parameter_count": 12493,
+        "validation_selected_threshold": {
+          "f2": 0.4811806287592237,
+          "f1": 0.3380527118274886,
+          "average_precision": 0.28603358018551783,
+          "precision": 0.22600844619193244,
+          "recall": 0.6704103671706263,
+          "tp": 1552,
+          "fp": 5315,
+          "fn": 763
+        },
+        "covered_events": 618,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "delta": {
+        "f2": 0.022332425607653583,
+        "f1": 0.03535101976429328,
+        "average_precision": 0.07444790833989223,
+        "precision": 0.03285645382734165,
+        "recall": -0.02894168466522684,
+        "tp": -67,
+        "fp": -1448,
+        "fn": 67,
+        "covered_events": 4
+      }
+    },
+    "43": {
+      "reference": {
+        "best_epoch": 22,
+        "threshold": 0.14,
+        "parameter_count": 10189,
+        "validation_selected_threshold": {
+          "f2": 0.46565262753280984,
+          "f1": 0.30108290431386475,
+          "average_precision": 0.2080459009119552,
+          "precision": 0.18947603619707296,
+          "recall": 0.7326133909287257,
+          "tp": 1696,
+          "fp": 7255,
+          "fn": 619
+        },
+        "covered_events": 663,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "candidate": {
+        "best_epoch": 5,
+        "threshold": 0.26,
+        "parameter_count": 12493,
+        "validation_selected_threshold": {
+          "f2": 0.5183686176836861,
+          "f1": 0.3653318705430609,
+          "average_precision": 0.32397540669412667,
+          "precision": 0.24485294117647058,
+          "recall": 0.7192224622030238,
+          "tp": 1665,
+          "fp": 5135,
+          "fn": 650
+        },
+        "covered_events": 654,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "delta": {
+        "f2": 0.0527159901508763,
+        "f1": 0.06424896622919612,
+        "average_precision": 0.11592950578217145,
+        "precision": 0.05537690497939762,
+        "recall": -0.013390928725701912,
+        "tp": -31,
+        "fp": -2120,
+        "fn": 31,
+        "covered_events": -9
+      }
+    },
+    "44": {
+      "reference": {
+        "best_epoch": 13,
+        "threshold": 0.19,
+        "parameter_count": 10189,
+        "validation_selected_threshold": {
+          "f2": 0.45183741648106907,
+          "f1": 0.2946890603722197,
+          "average_precision": 0.20905584953326703,
+          "precision": 0.18655172413793103,
+          "recall": 0.7010799136069115,
+          "tp": 1623,
+          "fp": 7077,
+          "fn": 692
+        },
+        "covered_events": 637,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "candidate": {
+        "best_epoch": 6,
+        "threshold": 0.23,
+        "parameter_count": 12493,
+        "validation_selected_threshold": {
+          "f2": 0.5089107636878337,
+          "f1": 0.36799255640846706,
+          "average_precision": 0.3295195473920982,
+          "precision": 0.2517905459175553,
+          "recall": 0.6833693304535637,
+          "tp": 1582,
+          "fp": 4701,
+          "fn": 733
+        },
+        "covered_events": 638,
+        "evaluable_events": 824,
+        "parity_passed": true
+      },
+      "delta": {
+        "f2": 0.05707334720676466,
+        "f1": 0.07330349603624736,
+        "average_precision": 0.12046369785883118,
+        "precision": 0.06523882177962426,
+        "recall": -0.017710583153347725,
+        "tp": -41,
+        "fp": -2376,
+        "fn": 41,
+        "covered_events": 1
+      }
+    }
+  },
+  "mean": {
+    "reference": {
+      "f2": 0.45877941572181635,
+      "f1": 0.29949121891642655,
+      "average_precision": 0.20956247409694928,
+      "precision": 0.18972658423319824,
+      "recall": 0.7110151187904967
+    },
+    "candidate": {
+      "f2": 0.5028200033769145,
+      "f1": 0.3571257129263388,
+      "average_precision": 0.3131761780905809,
+      "precision": 0.2408839777619861,
+      "recall": 0.6910007199424046
+    },
+    "delta": {
+      "f2": 0.04404058765509811,
+      "f1": 0.057634494009912274,
+      "average_precision": 0.10361370399363162,
+      "precision": 0.05115739352878787,
+      "recall": -0.020014398848092085
+    }
+  }
+}

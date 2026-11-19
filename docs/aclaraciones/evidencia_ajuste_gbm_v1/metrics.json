@@ -1,0 +1,156 @@
+{
+  "protocol": {
+    "features": "telemetry + strategy rounds 1-3 (66)",
+    "grid": {
+      "num_leaves": [
+        7,
+        15,
+        31,
+        63,
+        127
+      ],
+      "min_child_samples": [
+        20,
+        50,
+        100,
+        200,
+        400
+      ],
+      "learning_rate": [
+        0.01,
+        0.02,
+        0.03,
+        0.05
+      ],
+      "feature_fraction": [
+        0.5,
+        0.7,
+        0.8,
+        1.0
+      ],
+      "bagging_fraction": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "lambda_l2": [
+        0.0,
+        1.0,
+        5.0,
+        20.0
+      ],
+      "min_gain_to_split": [
+        0.0,
+        0.1,
+        0.5
+      ],
+      "max_bin": [
+        63,
+        255
+      ]
+    },
+    "random_configs": 30,
+    "search_seed": 2026,
+    "selection": "mean out-of-fold AP over 5 race-grouped train folds (inner 20% race early stopping)",
+    "adoption_rule": "best beats default by > 0.002 mean fold AP and in >= 4/5 folds",
+    "confirmation": "validation 2024, mean of seeds 42-44, used once",
+    "test_2025_loaded": false,
+    "lightgbm_version": "4.7.0"
+  },
+  "default_params": {
+    "objective": "binary",
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "min_child_samples": 50,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 1.0,
+    "verbose": -1,
+    "seed": 42,
+    "deterministic": true,
+    "force_row_wise": true,
+    "num_threads": 4
+  },
+  "decision": {
+    "best": "random_06",
+    "mean_delta_ap_vs_default": 0.011944143419858777,
+    "folds_positive": 5,
+    "per_fold": [
+      0.003983997388952332,
+      0.011324515805808344,
+      0.017268016317596946,
+      0.02290583607461638,
+      0.004238351512319882
+    ],
+    "adopted": true
+  },
+  "confirmation_2024": {
+    "default": {
+      "config": {
+        "name": "default",
+        "num_leaves": 31,
+        "min_child_samples": 50,
+        "learning_rate": 0.03,
+        "feature_fraction": 0.8,
+        "bagging_fraction": 0.8,
+        "lambda_l2": 1.0,
+        "mean_fold_ap": 0.36047668604041627,
+        "oof_ap": 0.35342770813235114
+      },
+      "boosting_rounds_by_seed": [
+        117,
+        96,
+        168
+      ],
+      "threshold": 0.15,
+      "average_precision": 0.3859467861438174,
+      "f2": 0.5351989799342326,
+      "f1": 0.4009552538964304,
+      "precision": 0.2827512852331147,
+      "recall": 0.6889848812095032,
+      "tp": 1595,
+      "fp": 4046,
+      "fn": 720,
+      "single_seed_ap": [
+        0.3782794437135518,
+        0.37872513916377465,
+        0.38744994817527784
+      ]
+    },
+    "ajustado": {
+      "config": {
+        "name": "random_06",
+        "num_leaves": 127,
+        "min_child_samples": 100,
+        "learning_rate": 0.01,
+        "feature_fraction": 0.7,
+        "bagging_fraction": 0.6,
+        "lambda_l2": 5.0,
+        "min_gain_to_split": 0.5,
+        "max_bin": 63,
+        "mean_fold_ap": 0.37242082946027505,
+        "oof_ap": 0.36822751580979807
+      },
+      "boosting_rounds_by_seed": [
+        315,
+        306,
+        334
+      ],
+      "threshold": 0.14,
+      "average_precision": 0.3866848663409667,
+      "f2": 0.5399418066393334,
+      "f1": 0.39941298764828176,
+      "precision": 0.2785738655748891,
+      "recall": 0.7053995680345573,
+      "tp": 1633,
+      "fp": 4229,
+      "fn": 682,
+      "single_seed_ap": [
+        0.3883724640412556,
+        0.3811583900095913,
+        0.38667604301870107
+      ]
+    }
+  }
+}

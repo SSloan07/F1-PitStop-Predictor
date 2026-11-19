@@ -1,0 +1,29 @@
+{
+  "derivation_id": "entradas_estrategia_r2_v1",
+  "question": "Does the causal LSTM improve when the round-1 strategy inputs also carry the full round-2 strategy block (teammate, pit window, undercut, safety car, rain, field tyre freshness, tyre-to-finish)?",
+  "source_package": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_estrategia_v1",
+  "source_manifest_sha256": "abfb19153b2c0833a614691131ebdf0d748155754bff4447a45a627dccb6fdcb",
+  "output_dir": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_estrategia_r2_v1",
+  "laps": "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_normalizado_v1/vueltas_2022_2025_compound_normalizado.pkl",
+  "laps_sha256": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+  "sample_index": "EDA/dataset/muestras_causales_v1_3/sample_index.csv.gz",
+  "sample_index_sha256": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+  "cache": "EDA/dataset/cache_fastf1_carreras",
+  "strategy_round": 2,
+  "strategy_features": [
+    "laps_short_to_finish",
+    "teammate_pitted_last2laps",
+    "teammate_stops_minus_own",
+    "pit_loss_est_s",
+    "free_stop_margin_s",
+    "cars_within_pit_loss_behind",
+    "nearest_behind_pitted_last2laps",
+    "behind_faster_by_s",
+    "sc_vsc_last_lap",
+    "cheap_stop_index",
+    "rain_on_slicks",
+    "dry_on_wets",
+    "share_field_fresher_tyres"
+  ],
+  "selection_source": "docs/aclaraciones/30_segunda_ronda_variables_estrategia.md: full round-2 block (improved train CV AP in 4/5 folds and validation 2024 AP 0.333 -> 0.369 in LightGBM)"
+}

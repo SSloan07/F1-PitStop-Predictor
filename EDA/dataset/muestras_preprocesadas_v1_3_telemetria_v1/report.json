@@ -1,0 +1,198 @@
+{
+  "splits": {
+    "train": {
+      "samples": 47997,
+      "supervised_eligible": 46162,
+      "positives": 4803,
+      "X_numeric_shape": [
+        47997,
+        8,
+        15
+      ],
+      "X_dynamic_categorical_ids_shape": [
+        47997,
+        8,
+        2
+      ],
+      "X_static_categorical_ids_shape": [
+        47997,
+        1
+      ],
+      "static_ids_unique": [
+        1
+      ]
+    },
+    "validation": {
+      "samples": 26604,
+      "supervised_eligible": 25635,
+      "positives": 2315,
+      "X_numeric_shape": [
+        26604,
+        8,
+        15
+      ],
+      "X_dynamic_categorical_ids_shape": [
+        26604,
+        8,
+        2
+      ],
+      "X_static_categorical_ids_shape": [
+        26604,
+        1
+      ],
+      "static_ids_unique": [
+        1
+      ]
+    }
+  },
+  "source_within_race_variance_share_train": {
+    "LapNumber": {
+      "within_race": 0.9285235733711763,
+      "within_driver_race": 0.9045214161880355,
+      "present_cells": 345500
+    },
+    "TyreLife_last_eligible": {
+      "within_race": 0.9018337733030642,
+      "within_driver_race": 0.8265365584600783,
+      "present_cells": 327675
+    },
+    "LapTime": {
+      "within_race": 0.49898424370880895,
+      "within_driver_race": 0.4940387073310446,
+      "present_cells": 298371
+    },
+    "Sector1Time": {
+      "within_race": 0.4362973126284887,
+      "within_driver_race": 0.43290595850169694,
+      "present_cells": 292782
+    },
+    "Sector2Time": {
+      "within_race": 0.2632381034490277,
+      "within_driver_race": 0.2601451508411258,
+      "present_cells": 299266
+    },
+    "Sector3Time": {
+      "within_race": 0.3545663146747531,
+      "within_driver_race": 0.35155692339237665,
+      "present_cells": 298958
+    },
+    "Position": {
+      "within_race": 0.9905900351857344,
+      "within_driver_race": 0.13986478144071834,
+      "present_cells": 299322
+    },
+    "Telemetry_Speed_mean": {
+      "within_race": 0.44822139085577345,
+      "within_driver_race": 0.42809168475547354,
+      "present_cells": 299322
+    },
+    "Telemetry_Speed_max": {
+      "within_race": 0.5350802149246005,
+      "within_driver_race": 0.4255190274623403,
+      "present_cells": 299322
+    },
+    "Telemetry_RPM_mean": {
+      "within_race": 0.6594484717993342,
+      "within_driver_race": 0.5143553822373497,
+      "present_cells": 299322
+    },
+    "Telemetry_RPM_max": {
+      "within_race": 0.9430657919316977,
+      "within_driver_race": 0.34697403980102826,
+      "present_cells": 299322
+    },
+    "Telemetry_Throttle_valid_mean": {
+      "within_race": 0.5205520638110348,
+      "within_driver_race": 0.481216854379587,
+      "present_cells": 299175
+    },
+    "Telemetry_Throttle_valid_max": {
+      "within_race": 0.9940196103723233,
+      "within_driver_race": 0.8554694157906823,
+      "present_cells": 299175
+    },
+    "Telemetry_Brake_mean": {
+      "within_race": 0.49115815227178766,
+      "within_driver_race": 0.28176181437293407,
+      "present_cells": 299322
+    },
+    "Weather_AirTemp": {
+      "within_race": 0.005765016495566061,
+      "within_driver_race": 0.0056675596520934365,
+      "present_cells": 345500
+    },
+    "Weather_Humidity": {
+      "within_race": 0.017431746211711344,
+      "within_driver_race": 0.01708573768262121,
+      "present_cells": 345500
+    },
+    "Weather_Pressure": {
+      "within_race": 1.4811658450968584e-05,
+      "within_driver_race": 1.4362368041916944e-05,
+      "present_cells": 345500
+    },
+    "Weather_Rainfall": {
+      "within_race": 0.6267970130202154,
+      "within_driver_race": 0.6227676178714158,
+      "present_cells": 345500
+    },
+    "Weather_TrackTemp": {
+      "within_race": 0.043101241674377205,
+      "within_driver_race": 0.04228394929210546,
+      "present_cells": 345500
+    },
+    "Weather_WindDirection_sin": {
+      "within_race": 0.4600592745490838,
+      "within_driver_race": 0.4569777168024892,
+      "present_cells": 345500
+    },
+    "Weather_WindDirection_cos": {
+      "within_race": 0.45643017408939607,
+      "within_driver_race": 0.45352389479865907,
+      "present_cells": 345500
+    },
+    "Weather_WindSpeed": {
+      "within_race": 0.24485735488578625,
+      "within_driver_race": 0.2432216502290181,
+      "present_cells": 345500
+    }
+  },
+  "kept_numeric": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_Rainfall"
+  ],
+  "kept_dynamic_categorical": [
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "removed_numeric": [
+    "Weather_AirTemp",
+    "Weather_Humidity",
+    "Weather_Pressure",
+    "Weather_TrackTemp",
+    "Weather_WindDirection_sin",
+    "Weather_WindDirection_cos",
+    "Weather_WindSpeed"
+  ],
+  "removed_static": [
+    "Driver",
+    "Team",
+    "GranPremio"
+  ],
+  "static_policy": "constant_absent_placeholder",
+  "statistics_refit": false,
+  "test_features_transformed": false
+}

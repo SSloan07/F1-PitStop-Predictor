@@ -1,0 +1,11 @@
+{
+  "artifact_version": "lstm_posthoc_2025_v1",
+  "script": "cc3f946b214ceda0808db8cb9d7bb154bbc6d5e5b58d8d3b57abb962d5caf976",
+  "files_sha256": {
+    "lstm_estrategia_por_carrera_2025.csv": "d4711c0e48f087b96adc85320d41796823c176774bb7417131d982344511417d",
+    "lstm_estrategia_predicciones_2025.csv.gz": "984c3bd8bd6310bb567acb0c7b6fbb01e69c967d33e0dd5e4eecdcc8d8d856c7",
+    "lstm_partida_por_carrera_2025.csv": "33d41210279e81c27cdd4256a67db6e9dccef544cfe04aaf157b92905a434054",
+    "lstm_partida_predicciones_2025.csv.gz": "f06bcf361593a95f2555caebf3e8dc8e96d1e2e201419d3496c51b43514d7068",
+    "metrics.json": "7eef9ae8ac40c55c1b2e44ea264daa94216f52b3e1bb42dad2f16dd7b0f57980"
+  }
+}
