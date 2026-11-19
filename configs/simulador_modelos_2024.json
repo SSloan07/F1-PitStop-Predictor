@@ -4,6 +4,16 @@
   "validation_split": "2024",
   "models": [
     {
+      "id": "lightgbm_final",
+      "name": "LightGBM final · estrategia",
+      "family": "GBM",
+      "architecture": "LightGBM · 66 variables · media de 3 semillas",
+      "objective": "Modelo final congelado · umbral por F2",
+      "kind": "frozen_lightgbm",
+      "path": "modelos/lightgbm_final_v1",
+      "manifest_sha256": "e23908f3b6b0e6a4c077d53d2b2498aa9ee526a81744267ff9db56ea275f5f06"
+    },
+    {
       "id": "rnn32_f2",
       "name": "RNN32 · F2",
       "family": "RNN",
