@@ -1,0 +1,13 @@
+{
+  "artifact_version": "gbm_tuning_v1",
+  "inputs_sha256": {
+    "preprocessed_manifest": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "script": "ec9c63aead1b2611051930c6818184432200c1f0cf7b8a6c71110b55c2f24aca"
+  },
+  "files_sha256": {
+    "busqueda.csv": "9058822972e60e96d15a11967d867b763cc11cf94ed5a3ba4bbd2fdf4315245a",
+    "metrics.json": "c36ff63d893cd21f3dd9389989b017057dc901e6ffa9e0d2a92649058e99981a"
+  }
+}

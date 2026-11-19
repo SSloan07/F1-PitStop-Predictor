@@ -9,6 +9,7 @@ STAGING = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(STAGING / "scripts"))
 from f1_pitstop.strategy_features import strategy_features
 from f1_pitstop.strategy_features_r2 import pit_loss_table, strategy_features_round2
+from f1_pitstop.strategy_features_r3 import strategy_features_round3
 
 
 def _laps(future_pit_for_rival=False, future_pace_noise=0.0):
@@ -70,6 +71,25 @@ class StrategyCausalityTest(unittest.TestCase):
         self.assertAlmostEqual(first.laps_short_to_finish, 13 - (14 - 7))
         self.assertAlmostEqual(first.share_field_fresher_tyres, 0.5)
         self.assertEqual(first.rain_on_slicks, 0.0)
+
+
+    def test_round3_future_rows_do_not_change_features(self):
+        samples = pd.DataFrame({"sample_id": [0, 1], "Temporada": [2024, 2024], "Ronda": [1, 1],
+                                "DriverNumber": ["1", "2"], "prediction_lap": [8, 9],
+                                "decision_time_seconds": [700.0, 801.5]})
+        total = {(2024, 1, "2024-01-01_Test_Grand_Prix"): 20}
+        priors = {(2022, 1): ("Test Grand Prix", [1, 1, 2]), (2023, 1): ("Other Grand Prix", [3, 3])}
+        frames = []
+        for laps in (_laps(), _laps(future_pit_for_rival=True, future_pace_noise=5.0)):
+            laps = laps.assign(Temporada=2024)
+            frames.append(strategy_features_round3(samples, laps, total, priors, {"SOFT": 20.0, "HARD": 30.0}))
+        pd.testing.assert_frame_equal(*frames)
+        first, second = frames[0].iloc[0], frames[0].iloc[1]
+        self.assertEqual(first.circuit_typical_stops, 1.0)  # same Grand Prix prior only
+        self.assertEqual(first.expected_stops_remaining, 1.0)
+        self.assertAlmostEqual(first.stops_vs_field_mean, -0.5)  # rivals: driver 2 stopped once, driver 3 not
+        self.assertAlmostEqual(first.laps_beyond_long_stint, 13 - (20 - 7))
+        self.assertEqual(second.expected_stops_remaining, 0.0)
 
 
 if __name__ == "__main__":

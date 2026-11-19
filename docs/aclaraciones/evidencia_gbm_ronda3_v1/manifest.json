@@ -1,0 +1,15 @@
+{
+  "artifact_version": "gbm_round3_diagnostic_v1",
+  "inputs_sha256": {
+    "preprocessed_manifest": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "events": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+    "script": "36d7367d843b4484d0a61938e992f1d6e741117076df59feef3b420fddfdeda8",
+    "round3_module": "9498da8649a8ec671aa9b019e8025ae5f221e24c249a4a882a341771c590c1e6"
+  },
+  "files_sha256": {
+    "importancia_validacion.csv": "18801f984c74f4fd0675993b3aadfd50a5c85c17649f1f9b3154079643d99cdb",
+    "metrics.json": "f8d0e5e6ddec8644853c69d10e5b6b405619339ac335d33f37f3eb7135e5287c"
+  }
+}

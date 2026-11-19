@@ -1,0 +1,19 @@
+{
+  "artifact_version": "error_analysis_v1",
+  "inputs_sha256": {
+    "predictions": "aac27c97e3f58edfe852872b52d01a6381e4477f3046ad1523ee482a270ef96a",
+    "ensemble_metrics": "b8e4845784982f47a7cdfdcb6d410ca2675e7ad2b7d38bbb79cf772d9e8254f5",
+    "strategy": "2616882ba6036b44f5c73eb08497ddfa70c905e69b8a647914f97cacc58f66a6",
+    "events": "ada92a965c77f8705dfdedca3459b7d9fd6d01313166dfc407ca4951fcb5d516",
+    "laps": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+    "sample_index": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+    "script": "265549990355b5dee8d6c34a2020b5ad253480733a271a92a40a5ef1e5eeb866"
+  },
+  "files_sha256": {
+    "ensamble_50_50_eventos.csv": "5fdb57aabaf7c7e0d04da305fa95a16f70688eaff90c7b9cf28924f35a980a7d",
+    "ensamble_50_50_por_carrera.csv": "5cb4fb4aa9f3dca22a67bb7d459ad785cb4ad67c63203bf732bc37da3c8a7815",
+    "gbm_media_3_eventos.csv": "455d0da3a8db0858a32947c50a5118617446e18ca02755fa0c3c5eed1190b534",
+    "gbm_media_3_por_carrera.csv": "ba4686cd8b6559290dd332fb4db253428caa67d1e5a11015bc4755ad252e7c84",
+    "metrics.json": "ca75a479cdca06320482397893d7cf56606adec22c09abd08fb60d104e41d6f3"
+  }
+}
