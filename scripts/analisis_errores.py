@@ -69,9 +69,9 @@ def bucket(distance):
     return labels
 
 
-def event_context(events, laps, stint_median):
+def event_context(events, laps, stint_median, season=2024):
     """Per-event descriptors: track status on the in-lap, stop order, stint length relative to typical."""
-    laps = laps.loc[laps.Temporada == 2024, ["Ronda", "DriverNumber", "LapNumber", "TrackStatus", "TyreLife",
+    laps = laps.loc[laps.Temporada == season, ["Ronda", "DriverNumber", "LapNumber", "TrackStatus", "TyreLife",
                                              "Compound", "PitInTime"]].copy()
     laps["DriverNumber"] = _driver(laps.DriverNumber)
     laps["LapNumber"] = laps.LapNumber.astype(int)

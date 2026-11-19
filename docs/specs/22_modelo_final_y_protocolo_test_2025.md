@@ -36,10 +36,30 @@ Valores de referencia aprendidos solo de train y usados también en 2025: duraci
 
 **No se hará en 2025:** ajustar el umbral, reentrenar, cambiar variables, parámetros ni semillas, ni excluir carreras. Si una carrera de 2025 no tiene datos de FastF1 para alguna fuente, sus muestras siguen la política de máscaras o ausencias ya vigente y se reportan, no se eliminan.
 
-## 3. Trabajo necesario antes de la evaluación
+## 3. Pipeline de evaluación (listo, revisado y commiteado antes de ejecutar 2025)
 
-1. **Entradas base de 2025:** aplicar el preprocesador congelado de `muestras_preprocesadas_v1_3` (método `transform`, sin reajuste) a las ventanas causales de 2025 que ya existen en `muestras_causales_v1_3`, y verificar hashes, esquema y máscaras.
-2. **Variables de estrategia de 2025:** calcularlas con los módulos congelados (`strategy_features*.py`, hashes en el manifiesto), con valores de referencia de train y la distancia programada de la caché FastF1 de 2025.
-3. **Script de evaluación de una sola ejecución:** carga los boosters congelados, comprueba los hashes del manifiesto, predice, calcula las métricas de la sección 2 y rechaza una segunda ejecución sobre la misma salida.
+`scripts/evaluar_modelo_final.py` implementa los tres pasos con un solo camino de código para 2024 y 2025:
 
-El código de los pasos 1–3 se revisará y se dejará commiteado **antes** de ejecutarlo sobre 2025.
+1. **Comprobación del congelado:** el manifiesto debe coincidir con el SHA-256 registrado arriba, y los modelos y todos los ficheros fuente que lista (módulos de estrategia, scripts de diagnóstico, ajuste y congelado) deben ser idénticos byte a byte.
+2. **Entradas base:** transforma las ventanas causales crudas de `muestras_causales_v1_3` con el preprocesador congelado de `muestras_preprocesadas_v1_3` (`transform`, sin ajuste) y toma población, elegibilidad y etiquetas de `..._particiones_v1_1`.
+3. **Variables de estrategia:** las calcula con los módulos congelados. Los valores de referencia se aprenden solo de 2022–2023 y la distancia programada sale de la caché FastF1 de la temporada.
+4. **Predicción y métricas:** media de los tres boosters guardados, umbral 0,14 y todas las métricas de la sección 2. Escribe predicciones, eventos, F2 por carrera y un manifiesto.
+
+**Ensayo en 2024 (`--split validation`):** reconstruye desde cero las entradas de 2024 y exige que los arrays transformados sean idénticos al paquete publicado y que las probabilidades coincidan con las congeladas. Resultado: idénticas, diferencia máxima 9,9×10⁻¹⁷. El informe del ensayo, con el mismo formato que tendrá el de 2025, está en `docs/aclaraciones/evaluacion_final_ensayo_2024/`:
+
+| Validación 2024 (referencia) | Valor |
+|---|---:|
+| F2 (principal) | 0,5399 |
+| AP / precisión / recall | 0,3867 / 27,9 % / 70,5 % |
+| Cobertura por evento | 650/824 (78,9 %) |
+| En verde con stint normal / SC-VSC con stint normal / stint corto | 86,1 % / 78,1 % / 47,8 % |
+| F2 con tolerancia N+3/N+4 | 0,5713 |
+| F2 por carrera (mín. / mediana / máx.) | 0,19 / 0,55 / 0,80 |
+
+**Ejecución única en 2025:**
+
+```bash
+python scripts/evaluar_modelo_final.py --split test --confirmar-evaluacion-unica
+```
+
+Sin `--confirmar-evaluacion-unica` el script se niega a ejecutarse, y rechaza una carpeta de salida existente (`docs/aclaraciones/evaluacion_final_2025/`). `tests/test_evaluacion_final.py` cubre estas protecciones y la integridad del congelado sin cargar datos.
