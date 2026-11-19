@@ -26,13 +26,16 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 from f1_pitstop.rnn_data import load_split, read_json, sha256, verify_preprocessed, write_json
 from f1_pitstop.strategy_features import SEASONS, median_stint_length_train, scheduled_laps, strategy_features
+from f1_pitstop.strategy_features_r2 import pit_loss_table, strategy_features_round2
+
+STRATEGY_MODULES = {1: "src/f1_pitstop/strategy_features.py", 2: "src/f1_pitstop/strategy_features_r2.py"}
 from preparar_entradas_telemetria import SPLITS, _state_hash
 
 KEY = ["Temporada", "Ronda", "DriverNumber"]
 PRESENT, PADDING, ROW_MISSING, TEMPORAL, FEATURE_MISSING = 0, 1, 2, 3, 4
 
 
-def decision_point_features(sample_index, laps, cache, names):
+def decision_point_features(sample_index, laps, cache, names, strategy_round=1):
     """Strategy features for every 2022-2024 decision point (all laps, not only eligible)."""
     index = sample_index.loc[sample_index.Temporada.isin(SEASONS)].copy()
     if index.Temporada.eq(2025).any():
@@ -42,7 +45,12 @@ def decision_point_features(sample_index, laps, cache, names):
     total_laps = scheduled_laps(cache)
     stint_median = median_stint_length_train(laps)
     samples = index[["sample_id", *KEY, "prediction_lap", "decision_time_seconds"]]
-    table = strategy_features(samples, laps, total_laps, stint_median)
+    if strategy_round == 1:
+        table = strategy_features(samples, laps, total_laps, stint_median)
+    elif strategy_round == 2:
+        table = strategy_features_round2(samples, laps, total_laps, stint_median, pit_loss_table(laps))
+    else:
+        raise ValueError("strategy_round must be 1 or 2")
     table = samples.merge(table, on="sample_id", how="left", validate="one_to_one")
     missing = [name for name in names if name not in table]
     if missing:
@@ -100,7 +108,9 @@ def prepare(config_path, root=ROOT):
     sample_index = pd.read_csv(root / config["sample_index"], dtype={"DriverNumber": str})
     sample_index = sample_index.loc[sample_index.Temporada.isin(SEASONS)]
     laps = pd.read_pickle(root / config["laps"])
-    table, stint_median, total_laps = decision_point_features(sample_index, laps, root / config["cache"], names)
+    strategy_round = int(config.get("strategy_round", 1))
+    table, stint_median, total_laps = decision_point_features(
+        sample_index, laps, root / config["cache"], names, strategy_round)
 
     splits, raw = {}, {}
     for split in SPLITS:
@@ -137,7 +147,7 @@ def prepare(config_path, root=ROOT):
     output.mkdir(parents=True)
     try:
         write_json(output / "preprocessor.json", derived_state)
-        report = {"strategy_features": names, "stint_median_train": stint_median,
+        report = {"strategy_features": names, "strategy_round": strategy_round, "stint_median_train": stint_median,
                   "scheduled_laps": {f"{k[0]}-{k[1]}": v for k, v in total_laps.items()},
                   "fit": fit, "constant_features_scale_one": constant, "splits": {},
                   "slot_rule": "slot lap L carries the value known at the decision time (start) of lap L",
@@ -190,7 +200,7 @@ def prepare(config_path, root=ROOT):
             "source_hashes": {**source_manifest["source_hashes"],
                               "strategy_config": sha256(config_path),
                               "strategy_script": sha256(Path(__file__)),
-                              "strategy_module": sha256(ROOT / "src/f1_pitstop/strategy_features.py"),
+                              "strategy_module": sha256(ROOT / STRATEGY_MODULES[strategy_round]),
                               "laps": config["laps_sha256"]},
             "feature_order": {key: schema[key] for key in (
                 "window_length", "numeric_feature_names", "categorical_feature_names", "static_feature_names",

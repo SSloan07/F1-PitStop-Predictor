@@ -6,6 +6,7 @@ and the candidate package must declare itself derived from the reference one:
 
 * ``lstm32_telemetria_f2_v1``: full v1_3 inputs -> telemetry-only projection.
 * ``lstm32_estrategia_f2_v1``: telemetry-only -> telemetry plus strategy state.
+* ``lstm32_estrategia_r2_f2_v1``: round-1 strategy -> plus the round-2 strategy block.
 """
 
 import argparse
@@ -35,6 +36,10 @@ PAIRS = {
     "lstm32_estrategia_f2_v1": {
         "reference_package": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_v1",
         "children": ("lstm32_solo_telemetria", "lstm32_telemetria_estrategia"),
+    },
+    "lstm32_estrategia_r2_f2_v1": {
+        "reference_package": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_estrategia_v1",
+        "children": ("lstm32_estrategia_r1", "lstm32_estrategia_r1_r2"),
     },
 }
 _INPUT_KEYS = ("preprocessed_package", "preprocessed_manifest_sha256")
