@@ -1,0 +1,24 @@
+{
+  "derivation_id": "entradas_estrategia_v1",
+  "question": "Does the causal LSTM improve when the telemetry-only inputs gain per-lap race-strategy state (stint age relative to typical, stops, pace loss in stint, rival pit activity, race progress, gap ahead)?",
+  "source_package": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_v1",
+  "source_manifest_sha256": "300126e6e6c5bc943990b64cc1985a8616ea2250e525629257f63f30de534417",
+  "output_dir": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_estrategia_v1",
+  "laps": "EDA/dataset/datos_carreras_completos_2022_2025/vueltas_2022_2025_compound_normalizado_v1/vueltas_2022_2025_compound_normalizado.pkl",
+  "laps_sha256": "02c15d7b2d766e1d01604cf143bb288a2e584370f0f422766683866a10ca00e0",
+  "sample_index": "EDA/dataset/muestras_causales_v1_3/sample_index.csv.gz",
+  "sample_index_sha256": "263155d033e65c0042d98383aa77877067c8a125adecfe4ea757a6296da817eb",
+  "cache": "EDA/dataset/cache_fastf1_carreras",
+  "strategy_features": [
+    "tyre_life_vs_typical_stint",
+    "laps_since_last_stop",
+    "pace_vs_stint_best",
+    "field_pit_entries_last2laps",
+    "laps_remaining",
+    "gap_ahead_s",
+    "race_fraction",
+    "stops_done",
+    "two_dry_compounds_used"
+  ],
+  "selection_source": "docs/aclaraciones/29_diagnostico_gradient_boosting.md: top permutation-importance strategy features plus stops_done and two_dry_compounds_used (strong univariate signal)"
+}

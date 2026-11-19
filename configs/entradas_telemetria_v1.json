@@ -1,0 +1,49 @@
+{
+  "derivation_id": "entradas_telemetria_v1",
+  "question": "Can the causal LSTM predict pit entry from lap-by-lap race state and telemetry alone, without driver/team/circuit identity and race-constant weather?",
+  "source_package": "EDA/dataset/muestras_preprocesadas_v1_3",
+  "source_manifest_sha256": "08afa3c1f406f6bbb33c27a5e688b0d0fd46658ec8398a095f8981d74abdbf66",
+  "output_dir": "EDA/dataset/muestras_preprocesadas_v1_3_telemetria_v1",
+  "keep_numeric": [
+    "LapNumber",
+    "TyreLife_last_eligible",
+    "LapTime",
+    "Sector1Time",
+    "Sector2Time",
+    "Sector3Time",
+    "Position",
+    "Telemetry_Speed_mean",
+    "Telemetry_Speed_max",
+    "Telemetry_RPM_mean",
+    "Telemetry_RPM_max",
+    "Telemetry_Throttle_valid_mean",
+    "Telemetry_Throttle_valid_max",
+    "Telemetry_Brake_mean",
+    "Weather_Rainfall"
+  ],
+  "keep_dynamic_categorical": [
+    "Compound_asof",
+    "track_phase_asof"
+  ],
+  "removed_numeric": [
+    "Weather_AirTemp",
+    "Weather_Humidity",
+    "Weather_Pressure",
+    "Weather_TrackTemp",
+    "Weather_WindDirection_sin",
+    "Weather_WindDirection_cos",
+    "Weather_WindSpeed"
+  ],
+  "removed_static": [
+    "Driver",
+    "Team",
+    "GranPremio"
+  ],
+  "static_policy": "constant_absent_placeholder",
+  "static_placeholder_name": "SinContextoEstatico",
+  "rationale": {
+    "removed_static": "Identity of driver, team and circuit is constant for every sample of a driver-race; the test removes this memorization channel.",
+    "removed_numeric": "Ambient weather that is almost constant within a race (less than 5% of its train variance is within-race for air/track temperature, humidity and pressure) or ambient wind unrelated to car state; together they act as a race identifier.",
+    "kept_weather_rainfall": "Rainfall changes within races (about 60% of its train variance is within-race) and directly triggers tyre changes, so it is kept as race-state information."
+  }
+}
